@@ -51,7 +51,7 @@ class CallLeadForm extends ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'text_from_client', 'name','phone'], 'string', 'max' => 450],
+            [['email', 'text_from_client', 'name', 'phone'], 'string', 'max' => 450],
 
             [['robotCheck'], 'safe'],
         ];
@@ -74,7 +74,7 @@ class CallLeadForm extends ActiveRecord
     //отправка отбивки юзеру
     public function sendEmailUser($email)
     {
-       
+
         return Yii::$app->mailer->compose()
             ->setTo($email)
             ->setFrom(Yii::$app->params['siteEmail'])
@@ -99,7 +99,7 @@ Email {$this->email}
                 Yii::$app->params['emailGnedasch2011'],
                 Yii::$app->params['emailShytnik'],
                 Yii::$app->params['emailInfoMscom'],
-                ])
+            ])
             ->setFrom(Yii::$app->params['siteEmail'])
             ->setSubject($this->subjectToAdmin)
             ->setTextBody($textForAdmin)

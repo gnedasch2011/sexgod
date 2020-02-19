@@ -5,8 +5,8 @@ namespace frontend\controllers;
 
 use yii\web\Controller;
 use app\models\Cart;
-use app\models\shop\Order;
 use app\models\sexgod\Goods;
+use app\modules\cart\models\Order;
 
 class CartController extends Controller
 {
@@ -18,7 +18,8 @@ class CartController extends Controller
     {
         $cart = new Cart();
         $goodsInCart = $cart->getProductForCart();
-        $order = new Order();
+      
+        $order = new \app\modules\cart\models\Order();
 
         if ($order->load(\Yii::$app->request->post())) {
 

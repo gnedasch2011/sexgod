@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\shop;
+namespace app\models\videoshop;
 
 use Yii;
 
@@ -78,4 +78,5 @@ class Order extends \yii\db\ActiveRecord
 
         }
     }
+
 }

@@ -47,11 +47,7 @@
         ]) ?>
         <?= $form->field($order, 'phone')->label('Контактный телефон:') ?>
         <?= $form->field($order, 'adress')->textarea()->label('Адрес доставки:') ?>
-        <?= $form->field($order, 'installation')->checkbox([
-            '0' => 'Монтаж',
-        ],
-            ['class' => 'test']
-        )->label("Нужен монтаж") ?>
+
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-12">
                 <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary buttonCallBack']) ?>

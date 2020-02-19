@@ -135,4 +135,26 @@ class Goods extends \yii\db\ActiveRecord
     {
         return ($this->price) ? $this->price . ' руб.' : "Уточнить цену";
     }
+
+    public function getRenderPrice()
+    {
+        if (is_numeric($this->price) && $this->price != '') {
+            return $this->price . " &#8381;";
+        } else {
+            return 'Уточняйте у менеджера';
+        }
+    }
+    public function getProductArrProduct($arr)
+    {
+        $product = [];
+
+        if ($arr) {
+            foreach ($arr as $id => $count) {
+                $product[$count] = self::findOne($id);
+            }
+        }
+
+        return $product;
+    }
+
 }

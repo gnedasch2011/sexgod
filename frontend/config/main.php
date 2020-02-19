@@ -49,7 +49,7 @@ return [
         ],
 
         'cart' => [
-            'class' => 'app\components\CartComponent',
+            'class' => 's\components\CartComponent',
         ],
         'request' => [
             'baseUrl' => '',

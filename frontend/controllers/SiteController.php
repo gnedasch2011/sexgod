@@ -106,7 +106,7 @@ class SiteController extends Controller
 //                echo "<pre>"; print_r($good->errors);die();
 //            }
 //        }
-die();
+        die();
         $this->layout = 'main';
         $params['popular'] = 1;
 
@@ -131,16 +131,6 @@ die();
         ]);
     }
 
-    public function slugify($string)
-    {
-
-        $translit = "Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();";
-        $string = transliterator_transliterate($translit, $string);
-        $string = preg_replace('/[-\s]+/', '-', $string);
-        return trim($string, '-');
-    }
-
-
     public function actionSupport()
     {
         return $this->render('support', [
@@ -153,7 +143,7 @@ die();
         $category = CategoryAbstract::find()->where(['slug' => $categoryName])->one();
 
         $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);
-        
+
         $allCategory = CategoryAbstract::getAllCategoryInCurrent($category->id);
         $this->title = $category->name;
         $this->categoryName = $categoryName;
@@ -331,13 +321,11 @@ die();
         $model = new CallLeadForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-
+          
             $date = new \DateTime('now', new \DateTimeZone('Europe/Moscow'));
-
             $model->create_date = $date->format('y-M-d H:i:s');
             if ($model->robotCheck == "on") {
                 $model->save(false);
-
                 $model->sendEmailUser($model->email);
                 return $model->sendEmailAdmin();
             }

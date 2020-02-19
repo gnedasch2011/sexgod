@@ -10,8 +10,8 @@
     foreach($idCountPrices as $id=>$count):?>
         <tr>
             <td><?= $number++ ;?>.</td>
-            <td><?= \app\models\shop\Goods::findOne($id)->name ;?></td>
-            <td><?= \app\models\shop\Goods::findOne($id)->price  ;?> руб.</td>
+            <td><?= \app\models\sexgod\Goods::findOne($id)->name ;?></td>
+            <td><?= \app\models\sexgod\Goods::findOne($id)->price  ;?> руб.</td>
             <td><?= $count ;?></td>
         </tr>
       <?php endforeach;?>
@@ -21,6 +21,7 @@
         <td><?= $cart->returnFullCountItems() ;?></td>
     </tr>
 </table>
+
 
  <div class="row dateForDelivery">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -32,11 +33,7 @@
               </p>
               <p><?= $order->adress ;?></p>
           </div>
-          <div>
-              <p class="addAttr-p">Монтаж
-              </p>
-              <p><?= $order->inst ;?></p>
-          </div>
+
 
           <?php if($order->paymentMethod!=0):?>
               <div>
