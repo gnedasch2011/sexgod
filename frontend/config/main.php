@@ -26,7 +26,10 @@ return [
         'debug' => [
             'class' => 'yii\debug\Module',
             'allowedIPs' => ['*'],
-        ]
+        ],
+//        'search' => [
+//            'class' => 'app\modules\search\Module',
+//        ],
     ],
 
     'components' => [
@@ -82,6 +85,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                "search"=>"search/index",
                 "products/<categoryName:\S+>" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',

@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
         'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
 
         'css/site.css',
+        'css/sexgod.css',
         'css/im_video.css',
         'css/fonts/pt-sans/stylesheet.css',
     ];

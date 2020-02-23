@@ -194,7 +194,6 @@ class CategoryAbstract extends ActiveRecord
     public static function getAllGoods($currentIDCategory)
     {
         $listCateg = static::find()->all();
-
         $resultArr = ArrayHelper::map($listCateg, 'slug', 'parent_id', 'id');
 
         $currentIDCategoryArr [] = $currentIDCategory;
@@ -205,6 +204,7 @@ class CategoryAbstract extends ActiveRecord
             ->join('left join', 'goods_category ghc', 'ghc.goods_id = goods.id')
             ->join('left join', 'category c', 'c.id = ghc.category_id')
             ->where(['c.id' => $arrIdCategoryAllArr])
+            ->limit(6)
             ->all();
 
         return $allGoods;

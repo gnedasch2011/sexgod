@@ -1,0 +1,53 @@
+.sexgodItem {
+    border: #f2f4f8 solid 1px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sexgod_item_img {
+    border-bottom: #f2f4f8 solid 1px;
+}
+
+.wrapForName {
+    height: 250px;
+}
+
+.sexgodItem__price {
+    font-family: 'Lato-Heavy';
+    font-size: 22px;
+    color: #ed3c36;
+    white-space: nowrap;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.itemSexGod {
+    /*height: 1%;*/
+}
+
+.itemSexGod__a {
+    padding: 10px;
+}
+
+.buttonInCategory {
+    width: 80%;
+}
+
+.buyOneClick {
+    margin-top: 20px;
+    /*padding: 10px;*/
+    display: inline-block;
+    border-bottom: #008bcc dotted 1px
+}
+
+.sex_good_item_name{
+    display: inline-block;
+    margin-top: 9px;
+    font-size: 18px;
+    color: #008bcc;
+    text-align: left;
+}

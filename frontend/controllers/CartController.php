@@ -13,7 +13,6 @@ class CartController extends Controller
     public $layout = 'category';
     public $title;
 
-
     public function actionIndex()
     {
         $cart = new Cart();
@@ -62,7 +61,6 @@ class CartController extends Controller
 
         $cart = new Cart();
         $cart = $cart->cart;
-
 
         if (empty($cart)) {
             $session['cart'] = [

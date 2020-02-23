@@ -20,7 +20,6 @@ class Cart extends Model
     public static function geInitAjaxData()
     {
         $request = Yii::$app->request;
-
         if ($request->isAjax) {
             if ($request->post('dataItem')) {
                 $dataItem = json_decode($request->post('dataItem'));
@@ -43,6 +42,10 @@ class Cart extends Model
 
     public function getIdsProductsInCart()
     {
+        if ($this->cart) {
+            unset($this->cart[null]);
+        }
+
         return array_keys($this->cart);
     }
 

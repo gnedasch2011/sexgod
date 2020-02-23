@@ -11,7 +11,7 @@ use app\widgets\CartHeaderDetailWidget;
 use yii\widgets\ActiveForm;
 use app\models\shop\search\Search;
 use app\components\ModalWindowWidget;
-$search = new Search();
+//$search = new Search();
 ?>
     <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">

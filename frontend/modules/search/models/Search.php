@@ -1,5 +1,5 @@
 <?php
-namespace app\models\videoshop\search;
+namespace app\modules\search\models;
 
 use yii\base\Model;
 

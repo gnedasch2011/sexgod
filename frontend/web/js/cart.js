@@ -1,23 +1,14 @@
 $('.addInCart').on('click', function (e) {
     e.preventDefault()
-    var idItem = $(this).parent(".item").data('id')
+    // var idItem = $(this).parent(".item").data('id')
+    let idItem = $(this).attr('data-id')
 
-    $.ajax({
-        url: '/cart/add-good',
-        data: {"id": idItem},
+    let dataItem = {"count": 1, "id": idItem};
+    dataItem = JSON.stringify(dataItem);
 
-        success: function () {
+    addInSessionCart(dataItem)
+    updatePriceInDetail();
 
-        }
-    });
-
-    $.ajax({
-        url: '/cart/item-count',
-
-        success: function (data) {
-            $('.itemCount').html(data)
-        }
-    });
 })
 
 
@@ -60,6 +51,7 @@ let updateFullPriceInCart = function () {
 }
 
 let addInSessionCart = function (dataItem) {
+
     $.ajax({
         url: '/cart/add-in-session-cart',
         method: "post",
@@ -149,7 +141,7 @@ $('.addItemInCart').on('click', function (e) {
 
     let dataItem = {count: count, id: id};
     dataItem = JSON.stringify(dataItem);
-
+    console.log(dataItem);
     $.ajax({
         url: '/cart/add-in-session-cart',
         method: "post",
@@ -161,6 +153,13 @@ $('.addItemInCart').on('click', function (e) {
         }
     });
 })
+
+
+// $(document).on('click','.addInCart',function (e) {
+//        e.preventDefault();
+//        let productId = $(this).attr('data-id')
+//     console.log(productId);
+// })
 
 
 let updateCart = function () {
@@ -221,15 +220,25 @@ $('.btn_form_call').on('click', function (e) {
 
         data: data,
         success: function (data) {
-           if(data){
+            if (data) {
                 $('.form_h2_success').text('Спасибо, скоро мы вам перезвоним')
-    
-           }
+
+            }
         }
     });
 })
 
-$(function(){
+  $(document).on('click','.oneClickAndDisabled',function (e) {
+         e.preventDefault();
+
+         $(this).css({
+             "disabled":"disabled",
+             "background":"#40a939",
+         }).text('Добавлено');
+
+  })
+
+$(function () {
     //2. Получить элемент, к которому необходимо добавить маску
     $("#callleadform-phone").mask("8(999) 999-9999");
 });

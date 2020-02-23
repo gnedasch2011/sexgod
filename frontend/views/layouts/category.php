@@ -11,8 +11,6 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <?= $this->render('_blocks/header') ?>
-
-
         <?= $content ?>
 <?= $this->render('_blocks/footer') ?>
 

@@ -2,6 +2,7 @@
 
 namespace app\models\sexgod;
 
+use app\models\ImageUrl;
 use Yii;
 
 /**
@@ -95,6 +96,7 @@ class Goods extends \yii\db\ActiveRecord
     public function getMainImg()
     {
         $images = $this->images;
+
         if (isset($images[1])) {
             return $images[1];
         }
@@ -157,4 +159,41 @@ class Goods extends \yii\db\ActiveRecord
         return $product;
     }
 
+
+    public static function getProducts($params = [])
+    {
+        return self::find()->where(['like', 'name', $params['name']])->all();
+        $query = new \yii\db\Query();
+
+        $query->select(['id'])
+            ->from('goods');
+
+        if ($params['name']) {
+            $query->where(['like', 'name', $params['name']]);
+        }
+
+        if ($params['popular']) {
+            $query->select(['*'])
+                ->from('goods');
+            $ids = [
+                740,
+                741,
+                742,
+                743,
+                744,
+                745,
+                746,
+                747
+            ];
+
+            return self::find()->where(['id' => $ids])->limit(8)->all();
+        }
+
+        return $query->all();
+    }
+
+    public function getImagesone()
+    {
+        return $this->mainImg;
+    }
 }

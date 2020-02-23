@@ -152,6 +152,10 @@ if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
                 "categoryName" => $this->context->categoryName
             ]) ?>
 
+<!--            --><?//= FilterIMWidget::widget([
+//                "categoryName" => $this->context->categoryName
+//            ]) ?>
+
         </sidebar>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">

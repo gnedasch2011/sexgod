@@ -145,6 +145,7 @@ class SiteController extends Controller
         $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);
 
         $allCategory = CategoryAbstract::getAllCategoryInCurrent($category->id);
+
         $this->title = $category->name;
         $this->categoryName = $categoryName;
 
