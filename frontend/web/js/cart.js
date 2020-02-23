@@ -228,17 +228,18 @@ $('.btn_form_call').on('click', function (e) {
     });
 })
 
-  $(document).on('click','.oneClickAndDisabled',function (e) {
-         e.preventDefault();
+$(document).on('click', '.oneClickAndDisabled', function (e) {
+    e.preventDefault();
 
-         $(this).css({
-             "disabled":"disabled",
-             "background":"#40a939",
-         }).text('Добавлено');
+    $(this).addClass('goodsInCart').text('Добавлено');
 
-  })
+})
 
 $(function () {
     //2. Получить элемент, к которому необходимо добавить маску
     $("#callleadform-phone").mask("8(999) 999-9999");
 });
+
+(function(){
+    $("#order-phone").mask("8(999) 999-9999");
+})()

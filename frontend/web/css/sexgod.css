@@ -10,6 +10,7 @@
 
 .sexgod_item_img {
     border-bottom: #f2f4f8 solid 1px;
+    padding: 10px;
 }
 
 .wrapForName {
@@ -31,6 +32,8 @@
 
 .itemSexGod__a {
     padding: 10px;
+    height: 140px;
+    overflow: hidden;
 }
 
 .buttonInCategory {
@@ -44,10 +47,28 @@
     border-bottom: #008bcc dotted 1px
 }
 
-.sex_good_item_name{
+.sex_good_item_name {
     display: inline-block;
     margin-top: 9px;
     font-size: 18px;
     color: #008bcc;
     text-align: left;
+}
+
+.goodsInCart {
+    background: #40a939 !important;
+}
+
+.textPrice {
+    text-align: left;
+    font-family: 'Lato-Regular';
+    font-size: 16px;
+    color: #808080;
+    margin-top: 10px;
+    height: 74px;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    margin-left: 15px;
 }

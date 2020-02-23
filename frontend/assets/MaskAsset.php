@@ -10,7 +10,7 @@ class MaskAsset extends AssetBundle
 
     public $baseUrl = '@web';
     public $js = [
-        'js/jquery.maskedinput.min.js'
+        '/js/jquery.maskedinput.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

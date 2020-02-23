@@ -33,6 +33,9 @@ return [
     ],
 
     'components' => [
+        'cart' => [
+            'class' => 'frontend\abstractComponents\components\Cart'
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache', // Используем хранилище yii\caching\FileCache
             'cachePath' => '@common/runtime/cache' // Храним кэш в common/runtime/cache
@@ -51,9 +54,6 @@ return [
             ],
         ],
 
-        'cart' => [
-            'class' => 's\components\CartComponent',
-        ],
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
@@ -85,7 +85,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                "search"=>"search/index",
+                "search" => "search/index",
                 "products/<categoryName:\S+>" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',

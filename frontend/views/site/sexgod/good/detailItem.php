@@ -35,8 +35,15 @@ MaskAsset::register($this);
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border_bottom">
             <div><strong>Розничная цена:</strong></div>
-            <div class="priceDetail"><?= $good->price ?> руб</div>
+            <div class="priceDetail"><?= $good->price ?> ₽</div>
         </div>
+
+        <?php
+        $goodExist = false;
+        if (\Yii::$app->cart->checkGoodsInCart($good->id)) {
+            $goodExist = true;
+        }
+        ?>
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockButtonInCart border_bottom">
             <div class="gp-buttons itemCart" data-id=<?= $good->id ;?>>
@@ -44,7 +51,8 @@ MaskAsset::register($this);
                 <span class="gp-count" contenteditable="true">1</span>
                 <span class="gp-plus">+</span>
             </div>
-            <a class="buttonFindProduct buttonInCart addItemInCart">В корзину</a>
+            <a class="buttonFindProduct buttonInCart oneClickAndDisabled addInCart
+oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist) ? 'Добавлено' : 'В корзину'; ?></a></a>
             <a class="buttonFustBuy" title="Быстрая покупка"> <i class="fa fa-shopping-basket"></i></a>
             <!--            <span>Удалить</span>-->
         </div>

@@ -49,10 +49,6 @@ class CartController extends Controller
         ]);
     }
 
-    public function actionAddOrder()
-    {
-
-    }
 
     public function actionAddInSessionCart()
     {
@@ -112,6 +108,12 @@ class CartController extends Controller
     {
         $cart = new Cart();
         return $cart->returnFormatFullPrice();
+    }
+
+    public function actionTest()
+    {
+        $cart = new Cart();
+        echo "<pre>"; print_r($cart->checkGoodsInCart(383802));die();
     }
 
 }

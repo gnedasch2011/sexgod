@@ -87,4 +87,12 @@ class Cart extends Model
         }
         return $count;
     }
+
+    public function checkGoodsInCart($itemId)
+    {
+        if (in_array($itemId, $this->getIdsProductsInCart())) {
+            return true;
+        }
+
+    }
 }

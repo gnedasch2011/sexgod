@@ -24,7 +24,7 @@ use yii\helpers\Html;
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                <span>Цена:</span>
+                <span class="textPrice">Цена:</span>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -41,13 +41,21 @@ use yii\helpers\Html;
 
                 </div>
             </div>
-
+            <?php
+            $goodExist = false;
+            if (\Yii::$app->cart->checkGoodsInCart($good->id)) {
+                $goodExist = true;
+            }
+            ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a data-id="<?= $good->id; ?>" class="buttonFindProduct buttonInCart addInCart buttonInCategory oneClickAndDisabled">В корзину</a>
+                <a data-id="<?= $good->id; ?>"
+                   class="
+                   buttonFindProduct buttonInCart addInCart buttonInCategory oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>" >
+                    <?= ($goodExist) ? 'Добавлено' : 'Купить'; ?></a>
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a class="buyOneClick" href="#">Купить в 1 клик</a>
+                <a class="buyOneClick" href="#">Купить в 1 клик </a>
             </div>
         </div>
     </div>
