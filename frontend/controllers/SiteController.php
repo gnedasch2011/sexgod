@@ -322,9 +322,10 @@ class SiteController extends Controller
         $model = new CallLeadForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-          
+
             $date = new \DateTime('now', new \DateTimeZone('Europe/Moscow'));
             $model->create_date = $date->format('y-M-d H:i:s');
+
             if ($model->robotCheck == "on") {
                 $model->save(false);
                 $model->sendEmailUser($model->email);

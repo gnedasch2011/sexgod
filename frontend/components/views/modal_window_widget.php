@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\ActiveField;
 
-
 ?>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -47,7 +46,7 @@ use yii\widgets\ActiveField;
                                     <span class="input-group-addon"><i
                                                 class="glyphicon glyphicon-user"></i></span>
 
-                                <input type="number" class="phone_mask form-control" id="number"
+                                <input class="phone_mask form-control" id="number"
                                        required="required"
                                        name="CallLeadForm[phone]">
                             </div>

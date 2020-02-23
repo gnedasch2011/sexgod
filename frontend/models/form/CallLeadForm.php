@@ -97,8 +97,6 @@ Email {$this->email}
         return Yii::$app->mailer->compose()
             ->setTo([
                 Yii::$app->params['emailGnedasch2011'],
-                Yii::$app->params['emailShytnik'],
-                Yii::$app->params['emailInfoMscom'],
             ])
             ->setFrom(Yii::$app->params['siteEmail'])
             ->setSubject($this->subjectToAdmin)

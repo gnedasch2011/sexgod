@@ -36,3 +36,4 @@ phpunit.phar
 /runtime
 /frontend/runtime*
 frontend/runtime*
+*cache
