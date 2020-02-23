@@ -174,13 +174,13 @@ let updateCart = function () {
     });
 }
 
-$(document).on('click', '.header_cart', function () {
-    $('.cart-detail').toggle()
-})
-
-$(document).on('mouseleave', '.header_cart', function () {
-    $('.cart-detail').hide()
-})
+// $(document).on('click', '.header_cart', function () {
+//     $('.cart-detail').toggle()
+// })
+//
+// $(document).on('mouseleave', '.header_cart', function () {
+//     $('.cart-detail').hide()
+// })
 
 $(document).on('click', '.jsClearCart', function () {
     $.ajax({

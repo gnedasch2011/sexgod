@@ -25,7 +25,7 @@ MaskAsset::register($this);
         </div>
         <? //php echo "<pre>"; print_r($good->listImagesWithoutMain);die();?>
     </div>
-    
+
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 descriptionItem">
         <div class="itemInfo"
              data-price="<?= $good->price; ?>"
@@ -46,7 +46,7 @@ MaskAsset::register($this);
         ?>
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockButtonInCart border_bottom">
-            <div class="gp-buttons itemCart" data-id=<?= $good->id ;?>>
+            <div class="gp-buttons itemCart" data-id=<?= $good->id; ?>>
                 <span class="gp-minus">-</span>
                 <span class="gp-count" contenteditable="true">1</span>
                 <span class="gp-plus">+</span>
@@ -73,20 +73,23 @@ oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20">
         <ul class="nav nav-tabs">
 
-
-
-            <li class="active"><a data-toggle="tab" href="#panel1">Спецификация</a></li>
-
-
-                <li><a data-toggle="tab" href="#panel2">Скачать</a></li>
-
             <?php if ($good->description): ?>
-                <li><a data-toggle="tab" href="#panel3">Описание</a></li>
+                <li class="active"><a data-toggle="tab" href="#panel1">Описание</a></li>
             <?php endif; ?>
+
+            <li><a data-toggle="tab" href="#panel2">Спецификация</a></li>
+
+            <!--            <li><a data-toggle="tab" href="#panel2">Скачать</a></li>-->
 
         </ul>
         <div class="tab-content">
-            <div id="panel1" class="tab-pane fade in active mt20">
+            <?php if ($good->description): ?>
+                <div id="panel1" class="tab-pane in active fade mt20">
+                    <?= $good->description; ?>
+                </div>
+            <?php endif; ?>
+
+            <div id="panel2" class="tab-pane fade mt20">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <table class="attrTable">
                         <?php /*?>
@@ -101,38 +104,10 @@ oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist
                             </tr>
                             <?php $i++; ?>
                         <?php endforeach; ?>
-     <?php */?>
+     <?php */ ?>
                     </table>
                 </div>
             </div>
-
-            <div id="panel2" class="tab-pane fade mt20">
-                <?php /*?>
-
-                <?php foreach ($good->files as $file): ?>
-                    <div><a href="/files/products/<?= $file->file_path; ?>"
-                            class=""><?= $file->name; ?></a></div><br>
-
-                <?php endforeach; ?>
-   <?php */?>
-                <p>На сайте указаны рекомендуемые розничные цены.
-                </p>
-                <p> Просим уточнять актуальную стоимость оборудования у своего менеджера.</p>
-
-            </div>
-            <?php if ($good->description): ?>
-                <div id="panel3" class="tab-pane fade mt20">
-                    <?= $good->description; ?>
-                </div>
-            <?php endif; ?>
-
-
-        </div>
-
-
-
-
     </div>
-
-
+</div>
 </div>
