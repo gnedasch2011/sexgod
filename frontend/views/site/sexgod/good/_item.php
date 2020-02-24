@@ -55,7 +55,10 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a class="buyOneClick" href="#">Купить в 1 клик </a>
+                <a class="buyOneClick"
+                   href="#"
+                   data-id="<?= $good->id; ?>"
+                >Купить в 1 клик </a>
             </div>
         </div>
     </div>

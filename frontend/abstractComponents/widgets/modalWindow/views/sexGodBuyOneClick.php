@@ -2,10 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\widgets\ActiveField;
+use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
+
+//ModalAssets::register($this);
 ?>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="modalBuyOneClick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -16,14 +18,14 @@ use yii\widgets\ActiveField;
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 modal__title_call">
-                        <div><h2 class="modal-header__title">Оставить заявку</h2></div>
+                        <div><h2 class="modal-header__title">Купить в один клик</h2></div>
                         <div class="modal-header__text"><p>Представьтесь, мы вам перезвоним.</p>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <div class="modal-header__close"><i
-                                    class="fa fa-close modal-header__close__fa"
-                                    data-dismiss="modal"></i></div>
+                                class="fa fa-close modal-header__close__fa"
+                                data-dismiss="modal"></i></div>
                     </div>
                 </div>
 
@@ -43,9 +45,10 @@ use yii\widgets\ActiveField;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span>
+                                            class="glyphicon glyphicon-user"></i></span>
 
-                                <input class="phone_mask form-control" id="number"
+                                <input class="phone_mask form-control"
+
                                        required="required"
                                        name="CallLeadForm[phone]">
                             </div>
@@ -58,8 +61,8 @@ use yii\widgets\ActiveField;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-envelope"></i></span>
-                                <input type="email" class="form-control" required="" id="email"
+                                            class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="email" class="form-control" required=""
                                        name="CallLeadForm[email]">
                             </div>
                             <span class="glyphicon form-control-feedback"></span>
@@ -72,8 +75,8 @@ use yii\widgets\ActiveField;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-envelope"></i></span>
-                                <textarea type="text_order" class="form-control" id="text_order"
+                                            class="glyphicon glyphicon-envelope"></i></span>
+                                <textarea type="text_order" class="form-control"
                                           name="CallLeadForm[text_from_client]"></textarea>
                             </div>
                             <span class="glyphicon form-control-feedback"></span>
@@ -81,7 +84,8 @@ use yii\widgets\ActiveField;
                     </div>
                     <div>
                         <label for="robotCheck"> Я не робот</label>
-                        <input type="checkbox" id="robotCheck" name="CallLeadForm[robotCheck]">
+                        <input type="checkbox"
+                               name="CallLeadForm[robotCheck]">
                     </div>
                     <!-- Конец блока для ввода email-->
                 </div>
@@ -99,7 +103,12 @@ use yii\widgets\ActiveField;
 
 <?php
 $js = <<<JS
-    $('.form_modal').on('beforeSubmit', function(){
+  $(document).on('click','.buyOneClick',function (e) {
+         e.preventDefault();
+            $("#modalBuyOneClick").modal('show');
+  })
+
+    $('#modalBuyOneClick').on('beforeSubmit', function(){
        
        var data = $(this);
        

@@ -1,9 +1,8 @@
 <?php
 
-namespace app\components;
+namespace frontend\abstractComponents\widgets\modalWindow;
 
 use yii\base\Widget;
-use yii\helpers\Html;
 use frontend\models\widgets\AdvantagesIcons;
 
 class ModalWindowWidget extends Widget
@@ -15,11 +14,13 @@ class ModalWindowWidget extends Widget
     public function init()
     {
         parent::init();
+
     }
 
     public function run()
     {
-        return $this->render('modal_window_widget', [
+
+        return $this->render($this->template, [
             'model' => $this->model,
         ]);
     }
