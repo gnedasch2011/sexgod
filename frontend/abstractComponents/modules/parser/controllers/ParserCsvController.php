@@ -30,14 +30,12 @@ class ParserCsvController extends Controller
             // Сохраняем значение $categories в кэше по ключу. Данные можно получить в следующий раз.
             $cache->set($key, $csv->data);
         } else {
-
-
             $goodInBases = \app\models\sexgod\Goods::find()->where(['not like', 'photo_150', '.jpg'])->all();
 
             foreach ($goodInBases as $good) {
                 $itemArr = $csvResult[$good->article];
                 $good->photo_150 = $itemArr['Фотография 1'];
-                $good->save(false);
+//                $good->save(false);
             }
             echo "<pre>";
             print_r('ok');

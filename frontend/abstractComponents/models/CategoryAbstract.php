@@ -284,6 +284,17 @@ class CategoryAbstract extends ActiveRecord
     {
         return $this->hasMany(self::className(), ['parent_id' => 'id']);
     }
+
+    public function getIdBySlug($slug)
+    {
+        $cat = self::find()->where(['slug' => $slug])->one();
+
+        if ($cat) {
+            return $cat->id;
+        } else {
+            return false;
+        }
+    }
 }
 
 

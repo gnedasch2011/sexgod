@@ -97,7 +97,7 @@ use app\models\shop\search\Search;
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-        
+
                 <?php
                 $categorys = \frontend\abstractComponents\models\CategoryAbstract::getAllCategoryForMenu();
                 foreach ($categorys as $slug => $title) {
@@ -152,11 +152,15 @@ if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
                 "categoryName" => $this->context->categoryName
             ]) ?>
 
-<!--            --><?//= FilterIMWidget::widget([
-//                "categoryName" => $this->context->categoryName
-//            ]) ?>
+            <?= \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
+                "categoryName" => $this->context->categoryName,
+
+
+            ]) ?>
+
 
         </sidebar>
+
     </div>
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 <?php else: ?>
