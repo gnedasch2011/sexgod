@@ -11,7 +11,9 @@ use yii\base\Widget;
 class FilterIMWidget extends Widget
 {
     public $categoryName;
-    public $AttributesForFilter;
+    public $model;
+    public $attributesForFilter;
+    public $AttributesModels;
 
 
     public function init()
@@ -19,20 +21,17 @@ class FilterIMWidget extends Widget
         parent::init();
         //собираем id аттрибутов и на основе их групп и позиции делаем диапазон или checkbox
         $catId = CategoryAbstract::getIdBySlug($this->categoryName);
-        
-        $this->AttributesForFilter = AttributeMain::getAttributesForFilter($catId);
-        echo "<pre>"; print_r($this->AttributesForFilter);die();
-        //наполняем модель аттрибутами и группой
 
+        $this->attributesForFilter = AttributeMain::getAttributesForFilter($catId);
+        $this->AttributesModels = AttributeMain::getAttributesModel($this->attributesForFilter);
 
     }
 
     public function run()
     {
-
-        echo 'stet';
-//        return $this->render($this->template, [
-//            'model' => $this->model,
-//        ]);
+        return $this->render($this->template, [
+            'model' => $this->model,
+            'model' => $this->model,
+        ]);
     }
 }

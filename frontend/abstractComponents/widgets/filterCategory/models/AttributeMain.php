@@ -32,7 +32,7 @@ class AttributeMain extends Model
                 ->leftJoin('goods_category sgc', 'sgc.goods_id = attr_product.product_id')
                 ->where(['sgc.category_id' => $idCat])
                 ->all();
-        
+
         if ($AttributesForFilter) {
             return ArrayHelper::getColumn($AttributesForFilter, 'attr_id');
         }
@@ -40,5 +40,18 @@ class AttributeMain extends Model
         return [];
 
     }
+
+
+    public static function getAttributesModel($idsAttr)
+    {
+        foreach ($idsAttr as $attr) {
+            $attributesModels[] = Attr::findOne($attr);
+        }
+
+        return $attributesModels;
+
+
+    }
+
 
 }

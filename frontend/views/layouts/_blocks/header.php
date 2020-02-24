@@ -154,6 +154,7 @@ if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
 
             <?= \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
                 "categoryName" => $this->context->categoryName,
+                "model" => "/",
 
 
             ]) ?>
