@@ -29,9 +29,9 @@ class FilterIMWidget extends Widget
 
     public function run()
     {
-        return $this->render($this->template, [
+        return $this->render('main', [
             'model' => $this->model,
-            'model' => $this->model,
+            'AttributesModels' => $this->AttributesModels,
         ]);
     }
 }

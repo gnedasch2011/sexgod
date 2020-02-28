@@ -5,10 +5,13 @@ namespace frontend\abstractComponents\widgets\filterCategory\models;
 use Yii;
 
 /**
- * This is the model class for table "attr_group".
+ * This is the model class for table "attr_category".
  *
  * @property int $id
- * @property string $name
+ * @property int $category_id
+ * @property int $attr_id
+ * @property int $positon
+ * @property int $visible
  */
 class AttrCategory extends \yii\db\ActiveRecord
 {
@@ -26,10 +29,7 @@ class AttrCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id'], 'integer'],
-            [['name'], 'string', 'max' => 45],
-            [['id'], 'unique'],
+            [['category_id', 'attr_id', 'positon', 'visible'], 'integer'],
         ];
     }
 
@@ -40,7 +40,10 @@ class AttrCategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'category_id' => 'Category ID',
+            'attr_id' => 'Attr ID',
+            'positon' => 'Positon',
+            'visible' => 'Visible',
         ];
     }
 }

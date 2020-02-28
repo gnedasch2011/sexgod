@@ -46,4 +46,16 @@ class AttrProduct extends \yii\db\ActiveRecord
             'value' => 'Value',
         ];
     }
+
+    public function getMinValue($attrId)
+    {
+        return self::find()->where(['attr_id' => $attrId])->min() ?? 0;
+    }
+
+    public  function getMaxValue($attrId)
+    {
+        return self::find()->where(['attr_id' => $attrId])->max() ?? 0;
+
+    }
+
 }

@@ -31,6 +31,7 @@ class AttributeMain extends Model
                 ->leftJoin('attr_group sag', 'sag.id = sa.group_id')
                 ->leftJoin('goods_category sgc', 'sgc.goods_id = attr_product.product_id')
                 ->where(['sgc.category_id' => $idCat])
+                ->orderBy('')
                 ->all();
 
         if ($AttributesForFilter) {
@@ -49,9 +50,6 @@ class AttributeMain extends Model
         }
 
         return $attributesModels;
-
-
     }
-
 
 }

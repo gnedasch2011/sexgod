@@ -49,4 +49,6 @@ class Attr extends \yii\db\ActiveRecord
     {
         return $this->hasOne(AttrGroup::className(), ['id' => 'group_id']);
     }
+
+
 }
