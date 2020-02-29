@@ -140,6 +140,16 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
+        
+        $categorys = \app\models\sexgod\CategoryBase::find()->all();
+
+        foreach ($categorys as $good) {
+            $good->slug = str_replace('ʹ', '', $good->slug);
+            if(!$good->save(false)){
+                echo "<pre>"; print_r($good->errors);die();
+            }
+        }
+        
         $category = CategoryAbstract::find()->where(['slug' => $categoryName])->one();
 
         $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);

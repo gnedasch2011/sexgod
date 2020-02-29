@@ -86,7 +86,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 "search" => "search/index",
-                "products/<categoryName:\S+>" => 'site/category',
+                "catalog/<categoryName:\S+>" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",

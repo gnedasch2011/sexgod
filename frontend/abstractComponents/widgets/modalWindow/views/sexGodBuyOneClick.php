@@ -7,7 +7,8 @@ use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
 //ModalAssets::register($this);
 ?>
 
-<div class="modal fade" id="modalBuyOneClick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="modalBuyOneClick" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -24,8 +25,8 @@ use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <div class="modal-header__close"><i
-                                class="fa fa-close modal-header__close__fa"
-                                data-dismiss="modal"></i></div>
+                                    class="fa fa-close modal-header__close__fa"
+                                    data-dismiss="modal"></i></div>
                     </div>
                 </div>
 
@@ -45,7 +46,7 @@ use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                            class="glyphicon glyphicon-user"></i></span>
+                                                class="glyphicon glyphicon-user"></i></span>
 
                                 <input class="phone_mask form-control"
 
@@ -61,7 +62,7 @@ use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                            class="glyphicon glyphicon-envelope"></i></span>
+                                                class="glyphicon glyphicon-envelope"></i></span>
                                 <input type="email" class="form-control" required=""
                                        name="CallLeadForm[email]">
                             </div>
@@ -75,7 +76,7 @@ use frontend\abstractComponents\widgets\modalWindow\assets\ModalAssets;
                         <div class="col-xs-12">
                             <div class="input-group">
                                     <span class="input-group-addon"><i
-                                            class="glyphicon glyphicon-envelope"></i></span>
+                                                class="glyphicon glyphicon-envelope"></i></span>
                                 <textarea type="text_order" class="form-control"
                                           name="CallLeadForm[text_from_client]"></textarea>
                             </div>
@@ -107,7 +108,8 @@ $js = <<<JS
          e.preventDefault();
             $("#modalBuyOneClick").modal('show');
   })
-
+      
+    
     $('#modalBuyOneClick').on('beforeSubmit', function(){
        
        var data = $(this);

@@ -4,4 +4,5 @@ return [
     'phone' => '+7 (905) 455-50-63',
 
     'email' => 'info@m-s-cam.ru',
+    'gtm'=>'GTM-TV4F4DD'
 ];

@@ -5,12 +5,20 @@
 /* @var $content string */
 
 use frontend\assets\AppAsset;
-
+use frontend\assets\MetricaAsset;
 
 AppAsset::register($this);
+MetricaAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <?= $this->render('_blocks/header') ?>
+<!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= \Yii::$app->params['gtm'] ;?>"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
         <?= $content ?>
 <?= $this->render('_blocks/footer') ?>
 

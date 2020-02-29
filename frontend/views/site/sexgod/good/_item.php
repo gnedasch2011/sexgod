@@ -10,9 +10,10 @@ use yii\helpers\Html;
             <a href="/product/<?= $good->slug; ?>" class="">
                 <div class="wrapForName">
                     <img width="100%"
+                         title="<?= $good->name; ?>"
                          class="sexgod_item_img"
                          src="<?= $good->previewImg; ?>"
-                         alt="">
+                         alt="<?= $good->name; ?>">
                 </div>
             </a>
             <div class="itemSexGod__a">
