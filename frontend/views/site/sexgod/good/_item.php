@@ -57,7 +57,9 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a class="buyOneClick"
+                <a
+                   class="buyOneClick buyOneClickJs"
+                   data-toggle="lightbox"
                    href="#"
                    data-id="<?= $good->id; ?>"
                 >Купить в 1 клик </a>

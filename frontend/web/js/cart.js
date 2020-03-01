@@ -121,7 +121,7 @@ $('.cartDeleteItem').on('click', function (e) {
     dataItem = JSON.stringify(dataItem);
 
     $.ajax({
-        url: '/cart/cart-delete-item',
+        url: '/cart/cart-delete-item/',
         method: "post",
         dataType: 'json',
         data: {dataItem: dataItem},

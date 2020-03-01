@@ -52,7 +52,7 @@ use yii\helpers\Html;
 
     </div>
 </div>
-<?= ModalWindowWidget::widget(); ?>
-<?= \frontend\abstractComponents\widgets\modalWindow\ModalWindowWidget::widget([
-    'template'=>'sexGodBuyOneClick',
-]); ?>
+<?//= ModalWindowWidget::widget(); ?>
+<?//= \frontend\abstractComponents\widgets\modalWindow\ModalWindowWidget::widget([
+//    'template'=>'sexGodBuyOneClick',
+//]); ?>

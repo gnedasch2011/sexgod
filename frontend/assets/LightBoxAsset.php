@@ -12,7 +12,7 @@ class LightBoxAsset extends AssetBundle
     ];
     public $baseUrl = '@web';
     public $js = [
-        'css/lightbox/lightbox.js'
+        'css/lightbox/lightbox.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
