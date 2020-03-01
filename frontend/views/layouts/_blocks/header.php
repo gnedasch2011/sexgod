@@ -122,44 +122,7 @@ use app\models\shop\search\Search;
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-<?= Breadcrumbs::widget([
-    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-]) ?>
 
-<div class="container mt20">
-    <!--    <h1 class="categoryH1">Категория</h1>-->
-<?php
-$url = Yii::$app->request->url;
-
-
-if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
-    <div class="col-lg-3 col-md-3 hidden-sm  hidden-xs col-xs-12">
-        <sidebar>
-            <?= MenuIMWidget::widget([
-                "categoryName" => $this->context->categoryName
-            ]) ?>
-            <?php /*?>
-
-            <?=
-
-            \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
-                "categoryName" => $this->context->categoryName,
-                "model" => "/",
-
-
-            ]) ?>
- <?php */?>
-
-        </sidebar>
-
-    </div>
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-<?php else: ?>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<?php endif; ?>
-=======
 <?//= Breadcrumbs::widget([
 //    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 //]) ?>
->>>>>>> 5adec6bf6cba91ca61a74a402f5528410e2c4da6
