@@ -30,6 +30,14 @@ use app\models\shop\search\Search;
 <body>
 <?php $this->beginBody() ?>
 
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=<?= \Yii::$app->params['gtm']; ?>"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="container">
         <div class="row fx headerLine">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs">
@@ -78,8 +86,9 @@ use app\models\shop\search\Search;
 
                 <?php
                 $categorys = \frontend\abstractComponents\models\CategoryAbstract::getAllCategoryForMenu();
+
                 foreach ($categorys as $slug => $title) {
-                    $menuCategory[] = ['label' => $title, 'url' => '/products/' . $slug];
+                    $menuCategory[] = ['label' => $title, 'url' => '/catalog/' . $slug . '/'];
                 }
 
 
@@ -116,32 +125,3 @@ use app\models\shop\search\Search;
 <?= Breadcrumbs::widget([
     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 ]) ?>
-
-<div class="container mt20">
-    <!--    <h1 class="categoryH1">Категория</h1>-->
-<?php
-$url = Yii::$app->request->url;
-
-
-if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
-    <div class="col-lg-3 col-md-3 hidden-sm  hidden-xs col-xs-12">
-        <sidebar>
-            <?= MenuIMWidget::widget([
-                "categoryName" => $this->context->categoryName
-            ]) ?>
-
-            <?= \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
-                "categoryName" => $this->context->categoryName,
-                "model" => "/",
-
-
-            ]) ?>
-
-
-        </sidebar>
-
-    </div>
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-<?php else: ?>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<?php endif; ?>

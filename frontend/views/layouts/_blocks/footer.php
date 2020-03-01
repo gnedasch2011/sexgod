@@ -5,8 +5,6 @@ use yii\helpers\Html;
 
 ?><!-- модальное окно -->
 
-</div>
-</div>
 
 <div class="container-fluid">
     <div class="row footerMain">

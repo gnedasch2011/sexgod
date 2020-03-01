@@ -10,7 +10,7 @@ use app\modules\cart\models\Order;
 
 class CartController extends Controller
 {
-    public $layout = 'category';
+    public $layout = 'main';
     public $title;
 
     public function actionIndex()

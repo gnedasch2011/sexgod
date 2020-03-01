@@ -81,12 +81,18 @@ return [
         ],
 
         'urlManager' => [
+            'suffix' => '/',
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'normalizeTrailingSlash' => true,
+                'collapseSlashes' => true,
+            ],
             'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 "search" => "search/index",
-                "catalog/<categoryName:\S+>" => 'site/category',
+                "catalog/<categoryName:\S+>/" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",

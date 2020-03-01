@@ -140,18 +140,8 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
-        
-        $categorys = \app\models\sexgod\CategoryBase::find()->all();
-
-        foreach ($categorys as $good) {
-            $good->slug = str_replace('ʹ', '', $good->slug);
-            if(!$good->save(false)){
-                echo "<pre>"; print_r($good->errors);die();
-            }
-        }
-        
+        $categoryName =str_replace("/", '', $categoryName);
         $category = CategoryAbstract::find()->where(['slug' => $categoryName])->one();
-
         $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);
 
         $allCategory = CategoryAbstract::getAllCategoryInCurrent($category->id);
@@ -174,6 +164,7 @@ class SiteController extends Controller
 
     public function actionDetailItem($slugItem)
     {
+        $slugItem =str_replace("/", '', $slugItem);
         $good = \app\models\sexgod\Goods::find()->where(['slug' => $slugItem])
             ->one();
 

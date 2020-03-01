@@ -14,7 +14,7 @@ $this->title = 'Товары';
 <div class="row categoryBlock">
     <?php foreach ($allCategory as $category): ?>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <a href="/products/<?= $category->slug; ?>"
+            <a href="/catalog/<?= $category->slug; ?>"
                class="subCategoryA"><?= $category->name; ?></a>
         </div>
     <?php endforeach; ?>
