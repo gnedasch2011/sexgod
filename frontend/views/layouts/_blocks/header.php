@@ -151,14 +151,17 @@ if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
             <?= MenuIMWidget::widget([
                 "categoryName" => $this->context->categoryName
             ]) ?>
+            <?php /*?>
 
-            <?= \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
+            <?=
+
+            \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
                 "categoryName" => $this->context->categoryName,
                 "model" => "/",
 
 
             ]) ?>
-
+ <?php */?>
 
         </sidebar>
 
