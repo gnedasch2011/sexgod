@@ -140,7 +140,7 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
-        $categoryName =str_replace("/", '', $categoryName);
+        $categoryName = str_replace("/", '', $categoryName);
         $category = CategoryAbstract::find()->where(['slug' => $categoryName])->one();
         $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);
 
@@ -156,15 +156,33 @@ class SiteController extends Controller
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
+        $breadcrumbs = [];
+
+
+        if ($category->parentCategory) {
+            $breadcrumbs[] = [
+                'label' => $category->parentCategory->name,
+                'url' => [$category->parentCategory->fullUrl]
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'label' => $category->name,
+            'url' => [$category->fullUrl]
+        ];
+
+
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
-            'allCategory' => $allCategory
+            'allCategory' => $allCategory,
+            'breadcrumbs' => $breadcrumbs,
+
         ]);
     }
 
     public function actionDetailItem($slugItem)
     {
-        $slugItem =str_replace("/", '', $slugItem);
+        $slugItem = str_replace("/", '', $slugItem);
         $good = \app\models\sexgod\Goods::find()->where(['slug' => $slugItem])
             ->one();
 

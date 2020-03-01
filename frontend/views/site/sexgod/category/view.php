@@ -2,11 +2,19 @@
 
 use yii\helpers\Html;
 use yii\web\View;
+use yii\widgets\Breadcrumbs;
 
 /* @var $this yii\web\View */
 
-$this->title = 'Товары';
 ?>
+
+<?//= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]);; ?>
+<?= Breadcrumbs::widget([
+        'links' => isset($breadcrumbs) ? $breadcrumbs : [],
+        'homeLink' => ['label' => 'Главная', 'url' => '/'],
+        ]
+);; ?>
+
 <?php if (count($allCategory) == 0): ?>
     <h2 class="currentCategory"><?= \Yii::$app->controller->title; ?></h2>
 <?php endif; ?>
@@ -21,7 +29,7 @@ $this->title = 'Товары';
 
 </div>
 
-<div class="row">
+<div class="row productsList">
     <?php foreach ($goods as $good): ?>
         <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
     <?php endforeach; ?>
