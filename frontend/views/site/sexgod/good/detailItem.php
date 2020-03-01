@@ -10,14 +10,15 @@ MaskAsset::register($this);
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h1><?= $good->name; ?></h1>
-        <img width="100%" src="<?= $good->mainImg; ?>" alt="" class="">
+        <img width="100%" src="<?= $good->mainImg; ?>" alt="<?= $good->name ;?>" class="">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="wrap-block-miniImg">
                 <?php foreach ($good->images as $imgMini): ?>
                     <div class="wrap-min-img">
                         <a href="<?= $imgMini; ?>" data-lightbox="image-1"
                            data-title="<?= $good->name; ?>"><img
-                                    src="<?= $imgMini; ?>" class="detailItem-img-mini" alt=""
+                                    title="<?= $good->name; ?>"
+                                    src="<?= $imgMini; ?>" class="detailItem-img-mini" alt="<?= $good->name ;?>"
                                     class=""></a>
                     </div>
                 <?php endforeach; ?>
@@ -53,7 +54,9 @@ MaskAsset::register($this);
             </div>
             <a class="buttonFindProduct buttonInCart oneClickAndDisabled addInCart
 oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist) ? 'Добавлено' : 'В корзину'; ?></a></a>
-            <a class="buttonFustBuy" title="Быстрая покупка"> <i class="fa fa-shopping-basket"></i></a>
+            <a class="buttonFustBuy buyOneClickJs"
+               data-id="<?= $good->id; ?>"
+               title="Быстрая покупка"> <i class="fa fa-shopping-basket"></i></a>
             <!--            <span>Удалить</span>-->
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-qustions border_bottom">

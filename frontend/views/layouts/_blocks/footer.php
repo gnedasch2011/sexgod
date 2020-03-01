@@ -5,8 +5,6 @@ use yii\helpers\Html;
 
 ?><!-- модальное окно -->
 
-</div>
-</div>
 
 <div class="container-fluid">
     <div class="row footerMain">
@@ -54,7 +52,7 @@ use yii\helpers\Html;
 
     </div>
 </div>
-<?= ModalWindowWidget::widget(); ?>
-<?= \frontend\abstractComponents\widgets\modalWindow\ModalWindowWidget::widget([
-    'template'=>'sexGodBuyOneClick',
-]); ?>
+<?//= ModalWindowWidget::widget(); ?>
+<?//= \frontend\abstractComponents\widgets\modalWindow\ModalWindowWidget::widget([
+//    'template'=>'sexGodBuyOneClick',
+//]); ?>

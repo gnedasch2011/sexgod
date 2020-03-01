@@ -46,7 +46,7 @@
             'options' => ['class' => 'form-horizontal'],
         ]) ?>
         <?= $form->field($order, 'phone')->label('Контактный телефон:') ?>
-        <?= $form->field($order, 'adress')->textarea()->label('Адрес доставки:') ?>
+        <?= $form->field($order, 'address')->textarea()->label('Адрес доставки:') ?>
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-12">

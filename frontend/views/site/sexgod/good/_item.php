@@ -10,9 +10,10 @@ use yii\helpers\Html;
             <a href="/product/<?= $good->slug; ?>" class="">
                 <div class="wrapForName">
                     <img width="100%"
+                         title="<?= $good->name; ?>"
                          class="sexgod_item_img"
                          src="<?= $good->previewImg; ?>"
-                         alt="">
+                         alt="<?= $good->name; ?>">
                 </div>
             </a>
             <div class="itemSexGod__a">
@@ -28,6 +29,7 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <span class="sexgodItem__price_action"> <?= $good->price + ($good->price*.02); ?> руб.</span>
                 <span class="sexgodItem__price"> <?= $good->price; ?> руб.</span>
             </div>
 
@@ -55,7 +57,9 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a class="buyOneClick"
+                <a
+                   class="buyOneClick buyOneClickJs"
+                   data-toggle="lightbox"
                    href="#"
                    data-id="<?= $good->id; ?>"
                 >Купить в 1 клик </a>

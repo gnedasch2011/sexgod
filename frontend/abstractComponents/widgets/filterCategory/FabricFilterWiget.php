@@ -19,7 +19,7 @@ class FabricFilterWiget extends Widget
     public function init()
     {
         parent::init();
-        echo "<pre>"; print_r($this->attrModel);die();
+//        echo "<pre>"; print_r($this->attrModel);die();
     }
 
     public function run()

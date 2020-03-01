@@ -40,7 +40,7 @@ let updatePriceInDetail = function () {
 
 let updateFullPriceInCart = function () {
     $.ajax({
-        url: '/cart/get-full-price',
+        url: '/cart/get-full-price/',
         method: "post",
 
         success: function (data) {
@@ -53,7 +53,7 @@ let updateFullPriceInCart = function () {
 let addInSessionCart = function (dataItem) {
 
     $.ajax({
-        url: '/cart/add-in-session-cart',
+        url: '/cart/add-in-session-cart/',
         method: "post",
         dataType: 'json',
         data: {dataItem: dataItem},
@@ -67,6 +67,8 @@ let addInSessionCart = function (dataItem) {
 
 
 $('.gp-plus', $gpButtons).on('click', function (e) {
+
+      e.preventDefault();
     let target = $(e.target);
     let id = $(target).parents('.itemCart').attr('data-id');
 
@@ -119,7 +121,7 @@ $('.cartDeleteItem').on('click', function (e) {
     dataItem = JSON.stringify(dataItem);
 
     $.ajax({
-        url: '/cart/cart-delete-item',
+        url: '/cart/cart-delete-item/',
         method: "post",
         dataType: 'json',
         data: {dataItem: dataItem},
@@ -163,8 +165,9 @@ $('.addItemInCart').on('click', function (e) {
 
 
 let updateCart = function () {
+    console.log('fsdf');return false;
     $.ajax({
-        url: '/cart/ajax-update-cart',
+        url: '/cart/ajax-update-cart/',
         method: "post",
         dataType: 'html',
 

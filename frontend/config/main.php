@@ -6,6 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+
 return [
     'id' => 'app-frontend',
     'aliases' => [
@@ -22,6 +23,9 @@ return [
         ],
         'parsers' => [
             'class' => 'frontend\abstractComponents\modules\parsers\Module',
+        ],
+        'order' => [
+            'class' => 'frontend\abstractComponents\modules\order\Module',
         ],
         'debug' => [
             'class' => 'yii\debug\Module',
@@ -56,6 +60,8 @@ return [
 
         'request' => [
             'baseUrl' => '',
+            'enableCookieValidation' => false,
+            'enableCsrfValidation' => false,
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
@@ -81,12 +87,18 @@ return [
         ],
 
         'urlManager' => [
+            'suffix' => '/',
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'normalizeTrailingSlash' => true,
+                'collapseSlashes' => true,
+            ],
             'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 "search" => "search/index",
-                "products/<categoryName:\S+>" => 'site/category',
+                "catalog/<categoryName:\S+>/" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
@@ -97,5 +109,6 @@ return [
         ],
 
     ],
+
     'params' => $params,
 ];

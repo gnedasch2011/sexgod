@@ -295,6 +295,26 @@ class CategoryAbstract extends ActiveRecord
             return false;
         }
     }
+
+    /**
+     * @return bool|CategoryAbstract|null
+     */
+    public function getParentCategory()
+    {
+        $parentCat = self::findOne(['id' => $this->parent_id]);
+
+        if (isset($parentCat) && $parentCat->id == 0) {
+            return false;
+        }
+        return $parentCat;
+
+    }
+
+    public function getFullUrl()
+    {
+        $fullUrl = '/catalog/' . $this->slug . '/';
+        return $fullUrl;
+    }
 }
 
 

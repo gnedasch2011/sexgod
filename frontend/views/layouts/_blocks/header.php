@@ -10,34 +10,12 @@ use app\widgets\CartHeaderDetailWidget;
 
 use app\models\shop\search\Search;
 
-//$search = new Search();
+
 ?>
     <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
     <head>
         <link href="/css/images/main/favicon.png" rel="shortcut icon" type="image/x-icon"/>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-            ym(53931271, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
-        </script>
-        <noscript>
-            <div><img src="https://mc.yandex.ru/watch/53931271"
-                      style="position:absolute; left:-9999px;" alt=""/></div>
-        </noscript>
         <!-- /Yandex.Metrika counter -->
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,6 +29,14 @@ use app\models\shop\search\Search;
     </head>
 <body>
 <?php $this->beginBody() ?>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=<?= \Yii::$app->params['gtm']; ?>"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
         <div class="row fx headerLine">
@@ -100,8 +86,9 @@ use app\models\shop\search\Search;
 
                 <?php
                 $categorys = \frontend\abstractComponents\models\CategoryAbstract::getAllCategoryForMenu();
+
                 foreach ($categorys as $slug => $title) {
-                    $menuCategory[] = ['label' => $title, 'url' => '/products/' . $slug];
+                    $menuCategory[] = ['label' => $title, 'url' => '/catalog/' . $slug . '/'];
                 }
 
 
@@ -135,6 +122,7 @@ use app\models\shop\search\Search;
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 <?= Breadcrumbs::widget([
     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 ]) ?>
@@ -170,3 +158,8 @@ if (strpos($url, 'products') || strpos($url, 'product') || $url == "/"):?>
 <?php else: ?>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <?php endif; ?>
+=======
+<?//= Breadcrumbs::widget([
+//    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//]) ?>
+>>>>>>> 5adec6bf6cba91ca61a74a402f5528410e2c4da6

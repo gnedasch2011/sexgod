@@ -31,7 +31,8 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['payment_method', 'dateCreate', 'delivery', 'phone', 'adress', 'arr_product'], 'string', 'max' => 255],
+            ['phone', 'required'],
+            [['payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name'], 'string', 'max' => 255],
         ];
     }
 
