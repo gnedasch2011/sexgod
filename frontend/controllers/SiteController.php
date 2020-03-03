@@ -177,6 +177,7 @@ class SiteController extends Controller
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
             'breadcrumbs' => $breadcrumbs,
+            'category' => $category,
 
         ]);
     }
