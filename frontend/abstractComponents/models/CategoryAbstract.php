@@ -331,7 +331,7 @@ class CategoryAbstract extends ActiveRecord
         return $arr;
     }
 
-    public function getRecursiveParentCat($cat)
+    public static function getRecursiveParentCat($cat)
     {
         if (isset($cat->parent_id) && $cat->parent_id != 0) {
             $cat = self::find()->where(['id' => $cat->parent_id])->one();
