@@ -316,7 +316,7 @@ class CategoryAbstract extends ActiveRecord
         return $fullUrl;
     }
 
-    public function getParentCategoryForBread($GoodsCategory)
+    public  static function getParentCategoryForBread($GoodsCategory)
     {
         $cat = self::find()->where(['id' => $GoodsCategory->category_id])->one();
 
