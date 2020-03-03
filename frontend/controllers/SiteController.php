@@ -119,8 +119,8 @@ class SiteController extends Controller
         $goods = Goods::getProducts($params);
 
 
-        $keywords = 'купить установка скидки ';
-        $description = trim($category->name) . '. Покупка и монтаж, скидки на весь сезон! ';
+        $keywords = '';
+        $description = trim($category->name) . '';
 
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
@@ -166,6 +166,7 @@ class SiteController extends Controller
             ];
         }
 
+
         $breadcrumbs[] = [
             'label' => $category->name,
             'url' => [$category->fullUrl]
@@ -192,8 +193,16 @@ class SiteController extends Controller
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
+        $breadcrumbs[] = $good->parentCategoryUrl;
+        $breadcrumbs[] = [
+            'label' => $good->name,
+//            'url' => [$good->fullUrl]
+        ];
+
+
         return $this->render('@currentSiteView/good/detailItem', [
             'good' => $good,
+            'breadcrumbs' => $breadcrumbs,
         ]);
     }
 

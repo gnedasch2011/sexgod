@@ -315,6 +315,31 @@ class CategoryAbstract extends ActiveRecord
         $fullUrl = '/catalog/' . $this->slug . '/';
         return $fullUrl;
     }
+
+    public function getParentCategoryForBread($GoodsCategory)
+    {
+        $cat = self::find()->where(['id' => $GoodsCategory->category_id])->one();
+
+        $catForBread = self::getRecursiveParentCat($cat);
+
+        $arr = [
+            'label' => $catForBread->name,
+            'url' => [$catForBread->fullUrl]
+        ];
+
+
+        return $arr;
+    }
+
+    public function getRecursiveParentCat($cat)
+    {
+        if (isset($cat->parent_id) && $cat->parent_id != 0) {
+            $cat = self::find()->where(['id' => $cat->parent_id])->one();
+            self::getRecursiveParentCat($cat);
+        }
+
+        return $cat;
+    }
 }
 
 

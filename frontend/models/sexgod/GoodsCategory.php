@@ -45,4 +45,6 @@ class GoodsCategory extends \yii\db\ActiveRecord
             'position' => 'Position',
         ];
     }
+
+
 }

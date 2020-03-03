@@ -146,6 +146,7 @@ class Goods extends \yii\db\ActiveRecord
             return 'Уточняйте у менеджера';
         }
     }
+
     public function getProductArrProduct($arr)
     {
         $product = [];
@@ -196,4 +197,18 @@ class Goods extends \yii\db\ActiveRecord
     {
         return $this->mainImg;
     }
+
+    public function getParentCategoryUrl(): array
+    {
+        $GoodsCategory = $this->goodsCategory;
+        return CategoryBase::getParentCategoryForBread($GoodsCategory);
+
+    }
+
+    public function getGoodsCategory()
+    {
+        return $this->hasOne(GoodsCategory::className(), ['goods_id' => 'id']);
+    }
+
+
 }
