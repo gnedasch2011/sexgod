@@ -6,7 +6,7 @@ use yii\helpers\Html;
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="sexgodItem">
 
-        <div class="itemSexGod" data-id="<?= $good->id; ?>">
+        <div class="itemSexGod" data-id="<?= $good->aID; ?>">
             <a href="/product/<?= $good->slug; ?>" class="">
                 <div class="wrapForName">
                     <img width="100%"
@@ -35,7 +35,7 @@ use yii\helpers\Html;
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockButtonInCart border_bottom">
-                    <div class="gp-buttons itemCart" data-id=<?= $good->id; ?>>
+                    <div class="gp-buttons itemCart" data-id=<?= $good->aID; ?>>
                         <span class="gp-minus">-</span>
                         <span class="gp-count" contenteditable="true">1</span>
                         <span class="gp-plus">+</span>
@@ -45,12 +45,12 @@ use yii\helpers\Html;
             </div>
             <?php
             $goodExist = false;
-            if (\Yii::$app->cart->checkGoodsInCart($good->id)) {
+            if (\Yii::$app->cart->checkGoodsInCart($good->aID)) {
                 $goodExist = true;
             }
             ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a data-id="<?= $good->id; ?>"
+                <a data-id="<?= $good->aID; ?>"
                    class="
                    buttonFindProduct buttonInCart addInCart buttonInCategory oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>" >
                     <?= ($goodExist) ? 'Добавлено' : 'Купить'; ?></a>
@@ -61,7 +61,7 @@ use yii\helpers\Html;
                    class="buyOneClick buyOneClickJs"
                    data-toggle="lightbox"
                    href="#"
-                   data-id="<?= $good->id; ?>"
+                   data-id="<?= $good->aID; ?>"
                 >Купить в 1 клик </a>
             </div>
         </div>

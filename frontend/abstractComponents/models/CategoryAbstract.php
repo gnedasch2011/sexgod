@@ -4,8 +4,9 @@
 namespace frontend\abstractComponents\models;
 
 
-use app\models\sexgod\Goods;
+use app\models\sexgod\good\Goods;
 use app\models\shop\Category;
+use app\modelsapp\models\sexgod\good\Goods2;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -195,16 +196,16 @@ class CategoryAbstract extends ActiveRecord
     {
         $listCateg = static::find()->all();
         $resultArr = ArrayHelper::map($listCateg, 'slug', 'parent_id', 'id');
-
         $currentIDCategoryArr [] = $currentIDCategory;
         $arrIdCategoryAll = self::recursiveLevelDownCategory($currentIDCategoryArr, $resultArr);
+
         $arrIdCategoryAllArr = explode(',', $arrIdCategoryAll);
 
         $allGoods = Goods::find()
-            ->join('left join', 'goods_category ghc', 'ghc.goods_id = goods.id')
-            ->join('left join', 'category c', 'c.id = ghc.category_id')
-            ->where(['c.id' => $arrIdCategoryAllArr])
-            ->limit(6)
+            ->join('left join', 'goods_category ghc', 'ghc.aid = goods.aID')
+//            ->join('left join', 'category c', 'c.id = ghc.category_id')
+            ->where(['ghc.category_id' => $arrIdCategoryAllArr])
+            ->limit(100)
             ->all();
 
         return $allGoods;
@@ -316,7 +317,7 @@ class CategoryAbstract extends ActiveRecord
         return $fullUrl;
     }
 
-    public  static function getParentCategoryForBread($GoodsCategory)
+    public static function getParentCategoryForBread($GoodsCategory)
     {
         $cat = self::find()->where(['id' => $GoodsCategory->category_id])->one();
 

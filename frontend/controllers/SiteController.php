@@ -1,15 +1,10 @@
 <?php
 
 namespace frontend\controllers;
-
-use app\models\sexgod\CategoryBase;
-use app\models\sexgod\GoodsCategory;
-use app\models\shop\Category;
-use frontend\abstractComponents\models\CategoryAbstract;
+use app\models\sexgod\category\CategoryBase;
 use frontend\models\form\CallLeadForm;
 use Yii;
 use yii\base\InvalidParamException;
-use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -19,7 +14,6 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use app\models\shop\Goods;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
@@ -93,20 +87,26 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $goods = \app\models\sexgod\Goods::find()->all();
-        $categorys = CategoryBase::find()->all();
-//        foreach ($categorys as $category) {
-//            if(!$category->save()){
-//                echo "<pre>"; print_r($category->errors);die();
-//            };
-//        }
+        $items = \app\models\sexgod\good\Goods::find()->all();
+//        $categorys = CategoryBase::find()->all();
+
+        foreach ($items as $item) {
+            $item->id = str_replace('ʹ', '', $item->aID);
+            if (!$item->save()) {
+                echo "<pre>";
+                print_r($item->errors);
+                die();
+            };
+
+        }
+        die();
 //        foreach ($goods as $good) {
 //            $good->slug = $this->slugify($good->name);
 //            if(!$good->save(false)){
 //                echo "<pre>"; print_r($good->errors);die();
 //            }
 //        }
-        die();
+//        die();
         $this->layout = 'main';
         $params['popular'] = 1;
 
@@ -141,11 +141,13 @@ class SiteController extends Controller
     public function actionCategory($categoryName = "")
     {
         $categoryName = str_replace("/", '', $categoryName);
-        $category = CategoryAbstract::find()->where(['slug' => $categoryName])->one();
-        $allGoodsInCategoryAndSubCategory = CategoryAbstract::getAllGoods($category->id);
 
-        $allCategory = CategoryAbstract::getAllCategoryInCurrent($category->id);
+        $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
 
+        $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
+
+        $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
+        //        echo "<pre>"; print_r($allCategory);die();
         $this->title = $category->name;
         $this->categoryName = $categoryName;
 
@@ -185,7 +187,7 @@ class SiteController extends Controller
     public function actionDetailItem($slugItem)
     {
         $slugItem = str_replace("/", '', $slugItem);
-        $good = \app\models\sexgod\Goods::find()->where(['slug' => $slugItem])
+        $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
             ->one();
 
         $keywords = 'купить установка скидки ' . $good->name;

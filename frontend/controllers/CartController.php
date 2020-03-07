@@ -5,7 +5,7 @@ namespace frontend\controllers;
 
 use yii\web\Controller;
 use app\models\Cart;
-use app\models\sexgod\Goods;
+use app\models\sexgod\good\Goods;
 use app\modules\cart\models\Order;
 
 class CartController extends Controller

@@ -20,7 +20,7 @@ class SearchController extends Controller
         $productsModels = [];
         if ($search->load(\Yii::$app->request->post())) {
             $params['name'] = $search->search;
-            $productsModels = \app\models\sexgod\Goods::getProducts($params);
+            $productsModels = \app\models\sexgod\good\Goods::getProducts($params);
         };
 
         return $this->render('search', [

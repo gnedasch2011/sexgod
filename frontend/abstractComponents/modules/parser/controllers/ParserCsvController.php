@@ -30,7 +30,7 @@ class ParserCsvController extends Controller
             // Сохраняем значение $categories в кэше по ключу. Данные можно получить в следующий раз.
             $cache->set($key, $csv->data);
         } else {
-            $goodInBases = \app\models\sexgod\Goods::find()->where(['not like', 'photo_150', '.jpg'])->all();
+            $goodInBases = \app\models\sexgod\good\Goods::find()->where(['not like', 'photo_150', '.jpg'])->all();
 
             foreach ($goodInBases as $good) {
                 $itemArr = $csvResult[$good->article];
@@ -43,11 +43,11 @@ class ParserCsvController extends Controller
             for ($i = 0; $i < 27000; $i++) {
                 $itemArr = array_values($csvResult[$i]);
 
-                $goodInBase = \app\models\sexgod\Goods::find()->where(['article' => $itemArr[0]])->one();
+                $goodInBase = \app\models\sexgod\good\Goods::find()->where(['article' => $itemArr[0]])->one();
                 if (strpos($goodInBase->photo_150, ".jpg")) {
                     continue;
                 }
-//                $newGood = new \app\models\sexgod\Goods();
+//                $newGood = new \app\models\sexgod\good\Goods();
 //                for ($j = 0; $j < count($fields); $j++) {
 //                    $newGood->{$fields[$j]} = $itemArr[$j];
 //                }

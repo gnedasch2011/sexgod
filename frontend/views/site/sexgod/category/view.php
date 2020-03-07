@@ -14,7 +14,6 @@ use yii\widgets\Breadcrumbs;
         'homeLink' => ['label' => 'Главная', 'url' => '/'],
     ]
 );; ?>
-
 <?php if ($category->advantages): ?>
     <?= $category->advantages; ?>
 <?php else: ?>

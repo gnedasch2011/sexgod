@@ -4,7 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
-use app\models\sexgod\Goods;
+use app\models\sexgod\good\Goods;
 
 class Cart extends Model
 {
