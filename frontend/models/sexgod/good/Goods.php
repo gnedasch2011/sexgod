@@ -2,6 +2,8 @@
 
 namespace app\models\sexgod\good;
 
+use app\models\sexgod\category\CategoryBase;
+use app\models\sexgod\good\GoodsCategory;
 use Yii;
 
 /**
@@ -148,14 +150,8 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getImages()
     {
-        $images[] = $this->photo_150;
-        $images[] = $this->photo_1;
-        $images[] = $this->photo_2;
-        $images[] = $this->photo_3;
-        $images[] = $this->photo_4;
-        $images[] = $this->photo_5;
 
-        $new_arr = array_diff($images, array(''));
+        $new_arr = array_diff(explode(' ', $this->Images), array(''));
 
         return $new_arr;
     }
@@ -167,7 +163,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getDescription()
     {
-        return $this->desc;
+        return $this->Description;
     }
 
     public function getPreviewImg()
@@ -243,13 +239,14 @@ class Goods extends \yii\db\ActiveRecord
     public function getParentCategoryUrl(): array
     {
         $GoodsCategory = $this->goodsCategory;
+
         return CategoryBase::getParentCategoryForBread($GoodsCategory);
 
     }
 
     public function getGoodsCategory()
     {
-        return $this->hasOne(GoodsCategory::className(), ['goods_id' => 'id']);
+        return $this->hasOne(GoodsCategory::className(), ['aid' => 'id']);
     }
 
     public function getName()

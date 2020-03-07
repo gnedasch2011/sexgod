@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\sexgod;
+namespace app\models\sexgod\good;
 
 use Yii;
 
