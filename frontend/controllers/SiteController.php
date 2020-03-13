@@ -1,6 +1,7 @@
 <?php
 
 namespace frontend\controllers;
+
 use app\models\sexgod\category\CategoryBase;
 use frontend\models\form\CallLeadForm;
 use Yii;
@@ -24,7 +25,7 @@ class SiteController extends Controller
 {
 
     public $title;
-    public $layout = 'category';
+    public $layout = 'main';
     public $categoryName = 'category';
     public $itemsMenu = [];
 
@@ -87,47 +88,49 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $items = \app\models\sexgod\good\Goods::find()->all();
-//        $categorys = CategoryBase::find()->all();
+        $this->layout = 'red_stroyka/main';
 
-        foreach ($items as $item) {
-            $item->id = str_replace('ʹ', '', $item->aID);
-            if (!$item->save()) {
-                echo "<pre>";
-                print_r($item->errors);
-                die();
-            };
-
-        }
-        die();
-//        foreach ($goods as $good) {
-//            $good->slug = $this->slugify($good->name);
-//            if(!$good->save(false)){
-//                echo "<pre>"; print_r($good->errors);die();
-//            }
+//        $items = \app\models\sexgod\good\Goods::find()->all();
+////        $categorys = CategoryBase::find()->all();
+//
+//        foreach ($items as $item) {
+//            $item->id = str_replace('ʹ', '', $item->aID);
+//            if (!$item->save()) {
+//                echo "<pre>";
+//                print_r($item->errors);
+//                die();
+//            };
+//
 //        }
 //        die();
-        $this->layout = 'main';
-        $params['popular'] = 1;
-
-        $model = new CallLeadForm();
-        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            echo '<pre>';
-            print_r($model);
-            die();
-        }
-        $goods = Goods::getProducts($params);
-
-
-        $keywords = '';
-        $description = trim($category->name) . '';
-
-        $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
-        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
+////        foreach ($goods as $good) {
+////            $good->slug = $this->slugify($good->name);     0000000
+////            if(!$good->save(false)){
+////                echo "<pre>"; print_r($good->errors);die();
+////            }
+////        }
+////        die();
+//        $this->layout = 'main';
+//        $params['popular'] = 1;
+//
+//        $model = new CallLeadForm();
+//        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+//            echo '<pre>';
+//            print_r($model);
+//            die();
+//        }
+//        $goods = Goods::getProducts($params);
+//
+//
+//        $keywords = '';
+//        $description = trim($category->name) . '';
+//
+//        $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
+//        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
 
         return $this->render('index', [
-            'goods' => $goods
+//            'goods' => $goods
         ]);
     }
 

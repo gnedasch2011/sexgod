@@ -13,7 +13,6 @@ MetricaAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
-
 <?= $this->render('_blocks/header') ?>
 <div class="container mt20">
     <div class="row">
