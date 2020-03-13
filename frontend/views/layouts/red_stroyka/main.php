@@ -3,13 +3,11 @@
 /* @var $this \yii\web\View */
 
 /* @var $content string */
-
 use app\widgets\MenuIMWidget;
-use frontend\assets\AppAsset;
-use frontend\assets\MetricaAsset;
 
-AppAsset::register($this);
-MetricaAsset::register($this);
+use frontend\assets\RedStroykaAsset;
+
+RedStroykaAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>

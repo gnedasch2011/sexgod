@@ -1,7 +1,5 @@
 <?php
-use frontend\assets\RedStroykaAsset;
 
-RedStroykaAsset::register($this);
 
 ;?>
 <!DOCTYPE html>
@@ -16,9 +14,6 @@ RedStroykaAsset::register($this);
     <!-- fonts -->
 
     <!-- font - fontawesome -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
-    <!-- font - stroyka -->
-    <link rel="stylesheet" href="fonts/stroyka/stroyka.css">
 </head>
 
 
