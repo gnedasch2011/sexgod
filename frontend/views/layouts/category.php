@@ -10,7 +10,6 @@ use frontend\assets\MetricaAsset;
 
 AppAsset::register($this);
 MetricaAsset::register($this);
-
 ?>
 <?php $this->beginPage() ?>
 <?= $this->render('_blocks/header') ?>

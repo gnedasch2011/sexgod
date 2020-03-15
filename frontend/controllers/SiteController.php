@@ -143,17 +143,17 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
+        $this->layout = 'red_stroyka/main';
+
         $categoryName = str_replace("/", '', $categoryName);
-
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
-
+      
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
 
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
         //        echo "<pre>"; print_r($allCategory);die();
         $this->title = $category->name;
         $this->categoryName = $categoryName;
-
 
         $keywords = 'купить установка скидки ' . $category->name;
         $description = trim($category->name) . '. Покупка и монтаж, скидки на весь сезон! ';
@@ -176,7 +176,6 @@ class SiteController extends Controller
             'label' => $category->name,
             'url' => [$category->fullUrl]
         ];
-
 
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,

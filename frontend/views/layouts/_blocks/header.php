@@ -112,7 +112,6 @@ use app\models\shop\search\Search;
                 //                $menuItems[] = ['label' => 'Новости', 'url' => ['/']];
                 //                $menuItems[] = ['label' => 'Тренинги', 'url' => ['/']];
                 $menuItems[] = ['label' => 'Контакты', 'url' => ['/site/contacts']];
-
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav navbar-left menuTop'],
                     'items' => $menuItems,

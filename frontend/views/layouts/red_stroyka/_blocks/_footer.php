@@ -1,3 +1,5 @@
+</div>
+
 <footer class="site__footer">
     <div class="site-footer">
         <div class="container">
@@ -130,7 +132,7 @@
                                                    target="_blank">Kos</a>
                 </div>
                 <div class="site-footer__payments">
-                    <img src="images/payments.png" alt="">
+                    <img src="/template/red_stroyka/images/payments.png" alt="">
                 </div>
             </div>
         </div>
@@ -141,7 +143,7 @@
                 <div class="totop__end">
                     <button type="button" class="totop__button">
                         <svg width="13px" height="8px">
-                            <use xlink:href="images/sprite.svg#arrow-rounded-up-13x8"></use>
+                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-up-13x8"></use>
                         </svg>
                     </button>
                 </div>
@@ -167,7 +169,7 @@
             <div class="mobilemenu__title">Menu</div>
             <button type="button" class="mobilemenu__close">
                 <svg width="20px" height="20px">
-                    <use xlink:href="images/sprite.svg#cross-20"></use>
+                    <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-20"></use>
                 </svg>
             </button>
         </div>
@@ -180,7 +182,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -224,7 +226,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -237,7 +239,7 @@
                                             data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px"
                                              height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -277,7 +279,7 @@
                                             data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px"
                                              height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -331,7 +333,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -345,7 +347,7 @@
                                             data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px"
                                              height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -395,7 +397,7 @@
                                             data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px"
                                              height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -473,7 +475,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -535,7 +537,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -586,7 +588,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -645,7 +647,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -680,7 +682,7 @@
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -756,22 +758,3 @@
         </div>
     </div>
 </div>
-<!-- photoswipe / end -->
-<!-- js -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-<script src="vendor/nouislider/nouislider.min.js"></script>
-<script src="vendor/photoswipe/photoswipe.min.js"></script>
-<script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
-<script src="vendor/select2/js/select2.min.js"></script>
-<script src="js/number.js"></script>
-<script src="js/main.js"></script>
-<script src="js/header.js"></script>
-<script src="vendor/svg4everybody/svg4everybody.min.js"></script>
-<script>
-    svg4everybody();
-</script>
-</body>
-
-</html>

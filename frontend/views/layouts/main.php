@@ -10,13 +10,25 @@ use frontend\assets\MetricaAsset;
 
 AppAsset::register($this);
 MetricaAsset::register($this);
-
 ?>
 <?php $this->beginPage() ?>
 <?= $this->render('_blocks/header') ?>
 <div class="container mt20">
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-3 hidden-sm  hidden-xs col-xs-12">
+            <sidebar>
+                <?= MenuIMWidget::widget([
+                    "categoryName" => $this->context->categoryName
+                ]) ?>
+
+                <!--            --><? //= \frontend\abstractComponents\widgets\filterCategory\FilterIMWidget::widget([
+                //                "categoryName" => $this->context->categoryName,
+                //                "model" => "/",
+                //            ]) ?>
+            </sidebar>
+
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
             <?= $content ?>
         </div>
     </div>

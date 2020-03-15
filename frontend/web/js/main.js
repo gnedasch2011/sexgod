@@ -44,3 +44,4 @@ $(document).on('click', '.sexGodBuyOneClick_send', function (e) {
         }
     });
 })
+svg4everybody();
