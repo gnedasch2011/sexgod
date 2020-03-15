@@ -14,7 +14,7 @@ use yii\widgets\Breadcrumbs;
                     <div class="block-sidebar__backdrop"></div>
                     <div class="block-sidebar__body">
                         <div class="block-sidebar__header">
-                            <div class="block-sidebar__title">Filters</div>
+                            <div class="block-sidebar__title">Фильтры</div>
                             <button class="block-sidebar__close" type="button">
                                 <svg width="20px" height="20px">
                                     <use xlink:href="images/sprite.svg#cross-20"></use>
@@ -23,8 +23,11 @@ use yii\widgets\Breadcrumbs;
                         </div>
                         <div class="block-sidebar__item">
                             <div class="widget-filters widget widget-filters--offcanvas--mobile" data-collapse data-collapse-opened-class="filter--opened">
-                                <h4 class="widget-filters__title widget__title">Filters</h4>
+                                <h4 class="widget-filters__title widget__title">Фильтры</h4>
                                 <div class="widget-filters__list">
+
+                                    <?php /*?>
+
                                     <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
                                             <button type="button" class="filter__title" data-collapse-trigger>
@@ -105,6 +108,15 @@ use yii\widgets\Breadcrumbs;
                                             </div>
                                         </div>
                                     </div>
+
+                                     <?php */?>
+                                    <?=\app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
+                                            'categoryName' =>'seks-igrushki',
+                                    ]);?>
+
+
+                                    <?php /*?>
+
                                     <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
                                             <button type="button" class="filter__title" data-collapse-trigger>
@@ -250,6 +262,7 @@ use yii\widgets\Breadcrumbs;
                                             </div>
                                         </div>
                                     </div>
+      <?php */?>
                                     <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
                                             <button type="button" class="filter__title" data-collapse-trigger>
@@ -2968,14 +2981,10 @@ use yii\widgets\Breadcrumbs;
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 <?php /*?>
-
-
-
-
-
 
 <? //= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]);; ?>
 <?= Breadcrumbs::widget([

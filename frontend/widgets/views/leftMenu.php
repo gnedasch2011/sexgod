@@ -5,13 +5,10 @@
     <?php foreach ($menuItem as $item): ?>
         <?php
         $urlCat = "/catalog/$item->slug/";
-//        echo "<pre>";
-//        print_r($item->subMenu);
-//        die();
         ?>
         <?php if (trim($item->slug) == trim($categoryName)): ?>
             <li class="subCategoryMenu"><a class="activeMenuItem"
-                        href="<?= $urlCat ;?>"><?= $item->name; ?></a>
+                                           href="<?= $urlCat; ?>"><?= $item->name; ?></a>
                 <ul>
 
                     <?php foreach ($item->subMenu as $subItem): ?>
