@@ -17,7 +17,7 @@ class CartController extends Controller
     {
         $cart = new Cart();
         $goodsInCart = $cart->getProductForCart();
-      
+
         $order = new \app\modules\cart\models\Order();
 
         if ($order->load(\Yii::$app->request->post())) {
@@ -63,7 +63,6 @@ class CartController extends Controller
                 $dataForCart['id'] => $dataForCart['count']
             ];
         }
-
         if (!empty($cart)) {
 
             if (isset($cart[$dataForCart['id']])) {
@@ -75,6 +74,10 @@ class CartController extends Controller
             }
 
         }
+        echo "<pre>";
+        print_r($cart);
+        die();
+
         return true;
     }
 
@@ -110,10 +113,32 @@ class CartController extends Controller
         return $cart->returnFormatFullPrice();
     }
 
+    public function actionGetCountItems()
+    {
+        $cart = new Cart();
+
+        if (isset($cart['cart'])) {
+            return array_sum($cart['cart']);
+        }
+
+        return 0;
+    }
+
+    public function actionClear()
+    {
+        $cart = new Cart();
+        $cart->clear();
+
+        $cart->cart = false;
+    }
+
     public function actionTest()
     {
         $cart = new Cart();
-        echo "<pre>"; print_r($cart->checkGoodsInCart(383802));die();
+        echo "<pre>"; print_r($cart);die();
+        echo "<pre>";
+        print_r($cart->checkGoodsInCart(383802));
+        die();
     }
 
 }

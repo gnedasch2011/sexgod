@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\Breadcrumbs;
 
 ?>
 
@@ -45,7 +46,8 @@ use yii\helpers\Html;
                         </button>
                         <a class="mobile-header__logo" href="index.html">
                             <img class="logo-main_xs"
-                                 src="/template/red_stroyka/images/main/SEXGOD_Logo.svg" alt="">
+                                 src="/template/red_stroyka/images/main/SEXGOD_Logo_forBG.svg"
+                                 alt="">
                             <?php /*?><svg xmlns="http://www.w3.org/2000/svg" width="120px" height="20px">
                                 <path d="M118.5,20h-1.1c-0.6,0-1.2-0.4-1.4-1l-1.5-4h-6.1l-1.5,4c-0.2,0.6-0.8,1-1.4,1h-1.1c-1,0-1.8-1-1.4-2l1.1-3
                                  l1.5-4l3.6-10c0.2-0.6,0.8-1,1.4-1h1.6c0.6,0,1.2,0.4,1.4,1l3.6,10l1.5,4l1.1,3C120.3,19,119.5,20,118.5,20z M111.5,6.6l-1.6,4.4
@@ -1021,7 +1023,7 @@ use yii\helpers\Html;
                                              height="14px">
                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#menu-18x14"></use>
                                         </svg>
-                                        Shop By Category
+                                        Категории
                                         <svg class="departments__button-arrow" width="9px"
                                              height="6px">
                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1639,12 +1641,12 @@ use yii\helpers\Html;
                                     </a>
                                 </div>
                                 <div class="indicator indicator--trigger--click">
-                                    <a href="cart.html" class="indicator__button">
+                                    <a href="/cart/" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#cart-20"></use>
                                                 </svg>
-                                                <span class="indicator__value">3</span>
+                                                <span class="indicator__value getCountItems"><?= Yii::$app->cart->countItems; ?></span>
                                             </span>
                                     </a>
                                     <div class="indicator__dropdown">
@@ -1763,7 +1765,7 @@ use yii\helpers\Html;
                                     </div>
                                 </div>
                                 <div class="indicator indicator--trigger--click">
-                                    <a href="account-login.html" class="indicator__button">
+                                    <a href="/cart/" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#person-20"></use>
@@ -1845,30 +1847,43 @@ use yii\helpers\Html;
             </div>
         </div>
     </header>
+
     <div class="site__body">
         <div class="page-header">
             <div class="page-header__container container">
                 <div class="page-header__breadcrumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="index.html">Home</a>
-                                <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                </svg>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="">Breadcrumb</a>
-                                <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                </svg>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Screwdrivers</li>
-                        </ol>
-                    </nav>
+                    <?= Breadcrumbs::widget([
+                            'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n", // template for all links
+                            'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n", // template for all links
+
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'homeLink' => ['label' => 'Главная', 'url' => '/'],
+                            'options' => [
+                                'class' => 'breadcrumb',//этот класс стоит по умолчанию
+                            ],
+                        ]
+                    ); ?>
+
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item">-->
+<!--                                <a href="index.html">Home</a>-->
+<!--                                <svg class="breadcrumb-arrow" width="6px" height="9px">-->
+<!--                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>-->
+<!--                                </svg>-->
+<!--                            </li>-->
+<!--                            <li class="breadcrumb-item">-->
+<!--                                <a href="">Breadcrumb</a>-->
+<!--                                <svg class="breadcrumb-arrow" width="6px" height="9px">-->
+<!--                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>-->
+<!--                                </svg>-->
+<!--                            </li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Screwdrivers</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
                 </div>
                 <div class="page-header__title">
-                    <h1>Screwdrivers</h1>
+                    <h1><?= $this->params['h1'] ;?></h1>
                 </div>
             </div>
         </div>

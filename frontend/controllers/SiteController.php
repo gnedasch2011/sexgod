@@ -147,12 +147,12 @@ class SiteController extends Controller
 
         $categoryName = str_replace("/", '', $categoryName);
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
-      
+
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
 
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
         //        echo "<pre>"; print_r($allCategory);die();
-        $this->title = $category->name;
+//        $this->title = $category->name;
         $this->categoryName = $categoryName;
 
         $keywords = 'купить установка скидки ' . $category->name;
@@ -176,6 +176,9 @@ class SiteController extends Controller
             'label' => $category->name,
             'url' => [$category->fullUrl]
         ];
+
+        $this->view->params['breadcrumbs']= $breadcrumbs;
+        $this->view->params['h1']= $category->name;
 
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,

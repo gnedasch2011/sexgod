@@ -39,6 +39,8 @@ class RedStroykaAsset extends AssetBundle
         'template/red_stroyka/vendor/svg4everybody/svg4everybody.min.js',
         'template/red_stroyka/js/main.js',
         'template/red_stroyka/js/header.js',
-        'js/main.js'
+        'js/main.js',
+        //модули
+        'js/cart.js'
     ];
 }

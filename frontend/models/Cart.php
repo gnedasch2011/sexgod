@@ -95,4 +95,16 @@ class Cart extends Model
         }
 
     }
+
+    public function clear()
+    {
+        $session = Cart::sessionInit();
+        $cart = isset($session['cart']) ? $_SESSION['cart'] : [];
+        $session->destroy();
+        echo "<pre>"; print_r($session->get('cart'));die();
+
+    }
+
+
+
 }

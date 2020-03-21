@@ -3,13 +3,11 @@
 use yii\helpers\Html;
 
 ?>
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
     <div class="products-list__item">
         <div class="product-card ">
             <button class="product-card__quickview" type="button">
                 <svg width="16px" height="16px">
-                    <use xlink:href="images/sprite.svg#quickview-16"></use>
+                    <use xlink:href="template/red_stroyka/images/sprite.svg#quickview-16"></use>
                 </svg>
                 <span class="fake-svg-icon"></span>
             </button>
@@ -17,22 +15,32 @@ use yii\helpers\Html;
                 <div class="product-card__badge product-card__badge--new">New</div>
             </div>
             <div class="product-card__image">
-                <a href="product.html"><img src="images/products/product-1.jpg" alt=""></a>
+                <a href="/product/<?= $good->slug; ?>"><img
+                            title="<?= $good->name; ?>"
+                            class="sexgod_item_img"
+                            src="<?= $good->previewImg; ?>"
+                            alt="<?= $good->name; ?>"
+
+                    ></a>
             </div>
             <div class="product-card__info">
                 <div class="product-card__name">
-                    <a href="product.html">Electric Planer Brandix KL370090G 300 Watts</a>
+                    <a
+                            href="/product/<?= $good->slug; ?>"
+                            alt="<?= $good->name; ?>"
+                    ><?= $good->name; ?></a>
                 </div>
                 <div class="product-card__rating">
                     <div class="product-card__rating-stars">
                         <div class="rating">
                             <div class="rating__body">
-                                <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                <svg class="rating__star rating__star--active" width="13px"
+                                     height="12px">
                                     <g class="rating__fill">
-                                        <use xlink:href="images/sprite.svg#star-normal"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal"></use>
                                     </g>
                                     <g class="rating__stroke">
-                                        <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal-stroke"></use>
                                     </g>
                                 </svg>
                                 <div class="rating__star rating__star--only-edge rating__star--active">
@@ -43,12 +51,13 @@ use yii\helpers\Html;
                                         <div class="fake-svg-icon"></div>
                                     </div>
                                 </div>
-                                <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                <svg class="rating__star rating__star--active" width="13px"
+                                     height="12px">
                                     <g class="rating__fill">
-                                        <use xlink:href="images/sprite.svg#star-normal"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal"></use>
                                     </g>
                                     <g class="rating__stroke">
-                                        <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal-stroke"></use>
                                     </g>
                                 </svg>
                                 <div class="rating__star rating__star--only-edge rating__star--active">
@@ -59,12 +68,13 @@ use yii\helpers\Html;
                                         <div class="fake-svg-icon"></div>
                                     </div>
                                 </div>
-                                <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                <svg class="rating__star rating__star--active" width="13px"
+                                     height="12px">
                                     <g class="rating__fill">
-                                        <use xlink:href="images/sprite.svg#star-normal"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal"></use>
                                     </g>
                                     <g class="rating__stroke">
-                                        <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal-stroke"></use>
                                     </g>
                                 </svg>
                                 <div class="rating__star rating__star--only-edge rating__star--active">
@@ -75,12 +85,13 @@ use yii\helpers\Html;
                                         <div class="fake-svg-icon"></div>
                                     </div>
                                 </div>
-                                <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                <svg class="rating__star rating__star--active" width="13px"
+                                     height="12px">
                                     <g class="rating__fill">
-                                        <use xlink:href="images/sprite.svg#star-normal"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal"></use>
                                     </g>
                                     <g class="rating__stroke">
-                                        <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal-stroke"></use>
                                     </g>
                                 </svg>
                                 <div class="rating__star rating__star--only-edge rating__star--active">
@@ -93,10 +104,10 @@ use yii\helpers\Html;
                                 </div>
                                 <svg class="rating__star " width="13px" height="12px">
                                     <g class="rating__fill">
-                                        <use xlink:href="images/sprite.svg#star-normal"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal"></use>
                                     </g>
                                     <g class="rating__stroke">
-                                        <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                        <use xlink:href="template/red_stroyka/images/sprite.svg#star-normal-stroke"></use>
                                     </g>
                                 </svg>
                                 <div class="rating__star rating__star--only-edge ">
@@ -110,7 +121,7 @@ use yii\helpers\Html;
                             </div>
                         </div>
                     </div>
-                    <div class="product-card__rating-legend">9 Reviews</div>
+                    <div class="product-card__rating-legend">0 отзывов</div>
                 </div>
                 <ul class="product-card__features-list">
                     <li>Speed: 750 RPM</li>
@@ -125,20 +136,27 @@ use yii\helpers\Html;
                     Availability: <span class="text-success">In Stock</span>
                 </div>
                 <div class="product-card__prices">
-                    $749.00
+                    <?= $good->price; ?> руб.
                 </div>
                 <div class="product-card__buttons">
-                    <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
-                    <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button>
-                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button">
+                    <button class="btn btn-primary prod1uct-card__addtocart addInCart oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"
+                            data-id="<?= $good->aID; ?>"
+                            type="button"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'В корзину'; ?>
+                    </button>
+                    <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
+                            type="button">Add To Cart
+                    </button>
+                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
+                            type="button">
                         <svg width="16px" height="16px">
-                            <use xlink:href="images/sprite.svg#wishlist-16"></use>
+                            <use xlink:href="template/red_stroyka/images/sprite.svg#wishlist-16"></use>
                         </svg>
                         <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
                     </button>
-                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button">
+                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
+                            type="button">
                         <svg width="16px" height="16px">
-                            <use xlink:href="images/sprite.svg#compare-16"></use>
+                            <use xlink:href="template/red_stroyka/images/sprite.svg#compare-16"></use>
                         </svg>
                         <span class="fake-svg-icon fake-svg-icon--compare-16"></span>
                     </button>
@@ -146,6 +164,7 @@ use yii\helpers\Html;
             </div>
         </div>
     </div>
+<?php /*?>
 
     <div class="sexgodItem">
         <div class="itemSexGod" data-id="<?= $good->aID; ?>">
@@ -155,7 +174,8 @@ use yii\helpers\Html;
                          title="<?= $good->name; ?>"
                          class="sexgod_item_img"
                          src="<?= $good->previewImg; ?>"
-                         alt="<?= $good->name; ?>">
+                         alt="<?= $good->name; ?>"
+ >
                 </div>
             </a>
             <div class="itemSexGod__a">
@@ -183,30 +203,5 @@ use yii\helpers\Html;
                         <span class="gp-plus">+</span>
                     </div>
 
-                </div>
-            </div>
-            <?php
-            $goodExist = false;
-            if (\Yii::$app->cart->checkGoodsInCart($good->aID)) {
-                $goodExist = true;
-            }
-            ?>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a data-id="<?= $good->aID; ?>"
-                   class="
-                   buttonFindProduct buttonInCart addInCart buttonInCategory oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>" >
-                    <?= ($goodExist) ? 'Добавлено' : 'Купить'; ?></a>
-            </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <a
-                   class="buyOneClick buyOneClickJs"
-                   data-toggle="lightbox"
-                   href="#"
-                   data-id="<?= $good->aID; ?>"
-                >Купить в 1 клик </a>
-            </div>
-        </div>
-    </div>
-</div>
-
+ */ ?>

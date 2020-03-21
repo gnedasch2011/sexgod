@@ -15,7 +15,7 @@ MaskAsset::register($this);
             'links' => isset($breadcrumbs) ? $breadcrumbs : [],
             'homeLink' => ['label' => 'Главная', 'url' => '/'],
         ]
-    );; ?>
+    ); ?>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h1><?= $good->name; ?></h1>
         <img width="100%" src="<?= $good->mainImg; ?>" alt="<?= $good->name ;?>" class="">

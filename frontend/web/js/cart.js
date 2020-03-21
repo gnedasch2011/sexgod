@@ -8,7 +8,7 @@ $('.addInCart').on('click', function (e) {
 
     addInSessionCart(dataItem)
     updatePriceInDetail();
-
+    getCountItems();
 })
 
 
@@ -35,6 +35,7 @@ let updatePriceInDetail = function () {
     if (isNaN(priceItem)) {
         return false;
     }
+
     $priceDetail.text(priceItem * returnCountItem() + " ₽")
 }
 
@@ -48,6 +49,18 @@ let updateFullPriceInCart = function () {
         }
     });
 
+}
+
+let getCountItems = function () {
+    $.ajax({
+        url: '/cart/get-count-items/',
+        method: "post",
+
+        success: function (data) {
+            console.log(data);
+            $('.getCountItems').text(data);
+        }
+    });
 }
 
 let addInSessionCart = function (dataItem) {
@@ -68,7 +81,7 @@ let addInSessionCart = function (dataItem) {
 
 $('.gp-plus', $gpButtons).on('click', function (e) {
 
-      e.preventDefault();
+    e.preventDefault();
     let target = $(e.target);
     let id = $(target).parents('.itemCart').attr('data-id');
 
@@ -165,7 +178,8 @@ $('.addItemInCart').on('click', function (e) {
 
 
 let updateCart = function () {
-    console.log('fsdf');return false;
+    console.log('fsdf');
+    return false;
     $.ajax({
         url: '/cart/ajax-update-cart/',
         method: "post",
@@ -233,7 +247,12 @@ $('.btn_form_call').on('click', function (e) {
 
 $(document).on('click', '.oneClickAndDisabled', function (e) {
     e.preventDefault();
-
+    
+    if( $(this).hasClass('goodsInCart')){
+        console.log($(this));
+        window.location.href = "/cart/";
+    }
+    
     $(this).addClass('goodsInCart').text('Добавлено');
 
 })
@@ -243,6 +262,6 @@ $(function () {
     $("#callleadform-phone").mask("8(999) 999-9999");
 });
 
-(function(){
+(function () {
     $("#order-phone").mask("8(999) 999-9999");
 })()

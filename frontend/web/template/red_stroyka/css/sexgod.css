@@ -68,6 +68,7 @@
 
 .goodsInCart {
     background: #40a939 !important;
+    border: 1px solid #40a939 !important;
 }
 
 .textPrice {
@@ -92,5 +93,5 @@
 }
 
 .logo-main_xs{
-    width: 60%;
+    width: 47%;
 }
