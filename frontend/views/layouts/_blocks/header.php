@@ -42,7 +42,7 @@ use app\models\shop\search\Search;
         <div class="row fx headerLine">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs">
                 <a href="/" class="">
-                    <img src="/css/images/main/logo-ms-12001.png" alt="" class="logo">
+                    <img src="/template/red_stroyka/images/main/SEXGOD_Logo.svg" alt="" class="logo">
                 </a>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">

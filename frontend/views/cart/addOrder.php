@@ -31,7 +31,7 @@
           <div>
               <p class="addAttr-p">Адрес доставки
               </p>
-              <p><?= $order->adress ;?></p>
+              <p><?= $order->address ;?></p>
           </div>
 
 

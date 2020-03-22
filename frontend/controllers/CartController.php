@@ -15,6 +15,7 @@ class CartController extends Controller
 
     public function actionIndex()
     {
+        $this->layout = 'red_stroyka/main';
         $cart = new Cart();
         $goodsInCart = $cart->getProductForCart();
 

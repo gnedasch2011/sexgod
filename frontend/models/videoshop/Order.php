@@ -34,7 +34,7 @@ class Order extends \yii\db\ActiveRecord
             [['payment_method','dateCreate', 'installation', 'delivery'], 'string', 'max' => 45],
             [['phone'], 'integer'],
             [['phone'], 'required'],
-            [['adress', 'arr_product'], 'string', 'max' => 450],
+            [['address', 'arr_product'], 'string', 'max' => 450],
 
         ];
     }
@@ -47,7 +47,7 @@ class Order extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'phone' => 'Phone',
-            'adress' => 'Adress',
+            'address' => 'address',
             'payment_method' => 'Payment Method',
             'installation' => '',
             'delivery' => 'Delivery',

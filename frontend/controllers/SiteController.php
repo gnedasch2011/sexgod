@@ -193,7 +193,7 @@ class SiteController extends Controller
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
-            'breadcrumbs' => $breadcrumbs,
+//            'breadcrumbs' => $breadcrumbs,
             'category' => $category,
             'pages' => $pages,
 
@@ -202,6 +202,8 @@ class SiteController extends Controller
 
     public function actionDetailItem($slugItem)
     {
+//        $this->layout = 'red_stroyka/main';
+
         $slugItem = str_replace("/", '', $slugItem);
         $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
             ->one();

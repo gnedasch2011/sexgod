@@ -47,7 +47,7 @@ class Order extends \yii\db\ActiveRecord
             'dateCreate' => 'Date Create',
             'delivery' => 'Delivery',
             'phone' => 'Phone',
-            'adress' => 'Adress',
+            'address' => 'address',
             'arr_product' => 'Arr Product',
         ];
     }

@@ -18,7 +18,7 @@ class m200218_170737_create_order_table extends Migration
             'dateCreate' => $this->string(),
             'delivery' => $this->string(),
             'phone' => $this->string(),
-            'adress' => $this->string(),
+            'address' => $this->string(),
             'arr_product' => $this->string(),
             ]);
     }
