@@ -5,6 +5,7 @@ namespace frontend\abstractComponents\models;
 
 
 use app\models\sexgod\good\Goods;
+use app\models\sexgod\good\GoodsCategory;
 use app\models\shop\Category;
 use app\modelsapp\models\sexgod\good\Goods2;
 use yii\db\ActiveRecord;
@@ -198,15 +199,16 @@ class CategoryAbstract extends ActiveRecord
         $resultArr = ArrayHelper::map($listCateg, 'slug', 'parent_id', 'id');
         $currentIDCategoryArr [] = $currentIDCategory;
         $arrIdCategoryAll = self::recursiveLevelDownCategory($currentIDCategoryArr, $resultArr);
-
         $arrIdCategoryAllArr = explode(',', $arrIdCategoryAll);
 
         $allGoods = Goods::find()
             ->join('left join', 'goods_category ghc', 'ghc.aid = goods.aID')
 //            ->join('left join', 'category c', 'c.id = ghc.category_id')
             ->where(['ghc.category_id' => $arrIdCategoryAllArr])
-            ->limit(100)
-            ->all();
+//            ->limit(100)
+//            ->all()
+
+        ;
 
         return $allGoods;
     }
@@ -340,6 +342,21 @@ class CategoryAbstract extends ActiveRecord
         }
 
         return $cat;
+    }
+
+//    public function getCountItems()
+//    {
+//
+//        echo "<pre>";
+//        print_r($this);
+//        die();
+//    }
+
+    public function getCountItems()
+    {
+        $idsSubCat = ArrayHelper::getColumn($this->subMenu, 'id');
+        $idsSubCat[] = $this->id;
+        return GoodsCategory::find()->where(['category_id' => $idsSubCat])->count();
     }
 }
 

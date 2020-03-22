@@ -19,24 +19,24 @@
                             <?php
                             $urlCat = "/catalog/$item->slug/";
                             ?>
-                                <li class="filter-categories__item filter-categories__item--parent">
-                                    <svg class="filter-categories__arrow" width="6px" height="9px">
-                                        <use xlink:href="images/sprite.svg#arrow-rounded-left-6x9"></use>
-                                    </svg>
-                                    <a href="<?= $urlCat; ?>"><?= $item->name; ?></a>
-                                    <div class="filter-categories__counter">254</div>
-                                </li>
+                            <li class="filter-categories__item filter-categories__item--parent">
+                                <svg class="filter-categories__arrow" width="6px" height="9px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-6x9"></use>
+                                </svg>
+                                <a href="<?= $urlCat; ?>"><?= $item->name; ?></a>
+                                <div class="filter-categories__counter"><?= $item->countItems; ?></div>
+                            </li>
 
-                                <ul>
-                                    <?php foreach ($item->subMenu as $subItem): ?>
+                            <ul>
+                                <?php foreach ($item->subMenu as $subItem): ?>
 
-                                        <li class="filter-categories__item filter-categories__item--child">
-                                            <a href="<?= "/catalog/$subItem->slug/"; ?>"><?= $subItem->name; ?></a>
-                                            <div class="filter-categories__counter">5</div>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                </li>
+                                    <li class="filter-categories__item filter-categories__item--child">
+                                        <a href="<?= "/catalog/$subItem->slug/"; ?>"><?= $subItem->name; ?></a>
+                                        <div class="filter-categories__counter"><?= $subItem->countItems; ?></div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            </li>
 
                         <?php endforeach; ?>
                     </ul>

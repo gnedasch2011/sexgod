@@ -6,6 +6,7 @@ use app\models\sexgod\category\CategoryBase;
 use frontend\models\form\CallLeadForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\Pagination;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -148,11 +149,19 @@ class SiteController extends Controller
         $categoryName = str_replace("/", '', $categoryName);
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
 
+        //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
 
+        $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
+      
+        $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+        
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
+
         //        echo "<pre>"; print_r($allCategory);die();
-//        $this->title = $category->name;
+        //        $this->title = $category->name;
         $this->categoryName = $categoryName;
 
         $keywords = 'купить установка скидки ' . $category->name;
@@ -177,14 +186,16 @@ class SiteController extends Controller
             'url' => [$category->fullUrl]
         ];
 
-        $this->view->params['breadcrumbs']= $breadcrumbs;
-        $this->view->params['h1']= $category->name;
+        $this->view->params['breadcrumbs'] = $breadcrumbs;
+        $this->view->params['h1'] = $category->name;
+
 
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
             'breadcrumbs' => $breadcrumbs,
             'category' => $category,
+            'pages' => $pages,
 
         ]);
     }

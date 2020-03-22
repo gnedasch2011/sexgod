@@ -11192,6 +11192,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 
 .products-list[data-layout^="grid-"] .product-card .product-card__image {
   padding: 18px 18px 20px;
+  overflow: hidden;
 }
 
 .products-list[data-layout^="grid-"] .product-card .product-card__info {
