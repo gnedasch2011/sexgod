@@ -164,8 +164,8 @@ class SiteController extends Controller
         //        $this->title = $category->name;
         $this->categoryName = $categoryName;
 
-        $keywords = 'купить установка скидки ' . $category->name;
-        $description = trim($category->name) . '. Покупка и монтаж, скидки на весь сезон! ';
+        $keywords = $category->name;
+        $description = trim($category->name);
 
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
@@ -208,8 +208,8 @@ class SiteController extends Controller
         $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
             ->one();
 
-        $keywords = 'купить установка скидки ' . $good->name;
-        $description = trim($good->name) . '. Покупка и монтаж, скидки на весь сезон! ';
+        $keywords = $good->name;
+        $description = trim($good->name);
 
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);

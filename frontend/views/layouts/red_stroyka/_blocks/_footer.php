@@ -19,8 +19,7 @@
                                 <li><i class="footer-contacts__icon far fa-envelope"></i>
                                     stroyka@example.com
                                 </li>
-                                <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> (800)
-                                    060-0730, (800) 060-0730
+                                <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> <?= Yii::$app->params['phone']; ?>
                                 </li>
                                 <li><i class="footer-contacts__icon far fa-clock"></i> Mon-Sat
                                     10:00pm - 7:00pm

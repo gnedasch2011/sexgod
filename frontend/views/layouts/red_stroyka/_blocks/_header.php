@@ -377,7 +377,7 @@ use yii\widgets\Breadcrumbs;
                 </div>
                 <div class="site-header__phone">
                     <div class="site-header__phone-title">Customer Service</div>
-                    <div class="site-header__phone-number">(800) 060-0730</div>
+                    <div class="site-header__phone-number"><?= Yii::$app->params['phone']; ?></div>
                 </div>
             </div>
             <div class="site-header__nav-panel">
@@ -1883,7 +1883,6 @@ use yii\widgets\Breadcrumbs;
                     <!--                    </nav>-->
                 </div>
                 <div class="page-header__title">
-                    <h1><?= $this->params['h1']; ?></h1>
                 </div>
             </div>
         </div>
