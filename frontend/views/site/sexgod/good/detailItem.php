@@ -61,7 +61,7 @@ MaskAsset::register($this);
                 <span class="gp-plus">+</span>
             </div>
             <a class="buttonFindProduct buttonInCart oneClickAndDisabled addInCart
-oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist) ? 'Добавлено' : 'В корзину'; ?></a></a>
+oneClickAndDisabled <?= ($goodExist) ? 'goodsInCart' : ''; ?>">  <?= ($goodExist) ? 'Добавлено' : 'Купить'; ?></a></a>
             <a class="buttonFustBuy buyOneClickJs"
                data-id="<?= $good->id; ?>"
                title="Быстрая покупка"> <i class="fa fa-shopping-basket"></i></a>

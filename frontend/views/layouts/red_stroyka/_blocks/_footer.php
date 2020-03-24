@@ -7,102 +7,81 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="site-footer__widget footer-contacts">
-                            <h5 class="footer-contacts__title">Contact Us</h5>
+                            <h5 class="footer-contacts__title">Контакты</h5>
                             <div class="footer-contacts__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in
-                                feugiat lorem. Pellentque ac placerat tellus.
+                                ИП Смирнов И.Н. <br>
+								ИНН: 761901019165<br>
+								ОГРНИП: 318762700075496
                             </div>
                             <ul class="footer-contacts__contacts">
                                 <li><i class="footer-contacts__icon fas fa-globe-americas"></i> 715
-                                    Fake Street, New York 10021 USA
+                                    115280, Москва, ул. Автозаводская, д. 16, корпус 2, строение 8
                                 </li>
                                 <li><i class="footer-contacts__icon far fa-envelope"></i>
                                     stroyka@example.com
                                 </li>
                                 <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> <?= Yii::$app->params['phone']; ?>
                                 </li>
-                                <li><i class="footer-contacts__icon far fa-clock"></i> Mon-Sat
-                                    10:00pm - 7:00pm
+                                <li><i class="footer-contacts__icon far fa-clock"></i> Каждый день
+                                   С 10:00 до 18:00
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 col-lg-2">
                         <div class="site-footer__widget footer-links">
-                            <h5 class="footer-links__title">Information</h5>
+                            <h5 class="footer-links__title">Информация</h5>
                             <ul class="footer-links__list">
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">About
-                                        Us</a></li>
+                                                                  class="footer-links__link">О магазине</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Delivery
-                                        Information</a></li>
+                                                                  class="footer-links__link">Доставка</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Privacy
-                                        Policy</a></li>
+                                                                  class="footer-links__link">Оплата</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Brands</a>
+                                                                  class="footer-links__link">Гарантия анонимности</a>
                                 </li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Contact
-                                        Us</a></li>
+                                                                  class="footer-links__link">Гарантия и возврат</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Returns</a>
-                                </li>
-                                <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Site
-                                        Map</a></li>
+                                                                  class="footer-links__link">Карта сайта</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 col-lg-2">
                         <div class="site-footer__widget footer-links">
-                            <h5 class="footer-links__title">My Account</h5>
+                            <h5 class="footer-links__title">Сервис</h5>
                             <ul class="footer-links__list">
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Store
-                                        Location</a></li>
+                                                                  class="footer-links__link">Личный кабинет</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Order
-                                        History</a></li>
+                                                                  class="footer-links__link">Мои заказы</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Wish
-                                        List</a></li>
+                                                                  class="footer-links__link">Программа лояльности</a></li>
                                 <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Newsletter</a>
+                                                                  class="footer-links__link">Блог</a>
                                 </li>
-                                <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Specials</a>
-                                </li>
-                                <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Gift
-                                        Certificates</a></li>
-                                <li class="footer-links__item"><a href=""
-                                                                  class="footer-links__link">Affiliate</a>
-                                </li>
-                            </ul>
+                                 </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-4">
                         <div class="site-footer__widget footer-newsletter">
-                            <h5 class="footer-newsletter__title">Newsletter</h5>
+                            <h5 class="footer-newsletter__title">Рассылка</h5>
                             <div class="footer-newsletter__text">
-                                Praesent pellentesque volutpat ex, vitae auctor lorem pulvinar
-                                mollis felis at lacinia.
+                                Подпишись, чтобы не упустить скидки
                             </div>
                             <form action="" class="footer-newsletter__form">
-                                <label class="sr-only" for="footer-newsletter-address">Email
-                                    Address</label>
+                                <label class="sr-only" for="footer-newsletter-address">Введите свой email</label>
                                 <input type="text"
                                        class="footer-newsletter__form-input form-control"
                                        id="footer-newsletter-address"
-                                       placeholder="Email Address...">
+                                       placeholder="Введите свой email">
                                 <button class="footer-newsletter__form-button btn btn-primary">
-                                    Subscribe
+                                    Подписаться
                                 </button>
                             </form>
                             <div class="footer-newsletter__text footer-newsletter__text--social">
-                                Follow us on social networks
+                                Подпишись на нас в соц. сетях
                             </div>
                             <ul class="footer-newsletter__social-links">
                                 <li class="footer-newsletter__social-link footer-newsletter__social-link--facebook">
@@ -125,7 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
+         <!--  <div class="site-footer__bottom">
                 <div class="site-footer__copyright">
                     Powered by HTML — Design by <a href="https://themeforest.net/user/kos9"
                                                    target="_blank">Kos</a>
@@ -133,7 +112,7 @@
                 <div class="site-footer__payments">
                     <img src="/template/red_stroyka/images/payments.png" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="totop">
             <div class="totop__body">
