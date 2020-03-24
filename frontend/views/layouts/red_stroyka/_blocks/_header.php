@@ -14,7 +14,7 @@ use yii\widgets\Breadcrumbs;
     <meta name="format-detection" content="telephone=no">
     <title>Stroyka</title>
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
-    <link href="/css/images/main/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
     <!-- /Yandex.Metrika counter -->
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@ use yii\widgets\Breadcrumbs;
                                 <use xlink:href="/template/red_stroyka/images/sprite.svg#menu-18x14"></use>
                             </svg>
                         </button>
-                        <a class="mobile-header__logo" href="index.html">
+                        <a class="mobile-header__logo" href="/">
                             <img class="logo-main_xs"
                                  src="/template/red_stroyka/images/main/SEXGOD_Logo_forBG.svg"
                                  alt="">
@@ -73,7 +73,7 @@ use yii\widgets\Breadcrumbs;
                             <div class="search__body">
                                 <form class="search__form" action="">
                                     <input class="search__input" name="search"
-                                           placeholder="Search over 10,000 products"
+                                           placeholder="Более 18000 товаров для вашего удовольствия"
                                            aria-label="Site search" type="text" autocomplete="off">
                                     <button class="search__button search__button--type--submit"
                                             type="submit">
@@ -137,25 +137,25 @@ use yii\widgets\Breadcrumbs;
                 <div class="topbar__container container">
                     <div class="topbar__row">
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="about-us.html">About Us</a>
+                            <a class="topbar-link" href="about-us.html">О нас</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="contact-us.html">Contacts</a>
+                            <a class="topbar-link" href="contact-us.html">Доставка</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="">Store Location</a>
+                            <a class="topbar-link" href="">Способы оплаты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="track-order.html">Track Order</a>
+                            <a class="topbar-link" href="track-order.html">Контакты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="blog-classic.html">Blog</a>
+                            <a class="topbar-link" href="blog-classic.html">Блог</a>
                         </div>
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
                                 <button class="topbar-dropdown__btn" type="button">
-                                    My Account
+                                    Личный кабинет
                                     <svg width="7px" height="5px">
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
@@ -220,56 +220,11 @@ use yii\widgets\Breadcrumbs;
                             </div>
                         </div>
                         <div class="topbar__item">
-                            <div class="topbar-dropdown">
-                                <button class="topbar-dropdown__btn" type="button">
-                                    Currency: <span class="topbar__item-value">USD</span>
-                                    <svg width="7px" height="5px">
-                                        <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
-                                    </svg>
-                                </button>
-                                <div class="topbar-dropdown__body">
-                                    <!-- .menu -->
-                                    <div class="menu menu--layout--topbar ">
-                                        <div class="menu__submenus-container"></div>
-                                        <ul class="menu__list">
-                                            <li class="menu__item">
-                                                <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                <div class="menu__item-submenu-offset"></div>
-                                                <a class="menu__item-link" href="">
-                                                    € Euro
-                                                </a>
-                                            </li>
-                                            <li class="menu__item">
-                                                <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                <div class="menu__item-submenu-offset"></div>
-                                                <a class="menu__item-link" href="">
-                                                    £ Pound Sterling
-                                                </a>
-                                            </li>
-                                            <li class="menu__item">
-                                                <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                <div class="menu__item-submenu-offset"></div>
-                                                <a class="menu__item-link" href="">
-                                                    $ US Dollar
-                                                </a>
-                                            </li>
-                                            <li class="menu__item">
-                                                <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                <div class="menu__item-submenu-offset"></div>
-                                                <a class="menu__item-link" href="">
-                                                    ₽ Russian Ruble
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- .menu / end -->
-                                </div>
-                            </div>
                         </div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
                                 <button class="topbar-dropdown__btn" type="button">
-                                    Language: <span class="topbar__item-value">EN</span>
+                                    Город: <span class="topbar__item-value">Москва</span>
                                     <svg width="7px" height="5px">
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
@@ -287,7 +242,7 @@ use yii\widgets\Breadcrumbs;
                                                                 srcset="/template/red_stroyka/images/languages/language-1.png 1x, images/languages/language-1@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-1.png"
                                                                 alt=""></div>
-                                                    English
+                                                    Москва
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -298,7 +253,7 @@ use yii\widgets\Breadcrumbs;
                                                                 srcset="/template/red_stroyka/images/languages/language-2.png 1x, images/languages/language-2@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-2.png"
                                                                 alt=""></div>
-                                                    French
+                                                    Санкт-Петербург
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -309,7 +264,7 @@ use yii\widgets\Breadcrumbs;
                                                                 srcset="/template/red_stroyka/images/languages/language-3.png 1x, images/languages/language-3@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-3.png"
                                                                 alt=""></div>
-                                                    German
+                                                    Нижний Новгород
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -320,7 +275,7 @@ use yii\widgets\Breadcrumbs;
                                                                 srcset="/template/red_stroyka/images/languages/language-4.png 1x, images/languages/language-4@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-4.png"
                                                                 alt=""></div>
-                                                    Russian
+                                                    Казань
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -331,7 +286,7 @@ use yii\widgets\Breadcrumbs;
                                                                 srcset="/template/red_stroyka/images/languages/language-5.png 1x, images/languages/language-5@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-5.png"
                                                                 alt=""></div>
-                                                    Italian
+                                                    Ярославль
                                                 </a>
                                             </li>
                                         </ul>
@@ -361,7 +316,7 @@ use yii\widgets\Breadcrumbs;
                         <div class="search__body">
                             <form class="search__form" action="">
                                 <input class="search__input" name="search"
-                                       placeholder="Search over 10,000 products"
+                                       placeholder="Более 18000 товаров для вашего удовольствия"
                                        aria-label="Site search" type="text" autocomplete="off">
                                 <button class="search__button search__button--type--submit"
                                         type="submit">
@@ -376,8 +331,8 @@ use yii\widgets\Breadcrumbs;
                     </div>
                 </div>
                 <div class="site-header__phone">
-                    <div class="site-header__phone-title">Customer Service</div>
-                    <div class="site-header__phone-number"><?= Yii::$app->params['phone']; ?></div>
+                    <div class="site-header__phone-title">Время работы: Ежедневно с 10:00 до 18:00</div>
+                    <div class="site-header__phone-number"><a href="tel:<?= Yii::$app->params['phone']; ?>"><?= Yii::$app->params['phone']; ?><a/></div>
                 </div>
             </div>
             <div class="site-header__nav-panel">
@@ -393,8 +348,8 @@ use yii\widgets\Breadcrumbs;
                                             <div class="departments__submenus-container"></div>
                                             <ul class="departments__links">
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Power Tools
+                                                    <a class="departments__item-link" href="/catalog/falloimitatory/">
+                                                        Фаллоимитаторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -568,8 +523,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Hand Tools
+                                                    <a class="departments__item-link" href="/catalog/vibratory/">
+                                                        Вибраторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -696,8 +651,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Machine Tools
+                                                    <a class="departments__item-link" href="/catalog/masturbatory/">
+                                                        Мастурбаторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -792,7 +747,7 @@ use yii\widgets\Breadcrumbs;
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link" href="">
-                                                        Building Supplies
+                                                        Секс-куклы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -860,8 +815,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Electrical
+                                                    <a class="departments__item-link" href="/catalog/massazhyory-prostaty/">
+                                                        Массажёры простаты
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -986,33 +941,43 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Power Machinery
+                                                    <a class="departments__item-link" href="/catalog/falloprotezy/">
+                                                        Фаллопротезы
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Measurement
+                                                    <a class="departments__item-link" href="/catalog/vaginalnye-shariki/">
+                                                        Вагинальные шарики
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Clothes & PPE
+                                                    <a class="departments__item-link" href="/catalog/ehrrekcionnye-kolca/">
+                                                        Эррекционные кольца
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Plumbing
+                                                    <a class="departments__item-link" href="/catalog/analnye-stimulyatory/">
+                                                        Анальные стимуляторы
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Storage & Organization
+                                                    <a class="departments__item-link" href="/catalog/analnye-shariki/">
+                                                        Анальные шарики
+                                                    </a>
+                                                </li>
+												<li class="departments__item">
+                                                    <a class="departments__item-link" href="/catalog/analnye-cepochki/">
+                                                        Анальные цепочки
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Welding & Soldering
+                                                    <a class="departments__item-link" href="/catalog/vibroyajca/">
+                                                        Виброяйца
+                                                    </a>
+                                                </li>
+												<li class="departments__item">
+                                                    <a class="departments__item-link" href="/catalog/seks-igrushki/">
+                                                        Все игрушки
                                                     </a>
                                                 </li>
                                             </ul>
@@ -1023,7 +988,7 @@ use yii\widgets\Breadcrumbs;
                                              height="14px">
                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#menu-18x14"></use>
                                         </svg>
-                                        Категории
+                                        Секс-Игрушки
                                         <svg class="departments__button-arrow" width="9px"
                                              height="6px">
                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1036,9 +1001,9 @@ use yii\widgets\Breadcrumbs;
                             <div class="nav-panel__nav-links nav-links">
                                 <ul class="nav-links__list">
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
-                                        <a class="nav-links__item-link" href="index.html">
+                                        <a class="nav-links__item-link" href="/">
                                             <div class="nav-links__item-body">
-                                                Home
+                                                Женщинам
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1098,7 +1063,7 @@ use yii\widgets\Breadcrumbs;
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link" href="">
                                             <div class="nav-links__item-body">
-                                                Megamenu
+                                                Мужчинам
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1207,7 +1172,7 @@ use yii\widgets\Breadcrumbs;
                                         <a class="nav-links__item-link"
                                            href="shop-grid-3-columns-sidebar.html">
                                             <div class="nav-links__item-body">
-                                                Shop
+                                                Парам
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1388,7 +1353,7 @@ use yii\widgets\Breadcrumbs;
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link" href="account-login.html">
                                             <div class="nav-links__item-body">
-                                                Account
+                                                BDSM
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1472,7 +1437,7 @@ use yii\widgets\Breadcrumbs;
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link" href="blog-classic.html">
                                             <div class="nav-links__item-body">
-                                                Blog
+                                                Одежда
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1539,7 +1504,7 @@ use yii\widgets\Breadcrumbs;
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link" href="">
                                             <div class="nav-links__item-body">
-                                                Pages
+                                                Смазки
                                                 <svg class="nav-links__item-arrow" width="9px"
                                                      height="6px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
@@ -1618,13 +1583,87 @@ use yii\widgets\Breadcrumbs;
                                             <!-- .menu / end -->
                                         </div>
                                     </li>
-                                    <li class="nav-links__item ">
-                                        <a class="nav-links__item-link"
-                                           href="https://themeforest.net/item/stroyka-tools-store-html-template/23326943">
+                                                                        <li class="nav-links__item  nav-links__item--has-submenu ">
+                                        <a class="nav-links__item-link" href="">
                                             <div class="nav-links__item-body">
-                                                Buy Theme
+                                                Полезное
+                                                <svg class="nav-links__item-arrow" width="9px"
+                                                     height="6px">
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                </svg>
                                             </div>
                                         </a>
+                                        <div class="nav-links__submenu nav-links__submenu--type--menu">
+                                            <!-- .menu -->
+                                            <div class="menu menu--layout--classic ">
+                                                <div class="menu__submenus-container"></div>
+                                                <ul class="menu__list">
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="about-us.html">
+                                                            Презервативы
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="contact-us.html">
+                                                            Сувениры
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="contact-us-alt.html">
+                                                            Эротические игры
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link" href="404.html">
+                                                            Секс-Мебель
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="terms-and-conditions.html">
+                                                            Возбуждающие средства
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link" href="faq.html">
+                                                            Феромоны
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="components.html">
+                                                            Интимная гигиена
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                        <a class="menu__item-link"
+                                                           href="typography.html">
+                                                            Typography
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- .menu / end -->
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

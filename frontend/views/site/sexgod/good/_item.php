@@ -141,7 +141,7 @@ use yii\helpers\Html;
                 <div class="product-card__buttons">
                     <button class="btn btn-primary prod1uct-card__addtocart addInCart oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"
                             data-id="<?= $good->aID; ?>"
-                            type="button"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'В корзину'; ?>
+                            type="button"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Купить'; ?>
                     </button>
                     <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
                             type="button">Add To Cart

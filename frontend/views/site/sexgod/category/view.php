@@ -965,6 +965,7 @@ use yii\widgets\Breadcrumbs;
         <div class="shop-layout__content">
             <div class="block">
                 <div class="products-view">
+				<h1>Категория</h1>
                     <div class="products-view__options">
                         <div class="view-options view-options--offcanvas--mobile">
                             <div class="view-options__filters-button">
@@ -976,7 +977,7 @@ use yii\widgets\Breadcrumbs;
                                     <span class="filters-button__counter">3</span>
                                 </button>
                             </div>
-                            <div class="view-options__layout">
+                        <!--   <div class="view-options__layout">
                                 <div class="layout-switcher">
                                     <div class="layout-switcher__list">
                                         <button data-layout="grid-3-sidebar"
@@ -1003,20 +1004,21 @@ use yii\widgets\Breadcrumbs;
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="view-options__legend">Showing 6 of 98 products</div>
+                            </div> 
+                            <div class="view-options__legend">Showing 6 of 98 products</div>-->
                             <div class="view-options__divider"></div>
                             <div class="view-options__control">
-                                <label for="">Sort By</label>
+                                <label for="">Сортировка</label>
                                 <div>
                                     <select class="form-control form-control-sm" name="" id="">
-                                        <option value="">Default</option>
-                                        <option value="">Name (A-Z)</option>
+                                        <option value="">По цене</option>
+                                        <option value="">По алфавиту</option>
+										<option value="">По популярности</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="view-options__control">
-                                <label for="">Show</label>
+                                <label for="">Товаров на странице</label>
                                 <div>
                                     <select class="form-control form-control-sm" name="" id="">
                                         <option value="">12</option>
