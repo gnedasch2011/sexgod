@@ -12,7 +12,6 @@ use yii\widgets\Breadcrumbs;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <title>Stroyka</title>
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
     <!-- /Yandex.Metrika counter -->
@@ -331,8 +330,11 @@ use yii\widgets\Breadcrumbs;
                     </div>
                 </div>
                 <div class="site-header__phone">
-                    <div class="site-header__phone-title">Время работы: Ежедневно с 10:00 до 18:00</div>
-                    <div class="site-header__phone-number"><a href="tel:<?= Yii::$app->params['phone']; ?>"><?= Yii::$app->params['phone']; ?><a/></div>
+                    <div class="site-header__phone-title">Время работы: Ежедневно с 10:00 до 18:00
+                    </div>
+                    <div class="site-header__phone-number"><a
+                                href="tel:<?= Yii::$app->params['phone']; ?>"><?= Yii::$app->params['phone']; ?>
+                            <a/></div>
                 </div>
             </div>
             <div class="site-header__nav-panel">
@@ -348,7 +350,8 @@ use yii\widgets\Breadcrumbs;
                                             <div class="departments__submenus-container"></div>
                                             <ul class="departments__links">
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/falloimitatory/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/falloimitatory/">
                                                         Фаллоимитаторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
@@ -523,7 +526,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/vibratory/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/vibratory/">
                                                         Вибраторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
@@ -651,7 +655,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/masturbatory/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/masturbatory/">
                                                         Мастурбаторы
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
@@ -815,7 +820,8 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/massazhyory-prostaty/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/massazhyory-prostaty/">
                                                         Массажёры простаты
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
@@ -941,42 +947,50 @@ use yii\widgets\Breadcrumbs;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/falloprotezy/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/falloprotezy/">
                                                         Фаллопротезы
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/vaginalnye-shariki/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/vaginalnye-shariki/">
                                                         Вагинальные шарики
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/ehrrekcionnye-kolca/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/ehrrekcionnye-kolca/">
                                                         Эррекционные кольца
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/analnye-stimulyatory/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/analnye-stimulyatory/">
                                                         Анальные стимуляторы
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/analnye-shariki/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/analnye-shariki/">
                                                         Анальные шарики
                                                     </a>
                                                 </li>
-												<li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/analnye-cepochki/">
+                                                <li class="departments__item">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/analnye-cepochki/">
                                                         Анальные цепочки
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/vibroyajca/">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/vibroyajca/">
                                                         Виброяйца
                                                     </a>
                                                 </li>
-												<li class="departments__item">
-                                                    <a class="departments__item-link" href="/catalog/seks-igrushki/">
+                                                <li class="departments__item">
+                                                    <a class="departments__item-link"
+                                                       href="/catalog/seks-igrushki/">
                                                         Все игрушки
                                                     </a>
                                                 </li>
@@ -1583,7 +1597,7 @@ use yii\widgets\Breadcrumbs;
                                             <!-- .menu / end -->
                                         </div>
                                     </li>
-                                                                        <li class="nav-links__item  nav-links__item--has-submenu ">
+                                    <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link" href="">
                                             <div class="nav-links__item-body">
                                                 Полезное

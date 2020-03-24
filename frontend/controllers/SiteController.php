@@ -164,6 +164,8 @@ class SiteController extends Controller
         //        $this->title = $category->name;
         $this->categoryName = $categoryName;
 
+        $this->title = $category->name;
+
         $keywords = $category->name;
         $description = trim($category->name);
 
@@ -213,6 +215,8 @@ class SiteController extends Controller
 
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
+        $this->title = $good->name;
+
 
         $breadcrumbs[] = $good->parentCategoryUrl;
         $breadcrumbs[] = [

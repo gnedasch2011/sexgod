@@ -965,7 +965,7 @@ use yii\widgets\Breadcrumbs;
         <div class="shop-layout__content">
             <div class="block">
                 <div class="products-view">
-				<h1>Категория</h1>
+				<h1><?= $this->context->title ;?></h1>
                     <div class="products-view__options">
                         <div class="view-options view-options--offcanvas--mobile">
                             <div class="view-options__filters-button">
