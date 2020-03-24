@@ -346,7 +346,7 @@ use yii\widgets\Breadcrumbs;
             <!-- .topbar / end -->
             <div class="site-header__middle container">
                 <div class="site-header__logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img class="logo-main"
                              src="/template/red_stroyka/images/main/SEXGOD_Logo.svg" alt="">
                         <?php /*?>
