@@ -164,10 +164,10 @@ class SiteController extends Controller
         //        $this->title = $category->name;
         $this->categoryName = $categoryName;
 
-        $this->title = $category->name;
+        $this->title = $category->titleMinPrice;
 
         $keywords = $category->name;
-        $description = trim($category->name);
+        $description = trim($category->description);
 
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
@@ -204,7 +204,7 @@ class SiteController extends Controller
 
     public function actionDetailItem($slugItem)
     {
-//        $this->layout = 'red_stroyka/main';
+        $this->layout = 'red_stroyka/main';
 
         $slugItem = str_replace("/", '', $slugItem);
         $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
