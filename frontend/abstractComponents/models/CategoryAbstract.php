@@ -8,6 +8,7 @@ use app\models\sexgod\good\Goods;
 use app\models\sexgod\good\GoodsCategory;
 use app\models\shop\Category;
 use app\modelsapp\models\sexgod\good\Goods2;
+use app\modules\product\models\ProductCategory;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -51,13 +52,30 @@ class CategoryAbstract extends ActiveRecord
         ];
     }
 
-    static public function getAllCategoryForMenu()
+     public static function getAllCategoryForMenu()
     {
+
         $listCateg = self::find()
             ->distinct()
             ->orderBy('name')
             ->where(['parent_id' => self::parent_id])
             ->all();
+
+        $arr = ArrayHelper::map($listCateg, 'slug', 'name');
+
+        return $arr;
+    }
+
+
+    public function getChildsCurrentCategory()
+    {
+
+        $listCateg = self::find()
+            ->distinct()
+            ->orderBy('name')
+            ->where(['parent_id' => $this->id])
+            ->all();
+
         $arr = ArrayHelper::map($listCateg, 'slug', 'name');
 
         return $arr;
@@ -222,10 +240,11 @@ class CategoryAbstract extends ActiveRecord
      */
     public static function getAllCategoryInCurrent($currentIDCategory)
     {
+       
         $categorys = self::find()
             ->where(['parent_id' => $currentIDCategory])
             ->all();
-
+            
         $categorysIds = ArrayHelper::getColumn($categorys, 'id');
 
         return $categorys;
@@ -237,6 +256,7 @@ class CategoryAbstract extends ActiveRecord
             ->distinct()
             ->orderBy('name')
             ->all();
+
         $arr = ArrayHelper::map($listCateg, 'id', 'name');
         $arr[0] = 'Базовый';
 
@@ -244,7 +264,7 @@ class CategoryAbstract extends ActiveRecord
     }
 
 
-//    static public function      getAllCategoryForMenu()
+//    static public function   getAllCategoryForMenu()
 //    {
 //        $listCateg = self::find()
 //            ->distinct()
@@ -358,6 +378,54 @@ class CategoryAbstract extends ActiveRecord
         $idsSubCat[] = $this->id;
         return GoodsCategory::find()->where(['category_id' => $idsSubCat])->count();
     }
+
+    /**
+     * Мин. цена в категории
+     * @return array|false|int
+     * @throws \yii\db\Exception
+     */
+    public function getMinPriceInCategory()
+    {
+
+        $query = GoodsCategory::find()
+            ->leftJoin('new_product_variant npv', 'npv.productId = product_category.productId')
+            ->leftJoin('goods g', 'g.id = product_category.productId')
+            ->where(['categoryId' => $this->ids])
+            ->andWhere(['published' => 1])
+            ->min('price');
+
+        //        echo "<pre>"; print_r($query);die();
+        //        echo "<pre>"; print_r($query->createCommand()->getRawSql());die();
+
+        return (isset($query)) ? $query : 0;
+    }
+
+    /**
+     * Макс. цена в категории
+     * @return array|false|int
+     * @throws \yii\db\Exception
+     */
+    public function getMaxPriceInCategory()
+    {
+        $query = GoodsCategory::find()
+            ->leftJoin('new_product_variant npv', 'npv.productId = product_category.productId')
+            ->leftJoin('goods g', 'g.id = product_category.productId')
+            ->where(['categoryId' => $this->ids])
+            ->andWhere(['published' => 1])
+            ->max('price');
+
+
+        return (isset($query)) ? $query : 0;
+    }
+
+    public function getTitle()
+    {
+        echo "<pre>";
+        print_r($this);
+        die();
+    }
+
+
 }
 
 

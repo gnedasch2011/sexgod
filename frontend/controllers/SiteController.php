@@ -151,37 +151,37 @@ class SiteController extends Controller
 
         //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
-
         $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
-      
+
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-        
+
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
 
-        //        echo "<pre>"; print_r($allCategory);die();
-        //        $this->title = $category->name;
-        $this->categoryName = $categoryName;
 
-        $this->title = $category->name;
+
+        //Для Сео
+        $this->categoryName = $categoryName;
+        $this->title = $category->titleMinPrice;
 
         $keywords = $category->name;
-        $description = trim($category->name);
+        $description = trim($category->description);
 
+        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
+
+
+        //Хлебные крошки
         $breadcrumbs = [];
-
-
         if ($category->parentCategory) {
             $breadcrumbs[] = [
                 'label' => $category->parentCategory->name,
                 'url' => [$category->parentCategory->fullUrl]
             ];
         }
-
 
         $breadcrumbs[] = [
             'label' => $category->name,
@@ -191,6 +191,9 @@ class SiteController extends Controller
         $this->view->params['breadcrumbs'] = $breadcrumbs;
         $this->view->params['h1'] = $category->name;
 
+        //Плитки тегов
+        $childsCurrentCategory = $category->getChildsCurrentCategory();
+
 
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
@@ -198,13 +201,14 @@ class SiteController extends Controller
 //            'breadcrumbs' => $breadcrumbs,
             'category' => $category,
             'pages' => $pages,
+            'childsCurrentCategory' => $childsCurrentCategory,
 
         ]);
     }
 
     public function actionDetailItem($slugItem)
     {
-//        $this->layout = 'red_stroyka/main';
+        $this->layout = 'red_stroyka/main';
 
         $slugItem = str_replace("/", '', $slugItem);
         $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
