@@ -56,7 +56,7 @@ class CategoryBase extends CategoryAbstract
         $phone = \Yii::$app->params['phone'];
 
         $search = ["#MIN_PRICE #", "#PHONE#"];
-        $replace = [$minPrice, $phone];
+        $replace = [$minPrice.' руб.', $phone];
 
         $res = str_replace($search, $replace, $this->description);
 
