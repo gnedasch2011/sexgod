@@ -144,7 +144,7 @@
     <div class="mobilemenu__backdrop"></div>
     <div class="mobilemenu__body">
         <div class="mobilemenu__header">
-            <div class="mobilemenu__title">Menu</div>
+            <div class="mobilemenu__title">Меню</div>
             <button type="button" class="mobilemenu__close">
                 <svg width="20px" height="20px">
                     <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-20"></use>
@@ -156,7 +156,7 @@
                 data-collapse-opened-class="mobile-links__item--open">
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="index.html" class="mobile-links__item-link">Home</a>
+                        <a href="index.html" class="mobile-links__item-link">Для женщин</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -168,31 +168,27 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index.html" class="mobile-links__item-link">Home 1</a>
+                                    <a href="index.html" class="mobile-links__item-link">Вибраторы</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-2.html" class="mobile-links__item-link">Home
-                                        2</a>
+                                    <a href="index-2.html" class="mobile-links__item-link">Фаллоимитаторы</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-3.html" class="mobile-links__item-link">Home 1
-                                        Finder</a>
+                                    <a href="index-3.html" class="mobile-links__item-link">Анальные пробки</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-4.html" class="mobile-links__item-link">Home 2
-                                        Finder</a>
+                                    <a href="index-4.html" class="mobile-links__item-link">Страпоны</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="offcanvas-cart.html" class="mobile-links__item-link">Offcanvas
-                                        Cart</a>
+                                    <a href="offcanvas-cart.html" class="mobile-links__item-link">Вагинальные шарики</a>
                                 </div>
                             </li>
                         </ul>
@@ -200,7 +196,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="" class="mobile-links__item-link">Categories</a>
+                        <a href="" class="mobile-links__item-link">Для мужчин</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -212,7 +208,7 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">Power Tools</a>
+                                    <a href="" class="mobile-links__item-link">Мастурбаторы</a>
                                     <button class="mobile-links__item-toggle" type="button"
                                             data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px"
@@ -226,19 +222,18 @@
                                         <li class="mobile-links__item" data-collapse-item>
                                             <div class="mobile-links__item-title">
                                                 <a href=""
-                                                   class="mobile-links__item-link">Engravers</a>
+                                                   class="mobile-links__item-link">Массажёры простаты</a>
                                             </div>
                                         </li>
                                         <li class="mobile-links__item" data-collapse-item>
                                             <div class="mobile-links__item-title">
                                                 <a href=""
-                                                   class="mobile-links__item-link">Wrenches</a>
+                                                   class="mobile-links__item-link">Эрекционные кольца</a>
                                             </div>
                                         </li>
                                         <li class="mobile-links__item" data-collapse-item>
                                             <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Wall
-                                                    Chaser</a>
+                                                <a href="" class="mobile-links__item-link">Секс-куклы</a>
                                             </div>
                                         </li>
                                         <li class="mobile-links__item" data-collapse-item>
@@ -307,7 +302,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="shop-grid-3-columns-sidebar.html" class="mobile-links__item-link">Shop</a>
+                        <a href="shop-grid-3-columns-sidebar.html" class="mobile-links__item-link">Для пар</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -449,7 +444,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="account-login.html" class="mobile-links__item-link">Account</a>
+                        <a href="account-login.html" class="mobile-links__item-link">BDSM</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -511,7 +506,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="blog-classic.html" class="mobile-links__item-link">Blog</a>
+                        <a href="blog-classic.html" class="mobile-links__item-link">Эротическая одежда</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -562,7 +557,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="" class="mobile-links__item-link">Pages</a>
+                        <a href="" class="mobile-links__item-link">Смазки и лубриканты</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -621,7 +616,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a data-collapse-trigger class="mobile-links__item-link">Currency</a>
+                        <a data-collapse-trigger class="mobile-links__item-link">Презервативы</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -656,7 +651,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a data-collapse-trigger class="mobile-links__item-link">Language</a>
+                        <a data-collapse-trigger class="mobile-links__item-link">Полезное</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
