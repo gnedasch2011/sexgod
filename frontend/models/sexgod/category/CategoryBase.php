@@ -27,7 +27,16 @@ class CategoryBase extends CategoryAbstract
         return $this->hasOne(CategoryAdvantages::className(), ['description' => 'id']);
     }
 
-    public function getTitleMinPrice()
+
+    public function getMaskForTitle()
+    {
+        $res = str_replace('#MIN_PRICE#', $this->minPrice . ' руб.', $this->title);
+
+        return $res;
+    }
+
+
+    public function getMinPrice()
     {
         $title = $this->title;
 
@@ -37,13 +46,24 @@ class CategoryBase extends CategoryAbstract
             ->where(['c.slug' => $this->slug])
             ->min('BaseRetailPrice');
 
-        $res = str_replace('#MIN_PRICE#', $minPrice . ' руб.', $title);
+        return $minPrice ?? '';
+    }
 
-        $resTitle = $res . ' руб.';
 
-        return $resTitle;
+    public function getDescriptionMeta()
+    {
+        $minPrice = $this->minPrice;
+        $phone = \Yii::$app->params['phone'];
+
+        $search = ["#MIN_PRICE #", "#PHONE#"];
+        $replace = [$minPrice.' руб.', $phone];
+
+        $res = str_replace($search, $replace, $this->description);
+
+        return $res;
 
     }
 
 
 }
+

@@ -163,10 +163,13 @@ class SiteController extends Controller
 
         //Для Сео
         $this->categoryName = $categoryName;
-        $this->title = $category->titleMinPrice;
+        $this->title = $category->maskForTitle;
 
         $keywords = $category->name;
-        $description = trim($category->description);
+
+
+//        $description = trim($category->description);
+        $description = trim($category->descriptionMeta);
 
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
