@@ -7,6 +7,7 @@ use yii\widgets\Breadcrumbs;
 /* @var $this yii\web\View */
 
 ?>
+
 <div class="container">
     <div class="shop-layout shop-layout--sidebar--start">
         <div class="shop-layout__sidebar">
@@ -965,7 +966,14 @@ use yii\widgets\Breadcrumbs;
         <div class="shop-layout__content">
             <div class="block">
                 <div class="products-view">
-				<h1><?= $category->h1 ;?></h1>
+                    <h1><?= $category->h1; ?></h1>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <?= \frontend\abstractComponents\widgets\TagTile\TagTileWidget::widget([
+                            'childsCurrentCategory' => $childsCurrentCategory,
+                        ]); ?>
+
+                    </div>
+
                     <div class="products-view__options">
                         <div class="view-options view-options--offcanvas--mobile">
                             <div class="view-options__filters-button">
@@ -977,35 +985,35 @@ use yii\widgets\Breadcrumbs;
                                     <span class="filters-button__counter">3</span>
                                 </button>
                             </div>
-                        <!--   <div class="view-options__layout">
-                                <div class="layout-switcher">
-                                    <div class="layout-switcher__list">
-                                        <button data-layout="grid-3-sidebar"
-                                                data-with-features="false" title="Grid"
-                                                type="button"
-                                                class="layout-switcher__button  layout-switcher__button--active ">
-                                            <svg width="16px" height="16px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-16x16"></use>
-                                            </svg>
-                                        </button>
-                                        <button data-layout="grid-3-sidebar"
-                                                data-with-features="true" title="Grid With Features"
-                                                type="button" class="layout-switcher__button ">
-                                            <svg width="16px" height="16px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-with-details-16x16"></use>
-                                            </svg>
-                                        </button>
-                                        <button data-layout="list" data-with-features="false"
-                                                title="List" type="button"
-                                                class="layout-switcher__button ">
-                                            <svg width="16px" height="16px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#layout-list-16x16"></use>
-                                            </svg>
-                                        </button>
+                            <!--   <div class="view-options__layout">
+                                    <div class="layout-switcher">
+                                        <div class="layout-switcher__list">
+                                            <button data-layout="grid-3-sidebar"
+                                                    data-with-features="false" title="Grid"
+                                                    type="button"
+                                                    class="layout-switcher__button  layout-switcher__button--active ">
+                                                <svg width="16px" height="16px">
+                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-16x16"></use>
+                                                </svg>
+                                            </button>
+                                            <button data-layout="grid-3-sidebar"
+                                                    data-with-features="true" title="Grid With Features"
+                                                    type="button" class="layout-switcher__button ">
+                                                <svg width="16px" height="16px">
+                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-with-details-16x16"></use>
+                                                </svg>
+                                            </button>
+                                            <button data-layout="list" data-with-features="false"
+                                                    title="List" type="button"
+                                                    class="layout-switcher__button ">
+                                                <svg width="16px" height="16px">
+                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-list-16x16"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div> 
-                            <div class="view-options__legend">Showing 6 of 98 products</div>-->
+                                <div class="view-options__legend">Showing 6 of 98 products</div>-->
                             <div class="view-options__divider"></div>
                             <div class="view-options__control">
                                 <label for="">Сортировка</label>
@@ -1013,7 +1021,7 @@ use yii\widgets\Breadcrumbs;
                                     <select class="form-control form-control-sm" name="" id="">
                                         <option value="">По цене</option>
                                         <option value="">По алфавиту</option>
-										<option value="">По популярности</option>
+                                        <option value="">По популярности</option>
                                     </select>
                                 </div>
                             </div>
@@ -1044,8 +1052,8 @@ use yii\widgets\Breadcrumbs;
                             'options' => [
                                 'class' => 'pagination justify-content-center'//for ul
                             ],
-                            'linkOptions'=>[
-                                    'class'=>'page-link'
+                            'linkOptions' => [
+                                'class' => 'page-link'
                             ]
 
                         ]); ?>

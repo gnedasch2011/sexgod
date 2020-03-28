@@ -52,13 +52,30 @@ class CategoryAbstract extends ActiveRecord
         ];
     }
 
-    static public function getAllCategoryForMenu()
+     public static function getAllCategoryForMenu()
     {
+
         $listCateg = self::find()
             ->distinct()
             ->orderBy('name')
             ->where(['parent_id' => self::parent_id])
             ->all();
+
+        $arr = ArrayHelper::map($listCateg, 'slug', 'name');
+
+        return $arr;
+    }
+
+
+    public function getChildsCurrentCategory()
+    {
+
+        $listCateg = self::find()
+            ->distinct()
+            ->orderBy('name')
+            ->where(['parent_id' => $this->id])
+            ->all();
+
         $arr = ArrayHelper::map($listCateg, 'slug', 'name');
 
         return $arr;
@@ -223,10 +240,11 @@ class CategoryAbstract extends ActiveRecord
      */
     public static function getAllCategoryInCurrent($currentIDCategory)
     {
+       
         $categorys = self::find()
             ->where(['parent_id' => $currentIDCategory])
             ->all();
-
+            
         $categorysIds = ArrayHelper::getColumn($categorys, 'id');
 
         return $categorys;
@@ -238,6 +256,7 @@ class CategoryAbstract extends ActiveRecord
             ->distinct()
             ->orderBy('name')
             ->all();
+
         $arr = ArrayHelper::map($listCateg, 'id', 'name');
         $arr[0] = 'Базовый';
 
@@ -245,7 +264,7 @@ class CategoryAbstract extends ActiveRecord
     }
 
 
-//    static public function      getAllCategoryForMenu()
+//    static public function   getAllCategoryForMenu()
 //    {
 //        $listCateg = self::find()
 //            ->distinct()

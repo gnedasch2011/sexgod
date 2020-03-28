@@ -12,6 +12,9 @@ use yii\widgets\Breadcrumbs;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
+
+    <link rel="canonical" href="http://site.com/dresses.html" />
+
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
     <!-- /Yandex.Metrika counter -->
