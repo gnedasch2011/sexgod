@@ -262,7 +262,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getAvailibilty()
     {
-        if ($good->Stock) {
+        if ($this->Stock) {
             return 'Есть в наличии';
         }
 
