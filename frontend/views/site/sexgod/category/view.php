@@ -18,7 +18,7 @@ use yii\widgets\Breadcrumbs;
                         <div class="block-sidebar__title">Фильтры</div>
                         <button class="block-sidebar__close" type="button">
                             <svg width="20px" height="20px">
-                                <use xlink:href="template/red_stroyka/images/sprite.svg#cross-20"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-20"></use>
                             </svg>
                         </button>
                     </div>
@@ -35,7 +35,7 @@ use yii\widgets\Breadcrumbs;
                                             <button type="button" class="filter__title" data-collapse-trigger>
                                                 Categories
                                                 <svg class="filter__arrow" width="12px" height="7px">
-                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                                 </svg>
                                             </button>
                                             <div class="filter__body" data-collapse-content>
@@ -44,14 +44,14 @@ use yii\widgets\Breadcrumbs;
                                                         <ul class="filter-categories__list">
                                                             <li class="filter-categories__item filter-categories__item--parent">
                                                                 <svg class="filter-categories__arrow" width="6px" height="9px">
-                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-left-6x9"></use>
+                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-6x9"></use>
                                                                 </svg>
                                                                 <a href="">Construction & Repair</a>
                                                                 <div class="filter-categories__counter">254</div>
                                                             </li>
                                                             <li class="filter-categories__item filter-categories__item--parent">
                                                                 <svg class="filter-categories__arrow" width="6px" height="9px">
-                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-left-6x9"></use>
+                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-6x9"></use>
                                                                 </svg>
                                                                 <a href="">Instruments</a>
                                                                 <div class="filter-categories__counter">75</div>
@@ -124,7 +124,7 @@ use yii\widgets\Breadcrumbs;
                                             <button type="button" class="filter__title" data-collapse-trigger>
                                                 Categories Alt
                                                 <svg class="filter__arrow" width="12px" height="7px">
-                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                                 </svg>
                                             </button>
                                             <div class="filter__body" data-collapse-content>
@@ -271,7 +271,7 @@ use yii\widgets\Breadcrumbs;
                                                 data-collapse-trigger>
                                             Price
                                             <svg class="filter__arrow" width="12px" height="7px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg>
                                         </button>
                                         <div class="filter__body" data-collapse-content>
@@ -295,7 +295,7 @@ use yii\widgets\Breadcrumbs;
                                                 data-collapse-trigger>
                                             Brand
                                             <svg class="filter__arrow" width="12px" height="7px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg>
                                         </button>
                                         <div class="filter__body" data-collapse-content>
@@ -311,7 +311,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -330,7 +330,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -350,7 +350,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -368,7 +368,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -385,7 +385,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -403,7 +403,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check__icon"
                                                                                      width="9px"
                                                                                      height="7px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-9x7"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
@@ -424,7 +424,7 @@ use yii\widgets\Breadcrumbs;
                                                 data-collapse-trigger>
                                             Brand
                                             <svg class="filter__arrow" width="12px" height="7px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg>
                                         </button>
                                         <div class="filter__body" data-collapse-content>
@@ -528,7 +528,7 @@ use yii\widgets\Breadcrumbs;
                                                 data-collapse-trigger>
                                             Color
                                             <svg class="filter__arrow" width="12px" height="7px">
-                                                <use xlink:href="template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                             </svg>
                                         </button>
                                         <div class="filter__body" data-collapse-content>
@@ -545,7 +545,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -561,7 +561,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -577,7 +577,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -593,7 +593,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -609,7 +609,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -625,7 +625,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -641,7 +641,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -658,7 +658,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -674,7 +674,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -690,7 +690,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -706,7 +706,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -723,7 +723,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -739,7 +739,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -755,7 +755,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -771,7 +771,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -788,7 +788,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -805,7 +805,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -821,7 +821,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -837,7 +837,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -853,7 +853,7 @@ use yii\widgets\Breadcrumbs;
                                                                                 <svg class="input-check-color__icon"
                                                                                      width="12px"
                                                                                      height="9px">
-                                                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#check-12x9"></use>
+                                                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#check-12x9"></use>
                                                                                 </svg>
                                                                                 <span class="input-check-color__stick"></span>
                                                                             </label>
@@ -879,7 +879,7 @@ use yii\widgets\Breadcrumbs;
                                 <div class="widget-products__item">
                                     <div class="widget-products__image">
                                         <a href="product.html"><img
-                                                    src="template/red_stroyka/images/products/product-1.jpg"
+                                                    src="/template/red_stroyka/images/products/product-1.jpg"
                                                     alt=""></a>
                                     </div>
                                     <div class="widget-products__info">
@@ -895,7 +895,7 @@ use yii\widgets\Breadcrumbs;
                                 <div class="widget-products__item">
                                     <div class="widget-products__image">
                                         <a href="product.html"><img
-                                                    src="template/red_stroyka/images/products/product-2.jpg"
+                                                    src="/template/red_stroyka/images/products/product-2.jpg"
                                                     alt=""></a>
                                     </div>
                                     <div class="widget-products__info">
@@ -911,7 +911,7 @@ use yii\widgets\Breadcrumbs;
                                 <div class="widget-products__item">
                                     <div class="widget-products__image">
                                         <a href="product.html"><img
-                                                    src="template/red_stroyka/images/products/product-3.jpg"
+                                                    src="/template/red_stroyka/images/products/product-3.jpg"
                                                     alt=""></a>
                                     </div>
                                     <div class="widget-products__info">
@@ -927,7 +927,7 @@ use yii\widgets\Breadcrumbs;
                                 <div class="widget-products__item">
                                     <div class="widget-products__image">
                                         <a href="product.html"><img
-                                                    src="template/red_stroyka/images/products/product-4.jpg"
+                                                    src="/template/red_stroyka/images/products/product-4.jpg"
                                                     alt=""></a>
                                     </div>
                                     <div class="widget-products__info">
@@ -944,7 +944,7 @@ use yii\widgets\Breadcrumbs;
                                 <div class="widget-products__item">
                                     <div class="widget-products__image">
                                         <a href="product.html"><img
-                                                    src="template/red_stroyka/images/products/product-5.jpg"
+                                                    src="/template/red_stroyka/images/products/product-5.jpg"
                                                     alt=""></a>
                                     </div>
                                     <div class="widget-products__info">
@@ -966,7 +966,6 @@ use yii\widgets\Breadcrumbs;
         <div class="shop-layout__content">
             <div class="block">
                 <div class="products-view">
-                    <h1><?= $category->h1; ?></h1>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <?= \frontend\abstractComponents\widgets\TagTile\TagTileWidget::widget([
@@ -982,7 +981,7 @@ use yii\widgets\Breadcrumbs;
                             <div class="view-options__filters-button">
                                 <button type="button" class="filters-button">
                                     <svg class="filters-button__icon" width="16px" height="16px">
-                                        <use xlink:href="template/red_stroyka/images/sprite.svg#filters-16"></use>
+                                        <use xlink:href="/template/red_stroyka/images/sprite.svg#filters-16"></use>
                                     </svg>
                                     <span class="filters-button__title">Filters</span>
                                     <span class="filters-button__counter">3</span>
@@ -996,21 +995,21 @@ use yii\widgets\Breadcrumbs;
                                                     type="button"
                                                     class="layout-switcher__button  layout-switcher__button--active ">
                                                 <svg width="16px" height="16px">
-                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-16x16"></use>
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#layout-grid-16x16"></use>
                                                 </svg>
                                             </button>
                                             <button data-layout="grid-3-sidebar"
                                                     data-with-features="true" title="Grid With Features"
                                                     type="button" class="layout-switcher__button ">
                                                 <svg width="16px" height="16px">
-                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-grid-with-details-16x16"></use>
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#layout-grid-with-details-16x16"></use>
                                                 </svg>
                                             </button>
                                             <button data-layout="list" data-with-features="false"
                                                     title="List" type="button"
                                                     class="layout-switcher__button ">
                                                 <svg width="16px" height="16px">
-                                                    <use xlink:href="template/red_stroyka/images/sprite.svg#layout-list-16x16"></use>
+                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#layout-list-16x16"></use>
                                                 </svg>
                                             </button>
                                         </div>

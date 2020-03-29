@@ -13,10 +13,11 @@ use yii\widgets\Breadcrumbs;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="canonical" href="http://site.com/dresses.html" />
+    <link rel="canonical" href="http://site.com/dresses.html"/>
 
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+
     <!-- /Yandex.Metrika counter -->
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,12 +157,15 @@ use yii\widgets\Breadcrumbs;
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
+                                <?php /*?>
+
                                 <button class="topbar-dropdown__btn" type="button">
                                     Личный кабинет
                                     <svg width="7px" height="5px">
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
+                                 <?php */?>
                                 <div class="topbar-dropdown__body">
                                     <!-- .menu -->
                                     <div class="menu menu--layout--topbar ">
@@ -1905,40 +1909,24 @@ use yii\widgets\Breadcrumbs;
     </header>
 
     <div class="site__body">
-        <div class="page-header">
-            <div class="page-header__container container">
-                <div class="page-header__breadcrumb">
-                    <?= Breadcrumbs::widget([
-                            'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n", // template for all links
-                            'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n", // template for all links
 
-                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                            'homeLink' => ['label' => 'Главная', 'url' => '/'],
-                            'options' => [
-                                'class' => 'breadcrumb',//этот класс стоит по умолчанию
-                            ],
-                        ]
-                    ); ?>
+        <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+                <?= Breadcrumbs::widget([
+                        'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n", // template for all links
+                        'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n", // template for all links
 
-                    <!--                    <nav aria-label="breadcrumb">-->
-                    <!--                        <ol class="breadcrumb">-->
-                    <!--                            <li class="breadcrumb-item">-->
-                    <!--                                <a href="index.html">Home</a>-->
-                    <!--                                <svg class="breadcrumb-arrow" width="6px" height="9px">-->
-                    <!--                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>-->
-                    <!--                                </svg>-->
-                    <!--                            </li>-->
-                    <!--                            <li class="breadcrumb-item">-->
-                    <!--                                <a href="">Breadcrumb</a>-->
-                    <!--                                <svg class="breadcrumb-arrow" width="6px" height="9px">-->
-                    <!--                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>-->
-                    <!--                                </svg>-->
-                    <!--                            </li>-->
-                    <!--                            <li class="breadcrumb-item active" aria-current="page">Screwdrivers</li>-->
-                    <!--                        </ol>-->
-                    <!--                    </nav>-->
-                </div>
-                <div class="page-header__title">
-                </div>
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'homeLink' => ['label' => 'Главная', 'url' => '/'],
+                        'options' => [
+                            'class' => 'breadcrumb',//этот класс стоит по умолчанию
+                        ],
+                    ]
+                ); ?>
+            </div>
+            <div class="page-header__title">
+                <h1><?= Html::encode($this->params['h1']) ?></h1>
             </div>
         </div>
+
+
