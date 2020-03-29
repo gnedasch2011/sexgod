@@ -1924,9 +1924,12 @@ use yii\widgets\Breadcrumbs;
                     ]
                 ); ?>
             </div>
-            <div class="page-header__title">
-                <h1><?= Html::encode($this->params['h1']) ?></h1>
-            </div>
+            <?php if(isset($this->params['h1'])):?>
+                <div class="page-header__title">
+                    <h1><?= Html::encode($this->params['h1']) ?></h1>
+                </div>
+            <?php endif;?>
+
         </div>
 
 
