@@ -224,8 +224,6 @@ class SiteController extends Controller
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
         $this->title = $good->name;
 
-
-
         //Хлебные крошки
         $breadcrumbs[] = $good->parentCategoryUrl;
         $breadcrumbs[] = [
