@@ -164,11 +164,10 @@ class SiteController extends Controller
         //Для Сео
         $this->categoryName = $categoryName;
         $this->title = $category->maskForTitle;
-
         $keywords = $category->name;
 
+        $this->view->params['h1'] = $category->name;
 
-//        $description = trim($category->description);
         $description = trim($category->descriptionMeta);
 
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
@@ -192,7 +191,8 @@ class SiteController extends Controller
         ];
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
-        $this->view->params['h1'] = $category->name;
+
+
 
         //Плитки тегов
         $childsCurrentCategory = $category->getChildsCurrentCategory();
@@ -225,11 +225,16 @@ class SiteController extends Controller
         $this->title = $good->name;
 
 
+
+        //Хлебные крошки
         $breadcrumbs[] = $good->parentCategoryUrl;
         $breadcrumbs[] = [
             'label' => $good->name,
 //            'url' => [$good->fullUrl]
         ];
+
+
+        $this->view->params['breadcrumbs'] = $breadcrumbs;
 
 
         return $this->render('@currentSiteView/good/detailItem', [

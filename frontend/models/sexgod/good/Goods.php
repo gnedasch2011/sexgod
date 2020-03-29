@@ -79,7 +79,7 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id','prodID', 'aID', 'Barcode', 'VendorID', 'Stock', 'Novelties', 'SuperSale', 'Bestseller', 'Discount', 'img_status', 'ready_to_go', 'StopPromo'], 'integer'],
+            [['id', 'prodID', 'aID', 'Barcode', 'VendorID', 'Stock', 'Novelties', 'SuperSale', 'Bestseller', 'Discount', 'img_status', 'ready_to_go', 'StopPromo'], 'integer'],
             [['aID'], 'required'],
             [['ProdName', 'VendorCode', 'Vendor', 'VendorCountry', 'ProdCountry', 'ShippingDate', 'Description', 'Brutto', 'Batteries', 'Pack', 'Material', 'Lenght', 'Diameter', 'Collection', 'Images', 'Category', 'SubCategory', 'Color', 'Size', 'prodUrl', 'function', 'addfunction', 'vibration', 'volume', 'ModelYear', 'slug'], 'string'],
             [['BaseRetailPrice', 'BaseWholePrice', 'RetailPrice', 'WholePrice'], 'number'],
@@ -160,6 +160,12 @@ class Goods extends \yii\db\ActiveRecord
     {
         return $this->RetailPrice;
     }
+
+    public function getFormatPrice()
+    {
+        return $this->RetailPrice . ' руб.';
+    }
+
 
     public function getDescription()
     {
@@ -252,5 +258,14 @@ class Goods extends \yii\db\ActiveRecord
     public function getName()
     {
         return $this->ProdName;
+    }
+
+    public function getAvailibilty()
+    {
+        if ($good->Stock) {
+            return 'Есть в наличии';
+        }
+
+        return 'Нет в наличии';
     }
 }
