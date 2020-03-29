@@ -219,6 +219,9 @@ use yii\widgets\Breadcrumbs;
                                 </div>
                             </div>
                         </div>
+
+                        <?php /*?>
+
                         <div class="form-group product__option">
                             <label class="product__option-label">Material</label>
                             <div class="input-radio-label">
@@ -238,6 +241,7 @@ use yii\widgets\Breadcrumbs;
                                 </div>
                             </div>
                         </div>
+                         <?php */?>
                         <div class="form-group product__option">
                             <label class="product__option-label"
                                    for="product-quantity">Количество</label>
@@ -252,7 +256,8 @@ use yii\widgets\Breadcrumbs;
                                     </div>
                                 </div>
                                 <div class="product__actions-item product__actions-item--addtocart">
-                                    <button class="btn btn-primary btn-lg">Добавить в корзину</button>
+                                    <button class="btn btn-primary btn-lg">Добавить в корзину
+                                    </button>
                                 </div>
                                 <div class="product__actions-item product__actions-item--wishlist">
                                     <button type="button"
@@ -306,11 +311,13 @@ use yii\widgets\Breadcrumbs;
             <div class="product-tabs__list">
                 <a href="#tab-description" class="product-tabs__item product-tabs__item--active">Описание</a>
                 <a href="#tab-specification" class="product-tabs__item">Характеристики</a>
+                <?php /*?>
                 <a href="#tab-reviews" class="product-tabs__item">Отзывы</a>
+                 <?php */ ?>
             </div>
             <div class="product-tabs__content">
                 <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
-                        <?= $good->Description ;?>
+                    <?= $good->Description; ?>
                 </div>
                 <div class="product-tabs__pane" id="tab-specification">
                     <div class="spec">
@@ -369,6 +376,7 @@ use yii\widgets\Breadcrumbs;
                         </div>
                     </div>
                 </div>
+                <?php /*?>
                 <div class="product-tabs__pane" id="tab-reviews">
                     <div class="reviews-view">
                         <div class="reviews-view__list">
@@ -771,6 +779,7 @@ use yii\widgets\Breadcrumbs;
                         </form>
                     </div>
                 </div>
+  <?php */ ?>
             </div>
         </div>
     </div>

@@ -157,12 +157,15 @@ use yii\widgets\Breadcrumbs;
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
+                                <?php /*?>
+
                                 <button class="topbar-dropdown__btn" type="button">
                                     Личный кабинет
                                     <svg width="7px" height="5px">
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
+                                 <?php */?>
                                 <div class="topbar-dropdown__body">
                                     <!-- .menu -->
                                     <div class="menu menu--layout--topbar ">
