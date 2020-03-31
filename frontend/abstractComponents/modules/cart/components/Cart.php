@@ -5,6 +5,7 @@ namespace frontend\abstractComponents\modules\cart\components;
 
 
 use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\helpers\CommonHelper;
 use Yii;
 use yii\base\Component;
 
@@ -101,7 +102,7 @@ class Cart extends Component
 
     public function returnFormatFullPrice()
     {
-        return number_format($this->returnCartFullPrice(), 0, '', ' ');
+        return CommonHelper::formatPrice($this->returnCartFullPrice());
     }
 
     public function countById($id)

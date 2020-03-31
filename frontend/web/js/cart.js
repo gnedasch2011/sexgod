@@ -12,31 +12,77 @@ let $gpButtonsAddInCart = $('.input-number'),
 ;
 
 
-$('.addInCart').on('click', function (e) {
-    e.preventDefault()
-    // var idItem = $(this).parent(".item").data('id')
-    let idItem = $(this).attr('data-id')
+// $('.addInCart').on('click', function (e) {
+//     e.preventDefault()
+//     // var idItem = $(this).parent(".item").data('id')
+//     let idItem = $(this).attr('data-id')
+//
+//     let dataItem = {"count": 1, "id": idItem};
+//     dataItem = JSON.stringify(dataItem);
+//
+//     addInSessionCart(dataItem)
+//     updatePriceInDetail();
+//     getCountItems();
+// })
 
-    let dataItem = {"count": 1, "id": idItem};
+// let returnIdItem = function () {
+//     return parseInt($('.itemInfo').data('id'));
+// }
+//
+// let returnCountItem = function () {
+//     return parseInt($gpCount.text())
+// }
+//
+// let returnPriceItem = function () {
+//     return parseInt($('.itemInfo').data('price'))
+// }
+
+
+
+$($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
+    e.preventDefault();
+
+    let target = $(e.target);
+    let id = $(target).parents($itemRow).attr('data-id');
+
+    $thisGpCount = $(target).parents($gpButtonsAddInCartClass).find($inputNumberInputClass);
+
+    let currentCount = parseInt($thisGpCount.val());
+
+    let dataItem = {"count": currentCount, "id": id};
+
+    console.log(dataItem);
     dataItem = JSON.stringify(dataItem);
 
-    addInSessionCart(dataItem)
-    updatePriceInDetail();
-    getCountItems();
+    //контекст куда вкидывать цену
+    let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
+
+    if (addInSessionCart(dataItem)) {
+        getTotalPriceOneGood(id, totalPriceOneGoodClass);
+    }
+
+    updateFullPriceInCart('.fullTotalCartClass');
+    getCountItems('.getCountItems');
 })
 
-let returnIdItem = function () {
-    return parseInt($('.itemInfo').data('id'));
-}
 
-let returnCountItem = function () {
-    return parseInt($gpCount.text())
-}
+/**
+ * Обновить цену у товара
+ * @param idGood
+ * @param totalPriceOneGoodClass
+ */
+let getTotalPriceOneGood = function (idGood, totalPriceOneGoodClass) {
 
-let returnPriceItem = function () {
-    return parseInt($('.itemInfo').data('price'))
-}
+    $.ajax({
+        url: '/cart/get-total-price-one-good/',
+        method: "post",
+        data: {idGood: idGood},
 
+        success: function (data) {
+            totalPriceOneGoodClass.html(data)
+        }
+    });
+}
 
 let updatePriceInDetail = function (target) {
 
@@ -45,26 +91,25 @@ let updatePriceInDetail = function (target) {
     $priceDetail.text(price * returnCountItem() + " ₽")
 }
 
-let updateFullPriceInCart = function () {
+let updateFullPriceInCart = function (fullTotalCartClass) {
     $.ajax({
         url: '/cart/get-full-price/',
         method: "post",
 
         success: function (data) {
-            $('.fullPriceInCart').text(data);
+            $(fullTotalCartClass).text(data + ' руб.')
         }
     });
 
 }
 
-let getCountItems = function () {
+let getCountItems = function (getCountItems) {
     $.ajax({
         url: '/cart/get-count-items/',
         method: "post",
 
         success: function (data) {
-            console.log(data);
-            $('.getCountItems').text(data);
+            $(getCountItems).text(data);
         }
     });
 }
@@ -78,7 +123,7 @@ let addInSessionCart = function (dataItem) {
         data: {dataItem: dataItem},
 
         success: function (data) {
-            console.log(data);
+
             // updateCart()
             // updateFullPriceInCart();
             return true;
@@ -89,42 +134,6 @@ let addInSessionCart = function (dataItem) {
 }
 
 
-$($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
-    e.preventDefault();
-    
-    let target = $(e.target);
-    let id = $(target).parents($itemRow).attr('data-id');
-    
-    $thisGpCount = $(target).parents($gpButtonsAddInCartClass).find($inputNumberInputClass);
-
-    let currentCount = parseInt($thisGpCount.val());
-    
-    let dataItem = {"count": currentCount, "id": id};
-        
-    console.log(dataItem);
-    dataItem = JSON.stringify(dataItem);
-
-    //контекст куда вкидывать цену
-    let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
-
-    if(addInSessionCart(dataItem)){
-        getTotalPriceOneGood(id, totalPriceOneGoodClass);
-    }
-
-})
-
-let getTotalPriceOneGood = function (idGood, totalPriceOneGoodClass) {
-
-    $.ajax({
-        url: '/cart/get-total-price-one-good/',
-        method: "post",
-        data: {idGood: idGood},
-
-        success: function (data) {
-            totalPriceOneGoodClass.html(data)
-        }
-    });
-}
 
 let getCartInfo = function () {
     $.ajax({
@@ -231,14 +240,6 @@ let updateCart = function () {
         }
     });
 }
-
-// $(document).on('click', '.header_cart', function () {
-//     $('.cart-detail').toggle()
-// })
-//
-// $(document).on('mouseleave', '.header_cart', function () {
-//     $('.cart-detail').hide()
-// })
 
 $(document).on('click', '.jsClearCart', function () {
     $.ajax({

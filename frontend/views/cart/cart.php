@@ -16,10 +16,10 @@
                 <?php foreach ($goodsInCart as $good): ?>
                     <tr class="cart-table__row" data-id=<?= $good->id; ?>>
                         <td class="cart-table__column cart-table__column--image">
-                            <a href=""><img src="<?= $good->mainImg; ?>" alt=""></a>
+                            <a href="<?= $good->detailUrl ;?>"><img src="<?= $good->mainImg; ?>" alt=""></a>
                         </td>
                         <td class="cart-table__column cart-table__column--product">
-                            <a href="" class="cart-table__product-name"><?= $good->name; ?></a>
+                            <a href="<?= $good->detailUrl ;?>" class="cart-table__product-name"><?= $good->name; ?></a>
                             <ul class="cart-table__options">
                                 <li>Color: Yellow</li>
                                 <li>Material: еуые</li>
@@ -73,7 +73,7 @@
                                 <thead class="cart__totals-header">
                                 <tr>
                                     <th>Промежуточный итог:</th>
-                                    <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
                                 </tr>
                                 </thead>
                                 <tbody class="cart__totals-body">
@@ -94,7 +94,7 @@
                                 <tfoot class="cart__totals-footer">
                                 <tr>
                                     <th>Итого:</th>
-                                    <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
                                 </tr>
                                 </tfoot>
                             </table>

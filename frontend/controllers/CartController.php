@@ -108,8 +108,7 @@ class CartController extends Controller
 
     public function actionGetFullPrice()
     {
-        $cart = new Cart();
-        return $cart->returnFormatFullPrice();
+        return \Yii::$app->cart->returnFormatFullPrice();
     }
 
     public function actionGetCountItems()

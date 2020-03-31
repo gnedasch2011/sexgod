@@ -243,6 +243,13 @@ class Goods extends \yii\db\ActiveRecord
         return $this->mainImg;
     }
 
+
+    public function getDetailUrl()
+    {
+        return "/product/" . $this->slug;
+    }
+
+
     public function getParentCategoryUrl(): array
     {
         $GoodsCategory = $this->goodsCategory;
