@@ -38,7 +38,7 @@ return [
 
     'components' => [
         'cart' => [
-            'class' => 'frontend\abstractComponents\components\Cart'
+            'class' => 'frontend\abstractComponents\modules\cart\components\Cart'
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache', // Используем хранилище yii\caching\FileCache

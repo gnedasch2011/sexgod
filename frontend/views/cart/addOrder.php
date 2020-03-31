@@ -5,16 +5,20 @@
         <td>Цена</td>
         <td>Кол-во</td>
     </tr>
-    <?php
-    $number = 1;
-    foreach($idCountPrices as $id=>$count):?>
-        <tr>
-            <td><?= $number++ ;?>.</td>
-            <td><?= \app\models\sexgod\good\Goods::findOne($id)->name ;?></td>
-            <td><?= \app\models\sexgod\good\Goods::findOne($id)->price  ;?> руб.</td>
-            <td><?= $count ;?></td>
-        </tr>
-      <?php endforeach;?>
+    
+    <?php if($idCountPrices):?>
+        <?php
+        $number = 1;
+        foreach($idCountPrices as $id=>$count):?>
+            <tr>
+                <td><?= $number++ ;?>.</td>
+                <td><?= \app\models\sexgod\good\Goods::findOne($id)->name ;?></td>
+                <td><?= \app\models\sexgod\good\Goods::findOne($id)->price  ;?> руб.</td>
+                <td><?= $count ;?></td>
+            </tr>
+        <?php endforeach;?>
+    <?php endif;?>
+
     <tr>
         <td colspan="2" class="text-center">ИТОГО:</td>
         <td><?= $cart->returnFormatFullPrice() ;?> руб.</td>

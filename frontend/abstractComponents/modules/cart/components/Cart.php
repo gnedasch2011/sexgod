@@ -1,7 +1,7 @@
 <?php
 
 
-namespace frontend\abstractComponents\components;
+namespace frontend\abstractComponents\modules\cart\components;
 
 
 use app\models\sexgod\good\Goods;
@@ -19,14 +19,21 @@ class Cart extends Component
         return $this->checkGoodInCartArray($idGood);
     }
 
-    public function getTest()
-    {
 
+    public function sessionInit()
+    {
+        $session = Yii::$app->session;
+
+        if (!$session->isActive) {
+            $session->open();
+        }
+        return $session;
     }
+
 
     public function __construct()
     {
-        $session = \app\models\Cart::sessionInit();
+        $session = $this->sessionInit();
         $cart = isset($session['cart']) ? $_SESSION['cart'] : [];
         $this->cart = $cart;
     }
@@ -44,16 +51,6 @@ class Cart extends Component
         return [];
     }
 
-    public static function sessionInit()
-    {
-        $session = Yii::$app->session;
-
-        if (!$session->isActive) {
-            $session->open();
-        }
-        return $session;
-    }
-
     public function getIdsProductsInCart()
     {
         if ($this->cart) {
@@ -69,7 +66,12 @@ class Cart extends Component
         return Goods::find()->where(['id' => $this->getIdsProductsInCart()])->all();
 
     }
-
+    
+    public function getTotalPriceOneGood()
+    {
+        
+    }
+    
     public function returnCartFullPrice()
     {
         $fullPrice = 0;
@@ -83,6 +85,19 @@ class Cart extends Component
 
         return $fullPrice;
     }
+
+
+
+
+    public function getFullPriceOneGood($goodId)
+    {
+        $countGood = $this->cart[$goodId];
+
+        $total = $countGood * Goods::findOne($goodId)->price;
+
+        return $total;
+    }
+
 
     public function returnFormatFullPrice()
     {
@@ -121,6 +136,40 @@ class Cart extends Component
         return true;
 
     }
+
+    public function addInSessionCart()
+    {
+        $session = $this->sessionInit();
+      
+        $dataForCart = $this->getDataFromPost();
+
+        if (empty($this->cart)) {
+            $session['cart'] = [
+                $dataForCart['id'] => $dataForCart['count']
+            ];
+        }
+        
+        if (!empty($this->cart)) {
+            $this->cart[$dataForCart['id']] = $dataForCart['count'];
+            $session->set('cart', $this->cart);
+        }
+
+        return true;
+    }
+
+    public function getDataFromPost()
+    {
+        $request = Yii::$app->request;
+        if ($request->isAjax) {
+            if ($request->post('dataItem')) {
+                $dataItem = json_decode($request->post('dataItem'));
+                $dataItem = (array)$dataItem;
+                return $dataItem;
+            }
+        }
+        return [];
+    }
+
 
 
 }

@@ -1,3 +1,17 @@
+let $gpButtonsAddInCart = $('.input-number'),
+    $priceDetail = $('.priceDetail'),
+    priceItem = parseInt($('.itemInfo').data('price')),
+    $gpCount = $('.input-number__input'),
+
+    $addCountItem = $('.input-number__add,.input-number__sub '),
+    $removeCountItem = $('.input-number__sub'),
+
+    $itemRow = '.cart-table__row',
+    $gpButtonsAddInCartClass = '.input-number',
+    $inputNumberInputClass = '.input-number__input'
+;
+
+
 $('.addInCart').on('click', function (e) {
     e.preventDefault()
     // var idItem = $(this).parent(".item").data('id')
@@ -10,12 +24,6 @@ $('.addInCart').on('click', function (e) {
     updatePriceInDetail();
     getCountItems();
 })
-
-
-let $gpButtons = $('.gp-buttons'),
-    $priceDetail = $('.priceDetail'),
-    priceItem = parseInt($('.itemInfo').data('price')),
-    $gpCount = $('.gp-count')
 
 let returnIdItem = function () {
     return parseInt($('.itemInfo').data('id'));
@@ -30,13 +38,11 @@ let returnPriceItem = function () {
 }
 
 
-let updatePriceInDetail = function () {
+let updatePriceInDetail = function (target) {
 
-    if (isNaN(priceItem)) {
-        return false;
-    }
+    let price = $(target).parents('.cart-table__row').find('.cart-table__column--price')
 
-    $priceDetail.text(priceItem * returnCountItem() + " ₽")
+    $priceDetail.text(price * returnCountItem() + " ₽")
 }
 
 let updateFullPriceInCart = function () {
@@ -71,34 +77,69 @@ let addInSessionCart = function (dataItem) {
         dataType: 'json',
         data: {dataItem: dataItem},
 
-        success: function () {
-            updateCart()
-            updateFullPriceInCart();
+        success: function (data) {
+            console.log(data);
+            // updateCart()
+            // updateFullPriceInCart();
+            return true;
+        }
+    });
+
+    return true;
+}
+
+
+$($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
+    e.preventDefault();
+    
+    let target = $(e.target);
+    let id = $(target).parents($itemRow).attr('data-id');
+    
+    $thisGpCount = $(target).parents($gpButtonsAddInCartClass).find($inputNumberInputClass);
+
+    let currentCount = parseInt($thisGpCount.val());
+    
+    let dataItem = {"count": currentCount, "id": id};
+        
+    console.log(dataItem);
+    dataItem = JSON.stringify(dataItem);
+
+    //контекст куда вкидывать цену
+    let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
+
+    if(addInSessionCart(dataItem)){
+        getTotalPriceOneGood(id, totalPriceOneGoodClass);
+    }
+
+})
+
+let getTotalPriceOneGood = function (idGood, totalPriceOneGoodClass) {
+
+    $.ajax({
+        url: '/cart/get-total-price-one-good/',
+        method: "post",
+        data: {idGood: idGood},
+
+        success: function (data) {
+            totalPriceOneGoodClass.html(data)
+        }
+    });
+}
+
+let getCartInfo = function () {
+    $.ajax({
+        url: '/cart/get-cart-info',
+        method: "post",
+        data: data,
+
+        success: function (data) {
+            console.log(data);
         }
     });
 }
 
 
-$('.gp-plus', $gpButtons).on('click', function (e) {
-
-    e.preventDefault();
-    let target = $(e.target);
-    let id = $(target).parents('.itemCart').attr('data-id');
-
-    $thisGpCount = $(target).parents('.gp-buttons').find('.gp-count');
-    let currentCount = parseInt($thisGpCount.text());
-
-    currentCount++
-    $thisGpCount.text(currentCount)
-
-    let dataItem = {"count": currentCount, "id": id};
-    dataItem = JSON.stringify(dataItem);
-
-    addInSessionCart(dataItem)
-    updatePriceInDetail();
-})
-
-$('.gp-minus', $gpButtons).on('click', function (e) {
+$('.gp-minus', $gpButtonsAddInCart).on('click', function (e) {
 
     let target = $(e.target);
     let id = $(target).parents('.itemCart').attr('data-id');
@@ -178,7 +219,7 @@ $('.addItemInCart').on('click', function (e) {
 
 
 let updateCart = function () {
-    console.log('fsdf');
+
     return false;
     $.ajax({
         url: '/cart/ajax-update-cart/',
@@ -245,23 +286,31 @@ $('.btn_form_call').on('click', function (e) {
     });
 })
 
+$(document).on('click', '.openCheckoutJs', function (e) {
+    e.preventDefault();
+    $(".openCheckoutJs").show();
+    $(".cartBlockJs").hide();
+})
+
+
 $(document).on('click', '.oneClickAndDisabled', function (e) {
     e.preventDefault();
-    
-    if( $(this).hasClass('goodsInCart')){
+
+    if ($(this).hasClass('goodsInCart')) {
         console.log($(this));
         window.location.href = "/cart/";
     }
-    
+
     $(this).addClass('goodsInCart').text('Добавлено');
 
 })
 
 $(function () {
     //2. Получить элемент, к которому необходимо добавить маску
-    $("#callleadform-phone").mask("8(999) 999-9999");
+    // $("#callleadform-phone").mask("8(999) 999-9999");
 });
 
+
 (function () {
-    $("#order-phone").mask("8(999) 999-9999");
+    // $("#order-phone").mask("8(999) 999-9999");
 })()

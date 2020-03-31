@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 
+use frontend\abstractComponents\helpers\CommonHelper;
+use Yii;
 use yii\web\Controller;
 use app\models\Cart;
 use app\models\sexgod\good\Goods;
@@ -16,14 +18,16 @@ class CartController extends Controller
     public function actionIndex()
     {
         $this->layout = 'red_stroyka/main';
-        $cart = new Cart();
-        $goodsInCart = $cart->getProductForCart();
 
-        $order = new \app\modules\cart\models\Order();
+        $cart = \Yii::$app->cart;
+
+        $goodsInCart = $cart->getProductForCart();
+        $order = new \frontend\abstractComponents\modules\order\models\Order();
+
+        $this->view->params['h1'] = 'Корзина';
 
         if ($order->load(\Yii::$app->request->post())) {
-
-            $order->arr_product = serialize($cart->cart);
+            $order->arr_product = serialize($goodsInCart->cart);
 
             if ($order->save()) {
 
@@ -53,47 +57,41 @@ class CartController extends Controller
 
     public function actionAddInSessionCart()
     {
-        $dataForCart = Cart::geInitAjaxData();
-        $session = Cart::sessionInit();
+        $dataForCart = \Yii::$app->cart->addInSessionCart();
 
-        $cart = new Cart();
-        $cart = $cart->cart;
-
-        if (empty($cart)) {
-            $session['cart'] = [
-                $dataForCart['id'] => $dataForCart['count']
-            ];
-        }
-        if (!empty($cart)) {
-
-            if (isset($cart[$dataForCart['id']])) {
-                $cart[$dataForCart['id']] = $dataForCart['count'];
-                $session->set('cart', $cart);
-            } else {
-                $cart[$dataForCart['id']] = $dataForCart['count'];
-                $session->set('cart', $cart);
-            }
-
-        }
-        echo "<pre>";
-        print_r($cart);
-        die();
-
-        return true;
+        return \Yii::$app->cart->addInSessionCart();
     }
+
 
     public function actionAjaxClear()
     {
-        $session = Cart::sessionInit();
+        $session = \Yii::$app->cart->sessionInit();
         $session->destroy();
 
         return true;
     }
 
+    public function actionGetTotalPriceOneGood()
+    {
+        $idGood = \Yii::$app->request->post('idGood');
+        $totalPriceOneGood = \Yii::$app->cart->getFullPriceOneGood($idGood);
+
+        return CommonHelper::formatPrice($totalPriceOneGood) . ' руб.';
+    }
+
     public function actionAjaxUpdateCart()
     {
         $this->enableCsrfValidation = false;
+
         return $this->renderPartial('/cart/headerCartWidget');
+    }
+
+    public function actionGetCartInfo()
+    {
+        echo "<pre>";
+        print_r(\Yii::$app->cart);
+        die();
+        return 'test';
     }
 
     public function actionCartDeleteItem()
@@ -136,7 +134,9 @@ class CartController extends Controller
     public function actionTest()
     {
         $cart = new Cart();
-        echo "<pre>"; print_r($cart);die();
+        echo "<pre>";
+        print_r($cart);
+        die();
         echo "<pre>";
         print_r($cart->checkGoodsInCart(383802));
         die();
