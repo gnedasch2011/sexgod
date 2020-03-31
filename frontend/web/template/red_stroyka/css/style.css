@@ -16701,4 +16701,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   padding: 28px;
 }
 
+.checkout_block_hidden{
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

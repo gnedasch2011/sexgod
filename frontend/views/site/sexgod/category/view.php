@@ -987,7 +987,7 @@ use yii\widgets\Breadcrumbs;
                                     <span class="filters-button__counter">3</span>
                                 </button>
                             </div>
-                            <!--   <div class="view-options__layout">
+                         <div class="view-options__layout">
                                     <div class="layout-switcher">
                                         <div class="layout-switcher__list">
                                             <button data-layout="grid-3-sidebar"
@@ -1015,7 +1015,7 @@ use yii\widgets\Breadcrumbs;
                                         </div>
                                     </div>
                                 </div>
-                                <div class="view-options__legend">Showing 6 of 98 products</div>-->
+                                <div class="view-options__legend">Showing 6 of 98 products</div>
                             <div class="view-options__divider"></div>
                             <div class="view-options__control">
                                 <label for="">Сортировка</label>

@@ -166,7 +166,7 @@ class SiteController extends Controller
         $this->title = $category->maskForTitle;
         $keywords = $category->name;
 
-        $this->view->params['h1'] = $category->name;
+        $this->view->params['h1'] = $category->h1;
 
         $description = trim($category->descriptionMeta);
 

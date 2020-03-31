@@ -4,6 +4,7 @@ namespace app\models\sexgod\good;
 
 use app\models\sexgod\category\CategoryBase;
 use app\models\sexgod\good\GoodsCategory;
+use frontend\abstractComponents\helpers\CommonHelper;
 use Yii;
 
 /**
@@ -163,7 +164,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getFormatPrice()
     {
-        return $this->RetailPrice . ' руб.';
+        return CommonHelper::formatPrice($this->RetailPrice) . ' руб.';
     }
 
 
@@ -241,6 +242,13 @@ class Goods extends \yii\db\ActiveRecord
     {
         return $this->mainImg;
     }
+
+
+    public function getDetailUrl()
+    {
+        return "/product/" . $this->slug;
+    }
+
 
     public function getParentCategoryUrl(): array
     {

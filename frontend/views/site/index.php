@@ -5850,7 +5850,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-1.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-1.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5874,7 +5874,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-2.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-2.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5898,7 +5898,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-3.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-3.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5922,7 +5922,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-4.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-4.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5946,7 +5946,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-5.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-5.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5970,7 +5970,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-6.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-6.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -5994,7 +5994,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-7.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-7.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -6018,7 +6018,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-8.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-8.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -6042,7 +6042,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-9.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-9.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
@@ -6066,7 +6066,7 @@ use yii\helpers\Html;
                 <div class="post-card  ">
                     <div class="post-card__image">
                         <a href="">
-                            <img src="images/posts/post-10.jpg" alt="">
+                            <img src="template/red_stroyka/images/posts/post-10.jpg" alt="">
                         </a>
                     </div>
                     <div class="post-card__info">
