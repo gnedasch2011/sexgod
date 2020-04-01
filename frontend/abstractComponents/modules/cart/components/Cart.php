@@ -28,6 +28,7 @@ class Cart extends Component
         if (!$session->isActive) {
             $session->open();
         }
+
         return $session;
     }
 
@@ -131,8 +132,9 @@ class Cart extends Component
 
     public function clear()
     {
-        $session = Cart::sessionInit();
+        $session = self::sessionInit();
         $cart = isset($session['cart']) ? $_SESSION['cart'] : [];
+
         $session->destroy();
         return true;
 

@@ -256,7 +256,9 @@ use yii\widgets\Breadcrumbs;
                                     </div>
                                 </div>
                                 <div class="product__actions-item product__actions-item--addtocart">
-                                    <button class="btn btn-primary btn-lg">Добавить в корзину
+                                    <button
+                                            data-id = <?= $good->aID ;?>
+                                            class="btn btn-primary btn-lg addInCartJs oneClickAndDisabled">Добавить в корзину
                                     </button>
                                 </div>
                                 <div class="product__actions-item product__actions-item--wishlist">

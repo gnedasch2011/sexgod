@@ -144,6 +144,10 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
+        if (\Yii::$app->request->get('clearCart')) {
+            \Yii::$app->cart->clear();
+        }
+
         $this->layout = 'red_stroyka/main';
 
         $categoryName = str_replace("/", '', $categoryName);
@@ -160,7 +164,6 @@ class SiteController extends Controller
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
 
 
-
         //Для Сео
         $this->categoryName = $categoryName;
         $this->title = $category->maskForTitle;
@@ -173,7 +176,6 @@ class SiteController extends Controller
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
-
 
 
         //Хлебные крошки
@@ -191,7 +193,6 @@ class SiteController extends Controller
         ];
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
-
 
 
         //Плитки тегов
