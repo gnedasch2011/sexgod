@@ -16,6 +16,7 @@ let $gpButtonsAddInCart = $('.input-number'),
 
 $($addInCartJs).on('click', function (e) {
     e.preventDefault()
+
     let idItem = $(this).attr('data-id')
 
     let dataItem = {"count": 1, "id": idItem};
@@ -48,8 +49,8 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
     e.preventDefault();
 
     let target = $(e.target);
-    let id = $(target).parents($itemRow).attr('data-id');
 
+    let id = $(target).parents($gpButtonsAddInCartClass).attr('data-id');
     $thisGpCount = $(target).parents($gpButtonsAddInCartClass).find($inputNumberInputClass);
 
     let currentCount = parseInt($thisGpCount.val());

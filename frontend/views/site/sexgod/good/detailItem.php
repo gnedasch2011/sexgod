@@ -247,18 +247,20 @@ use yii\widgets\Breadcrumbs;
                                    for="product-quantity">Количество</label>
                             <div class="product__actions">
                                 <div class="product__actions-item">
-                                    <div class="input-number product__quantity">
+                                    <div class="input-number product__quantity"
+                                         data-id = "<?= $good->aID ;?>"
+                                    >
                                         <input id="product-quantity"
                                                class="input-number__input form-control form-control-lg"
-                                               type="number" min="1" value="1">
+                                               type="number" min="1" value="<?= Yii::$app->cart->countById($good->id); ?>">
                                         <div class="input-number__add"></div>
                                         <div class="input-number__sub"></div>
                                     </div>
                                 </div>
                                 <div class="product__actions-item product__actions-item--addtocart">
                                     <button
-                                            data-id = <?= $good->aID ;?>
-                                            class="btn btn-primary btn-lg addInCartJs oneClickAndDisabled">Добавить в корзину
+                                            data-id = "<?= $good->aID ;?>"
+                                            class="btn btn-primary btn-lg addInCartJs oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Добавить в корзину'; ?>
                                     </button>
                                 </div>
                                 <div class="product__actions-item product__actions-item--wishlist">
