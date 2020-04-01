@@ -1,4 +1,6 @@
 let $gpButtonsAddInCart = $('.input-number'),
+    $addInCartJs = '.addInCartJs';//класс добавления в корзину
+
     $priceDetail = $('.priceDetail'),
     priceItem = parseInt($('.itemInfo').data('price')),
     $gpCount = $('.input-number__input'),
@@ -12,39 +14,43 @@ let $gpButtonsAddInCart = $('.input-number'),
 ;
 
 
-// $('.addInCart').on('click', function (e) {
-//     e.preventDefault()
-//     // var idItem = $(this).parent(".item").data('id')
-//     let idItem = $(this).attr('data-id')
-//
-//     let dataItem = {"count": 1, "id": idItem};
-//     dataItem = JSON.stringify(dataItem);
-//
-//     addInSessionCart(dataItem)
-//     updatePriceInDetail();
-//     getCountItems();
-// })
+$($addInCartJs).on('click', function (e) {
+    e.preventDefault()
 
-// let returnIdItem = function () {
-//     return parseInt($('.itemInfo').data('id'));
-// }
-//
-// let returnCountItem = function () {
-//     return parseInt($gpCount.text())
-// }
-//
-// let returnPriceItem = function () {
-//     return parseInt($('.itemInfo').data('price'))
-// }
+    let idItem = $(this).attr('data-id')
+
+    let dataItem = {"count": 1, "id": idItem};
+    dataItem = JSON.stringify(dataItem);
+
+    addInSessionCart(dataItem)
+    getCountItems('.getCountItems');
+    testingCart();
+})
 
 
+let testingCart = function () {
+    setTimeout(
+        $.ajax({
+            url: '/cart/test-cart/',
+            method: "post",
+            // data: data,
+
+            success: function (data) {
+                console.log(data);
+            }
+        }), 100
+    )
+
+}
+
+testingCart();
 
 $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
     e.preventDefault();
 
     let target = $(e.target);
-    let id = $(target).parents($itemRow).attr('data-id');
 
+    let id = $(target).parents($gpButtonsAddInCartClass).attr('data-id');
     $thisGpCount = $(target).parents($gpButtonsAddInCartClass).find($inputNumberInputClass);
 
     let currentCount = parseInt($thisGpCount.val());
@@ -63,6 +69,7 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
 
     updateFullPriceInCart('.fullTotalCartClass');
     getCountItems('.getCountItems');
+    testingCart();
 })
 
 
@@ -132,7 +139,6 @@ let addInSessionCart = function (dataItem) {
 
     return true;
 }
-
 
 
 let getCartInfo = function () {
@@ -218,13 +224,6 @@ $('.addItemInCart').on('click', function (e) {
         }
     });
 })
-
-
-// $(document).on('click','.addInCart',function (e) {
-//        e.preventDefault();
-//        let productId = $(this).attr('data-id')
-//     console.log(productId);
-// })
 
 
 let updateCart = function () {

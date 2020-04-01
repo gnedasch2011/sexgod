@@ -139,7 +139,7 @@ use yii\helpers\Html;
                     <?= $good->price; ?> руб.
                 </div>
                 <div class="product-card__buttons">
-                    <button class="btn btn-primary prod1uct-card__addtocart addInCart oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"
+                    <button class="btn btn-primary prod1uct-card__addtocart addInCartJs oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"
                             data-id="<?= $good->aID; ?>"
                             type="button"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Купить'; ?>
                     </button>

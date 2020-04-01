@@ -16,10 +16,12 @@
                 <?php foreach ($goodsInCart as $good): ?>
                     <tr class="cart-table__row" data-id=<?= $good->id; ?>>
                         <td class="cart-table__column cart-table__column--image">
-                            <a href="<?= $good->detailUrl ;?>"><img src="<?= $good->mainImg; ?>" alt=""></a>
+                            <a href="<?= $good->detailUrl; ?>"><img src="<?= $good->mainImg; ?>"
+                                                                    alt=""></a>
                         </td>
                         <td class="cart-table__column cart-table__column--product">
-                            <a href="<?= $good->detailUrl ;?>" class="cart-table__product-name"><?= $good->name; ?></a>
+                            <a href="<?= $good->detailUrl; ?>"
+                               class="cart-table__product-name"><?= $good->name; ?></a>
                             <ul class="cart-table__options">
                                 <li>Color: Yellow</li>
                                 <li>Material: еуые</li>
@@ -30,15 +32,19 @@
                         </td>
                         <td class="cart-table__column cart-table__column--quantity"
                             data-title="Quantity">
-                            <div class="input-number">
+                            <div class="input-number"
+                                 data-id="<?= $good->aID; ?>"
+                            >
                                 <input class="form-control input-number__input" type="number"
-                                       min="1" value="<?= $cart->countById($good->id); ?>">
+                                       min="1" value="<?= Yii::$app->cart->countById($good->id); ?>">
                                 <div class="input-number__add"></div>
                                 <div class="input-number__sub"></div>
                             </div>
                         </td>
                         <td class="cart-table__column cart-table__column--total" data-title="Итого">
-                            <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice( $cart->getFullPriceOneGood($good->id)) ;?> руб.</td>
+                            <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->getFullPriceOneGood($good->id)); ?>
+                            руб.
+                        </td>
                         <td class="cart-table__column cart-table__column--remove">
                             <button type="button" class="btn btn-light btn-sm btn-svg-icon">
                                 <svg width="12px" height="12px">
@@ -61,7 +67,7 @@
                 </form>
                 <div class="cart__buttons">
                     <a href="/catalog/seks-igrushki/" class="btn btn-light">Продолжить покупки</a>
-<!--                    <a href="" class="btn btn-primary cart__update-button">Update Cart</a>-->
+                    <!--                    <a href="" class="btn btn-primary cart__update-button">Update Cart</a>-->
                 </div>
             </div>
             <div class="row justify-content-end pt-5">
@@ -73,28 +79,33 @@
                                 <thead class="cart__totals-header">
                                 <tr>
                                     <th>Промежуточный итог:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?>
+                                        руб.
+                                    </td>
                                 </tr>
                                 </thead>
                                 <tbody class="cart__totals-body">
                                 <tr>
                                     <th>Доставка:</th>
                                     <td>
-                                       0 руб.
-                                        <div class="cart__calc-shipping"><a href="#">Посчитать доставку</a></div>
+                                        0 руб.
+                                        <div class="cart__calc-shipping"><a href="#">Посчитать
+                                                доставку</a></div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Налог:</th>
                                     <td>
-                                       0 руб.
+                                        0 руб.
                                     </td>
                                 </tr>
                                 </tbody>
                                 <tfoot class="cart__totals-footer">
                                 <tr>
                                     <th>Итого:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?> руб.</td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?>
+                                        руб.
+                                    </td>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -118,7 +129,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-3">
-                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click here to login</a></div>
+                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click
+                            here to login</a></div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="card mb-lg-0">
@@ -127,20 +139,25 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="checkout-first-name">First Name</label>
-                                    <input type="text" class="form-control" id="checkout-first-name" placeholder="First Name">
+                                    <input type="text" class="form-control" id="checkout-first-name"
+                                           placeholder="First Name">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="checkout-last-name">Last Name</label>
-                                    <input type="text" class="form-control" id="checkout-last-name" placeholder="Last Name">
+                                    <input type="text" class="form-control" id="checkout-last-name"
+                                           placeholder="Last Name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="checkout-company-name">Company Name <span class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="checkout-company-name" placeholder="Company Name">
+                                <label for="checkout-company-name">Company Name <span
+                                            class="text-muted">(Optional)</span></label>
+                                <input type="text" class="form-control" id="checkout-company-name"
+                                       placeholder="Company Name">
                             </div>
                             <div class="form-group">
                                 <label for="checkout-country">Country</label>
-                                <select id="checkout-country" class="form-control form-control-select2">
+                                <select id="checkout-country"
+                                        class="form-control form-control-select2">
                                     <option>Select a country...</option>
                                     <option>United States</option>
                                     <option>Russia</option>
@@ -153,10 +170,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="checkout-street-address">Street Address</label>
-                                <input type="text" class="form-control" id="checkout-street-address" placeholder="Street Address">
+                                <input type="text" class="form-control" id="checkout-street-address"
+                                       placeholder="Street Address">
                             </div>
                             <div class="form-group">
-                                <label for="checkout-address">Apartment, suite, unit etc. <span class="text-muted">(Optional)</span></label>
+                                <label for="checkout-address">Apartment, suite, unit etc. <span
+                                            class="text-muted">(Optional)</span></label>
                                 <input type="text" class="form-control" id="checkout-address">
                             </div>
                             <div class="form-group">
@@ -174,25 +193,31 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="checkout-email">Email address</label>
-                                    <input type="email" class="form-control" id="checkout-email" placeholder="Email address">
+                                    <input type="email" class="form-control" id="checkout-email"
+                                           placeholder="Email address">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="checkout-phone">Phone</label>
-                                    <input type="text" class="form-control" id="checkout-phone" placeholder="Phone">
+                                    <input type="text" class="form-control" id="checkout-phone"
+                                           placeholder="Phone">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
-                                                    <input class="input-check__input" type="checkbox" id="checkout-create-account">
+                                                    <input class="input-check__input"
+                                                           type="checkbox"
+                                                           id="checkout-create-account">
                                                     <span class="input-check__box"></span>
-                                                    <svg class="input-check__icon" width="9px" height="7px">
+                                                    <svg class="input-check__icon" width="9px"
+                                                         height="7px">
                                                         <use xlink:href="images/sprite.svg#check-9x7"></use>
                                                     </svg>
                                                 </span>
                                             </span>
-                                    <label class="form-check-label" for="checkout-create-account">Create an account?</label>
+                                    <label class="form-check-label" for="checkout-create-account">Create
+                                        an account?</label>
                                 </div>
                             </div>
                         </div>
@@ -203,19 +228,25 @@
                                 <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
-                                                    <input class="input-check__input" type="checkbox" id="checkout-different-address">
+                                                    <input class="input-check__input"
+                                                           type="checkbox"
+                                                           id="checkout-different-address">
                                                     <span class="input-check__box"></span>
-                                                    <svg class="input-check__icon" width="9px" height="7px">
+                                                    <svg class="input-check__icon" width="9px"
+                                                         height="7px">
                                                         <use xlink:href="images/sprite.svg#check-9x7"></use>
                                                     </svg>
                                                 </span>
                                             </span>
-                                    <label class="form-check-label" for="checkout-different-address">Ship to a different address?</label>
+                                    <label class="form-check-label"
+                                           for="checkout-different-address">Ship to a different
+                                        address?</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="checkout-comment">Order notes <span class="text-muted">(Optional)</span></label>
-                                <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
+                                <textarea id="checkout-comment" class="form-control"
+                                          rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -272,7 +303,9 @@
                                         <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked>
+                                                            <input class="input-radio__input"
+                                                                   name="checkout_payment_method"
+                                                                   type="radio" checked>
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
@@ -280,8 +313,10 @@
                                         </label>
                                         <div class="payment-methods__item-container">
                                             <div class="payment-methods__item-description text-muted">
-                                                Make your payment directly into our bank account. Please use your Order ID as the payment
-                                                reference. Your order will not be shipped until the funds have cleared in our account.
+                                                Make your payment directly into our bank account.
+                                                Please use your Order ID as the payment
+                                                reference. Your order will not be shipped until the
+                                                funds have cleared in our account.
                                             </div>
                                         </div>
                                     </li>
@@ -289,7 +324,9 @@
                                         <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <input class="input-radio__input"
+                                                                   name="checkout_payment_method"
+                                                                   type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
@@ -297,7 +334,8 @@
                                         </label>
                                         <div class="payment-methods__item-container">
                                             <div class="payment-methods__item-description text-muted">
-                                                Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+                                                Please send a check to Store Name, Store Street,
+                                                Store Town, Store State / County, Store Postcode.
                                             </div>
                                         </div>
                                     </li>
@@ -305,7 +343,9 @@
                                         <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <input class="input-radio__input"
+                                                                   name="checkout_payment_method"
+                                                                   type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
@@ -321,7 +361,9 @@
                                         <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <input class="input-radio__input"
+                                                                   name="checkout_payment_method"
+                                                                   type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
@@ -329,7 +371,8 @@
                                         </label>
                                         <div class="payment-methods__item-container">
                                             <div class="payment-methods__item-description text-muted">
-                                                Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+                                                Pay via PayPal; you can pay with your credit card if
+                                                you don’t have a PayPal account.
                                             </div>
                                         </div>
                                     </li>
@@ -339,19 +382,25 @@
                                 <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
-                                                    <input class="input-check__input" type="checkbox" id="checkout-terms">
+                                                    <input class="input-check__input"
+                                                           type="checkbox" id="checkout-terms">
                                                     <span class="input-check__box"></span>
-                                                    <svg class="input-check__icon" width="9px" height="7px">
+                                                    <svg class="input-check__icon" width="9px"
+                                                         height="7px">
                                                         <use xlink:href="images/sprite.svg#check-9x7"></use>
                                                     </svg>
                                                 </span>
                                             </span>
                                     <label class="form-check-label" for="checkout-terms">
-                                        I have read and agree to the website <a target="_blank" href="terms-and-conditions.html">terms and conditions</a>*
+                                        I have read and agree to the website <a target="_blank"
+                                                                                href="terms-and-conditions.html">terms
+                                            and conditions</a>*
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-xl btn-block">Place Order</button>
+                            <button type="submit" class="btn btn-primary btn-xl btn-block">Place
+                                Order
+                            </button>
                         </div>
                     </div>
                 </div>

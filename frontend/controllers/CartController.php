@@ -54,6 +54,11 @@ class CartController extends Controller
         ]);
     }
 
+    
+    public function actionTestCart()
+    {
+        return json_encode($_SESSION);
+    }
 
     public function actionAddInSessionCart()
     {
