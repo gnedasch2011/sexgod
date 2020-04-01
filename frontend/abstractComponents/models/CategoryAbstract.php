@@ -15,6 +15,8 @@ use yii\helpers\ArrayHelper;
 class CategoryAbstract extends ActiveRecord
 {
 
+    const ROOT_PATH_FOR_CAT = '/catalog/';
+
     public function behaviors()
     {
         return [
@@ -52,7 +54,7 @@ class CategoryAbstract extends ActiveRecord
         ];
     }
 
-     public static function getAllCategoryForMenu()
+    public static function getAllCategoryForMenu()
     {
 
         $listCateg = self::find()
@@ -240,11 +242,11 @@ class CategoryAbstract extends ActiveRecord
      */
     public static function getAllCategoryInCurrent($currentIDCategory)
     {
-       
+
         $categorys = self::find()
             ->where(['parent_id' => $currentIDCategory])
             ->all();
-            
+
         $categorysIds = ArrayHelper::getColumn($categorys, 'id');
 
         return $categorys;
@@ -335,7 +337,7 @@ class CategoryAbstract extends ActiveRecord
 
     public function getFullUrl()
     {
-        $fullUrl = '/catalog/' . $this->slug . '/';
+        $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
         return $fullUrl;
     }
 
@@ -425,7 +427,31 @@ class CategoryAbstract extends ActiveRecord
         die();
     }
 
+    /**
+     * @param $idCat
+     * @return mixed|string
+     */
+    public static function getNameById($idCat)
+    {
+        $cat = self::findOne(['id' => $idCat]);
 
+        if ($cat) {
+            return $cat->name;
+        }
+
+        return '';
+    }
+
+    public static function getLinkById($idCat)
+    {
+        $cat = self::findOne(['id' => $idCat]);
+
+        if ($cat) {
+            return self::ROOT_PATH_FOR_CAT . $cat->slug;
+        }
+
+        return '';
+    }
 }
 
 

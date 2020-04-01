@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use frontend\abstractComponents\models\CategoryAbstract;
 
 ?>
 
@@ -165,7 +166,7 @@ use yii\widgets\Breadcrumbs;
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
-                                 <?php */?>
+                                 <?php */ ?>
                                 <div class="topbar-dropdown__body">
                                     <!-- .menu -->
                                     <div class="menu menu--layout--topbar ">
@@ -358,8 +359,8 @@ use yii\widgets\Breadcrumbs;
                                             <ul class="departments__links">
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/falloimitatory/">
-                                                        Фаллоимитаторы
+                                                       href="<?= CategoryAbstract::getLinkById(269); ?>">
+                                                        <?= CategoryAbstract::getNameById(269); ?>
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -545,7 +546,8 @@ use yii\widgets\Breadcrumbs;
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
                                                             <div class="megamenu__body"
-                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-2.jpg');">frontend/web/template/red_stroyka
+                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-2.jpg');">
+                                                                frontend/web/template/red_stroyka
                                                                 <div class="row">
                                                                     <div class="col-4">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
@@ -1924,11 +1926,11 @@ use yii\widgets\Breadcrumbs;
                     ]
                 ); ?>
             </div>
-            <?php if(isset($this->params['h1'])):?>
+            <?php if (isset($this->params['h1'])): ?>
                 <div class="page-header__title">
                     <h1><?= Html::encode($this->params['h1']) ?></h1>
                 </div>
-            <?php endif;?>
+            <?php endif; ?>
 
         </div>
 
