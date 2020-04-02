@@ -6,6 +6,7 @@ use app\models\sexgod\category\CategoryBase;
 use app\models\sexgod\good\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "goods".
@@ -208,11 +209,15 @@ class Goods extends \yii\db\ActiveRecord
 
     public static function getProducts($params = [])
     {
-        return self::find()->where(['like', 'name', $params['name']])->all();
         $query = new \yii\db\Query();
 
-        $query->select(['id'])
+        $query->select(["id"])
             ->from('goods');
+
+
+        if ($params['idOneGood']) {
+            $query->where(['in', 'aID', $params['idOneGood']]);
+        }
 
         if ($params['name']) {
             $query->where(['like', 'name', $params['name']]);
@@ -235,8 +240,22 @@ class Goods extends \yii\db\ActiveRecord
             return self::find()->where(['id' => $ids])->limit(8)->all();
         }
 
-        return $query->all();
+
+        $result = [];
+
+        if ($query->all()) {
+            $ids = ArrayHelper::map($query->all(), 'id', 'id');
+            foreach ($ids as $id) {
+                $result [] = self::findOne(['aID' => $id]);
+            }
+
+            return $result;
+        }
+
+
+        return false;
     }
+
 
     public function getImagesone()
     {

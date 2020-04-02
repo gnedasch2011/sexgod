@@ -1716,86 +1716,11 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         <div class="dropcart dropcart--style--dropdown">
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
-                                                    <div class="dropcart__product">
-                                                        <div class="dropcart__product-image">
-                                                            <a href="product.html"><img
-                                                                        src="/template/red_stroyka/images/products/product-1.jpg"
-                                                                        alt=""></a>
-                                                        </div>
-                                                        <div class="dropcart__product-info">
-                                                            <div class="dropcart__product-name"><a
-                                                                        href="product.html">Electric
-                                                                    Planer Brandix KL370090G 300
-                                                                    Watts</a></div>
-                                                            <ul class="dropcart__product-options">
-                                                                <li>Color: Yellow</li>
-                                                                <li>Material: Aluminium</li>
-                                                            </ul>
-                                                            <div class="dropcart__product-meta">
-                                                                <span class="dropcart__product-quantity">2</span>
-                                                                ×
-                                                                <span class="dropcart__product-price">$699.00</span>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button"
-                                                                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
-                                                            <svg width="10px" height="10px">
-                                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-10"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                    <div class="dropcart__product">
-                                                        <div class="dropcart__product-image">
-                                                            <a href="product.html"><img
-                                                                        src="/template/red_stroyka/images/products/product-2.jpg"
-                                                                        alt=""></a>
-                                                        </div>
-                                                        <div class="dropcart__product-info">
-                                                            <div class="dropcart__product-name"><a
-                                                                        href="product.html">Undefined
-                                                                    Tool IRadix DPS3000SY 2700
-                                                                    watts</a></div>
-                                                            <div class="dropcart__product-meta">
-                                                                <span class="dropcart__product-quantity">1</span>
-                                                                ×
-                                                                <span class="dropcart__product-price">$849.00</span>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button"
-                                                                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
-                                                            <svg width="10px" height="10px">
-                                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-10"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                    <div class="dropcart__product">
-                                                        <div class="dropcart__product-image">
-                                                            <a href="product.html"><img
-                                                                        src="/template/red_stroyka/images/products/product-5.jpg"
-                                                                        alt=""></a>
-                                                        </div>
-                                                        <div class="dropcart__product-info">
-                                                            <div class="dropcart__product-name"><a
-                                                                        href="product.html">Brandix
-                                                                    Router Power Tool 2017ERXPK</a>
-                                                            </div>
-                                                            <ul class="dropcart__product-options">
-                                                                <li>Color: True Red</li>
-                                                            </ul>
-                                                            <div class="dropcart__product-meta">
-                                                                <span class="dropcart__product-quantity">3</span>
-                                                                ×
-                                                                <span class="dropcart__product-price">$1,210.00</span>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button"
-                                                                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
-                                                            <svg width="10px" height="10px">
-                                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-10"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
+                                                    <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+                                                        'products' => \Yii::$app->cart->returnProductModelsInCart(),
+                                                    ]);; ?>
                                                 </div>
+
                                                 <div class="dropcart__totals">
                                                     <table>
                                                         <tr>

@@ -54,7 +54,11 @@ class CartController extends Controller
         ]);
     }
 
-    
+    public function actionGetHtmlItemForDrop()
+    {
+      return Yii::$app->cart->generateDropCart();
+    }
+
     public function actionTestCart()
     {
         return json_encode($_SESSION);

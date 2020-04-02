@@ -179,40 +179,43 @@ class Goods extends \yii\db\ActiveRecord
         return $product;
     }
 
-    public static function getProducts($params = [])
-    {
-        $query = new \yii\db\Query();
-        $query->select(['id'])
-            ->from('goods');
+//    public static function getProducts($params = [])
+//    {
+//        $query = new \yii\db\Query();
+//        $query->select(['id'])
+//            ->from('goods');
+//
+//        if ($params['name']) {
+//            $query->where(['like', 'name', $params['name']]);
+//        }
+//
+//        if ($params['popular']) {
+//            $query->select(['*'])
+//                ->from('goods');
+//            $ids = [
+//                740,
+//                741,
+//                742,
+//                743,
+//                744,
+//                745,
+//                746,
+//                747
+//            ];
+//
+//            return self::find()->where(['id' => $ids])->limit(8)->all();
+//        }
+//
+//
+//        $products = $query->all();
+//
+//        $ids = ArrayHelper::map($products, 'id', 'id');
+//
+//        return self::find()
+//            ->where(['id' => $ids])
+//            ->all();
+//    }
 
-        if ($params['name']) {
-            $query->where(['like', 'name', $params['name']]);
-        }
 
-        if ($params['popular']) {
-            $query->select(['*'])
-                ->from('goods');
-            $ids = [
-                740,
-                741,
-                742,
-                743,
-                744,
-                745,
-                746,
-                747
-            ];
-            return self::find()->where(['id' => $ids])->limit(8)->all();
-        }
-
-
-        $products = $query->all();
-
-        $ids = ArrayHelper::map($products, 'id', 'id');
-
-        return self::find()
-            ->where(['id' => $ids])
-            ->all();
-    }
 
 }
