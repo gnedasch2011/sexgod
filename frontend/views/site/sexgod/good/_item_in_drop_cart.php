@@ -7,11 +7,11 @@
         </div>
         <div class="dropcart__product-info">
             <div class="dropcart__product-name"><a
-                        href="product.html"><?= $good->name; ?></a></div>
-            <ul class="dropcart__product-options">
-                <li>Color: Yellow</li>
-                <li>Material: Aluminium</li>
-            </ul>
+                        href="<?= $good->detailUrl; ?>"><?= $good->name; ?></a></div>
+<!--            <ul class="dropcart__product-options">-->
+<!--                <li>Color: Yellow</li>-->
+<!--                <li>Material: Aluminium</li>-->
+<!--            </ul>-->
             <div class="dropcart__product-meta">
                 <span class="dropcart__product-quantity"><?= Yii::$app->cart->countById($good->id); ?></span>
                 ×
