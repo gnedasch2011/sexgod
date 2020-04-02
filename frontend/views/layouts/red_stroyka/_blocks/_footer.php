@@ -64,6 +64,18 @@
                                  </ul>
                         </div>
                     </div>
+					
+					
+					
+					<div class="col-12 col-md-12 col-lg-4">
+					 <div class="site-footer__widget footer-newsletter">
+					 <h5 class="footer-newsletter__title">Скидки</h5>
+					<img src="/template/red_stroyka/images/test/banner_footer.jpg">
+					</div>
+					</div>
+					
+				
+				<!--  	
                     <div class="col-12 col-md-12 col-lg-4">
                         <div class="site-footer__widget footer-newsletter">
                             <h5 class="footer-newsletter__title">Рассылка</h5>
@@ -103,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
          <!--  <div class="site-footer__bottom">
                 <div class="site-footer__copyright">
                     Powered by HTML — Design by <a href="https://themeforest.net/user/kos9"

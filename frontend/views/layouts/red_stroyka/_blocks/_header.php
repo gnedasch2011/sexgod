@@ -375,153 +375,193 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                     <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Power
-                                                                                    Tools</a>
+                                                                               По длине
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Engravers</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(309); ?>">
+                                                        <?= CategoryAbstract::getNameById(309); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Drills</a>
+                                                                                      <a href="<?= CategoryAbstract::getLinkById(294); ?>">
+                                                        <?= CategoryAbstract::getNameById(294); ?></a>
+                                                                                    </li>
+																					                                                                                    <li class="megamenu__item">
+                                                                                      <a href="<?= CategoryAbstract::getLinkById(287); ?>">
+                                                        <?= CategoryAbstract::getNameById(287); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(288); ?>">
+                                                        <?= CategoryAbstract::getNameById(288); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Wrenches</a>
+                                                                                       <a href="<?= CategoryAbstract::getLinkById(302); ?>">
+                                                        <?= CategoryAbstract::getNameById(302); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(308); ?>">
+                                                        <?= CategoryAbstract::getNameById(308); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Plumbing</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(297); ?>">
+                                                        <?= CategoryAbstract::getNameById(297); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Wall
-                                                                                            Chaser</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(295); ?>">
+                                                        <?= CategoryAbstract::getNameById(295); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Pneumatic
-                                                                                            Tools</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(285); ?>">
+                                                        <?= CategoryAbstract::getNameById(285); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Milling
-                                                                                            Cutters</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(286); ?>">
+                                                        <?= CategoryAbstract::getNameById(286); ?></a>
+                                                                                    </li>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Workbenches</a>
+                                                                 
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-3">
+                                                                        <ul class="megamenu__links megamenu__links--level--0">
+                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
+                                                                               По цвету
+                                                                                <ul class="megamenu__links megamenu__links--level--1">
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(314); ?>">
+                                                        <?= CategoryAbstract::getNameById(314); ?></a>
+                                                                                    </li>
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(383); ?>">
+                                                        <?= CategoryAbstract::getNameById(383); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(348); ?>">
+                                                        <?= CategoryAbstract::getNameById(348); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(364); ?>">
+                                                        <?= CategoryAbstract::getNameById(364); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(386); ?>">
+                                                        <?= CategoryAbstract::getNameById(386); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(333); ?>">
+                                                        <?= CategoryAbstract::getNameById(333); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(367); ?>">
+                                                        <?= CategoryAbstract::getNameById(367); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(391); ?>">
+                                                        <?= CategoryAbstract::getNameById(391); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(363); ?>">
+                                                        <?= CategoryAbstract::getNameById(363); ?></a>
+                                                                                    </li>
+                                                                                </ul>
+
                                                                             </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Presses</a>
-                                                                            </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Spray
-                                                                                    Guns</a>
-                                                                            </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Riveters</a>
+                                                                            </ul>
+                                                                    </div>
+                                                                    <div class="col-3">
+                                                                        <ul class="megamenu__links megamenu__links--level--0">
+                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
+                                                                                По материалу
+                                                                                <ul class="megamenu__links megamenu__links--level--1">
+                                                                                    <li class="megamenu__item">
+                                                                                       <a href="<?= CategoryAbstract::getLinkById(349); ?>">
+                                                        <?= CategoryAbstract::getNameById(349); ?></a>
+                                                                                    </li>
+                                                                                    <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(323); ?>">
+                                                        <?= CategoryAbstract::getNameById(323); ?></a>
+                                                                                    </li>
+                                                                                    <li class="megamenu__item">
+                                                                                       <a href="<?= CategoryAbstract::getLinkById(368); ?>">
+                                                        <?= CategoryAbstract::getNameById(368); ?></a>
+                                                                                    </li>
+                                                                                    <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(353); ?>">
+                                                        <?= CategoryAbstract::getNameById(353); ?></a>
+                                                                                    </li>
+                                                                                    <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(316); ?>">
+                                                        <?= CategoryAbstract::getNameById(316); ?></a>
+                                                                                    </li>
+                                                                                    <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(281); ?>">
+                                                        <?= CategoryAbstract::getNameById(281); ?></a>
+                                                                                    </li>
+																					   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(346); ?>">
+                                                        <?= CategoryAbstract::getNameById(346); ?></a>
+                                                                                    </li>
+																					   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(280); ?>">
+                                                        <?= CategoryAbstract::getNameById(280); ?></a>
+                                                                                    </li>
+                                                                                </ul>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Hand
-                                                                                    Tools</a>
+                                                                                <a href="">По типу</a>
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Screwdrivers</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(328); ?>">
+                                                        <?= CategoryAbstract::getNameById(328); ?></a>
+                                                                                    </li>
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(283); ?>">
+                                                        <?= CategoryAbstract::getNameById(283); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Handsaws</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(365); ?>">
+                                                        <?= CategoryAbstract::getNameById(365); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Knives</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(357); ?>">
+                                                        <?= CategoryAbstract::getNameById(357); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Axes</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(271); ?>">
+                                                        <?= CategoryAbstract::getNameById(271); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Multitools</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(351); ?>">
+                                                        <?= CategoryAbstract::getNameById(351); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Paint
-                                                                                            Tools</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(313); ?>">
+                                                        <?= CategoryAbstract::getNameById(313); ?></a>
                                                                                     </li>
-                                                                                </ul>
-                                                                            </li>
-                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Garden
-                                                                                    Equipment</a>
-                                                                                <ul class="megamenu__links megamenu__links--level--1">
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Motor
-                                                                                            Pumps</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(337); ?>">
+                                                        <?= CategoryAbstract::getNameById(337); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Chainsaws</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(321); ?>">
+                                                        <?= CategoryAbstract::getNameById(321); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Electric
-                                                                                            Saws</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(327); ?>">
+                                                        <?= CategoryAbstract::getNameById(327); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Brush
-                                                                                            Cutters</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(334); ?>">
+                                                        <?= CategoryAbstract::getNameById(334); ?></a>
                                                                                     </li>
-                                                                                </ul>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="col-3">
-                                                                        <ul class="megamenu__links megamenu__links--level--0">
-                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Machine
-                                                                                    Tools</a>
-                                                                                <ul class="megamenu__links megamenu__links--level--1">
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Thread
-                                                                                            Cutting</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Chip
-                                                                                            Blowers</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Sharpening
-                                                                                            Machines</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Pipe
-                                                                                            Cutters</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Slotting
-                                                                                            machines</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Lathes</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="col-3">
-                                                                        <ul class="megamenu__links megamenu__links--level--0">
-                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Instruments</a>
-                                                                                <ul class="megamenu__links megamenu__links--level--1">
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Welding
-                                                                                            Equipment</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Power
-                                                                                            Tools</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Hand
-                                                                                            Tools</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Measuring
-                                                                                            Tool</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(326); ?>">
+                                                        <?= CategoryAbstract::getNameById(326); ?></a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
@@ -535,8 +575,8 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/vibratory/">
-                                                        Вибраторы
+                                                        href="<?= CategoryAbstract::getLinkById(163); ?>">
+                                                        <?= CategoryAbstract::getNameById(163); ?>
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -549,109 +589,174 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                  style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-2.jpg');">
                                                                 frontend/web/template/red_stroyka
                                                                 <div class="row">
-                                                                    <div class="col-4">
+                                                                    <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Hand
-                                                                                    Tools</a>
+                                                                                По размеру
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Screwdrivers</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(174); ?>">
+                                                        <?= CategoryAbstract::getNameById(174); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Handsaws</a>
+                                                                                     <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(183); ?>">
+                                                        <?= CategoryAbstract::getNameById(183); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Knives</a>
+																					 <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(172); ?>">
+                                                        <?= CategoryAbstract::getNameById(172); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Axes</a>
+																					 <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(179); ?>">
+                                                        <?= CategoryAbstract::getNameById(179); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Multitools</a>
+																					 <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(181); ?>">
+                                                        <?= CategoryAbstract::getNameById(181); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Paint
-                                                                                            Tools</a>
+																				   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(182); ?>">
+                                                        <?= CategoryAbstract::getNameById(182); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(175); ?>">
+                                                        <?= CategoryAbstract::getNameById(175); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(170); ?>">
+                                                        <?= CategoryAbstract::getNameById(170); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(184); ?>">
+                                                        <?= CategoryAbstract::getNameById(184); ?></a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Garden
-                                                                                    Equipment</a>
+                                                                                Спецпредложения
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Motor
-                                                                                            Pumps</a>
+                                                                                    	<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(166); ?>">
+                                                        <?= CategoryAbstract::getNameById(166); ?></a>
+                                                                                    </li>
+                                                                                      	<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(259); ?>">
+                                                        <?= CategoryAbstract::getNameById(259); ?></a>
+                                                                                    </li>
+                                                                                 </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-3">
+                                                                        <ul class="megamenu__links megamenu__links--level--0">
+                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
+                                                                               По цвету
+                                                                                <ul class="megamenu__links megamenu__links--level--1">
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(186); ?>">
+                                                        <?= CategoryAbstract::getNameById(186); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Chainsaws</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(192); ?>">
+                                                        <?= CategoryAbstract::getNameById(192); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Electric
-                                                                                            Saws</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(210); ?>">
+                                                        <?= CategoryAbstract::getNameById(210); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Brush
-                                                                                            Cutters</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(169); ?>">
+                                                        <?= CategoryAbstract::getNameById(169); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(187); ?>">
+                                                        <?= CategoryAbstract::getNameById(187); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(185); ?>">
+                                                        <?= CategoryAbstract::getNameById(185); ?></a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
-                                                                    <div class="col-4">
+                                                                    <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Machine
-                                                                                    Tools</a>
+                                                                              По материалу
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Thread
-                                                                                            Cutting</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(248); ?>">
+                                                        <?= CategoryAbstract::getNameById(248); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Chip
-                                                                                            Blowers</a>
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(238); ?>">
+                                                        <?= CategoryAbstract::getNameById(238); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Sharpening
-                                                                                            Machines</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(167); ?>">
+                                                        <?= CategoryAbstract::getNameById(167); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Pipe
-                                                                                            Cutters</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(196); ?>">
+                                                        <?= CategoryAbstract::getNameById(196); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Slotting
-                                                                                            machines</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Lathes</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(255); ?>">
+                                                        <?= CategoryAbstract::getNameById(255); ?></a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
-                                                                    <div class="col-4">
+																	 <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Instruments</a>
+                                                                               По типу
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Welding
-                                                                                            Equipment</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(204); ?>">
+                                                        <?= CategoryAbstract::getNameById(204); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Power
-                                                                                            Tools</a>
+                                                                                   <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(245); ?>">
+                                                        <?= CategoryAbstract::getNameById(245); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Hand
-                                                                                            Tools</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(224); ?>">
+                                                        <?= CategoryAbstract::getNameById(224); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Measuring
-                                                                                            Tool</a>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(253); ?>">
+                                                        <?= CategoryAbstract::getNameById(253); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(255); ?>">
+                                                        <?= CategoryAbstract::getNameById(255); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(208); ?>">
+                                                        <?= CategoryAbstract::getNameById(208); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(193); ?>">
+                                                        <?= CategoryAbstract::getNameById(193); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(200); ?>">
+                                                        <?= CategoryAbstract::getNameById(200); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(168); ?>">
+                                                        <?= CategoryAbstract::getNameById(168); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(233); ?>">
+                                                        <?= CategoryAbstract::getNameById(233); ?></a>
+                                                                                    </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(242); ?>">
+                                                        <?= CategoryAbstract::getNameById(242); ?></a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
@@ -665,92 +770,82 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/masturbatory/">
-                                                        Мастурбаторы
+                                                        href="<?= CategoryAbstract::getLinkById(492); ?>">
+                                                        <?= CategoryAbstract::getNameById(492); ?>
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
-                                                    <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--nl">
+                                                    <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
-                                                            <div class="megamenu__body"
-                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-3.jpg');">
+                                                            <div class="megamenu__body">
                                                                 <div class="row">
-                                                                    <div class="col-6">
+                                                                    <div class="col-12">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Hand
-                                                                                    Tools</a>
+                                                                                Бренды
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Screwdrivers</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(497); ?>">
+                                                        <?= CategoryAbstract::getNameById(497); ?></a>
                                                                                     </li>
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Handsaws</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Knives</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Axes</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Multitools</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Paint
-                                                                                            Tools</a>
-                                                                                    </li>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(496); ?>">
+                                                        <?= CategoryAbstract::getNameById(496); ?></a>
+                                                                                    </li>                                                                                    
                                                                                 </ul>
                                                                             </li>
                                                                             <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Garden
-                                                                                    Equipment</a>
+                                                                                По типу  
                                                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                                                     <li class="megamenu__item">
-                                                                                        <a href="">Motor
-                                                                                            Pumps</a>
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(495); ?>">
+                                                        <?= CategoryAbstract::getNameById(495); ?></a>
+                                                                                    </li> 
+                                                                                  <li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(500); ?>">
+                                                        <?= CategoryAbstract::getNameById(500); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(502); ?>">
+                                                        <?= CategoryAbstract::getNameById(502); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(506); ?>">
+                                                        <?= CategoryAbstract::getNameById(506); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(508); ?>">
+                                                        <?= CategoryAbstract::getNameById(508); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(518); ?>">
+                                                        <?= CategoryAbstract::getNameById(518); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(519); ?>">
+                                                        <?= CategoryAbstract::getNameById(519); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(520); ?>">
+                                                        <?= CategoryAbstract::getNameById(520); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(521); ?>">
+                                                        <?= CategoryAbstract::getNameById(521); ?></a>
+                                                                                    </li> 
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(524); ?>">
+                                                        <?= CategoryAbstract::getNameById(524); ?></a>
                                                                                     </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Chainsaws</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Electric
-                                                                                            Saws</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Brush
-                                                                                            Cutters</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <ul class="megamenu__links megamenu__links--level--0">
-                                                                            <li class="megamenu__item  megamenu__item--with-submenu ">
-                                                                                <a href="">Instruments</a>
-                                                                                <ul class="megamenu__links megamenu__links--level--1">
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Welding
-                                                                                            Equipment</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Power
-                                                                                            Tools</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Hand
-                                                                                            Tools</a>
-                                                                                    </li>
-                                                                                    <li class="megamenu__item">
-                                                                                        <a href="">Measuring
-                                                                                            Tool</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </li>
+																					<li class="megamenu__item">
+                                                                                        <a href="<?= CategoryAbstract::getLinkById(533); ?>">
+                                                        <?= CategoryAbstract::getNameById(533); ?></a>
+                                                                                    </li> 
+																				 </ul>
+                                                                           </li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -830,8 +925,8 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/massazhyory-prostaty/">
-                                                        Массажёры простаты
+                                                        href="<?= CategoryAbstract::getLinkById(449); ?>">
+                                                        <?= CategoryAbstract::getNameById(449); ?>
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -846,109 +941,57 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
                                                                     <a class="menu__item-link"
-                                                                       href="">
-                                                                        Soldering Equipment
-                                                                        <svg class="menu__item-arrow"
-                                                                             width="6px"
-                                                                             height="9px">
-                                                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                                                        </svg>
-                                                                    </a>
-                                                                    <div class="menu__submenu">
-                                                                        <!-- .menu -->
-                                                                        <div class="menu menu--layout--classic ">
-                                                                            <div class="menu__submenus-container"></div>
-                                                                            <ul class="menu__list">
-                                                                                <li class="menu__item">
-                                                                                    <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                                                    <div class="menu__item-submenu-offset"></div>
-                                                                                    <a class="menu__item-link"
-                                                                                       href="">
-                                                                                        Soldering
-                                                                                        Station
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="menu__item">
-                                                                                    <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                                                    <div class="menu__item-submenu-offset"></div>
-                                                                                    <a class="menu__item-link"
-                                                                                       href="">
-                                                                                        Soldering
-                                                                                        Dryers
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="menu__item">
-                                                                                    <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                                                    <div class="menu__item-submenu-offset"></div>
-                                                                                    <a class="menu__item-link"
-                                                                                       href="">
-                                                                                        Gas
-                                                                                        Soldering
-                                                                                        Iron
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="menu__item">
-                                                                                    <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                                                    <div class="menu__item-submenu-offset"></div>
-                                                                                    <a class="menu__item-link"
-                                                                                       href="">
-                                                                                        Electric
-                                                                                        Soldering
-                                                                                        Iron
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <!-- .menu / end -->
-                                                                    </div>
+																	  href="<?= CategoryAbstract::getLinkById(450); ?>">
+                                                        <?= CategoryAbstract::getNameById(450); ?>
+																	</a>                                                                  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        Light Bulbs
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(451); ?>">
+                                                        <?= CategoryAbstract::getNameById(451); ?>
+																	</a>  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        Batteries
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(452); ?>">
+                                                        <?= CategoryAbstract::getNameById(452); ?>
+																	</a>  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        Light Fixtures
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(453); ?>">
+                                                        <?= CategoryAbstract::getNameById(453); ?>
+																	</a>  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        Warm Floor
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(454); ?>">
+                                                        <?= CategoryAbstract::getNameById(454); ?>
+																	</a>  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        Generators
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(455); ?>">
+                                                        <?= CategoryAbstract::getNameById(455); ?>
+																	</a>  
                                                                 </li>
                                                                 <li class="menu__item">
                                                                     <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div>
-                                                                    <a class="menu__item-link"
-                                                                       href="">
-                                                                        UPS
-                                                                    </a>
+                                                                     <a class="menu__item-link"
+																	  href="<?= CategoryAbstract::getLinkById(456); ?>">
+                                                        <?= CategoryAbstract::getNameById(456); ?>
+																	</a>  
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -957,50 +1000,50 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/falloprotezy/">
-                                                        Фаллопротезы
+                                                       href="<?= CategoryAbstract::getLinkById(269); ?>">
+                                                        <?= CategoryAbstract::getNameById(269); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/vaginalnye-shariki/">
-                                                        Вагинальные шарики
+                                                       href="<?= CategoryAbstract::getLinkById(457); ?>">
+                                                        <?= CategoryAbstract::getNameById(457); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/ehrrekcionnye-kolca/">
-                                                        Эррекционные кольца
+                                                       href="<?= CategoryAbstract::getLinkById(468); ?>">
+                                                        <?= CategoryAbstract::getNameById(468); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/analnye-stimulyatory/">
-                                                        Анальные стимуляторы
+                                                       href="<?= CategoryAbstract::getLinkById(478); ?>">
+                                                        <?= CategoryAbstract::getNameById(478); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/analnye-shariki/">
-                                                        Анальные шарики
+                                                       href="<?= CategoryAbstract::getLinkById(484); ?>">
+                                                        <?= CategoryAbstract::getNameById(484); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/analnye-cepochki/">
-                                                        Анальные цепочки
+                                                       href="<?= CategoryAbstract::getLinkById(490); ?>">
+                                                        <?= CategoryAbstract::getNameById(490); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/vibroyajca/">
-                                                        Виброяйца
+                                                       href="<?= CategoryAbstract::getLinkById(491); ?>">
+                                                        <?= CategoryAbstract::getNameById(491); ?>
                                                     </a>
                                                 </li>
                                                 <li class="departments__item">
                                                     <a class="departments__item-link"
-                                                       href="/catalog/seks-igrushki/">
-                                                        Все игрушки
+                                                       href="<?= CategoryAbstract::getLinkById(100); ?>">
+                                                        <?= CategoryAbstract::getNameById(100); ?>
                                                     </a>
                                                 </li>
                                             </ul>
