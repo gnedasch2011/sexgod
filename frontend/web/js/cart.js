@@ -1,7 +1,7 @@
 let $gpButtonsAddInCart = $('.input-number'),
     $addInCartJs = '.addInCartJs';//класс добавления в корзину
 
-    $priceDetail = $('.priceDetail'),
+$priceDetail = $('.priceDetail'),
     priceItem = parseInt($('.itemInfo').data('price')),
     $gpCount = $('.input-number__input'),
 
@@ -69,8 +69,23 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
 
     updateFullPriceInCart('.fullTotalCartClass');
     getCountItems('.getCountItems');
+    getHtmlItemsForDropCart();
+
     testingCart();
 })
+
+
+let getHtmlItemsForDropCart = function () {
+    $.ajax({
+        url: '/cart/get-html-item-for-drop',
+        method: "post",
+        data: data,
+
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
 
 
 /**

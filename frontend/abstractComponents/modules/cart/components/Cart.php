@@ -175,4 +175,21 @@ class Cart extends Component
 
 
 
+    public function returnProductModelsInCart()
+    {
+        $products = [];
+
+        if (isset($this->cart)) {
+            foreach ($this->cart as $id => $count) {
+                $products = Goods::getProducts([
+                    'idOneGood' => [$id]
+                ]);
+
+            }
+        }
+
+        return $products;
+    }
+
+
 }
