@@ -1759,9 +1759,13 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         <div class="dropcart dropcart--style--dropdown">
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
-                                                    <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
-                                                        'products' => \Yii::$app->cart->returnProductModelsInCart(),
-                                                    ]);; ?>
+                                                    <?php if (\Yii::$app->cart->returnProductModelsInCart()): ?>
+
+                                                        <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+                                                            'products' => \Yii::$app->cart->returnProductModelsInCart()
+                                                        ]); ?>
+
+                                                    <?php endif; ?>
                                                 </div>
 
                                                 <div class="dropcart__totals">
