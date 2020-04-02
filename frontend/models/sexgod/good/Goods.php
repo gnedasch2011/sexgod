@@ -215,15 +215,15 @@ class Goods extends \yii\db\ActiveRecord
             ->from('goods');
 
 
-        if ($params['idOneGood']) {
+        if (isset($params['idOneGood']) && $params['idOneGood']) {
             $query->where(['in', 'aID', $params['idOneGood']]);
         }
 
-        if ($params['name']) {
+        if (isset($params['name']) && $params['name']) {
             $query->where(['like', 'name', $params['name']]);
         }
 
-        if ($params['popular']) {
+        if (isset($params['popular']) && $params['popular']) {
             $query->select(['*'])
                 ->from('goods');
             $ids = [
