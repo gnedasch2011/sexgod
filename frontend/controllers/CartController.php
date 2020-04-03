@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 
 use frontend\abstractComponents\helpers\CommonHelper;
+use frontend\modules\cart\models\form_for_order\Checkout;
 use Yii;
 use yii\web\Controller;
 use app\models\Cart;
@@ -47,10 +48,13 @@ class CartController extends Controller
             };
         }
 
+        $checkout = new Checkout();
+
         return $this->render('cart', [
             'goodsInCart' => $goodsInCart,
             'cart' => $cart,
             'order' => $order,
+            'checkout' => $checkout,
         ]);
     }
 

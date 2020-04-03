@@ -1,3 +1,9 @@
+<?php
+
+use yii\widgets\ActiveForm;
+
+?>
+
 <?php if ($goodsInCart): ?>
     <div class="cart block cartBlockJs">
         <div class="container">
@@ -14,47 +20,11 @@
                 </thead>
                 <tbody class="cart-table__body">
                 <?php foreach ($goodsInCart as $good): ?>
-                    <tr class="cart-table__row" data-id=<?= $good->id; ?>>
-                        <td class="cart-table__column cart-table__column--image">
-                            <a href="<?= $good->detailUrl; ?>"><img src="<?= $good->mainImg; ?>"
-                                                                    alt=""></a>
-                        </td>
-                        <td class="cart-table__column cart-table__column--product">
-                            <a href="<?= $good->detailUrl; ?>"
-                               class="cart-table__product-name"><?= $good->name; ?></a>
-                            <ul class="cart-table__options">
-                                <li>Color: Yellow</li>
-                                <li>Material: еуые</li>
-                            </ul>
-                        </td>
-                        <td class="cart-table__column cart-table__column--price" data-title="Price">
-                            <?= $good->formatPrice; ?>
-                        </td>
-                        <td class="cart-table__column cart-table__column--quantity"
-                            data-title="Quantity">
-                            <div class="input-number"
-                                 data-id="<?= $good->aID; ?>"
-                            >
-                                <input class="form-control input-number__input" type="number"
-                                       min="1" value="<?= Yii::$app->cart->countById($good->id); ?>">
-                                <div class="input-number__add"></div>
-                                <div class="input-number__sub"></div>
-                            </div>
-                        </td>
-                        <td class="cart-table__column cart-table__column--total" data-title="Итого">
-                            <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->getFullPriceOneGood($good->id)); ?>
-                            руб.
-                        </td>
-                        <td class="cart-table__column cart-table__column--remove">
-                            <button type="button" class="btn btn-light btn-sm btn-svg-icon">
-                                <svg width="12px" height="12px">
-                                    <use xlink:href="images/sprite.svg#cross-12"></use>
-                                </svg>
-                            </button>
-                        </td>
-                    </tr>
-
-
+                    <?php
+                    echo $this->render('@frontend/views/site/sexgod/good/_in_cart_tr', [
+                        'good' => $good
+                    ]);
+                    ?>
                 <?php endforeach; ?>
                 </tbody>
             </table>
@@ -79,7 +49,7 @@
                                 <thead class="cart__totals-header">
                                 <tr>
                                     <th>Промежуточный итог:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?>
                                         руб.
                                     </td>
                                 </tr>
@@ -103,7 +73,7 @@
                                 <tfoot class="cart__totals-footer">
                                 <tr>
                                     <th>Итого:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($cart->returnCartFullPrice()) ?>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->returnCartFullPrice()) ?>
                                         руб.
                                     </td>
                                 </tr>
@@ -125,85 +95,92 @@
         </div>
     </div>
 <?php endif; ?>
-    <div class="checkout block checkout_block_hidden openCheckoutJs">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-3">
-                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click
-                            here to login</a></div>
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="card mb-lg-0">
-                        <div class="card-body">
-                            <h3 class="card-title">Billing details</h3>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="checkout-first-name">First Name</label>
-                                    <input type="text" class="form-control" id="checkout-first-name"
-                                           placeholder="First Name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="checkout-last-name">Last Name</label>
-                                    <input type="text" class="form-control" id="checkout-last-name"
-                                           placeholder="Last Name">
-                                </div>
+<div class="checkout block checkout_block_hidden openCheckoutJs">
+    <div class="container">
+        <div class="row">
+            <!--                <div class="col-12 mb-3">-->
+            <!--                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click-->
+            <!--                            here to login</a></div>-->
+            <!--                </div>-->
+            <div class="col-12 col-lg-6 col-xl-7">
+                <div class="card mb-lg-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Детали заказа</h3>
+                        <?php
+
+                        use yii\helpers\Html;
+
+                        $form = ActiveForm::begin([
+                            'id' => 'login-form',
+                            'options' => ['class' => ''],
+                        ]) ?>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+                                    ->textInput([
+                                        'placeholder' => 'Ваше имя',
+                                        'class' => 'form-control',
+                                    ])->label('Ваше имя', [
+                                        'class' => 'checkout-first-name',
+                                    ]); ?>
                             </div>
-                            <div class="form-group">
-                                <label for="checkout-company-name">Company Name <span
-                                            class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="checkout-company-name"
-                                       placeholder="Company Name">
+                            <div class="form-group col-md-6">
+                                <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+                                    ->textInput([
+                                        'placeholder' => 'Ваша фамилия',
+                                        'class' => 'form-control',
+                                    ])->label('Ваша фамилия', [
+                                        'class' => 'checkout-first-name',
+                                    ]); ?>
                             </div>
-                            <div class="form-group">
-                                <label for="checkout-country">Country</label>
-                                <select id="checkout-country"
-                                        class="form-control form-control-select2">
-                                    <option>Select a country...</option>
-                                    <option>United States</option>
-                                    <option>Russia</option>
-                                    <option>Italy</option>
-                                    <option>France</option>
-                                    <option>Ukraine</option>
-                                    <option>Germany</option>
-                                    <option>Australia</option>
-                                </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <?= $form->field($checkout, 'town', ['errorOptions' => ['class' => 'v-msg']])
+                                ->textInput([
+                                    'placeholder' => 'Ваш город',
+                                    'class' => 'form-control',
+                                ])->label('Ваш город', [
+                                    'class' => 'checkout-first-name',
+                                ]); ?>
+                        </div>
+                        <div class="form-group">
+                            <?= $form->field($checkout, 'address', ['errorOptions' => ['class' => 'v-msg']])
+                                ->textInput([
+                                    'placeholder' => 'Ваш адресс',
+                                    'class' => 'form-control',
+                                ])->label('Ваш адресс', [
+                                    'class' => 'checkout-first-name',
+                                ]); ?>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <?= $form->field($checkout, 'email', ['errorOptions' => ['class' => 'v-msg']])
+                                    ->textInput([
+                                        'placeholder' => 'Email',
+                                        'class' => 'form-control',
+                                    ])->label('Email', [
+                                        'class' => 'checkout-first-name',
+                                    ]); ?>
                             </div>
-                            <div class="form-group">
-                                <label for="checkout-street-address">Street Address</label>
-                                <input type="text" class="form-control" id="checkout-street-address"
-                                       placeholder="Street Address">
+                            <div class="form-group col-md-6">
+                                <?= $form->field($checkout, 'phone', ['errorOptions' => ['class' => 'v-msg']])
+                                    ->textInput([
+                                        'placeholder' => 'Ваш телефон',
+                                        'class' => 'form-control',
+                                    ])->label('Ваш телефон', [
+                                        'class' => 'checkout-first-name',
+                                    ]); ?>
                             </div>
-                            <div class="form-group">
-                                <label for="checkout-address">Apartment, suite, unit etc. <span
-                                            class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="checkout-address">
-                            </div>
-                            <div class="form-group">
-                                <label for="checkout-city">Town / City</label>
-                                <input type="text" class="form-control" id="checkout-city">
-                            </div>
-                            <div class="form-group">
-                                <label for="checkout-state">State / County</label>
-                                <input type="text" class="form-control" id="checkout-state">
-                            </div>
-                            <div class="form-group">
-                                <label for="checkout-postcode">Postcode / ZIP</label>
-                                <input type="text" class="form-control" id="checkout-postcode">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="checkout-email">Email address</label>
-                                    <input type="email" class="form-control" id="checkout-email"
-                                           placeholder="Email address">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="checkout-phone">Phone</label>
-                                    <input type="text" class="form-control" id="checkout-phone"
-                                           placeholder="Phone">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-check">
+                        </div>
+                        <?php /*?>
+
+                        <div class="form-group">
+                            <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
                                                     <input class="input-check__input"
@@ -216,16 +193,18 @@
                                                     </svg>
                                                 </span>
                                             </span>
-                                    <label class="form-check-label" for="checkout-create-account">Create
-                                        an account?</label>
-                                </div>
+                                <label class="form-check-label" for="checkout-create-account">Create
+                                    an account?</label>
                             </div>
                         </div>
-                        <div class="card-divider"></div>
-                        <div class="card-body">
-                            <h3 class="card-title">Shipping Details</h3>
-                            <div class="form-group">
-                                <div class="form-check">
+  <?php */ ?>
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Детали доставки</h3>
+                        <div class="form-group">
+                            <?php /*?>
+                            <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
                                                     <input class="input-check__input"
@@ -238,69 +217,71 @@
                                                     </svg>
                                                 </span>
                                             </span>
-                                    <label class="form-check-label"
-                                           for="checkout-different-address">Ship to a different
-                                        address?</label>
-                                </div>
+                                <label class="form-check-label"
+                                       for="checkout-different-address">Ship to a different
+                                    address?</label>
                             </div>
-                            <div class="form-group">
-                                <label for="checkout-comment">Order notes <span class="text-muted">(Optional)</span></label>
-                                <textarea id="checkout-comment" class="form-control"
-                                          rows="4"></textarea>
-                            </div>
+                            <?php */ ?>
+                        </div>
+                        <div class="form-group">
+                            <?= $form->field($checkout, 'comment', ['errorOptions' => ['class' => 'v-msg']])
+                                ->textarea([
+                                    'placeholder' => 'Комментарии',
+                                    'class' => 'form-control',
+                                ])->label('Комментарии', [
+                                    'class' => 'checkout-first-name',
+                                ]); ?>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
-                    <div class="card mb-0">
-                        <div class="card-body">
-                            <h3 class="card-title">Your Order</h3>
-                            <table class="checkout__totals">
-                                <thead class="checkout__totals-header">
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
-                                <tbody class="checkout__totals-products">
-                                <tr>
-                                    <td>Electric Planer Brandix KL370090G 300 Watts × 2</td>
-                                    <td>$1,398.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Undefined Tool IRadix DPS3000SY 2700 watts × 1</td>
-                                    <td>$849.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Brandix Router Power Tool 2017ERXPK × 3</td>
-                                    <td>$3,630.00</td>
-                                </tr>
-                                </tbody>
-                                <tbody class="checkout__totals-subtotals">
-                                <tr>
-                                    <th>Subtotal</th>
-                                    <td>$5,877.00</td>
-                                </tr>
-                                <tr>
-                                    <th>Store Credit</th>
-                                    <td>$-20.00</td>
-                                </tr>
-                                <tr>
-                                    <th>Shipping</th>
-                                    <td>$25.00</td>
-                                </tr>
-                                </tbody>
-                                <tfoot class="checkout__totals-footer">
-                                <tr>
-                                    <th>Total</th>
-                                    <td>$5,882.00</td>
-                                </tr>
-                                </tfoot>
-                            </table>
-                            <div class="payment-methods">
-                                <ul class="payment-methods__list">
-                                    <li class="payment-methods__item payment-methods__item--active">
-                                        <label class="payment-methods__item-header">
+            </div>
+            <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Ваш заказ</h3>
+                        <table class="checkout__totals">
+                            <thead class="checkout__totals-header">
+                            <tr>
+                                <th>Продукт</th>
+                                <th>Итого</th>
+                            </tr>
+                            </thead>
+                            <tbody class="checkout__totals-products">
+                            <?php foreach ($goodsInCart as $good): ?>
+                                <?php
+                                echo $this->render('@frontend/views/site/sexgod/good/_in_cart_yours_order', [
+                                    'good' => $good
+                                ]);
+                                ?>
+                            <?php endforeach; ?>
+
+                         </tbody>
+                            <tbody class="checkout__totals-subtotals">
+                            <tr>
+                                <th>Подитог</th>
+                                <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
+                            </tr>
+                            <tr>
+                                <th>Скидки</th>
+                                <td>0 руб.</td>
+                            </tr>
+                            <tr>
+                                <th>Доставка</th>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                            <tfoot class="checkout__totals-footer">
+                            <tr>
+                                <th>Итого</th>
+                                <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        <div class="payment-methods">
+                            <ul class="payment-methods__list">
+                                <li class="payment-methods__item payment-methods__item--active">
+                                    <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
@@ -309,19 +290,19 @@
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                            <span class="payment-methods__item-title">Direct bank transfer</span>
-                                        </label>
-                                        <div class="payment-methods__item-container">
-                                            <div class="payment-methods__item-description text-muted">
-                                                Make your payment directly into our bank account.
-                                                Please use your Order ID as the payment
-                                                reference. Your order will not be shipped until the
-                                                funds have cleared in our account.
-                                            </div>
+                                        <span class="payment-methods__item-title">Direct bank transfer</span>
+                                    </label>
+                                    <div class="payment-methods__item-container">
+                                        <div class="payment-methods__item-description text-muted">
+                                            Make your payment directly into our bank account.
+                                            Please use your Order ID as the payment
+                                            reference. Your order will not be shipped until the
+                                            funds have cleared in our account.
                                         </div>
-                                    </li>
-                                    <li class="payment-methods__item">
-                                        <label class="payment-methods__item-header">
+                                    </div>
+                                </li>
+                                <li class="payment-methods__item">
+                                    <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
@@ -330,17 +311,17 @@
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                            <span class="payment-methods__item-title">Check payments</span>
-                                        </label>
-                                        <div class="payment-methods__item-container">
-                                            <div class="payment-methods__item-description text-muted">
-                                                Please send a check to Store Name, Store Street,
-                                                Store Town, Store State / County, Store Postcode.
-                                            </div>
+                                        <span class="payment-methods__item-title">Check payments</span>
+                                    </label>
+                                    <div class="payment-methods__item-container">
+                                        <div class="payment-methods__item-description text-muted">
+                                            Please send a check to Store Name, Store Street,
+                                            Store Town, Store State / County, Store Postcode.
                                         </div>
-                                    </li>
-                                    <li class="payment-methods__item">
-                                        <label class="payment-methods__item-header">
+                                    </div>
+                                </li>
+                                <li class="payment-methods__item">
+                                    <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
@@ -349,16 +330,16 @@
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                            <span class="payment-methods__item-title">Cash on delivery</span>
-                                        </label>
-                                        <div class="payment-methods__item-container">
-                                            <div class="payment-methods__item-description text-muted">
-                                                Pay with cash upon delivery.
-                                            </div>
+                                        <span class="payment-methods__item-title">Cash on delivery</span>
+                                    </label>
+                                    <div class="payment-methods__item-container">
+                                        <div class="payment-methods__item-description text-muted">
+                                            Pay with cash upon delivery.
                                         </div>
-                                    </li>
-                                    <li class="payment-methods__item">
-                                        <label class="payment-methods__item-header">
+                                    </div>
+                                </li>
+                                <li class="payment-methods__item">
+                                    <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
@@ -367,19 +348,19 @@
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                            <span class="payment-methods__item-title">PayPal</span>
-                                        </label>
-                                        <div class="payment-methods__item-container">
-                                            <div class="payment-methods__item-description text-muted">
-                                                Pay via PayPal; you can pay with your credit card if
-                                                you don’t have a PayPal account.
-                                            </div>
+                                        <span class="payment-methods__item-title">PayPal</span>
+                                    </label>
+                                    <div class="payment-methods__item-container">
+                                        <div class="payment-methods__item-description text-muted">
+                                            Pay via PayPal; you can pay with your credit card if
+                                            you don’t have a PayPal account.
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="checkout__agree form-group">
-                                <div class="form-check">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="checkout__agree form-group">
+                            <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
                                                     <input class="input-check__input"
@@ -391,22 +372,23 @@
                                                     </svg>
                                                 </span>
                                             </span>
-                                    <label class="form-check-label" for="checkout-terms">
-                                        I have read and agree to the website <a target="_blank"
-                                                                                href="terms-and-conditions.html">terms
-                                            and conditions</a>*
-                                    </label>
-                                </div>
+                                <label class="form-check-label" for="checkout-terms">
+                                    I have read and agree to the website <a target="_blank"
+                                                                            href="terms-and-conditions.html">terms
+                                        and conditions</a>*
+                                </label>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-xl btn-block">Place
-                                Order
-                            </button>
                         </div>
+                        <button type="submit" class="btn btn-primary btn-xl btn-block">Place
+                            Order
+                        </button>
+                        <?php ActiveForm::end() ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <?php /*?>
 
 
@@ -511,3 +493,11 @@
 </div>
 
  */ ?>
+
+<?php
+$script = <<< JS
+  $('.openCheckoutJs').click();
+JS;
+//маркер конца строки, обязательно сразу, без пробелов и табуляции
+$this->registerJs($script, yii\web\View::POS_READY);
+?>
