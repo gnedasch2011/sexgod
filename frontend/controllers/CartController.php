@@ -105,15 +105,17 @@ class CartController extends Controller
         return 'test';
     }
 
+    /**
+     * Удалить товар из корзины
+     * @return bool
+     */
     public function actionCartDeleteItem()
     {
-        $deleteItemId = Cart::geInitAjaxData();
-        $session = Cart::sessionInit();
+        $deleteItemId = Yii::$app->cart->geInitAjaxData();
+        $session = Yii::$app->cart->sessionInit();
+        unset(\Yii::$app->cart->cart[$deleteItemId['id']]);
+        $session->set('cart', \Yii::$app->cart->cart);
 
-        $cart = new Cart();
-        $cart = $cart->cart;
-        unset($cart[$deleteItemId['id']]);
-        $session->set('cart', $cart);
         return true;
     }
 
@@ -124,7 +126,7 @@ class CartController extends Controller
 
     public function actionGetCountItems()
     {
-       if (isset(\Yii::$app->cart->cart)) {
+        if (isset(\Yii::$app->cart->cart)) {
             return array_sum(\Yii::$app->cart->cart);
         }
 

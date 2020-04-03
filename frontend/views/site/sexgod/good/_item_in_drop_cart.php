@@ -1,6 +1,8 @@
 
 <?php foreach ($products as $good): ?>
-    <div class="dropcart__product">
+    <div class="dropcart__product dropBlockForRemove"
+         data-id="<?= $good->aID; ?>"
+    >
         <div class="dropcart__product-image">
             <a href="<?= $good->detailUrl; ?>"><img
                         src="<?= $good->mainImg; ?>"
@@ -21,7 +23,7 @@
         </div>
         <button type="button"
                 data-id="<?= $good->aID; ?>"
-                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
+                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon cartDeleteItemClass">
             <svg width="10px" height="10px">
                 <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-10"></use>
             </svg>

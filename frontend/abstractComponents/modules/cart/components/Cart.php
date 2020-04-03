@@ -15,8 +15,6 @@ class Cart extends Component
 
     public function checkGoodsInCart($idGood)
     {
-        $cart = new \app\models\Cart();
-
         return $this->checkGoodInCartArray($idGood);
     }
 

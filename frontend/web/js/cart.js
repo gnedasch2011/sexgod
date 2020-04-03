@@ -10,7 +10,8 @@ $priceDetail = $('.priceDetail'),
 
     $itemRow = '.cart-table__row',
     $gpButtonsAddInCartClass = '.input-number',
-    $inputNumberInputClass = '.input-number__input'
+    $inputNumberInputClass = '.input-number__input',
+    $cartDeleteItemClass = '.cartDeleteItemClass'
 ;
 
 
@@ -24,7 +25,7 @@ $($addInCartJs).on('click', function (e) {
 
     addInSessionCart(dataItem);
 
-    setTimeout(function(){
+    setTimeout(function () {
         getHtmlItemsForDropCart();
         getCountItems('.getCountItems');
     }, 100);
@@ -70,12 +71,15 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
     let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
 
     if (addInSessionCart(dataItem)) {
-        getTotalPriceOneGood(id, totalPriceOneGoodClass);
-    }
 
-    updateFullPriceInCart('.fullTotalCartClass');
-    getCountItems('.getCountItems');
-    getHtmlItemsForDropCart();
+    }
+    setTimeout(function () {
+        getTotalPriceOneGood(id, totalPriceOneGoodClass);
+        updateFullPriceInCart('.fullTotalCartClass');
+        getCountItems('.getCountItems');
+        getHtmlItemsForDropCart();
+    }, 100)
+
 
     testingCart();
 })
@@ -201,12 +205,13 @@ $('.gp-count').on('blur', function () {
     updatePriceInDetail();
 })
 
-$('.cartDeleteItem').on('click', function (e) {
+
+$(document).on('click', $cartDeleteItemClass, function (e) {
     e.preventDefault();
-    let parent = $(e.target).parents('tr');
-    let id = $(e.target).parents('tr').attr('data-id');
+    let parent = $(e.target).parents('.dropBlockForRemove');
+    let id = $(e.target).parents('.dropBlockForRemove').attr('data-id');
+
     let dataItem = {id: id};
-    parent.remove()
     dataItem = JSON.stringify(dataItem);
 
     $.ajax({
@@ -217,8 +222,8 @@ $('.cartDeleteItem').on('click', function (e) {
 
         success: function (data) {
             parent.remove()
-            updateCart()
-            updateFullPriceInCart();
+            // updateCart()
+            // updateFullPriceInCart();
         }
     });
 })

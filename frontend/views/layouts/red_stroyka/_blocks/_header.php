@@ -1716,9 +1716,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         <div class="dropcart dropcart--style--dropdown">
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
-
                                                     <?php if (\Yii::$app->cart->returnProductModelsInCart()): ?>
-
                                                         <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
                                                             'products' => \Yii::$app->cart->returnProductModelsInCart()
                                                         ]); ?>
@@ -1728,28 +1726,23 @@ use frontend\abstractComponents\models\CategoryAbstract;
 
                                                 <div class="dropcart__totals">
                                                     <table>
+<!--                                                        <tr>-->
+<!--                                                            <th>Подитог:</th>-->
+<!--                                                            <td>$5,877.00</td>-->
+<!--                                                        </tr>-->
                                                         <tr>
-                                                            <th>Subtotal</th>
-                                                            <td>$5,877.00</td>
+                                                            <th>Доставка:</th>
+                                                            <td>0 руб.</td>
                                                         </tr>
                                                         <tr>
-                                                            <th>Shipping</th>
-                                                            <td>$25.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Tax</th>
-                                                            <td>$0.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Total</th>
-                                                            <td>$5,902.00</td>
+                                                            <th>Итого:</th>
+                                                            <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ;?> руб.</td>
                                                         </tr>
                                                     </table>
                                                 </div>
                                                 <div class="dropcart__buttons">
-                                                    <a class="btn btn-secondary" href="cart.html">View
-                                                        Cart</a>
-                                                    <a class="btn btn-primary" href="checkout.html">Checkout</a>
+                                                    <a class="btn btn-secondary" href="/cart/">Корзина</a>
+                                                    <a class="btn btn-primary" href="/cart/"">Оформить</a>
                                                 </div>
                                             </div>
                                         </div>
