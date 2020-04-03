@@ -22,8 +22,14 @@ $($addInCartJs).on('click', function (e) {
     let dataItem = {"count": 1, "id": idItem};
     dataItem = JSON.stringify(dataItem);
 
-    addInSessionCart(dataItem)
-    getCountItems('.getCountItems');
+    addInSessionCart(dataItem);
+
+    setTimeout(function(){
+        getHtmlItemsForDropCart();
+        getCountItems('.getCountItems');
+    }, 100);
+
+
     testingCart();
 })
 
@@ -77,12 +83,11 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
 
 let getHtmlItemsForDropCart = function () {
     $.ajax({
-        url: '/cart/get-html-item-for-drop',
+        url: '/cart/get-html-item-for-drop/',
         method: "post",
-        data: data,
 
         success: function (data) {
-            console.log(data);
+            $('.dropcart__products-list').html(data)
         }
     });
 }

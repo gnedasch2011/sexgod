@@ -1716,6 +1716,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         <div class="dropcart dropcart--style--dropdown">
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
+
                                                     <?php if (\Yii::$app->cart->returnProductModelsInCart()): ?>
 
                                                         <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [

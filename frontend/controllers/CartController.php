@@ -56,7 +56,9 @@ class CartController extends Controller
 
     public function actionGetHtmlItemForDrop()
     {
-      return Yii::$app->cart->generateDropCart();
+        return $this->renderAjax('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+            'products' => \Yii::$app->cart->returnProductModelsInCart()
+        ]);
     }
 
     public function actionTestCart()
@@ -97,9 +99,9 @@ class CartController extends Controller
 
     public function actionGetCartInfo()
     {
-        echo "<pre>";
-        print_r(\Yii::$app->cart);
-        die();
+//        echo "<pre>";
+//        print_r(\Yii::$app->cart);
+//        die();
         return 'test';
     }
 
@@ -122,10 +124,8 @@ class CartController extends Controller
 
     public function actionGetCountItems()
     {
-        $cart = new Cart();
-
-        if (isset($cart['cart'])) {
-            return array_sum($cart['cart']);
+       if (isset(\Yii::$app->cart->cart)) {
+            return array_sum(\Yii::$app->cart->cart);
         }
 
         return 0;
