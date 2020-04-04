@@ -33,7 +33,7 @@
     <td class="cart-table__column cart-table__column--remove">
         <button type="button" class="btn btn-light btn-sm btn-svg-icon">
             <svg width="12px" height="12px">
-                <use xlink:href="images/sprite.svg#cross-12"></use>
+                <use xlink:href="/template/red_stroyka/images/sprite.svg#cross-12"></use>
             </svg>
         </button>
     </td>

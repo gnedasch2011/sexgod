@@ -191,7 +191,7 @@
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="offcanvas-cart.html" class="mobile-links__item-link">Offcanvas
+                                    <a href="offcanvas-/cart/" class="mobile-links__item-link">Offcanvas
                                         Cart</a>
                                 </div>
                             </li>
@@ -405,7 +405,7 @@
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="cart.html" class="mobile-links__item-link">Cart</a>
+                                    <a href="/cart/" class="mobile-links__item-link">Cart</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>

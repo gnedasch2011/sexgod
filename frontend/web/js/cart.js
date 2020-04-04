@@ -36,7 +36,6 @@ $($addInCartJs).on('click', function (e) {
 
 
 let testingCart = function () {
-    return true;
     setTimeout(
         $.ajax({
             url: '/cart/test-cart/',

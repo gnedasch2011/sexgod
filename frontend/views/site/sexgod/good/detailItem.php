@@ -54,13 +54,13 @@ use yii\widgets\Breadcrumbs;
                         <button type="button" class="btn btn-sm btn-light btn-svg-icon"
                                 data-toggle="tooltip" data-placement="right" title="Wishlist">
                             <svg width="16px" height="16px">
-                                <use xlink:href="/template/red_stroyka/images/products/sprite.svg#wishlist-16"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
                             </svg>
                         </button>
                         <button type="button" class="btn btn-sm btn-light btn-svg-icon"
                                 data-toggle="tooltip" data-placement="right" title="Compare">
                             <svg width="16px" height="16px">
-                                <use xlink:href="/template/red_stroyka/images/products/sprite.svg#compare-16"></use>
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
                             </svg>
                         </button>
                     </div>
@@ -268,7 +268,7 @@ use yii\widgets\Breadcrumbs;
                                             class="btn btn-secondary btn-svg-icon btn-lg"
                                             data-toggle="tooltip" title="Избранное">
                                         <svg width="16px" height="16px">
-                                            <use xlink:href="/template/red_stroyka/images/products/sprite.svg#wishlist-16"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -277,7 +277,7 @@ use yii\widgets\Breadcrumbs;
                                             class="btn btn-secondary btn-svg-icon btn-lg"
                                             data-toggle="tooltip" title="Сравнение">
                                         <svg width="16px" height="16px">
-                                            <use xlink:href="/template/red_stroyka/images/products/sprite.svg#compare-16"></use>
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
                                         </svg>
                                     </button>
                                 </div>

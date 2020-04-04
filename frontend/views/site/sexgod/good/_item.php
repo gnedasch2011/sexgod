@@ -7,7 +7,7 @@ use yii\helpers\Html;
         <div class="product-card ">
             <button class="product-card__quickview" type="button">
                 <svg width="16px" height="16px">
-                    <use xlink:href="template/red_stroyka/images/sprite.svg#quickview-16"></use>
+                    <use xlink:href="/template/red_stroyka/images/sprite.svg#quickview-16"></use>
                 </svg>
                 <span class="fake-svg-icon"></span>
             </button>

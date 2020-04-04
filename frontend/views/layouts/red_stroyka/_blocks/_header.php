@@ -117,7 +117,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                 </a>
                             </div>
                             <div class="indicator indicator--mobile">
-                                <a href="cart.html" class="indicator__button">
+                                <a href="/cart/" class="indicator__button">
                                         <span class="indicator__area">
                                             <svg width="20px" height="20px">
                                                 <use xlink:href="/template/red_stroyka/images/sprite.svg#cart-20"></use>
@@ -1074,7 +1074,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="offcanvas-cart.html">
+                                                           href="offcanvas-/cart/">
                                                             Offcanvas Cart
                                                         </a>
                                                     </li>
@@ -1316,7 +1316,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="cart.html">
+                                                        <a class="menu__item-link" href="/cart/">
                                                             Cart
                                                         </a>
                                                     </li>

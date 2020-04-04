@@ -368,7 +368,7 @@ use yii\widgets\ActiveForm;
                                                     <span class="input-check__box"></span>
                                                     <svg class="input-check__icon" width="9px"
                                                          height="7px">
-                                                        <use xlink:href="images/sprite.svg#check-9x7"></use>
+                                                        <use xlink:href="/template/red_stroyka/images/sprite.svg#check-9x7"></use>
                                                     </svg>
                                                 </span>
                                             </span>
