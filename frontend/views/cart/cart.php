@@ -476,7 +476,7 @@ use yii\widgets\ActiveForm;
 
 <?php
 $script = <<< JS
-  $('.openCheckoutJs').click();
+  // $('.openCheckoutJs').click();
 JS;
 //маркер конца строки, обязательно сразу, без пробелов и табуляции
 $this->registerJs($script, yii\web\View::POS_READY);
