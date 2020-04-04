@@ -3,7 +3,7 @@
         <button type="button" class="filter__title" data-collapse-trigger>
             Категории
             <svg class="filter__arrow" width="12px" height="7px">
-                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
             </svg>
         </button>
 
@@ -21,7 +21,7 @@
                             ?>
                             <li class="filter-categories__item filter-categories__item--parent">
                                 <svg class="filter-categories__arrow" width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-6x9"></use>
+                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-6x9"></use>
                                 </svg>
                                 <a href="<?= $urlCat; ?>"><?= $item->name; ?></a>
                                 <div class="filter-categories__counter"><?= $item->countItems; ?></div>

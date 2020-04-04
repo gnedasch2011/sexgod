@@ -200,7 +200,12 @@
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
+<<<<<<< HEAD
                                     <a href="offcanvas-cart.html" class="mobile-links__item-link">Вагинальные шарики</a>
+=======
+                                    <a href="offcanvas-/cart/" class="mobile-links__item-link">Offcanvas
+                                        Cart</a>
+>>>>>>> e92e6bb65d61c0a3dde164dd5bcdf93def59aee1
                                 </div>
                             </li>
                         </ul>
@@ -412,7 +417,7 @@
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="cart.html" class="mobile-links__item-link">Cart</a>
+                                    <a href="/cart/" class="mobile-links__item-link">Cart</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>

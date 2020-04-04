@@ -15,8 +15,6 @@ class Cart extends Component
 
     public function checkGoodsInCart($idGood)
     {
-        $cart = new \app\models\Cart();
-
         return $this->checkGoodInCartArray($idGood);
     }
 
@@ -68,12 +66,12 @@ class Cart extends Component
         return Goods::find()->where(['id' => $this->getIdsProductsInCart()])->all();
 
     }
-    
+
     public function getTotalPriceOneGood()
     {
-        
+
     }
-    
+
     public function returnCartFullPrice()
     {
         $fullPrice = 0;
@@ -87,8 +85,6 @@ class Cart extends Component
 
         return $fullPrice;
     }
-
-
 
 
     public function getFullPriceOneGood($goodId)
@@ -143,7 +139,7 @@ class Cart extends Component
     public function addInSessionCart()
     {
         $session = $this->sessionInit();
-      
+
         $dataForCart = $this->getDataFromPost();
 
         if (empty($this->cart)) {
@@ -151,7 +147,7 @@ class Cart extends Component
                 $dataForCart['id'] => $dataForCart['count']
             ];
         }
-        
+
         if (!empty($this->cart)) {
             $this->cart[$dataForCart['id']] = $dataForCart['count'];
             $session->set('cart', $this->cart);
@@ -174,17 +170,18 @@ class Cart extends Component
     }
 
 
-
     public function returnProductModelsInCart()
     {
         $products = [];
+    
         if (isset($this->cart)) {
             foreach ($this->cart as $id => $count) {
-                $products = Goods::getProducts([
+                $prod = Goods::getProducts([
                     'idOneGood' => [$id]
                 ]);
-
+                $products[] = $prod[0];
             }
+
             return $products;
         }
 

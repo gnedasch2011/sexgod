@@ -25,22 +25,23 @@ class RedStroykaAsset extends AssetBundle
     public $baseUrl = '@web';
     public $depends = [
         'yii\web\YiiAsset',
-//        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
     public $js = [
-        'template/red_stroyka/vendor/jquery/jquery.min.js',
-        'template/red_stroyka/vendor/bootstrap/js/bootstrap.bundle.min.js',
-        'template/red_stroyka/vendor/owl-carousel/owl.carousel.min.js',
-        'template/red_stroyka/vendor/nouislider/nouislider.min.js',
-        'template/red_stroyka/vendor/photoswipe/photoswipe.min.js',
-        'template/red_stroyka/vendor/photoswipe/photoswipe-ui-default.min.js',
-        'template/red_stroyka/js/number.js',
-        'template/red_stroyka/vendor/select2/js/select2.min.js',
-        'template/red_stroyka/vendor/svg4everybody/svg4everybody.min.js',
-        'template/red_stroyka/js/main.js',
-        'template/red_stroyka/js/header.js',
-        'js/main.js',
+//        'template/red_stroyka/vendor/jquery/jquery.min.js',
+        '/template/red_stroyka/vendor/bootstrap/js/bootstrap.bundle.min.js',
+        '/template/red_stroyka/vendor/owl-carousel/owl.carousel.min.js',
+        '/template/red_stroyka/vendor/nouislider/nouislider.min.js',
+        '/template/red_stroyka/vendor/photoswipe/photoswipe.min.js',
+        '/template/red_stroyka/vendor/photoswipe/photoswipe-ui-default.min.js',
+        '/template/red_stroyka/js/number.js',
+        '/template/red_stroyka/vendor/select2/js/select2.min.js',
+        '/template/red_stroyka/vendor/svg4everybody/svg4everybody.min.js',
+        '/template/red_stroyka/js/main.js',
+        '/template/red_stroyka/js/header.js',
+        '/js/main.js',
+
         //модули
-        'js/cart.js'
+        '/js/cart.js'
     ];
 }

@@ -10,7 +10,8 @@ $priceDetail = $('.priceDetail'),
 
     $itemRow = '.cart-table__row',
     $gpButtonsAddInCartClass = '.input-number',
-    $inputNumberInputClass = '.input-number__input'
+    $inputNumberInputClass = '.input-number__input',
+    $cartDeleteItemClass = '.cartDeleteItemClass'
 ;
 
 
@@ -22,13 +23,20 @@ $($addInCartJs).on('click', function (e) {
     let dataItem = {"count": 1, "id": idItem};
     dataItem = JSON.stringify(dataItem);
 
-    addInSessionCart(dataItem)
-    getCountItems('.getCountItems');
+    addInSessionCart(dataItem);
+
+    setTimeout(function () {
+        getHtmlItemsForDropCart();
+        getCountItems('.getCountItems');
+    }, 100);
+
+
     testingCart();
 })
 
 
 let testingCart = function () {
+    return true;
     setTimeout(
         $.ajax({
             url: '/cart/test-cart/',
@@ -64,12 +72,15 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
     let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
 
     if (addInSessionCart(dataItem)) {
-        getTotalPriceOneGood(id, totalPriceOneGoodClass);
-    }
 
-    updateFullPriceInCart('.fullTotalCartClass');
-    getCountItems('.getCountItems');
-    getHtmlItemsForDropCart();
+    }
+    setTimeout(function () {
+        getTotalPriceOneGood(id, totalPriceOneGoodClass);
+        updateFullPriceInCart('.fullTotalCartClass');
+        getCountItems('.getCountItems');
+        getHtmlItemsForDropCart();
+    }, 100)
+
 
     testingCart();
 })
@@ -77,12 +88,11 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
 
 let getHtmlItemsForDropCart = function () {
     $.ajax({
-        url: '/cart/get-html-item-for-drop',
+        url: '/cart/get-html-item-for-drop/',
         method: "post",
-        data: data,
 
         success: function (data) {
-            console.log(data);
+            $('.dropcart__products-list').html(data)
         }
     });
 }
@@ -196,12 +206,13 @@ $('.gp-count').on('blur', function () {
     updatePriceInDetail();
 })
 
-$('.cartDeleteItem').on('click', function (e) {
+
+$(document).on('click', $cartDeleteItemClass, function (e) {
     e.preventDefault();
-    let parent = $(e.target).parents('tr');
-    let id = $(e.target).parents('tr').attr('data-id');
+    let parent = $(e.target).parents('.dropBlockForRemove');
+    let id = $(e.target).parents('.dropBlockForRemove').attr('data-id');
+
     let dataItem = {id: id};
-    parent.remove()
     dataItem = JSON.stringify(dataItem);
 
     $.ajax({
@@ -212,8 +223,8 @@ $('.cartDeleteItem').on('click', function (e) {
 
         success: function (data) {
             parent.remove()
-            updateCart()
-            updateFullPriceInCart();
+            // updateCart()
+            // updateFullPriceInCart();
         }
     });
 })
@@ -325,7 +336,15 @@ $(function () {
     // $("#callleadform-phone").mask("8(999) 999-9999");
 });
 
+$(document).on('click', '.payment-methods__item', function (e) {
+    e.preventDefault();
 
-(function () {
-    // $("#order-phone").mask("8(999) 999-9999");
-})()
+    $(".payment-methods__item").each(function (i, val) {
+        $(val).find('input').attr('checked', false)
+    })
+
+    $(this).find('.input-radio__input').change();
+    $(this).find('input').attr('checked', true);
+
+})
+
