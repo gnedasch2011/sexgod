@@ -260,7 +260,7 @@ use yii\widgets\ActiveForm;
                             <tbody class="checkout__totals-subtotals">
                             <tr>
                                 <th>Подитог</th>
-                                <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
+                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
                             </tr>
                             <tr>
                                 <th>Скидки</th>
@@ -274,7 +274,7 @@ use yii\widgets\ActiveForm;
                             <tfoot class="checkout__totals-footer">
                             <tr>
                                 <th>Итого</th>
-                                <td><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
+                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
                             </tr>
                             </tfoot>
                         </table>
