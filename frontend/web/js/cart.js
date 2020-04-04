@@ -348,3 +348,19 @@ $(document).on('click', '.payment-methods__item', function (e) {
 
 })
 
+
+$(document).on('click', '.checkout__agree', function (e) {
+    e.preventDefault();
+    if ($(this).find('input').is(':checked')) {
+        $(this).find('input').prop('checked', false);
+    } else {
+        $(this).find('input').prop('checked', true);
+    }
+
+})
+  $(document).on('click','.checkoutForm',function (e) {
+         e.preventDefault();
+console.log( $("#checkout-form").serializeArray());
+
+         console.log('fs');
+  })

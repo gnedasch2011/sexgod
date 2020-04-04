@@ -29,12 +29,12 @@ use yii\widgets\ActiveForm;
                 </tbody>
             </table>
             <div class="cart__actions">
-                <form class="cart__coupon-form">
-                    <label for="input-coupon-code" class="sr-only">Password</label>
-                    <input type="text" class="form-control" id="input-coupon-code"
-                           placeholder="Код купона">
-                    <button type="submit" class="btn btn-primary">Применить купон</button>
-                </form>
+                <!--                <form class="cart__coupon-form">-->
+                <!--                    <label for="input-coupon-code" class="sr-only">Password</label>-->
+                <!--                    <input type="text" class="form-control" id="input-coupon-code"-->
+                <!--                           placeholder="Код купона">-->
+                <!--                    <button type="submit" class="btn btn-primary">Применить купон</button>-->
+                <!--                </form>-->
                 <div class="cart__buttons">
                     <a href="/catalog/seks-igrushki/" class="btn btn-light">Продолжить покупки</a>
                     <!--                    <a href="" class="btn btn-primary cart__update-button">Update Cart</a>-->
@@ -111,7 +111,7 @@ use yii\widgets\ActiveForm;
                         use yii\helpers\Html;
 
                         $form = ActiveForm::begin([
-                            'id' => 'login-form',
+                            'id' => 'checkout-form',
                             'options' => ['class' => ''],
                         ]) ?>
 
@@ -149,9 +149,9 @@ use yii\widgets\ActiveForm;
                         <div class="form-group">
                             <?= $form->field($checkout, 'address', ['errorOptions' => ['class' => 'v-msg']])
                                 ->textInput([
-                                    'placeholder' => 'Ваш адресс',
+                                    'placeholder' => 'Ваш адрес',
                                     'class' => 'form-control',
-                                ])->label('Ваш адресс', [
+                                ])->label('Ваш адрес', [
                                     'class' => 'checkout-first-name',
                                 ]); ?>
                         </div>
@@ -167,6 +167,7 @@ use yii\widgets\ActiveForm;
                                         'class' => 'checkout-first-name',
                                     ]); ?>
                             </div>
+
                             <div class="form-group col-md-6">
                                 <?= $form->field($checkout, 'phone', ['errorOptions' => ['class' => 'v-msg']])
                                     ->textInput([
@@ -176,6 +177,7 @@ use yii\widgets\ActiveForm;
                                         'class' => 'checkout-first-name',
                                     ]); ?>
                             </div>
+
                         </div>
                         <?php /*?>
 
@@ -256,7 +258,7 @@ use yii\widgets\ActiveForm;
                                 ?>
                             <?php endforeach; ?>
 
-                         </tbody>
+                            </tbody>
                             <tbody class="checkout__totals-subtotals">
                             <tr>
                                 <th>Подитог</th>
@@ -274,7 +276,9 @@ use yii\widgets\ActiveForm;
                             <tfoot class="checkout__totals-footer">
                             <tr>
                                 <th>Итого</th>
-                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
+                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?>
+                                    руб.
+                                </td>
                             </tr>
                             </tfoot>
                         </table>
@@ -285,30 +289,32 @@ use yii\widgets\ActiveForm;
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
+                                                                   name="Checkout[checkout_payment_method]"
                                                                    value="1"
-                                                                   type="radio">
+                                                                   type="radio"
+                                                                    checked
+                                                            >
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
                                         <span class="payment-methods__item-title">Наличными при получении</span>
                                     </label>
-<!--                                    <div class="payment-methods__item-container">-->
-<!--                                        <div class="payment-methods__item-description text-muted">-->
-<!--                                            Make your payment directly into our bank account.-->
-<!--                                            Please use your Order ID as the payment-->
-<!--                                            reference. Your order will not be shipped until the-->
-<!--                                            funds have cleared in our account.-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="payment-methods__item-container">-->
+                                    <!--                                        <div class="payment-methods__item-description text-muted">-->
+                                    <!--                                            Make your payment directly into our bank account.-->
+                                    <!--                                            Please use your Order ID as the payment-->
+                                    <!--                                            reference. Your order will not be shipped until the-->
+                                    <!--                                            funds have cleared in our account.-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                 </li>
                                 <li class="payment-methods__item">
                                     <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   val="2"
+                                                                   name="Checkout[checkout_payment_method]"
+                                                                   value="2"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
@@ -326,29 +332,34 @@ use yii\widgets\ActiveForm;
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   val="3"
+                                                                   name="Checkout[checkout_payment_method]"
+                                                                   value="3"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
                                         <span class="payment-methods__item-title">Картой при доставке</span>
                                     </label>
-<!--                                    <div class="payment-methods__item-container">-->
-<!--                                        <div class="payment-methods__item-description text-muted">-->
-<!--                                            Pay with cash upon delivery.-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="payment-methods__item-container">-->
+                                    <!--                                        <div class="payment-methods__item-description text-muted">-->
+                                    <!--                                            Pay with cash upon delivery.-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                 </li>
 
                             </ul>
                         </div>
+                        <?php /*?>
+
                         <div class="checkout__agree form-group">
                             <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
+
                                                     <input class="input-check__input"
-                                                           type="checkbox" id="checkout-terms">
+                                                           type="checkbox" id="checkout-terms"
+                                                           name="puboferta"
+                                                    >
                                                     <span class="input-check__box"></span>
                                                     <svg class="input-check__icon" width="9px"
                                                          height="7px">
@@ -357,11 +368,13 @@ use yii\widgets\ActiveForm;
                                                 </span>
                                             </span>
                                 <label class="form-check-label" for="checkout-terms">
-                                    Я согласен(a) с политикой конфиденциальности и даю согласие на обработку персональных
+                                    Я согласен(a) с политикой конфиденциальности и даю согласие на
+                                    обработку персональных
                                 </label>
                             </div>
-                        </div>
-                        <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary btn-xl btn-block']) ?>
+                        </div>    <?php */ ?>
+
+                        <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary btn-xl btn-block checkoutForm']) ?>
                         <?php ActiveForm::end() ?>
                     </div>
                 </div>
@@ -476,7 +489,7 @@ use yii\widgets\ActiveForm;
 
 <?php
 $script = <<< JS
-  // $('.openCheckoutJs').click();
+  $('.openCheckoutJs').click();
 JS;
 //маркер конца строки, обязательно сразу, без пробелов и табуляции
 $this->registerJs($script, yii\web\View::POS_READY);

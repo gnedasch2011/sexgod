@@ -16,12 +16,15 @@ class Checkout extends Model
     public $email;
     public $name;
     public $town;
+    public $puboferta;
 
     public function rules()
     {
         return [
             ['phone', 'required'],
-            [['payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name'], 'string', 'max' => 255],
+            [[
+                'payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name', 'puboferta'
+            ], 'string', 'max' => 255],
         ];
     }
 
