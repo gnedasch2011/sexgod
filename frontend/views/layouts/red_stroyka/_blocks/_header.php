@@ -14,7 +14,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="canonical" href="http://site.com/dresses.html"/>
+    <link rel="canonical" href="#"/>
 
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
@@ -107,7 +107,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                 </button>
                             </div>
                             <div class="indicator indicator--mobile d-sm-flex d-none">
-                                <a href="wishlist.html" class="indicator__button">
+                                <a href="#" class="indicator__button">
                                         <span class="indicator__area">
                                             <svg width="20px" height="20px">
                                                 <use xlink:href="/template/red_stroyka/images/sprite.svg#heart-20"></use>
@@ -141,19 +141,19 @@ use frontend\abstractComponents\models\CategoryAbstract;
                 <div class="topbar__container container">
                     <div class="topbar__row">
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="about-us.html">О нас</a>
+                            <a class="topbar-link" href="#">О нас</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="contact-us.html">Доставка</a>
+                            <a class="topbar-link" href="#">Доставка</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
                             <a class="topbar-link" href="">Способы оплаты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="track-order.html">Контакты</a>
+                            <a class="topbar-link" href="#">Контакты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="blog-classic.html">Блог</a>
+                            <a class="topbar-link" href="#">Блог</a>
                         </div>
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
@@ -176,7 +176,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-dashboard.html">
+                                                   href="#">
                                                     Dashboard
                                                 </a>
                                             </li>
@@ -184,7 +184,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-profile.html">
+                                                   href="#">
                                                     Edit Profile
                                                 </a>
                                             </li>
@@ -192,7 +192,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-orders.html">
+                                                   href="#">
                                                     Order History
                                                 </a>
                                             </li>
@@ -200,7 +200,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-addresses.html">
+                                                   href="#">
                                                     Addresses
                                                 </a>
                                             </li>
@@ -208,7 +208,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-password.html">
+                                                   href="#">
                                                     Password
                                                 </a>
                                             </li>
@@ -216,7 +216,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
-                                                   href="account-login.html">
+                                                   href="#">
                                                     Logout
                                                 </a>
                                             </li>
@@ -1042,7 +1042,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="index.html">
+                                                           href="#">
                                                             Home 1 Slideshow
                                                         </a>
                                                     </li>
@@ -1050,7 +1050,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="index-2.html">
+                                                           href="#">
                                                             Home 2 Slideshow
                                                         </a>
                                                     </li>
@@ -1058,7 +1058,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="index-3.html">
+                                                           href="#">
                                                             Home 1 Finder
                                                         </a>
                                                     </li>
@@ -1066,7 +1066,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="index-4.html">
+                                                           href="#">
                                                             Home 2 Finder
                                                         </a>
                                                     </li>
@@ -1074,7 +1074,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="offcanvas-/cart/">
+                                                           href="#">
                                                             Offcanvas Cart
                                                         </a>
                                                     </li>
@@ -1193,7 +1193,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                     </li>
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
                                         <a class="nav-links__item-link"
-                                           href="shop-grid-3-columns-sidebar.html">
+                                           href="#">
                                             <div class="nav-links__item-body">
                                                 Парам
                                                 <svg class="nav-links__item-arrow" width="9px"
@@ -1211,7 +1211,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="shop-grid-3-columns-sidebar.html">
+                                                           href="#">
                                                             Shop Grid
                                                             <svg class="menu__item-arrow"
                                                                  width="6px" height="9px">
@@ -1227,7 +1227,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="shop-grid-3-columns-sidebar.html">
+                                                                           href="#">
                                                                             3 Columns Sidebar
                                                                         </a>
                                                                     </li>
@@ -1235,7 +1235,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="shop-grid-4-columns-full.html">
+                                                                           href="#">
                                                                             4 Columns Full
                                                                         </a>
                                                                     </li>
@@ -1243,7 +1243,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="shop-grid-5-columns-full.html">
+                                                                           href="#">
                                                                             5 Columns Full
                                                                         </a>
                                                                     </li>
@@ -1256,7 +1256,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="shop-list.html">
+                                                           href="#">
                                                             Shop List
                                                         </a>
                                                     </li>
@@ -1264,7 +1264,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="shop-right-sidebar.html">
+                                                           href="#">
                                                             Shop Right Sidebar
                                                         </a>
                                                     </li>
@@ -1272,7 +1272,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="product.html">
+                                                           href="#">
                                                             Product
                                                             <svg class="menu__item-arrow"
                                                                  width="6px" height="9px">
@@ -1288,7 +1288,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="product.html">
+                                                                           href="#">
                                                                             Product
                                                                         </a>
                                                                     </li>
@@ -1296,7 +1296,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="product-alt.html">
+                                                                           href="#">
                                                                             Product Alt
                                                                         </a>
                                                                     </li>
@@ -1304,7 +1304,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                         <div class="menu__item-submenu-offset"></div>
                                                                         <a class="menu__item-link"
-                                                                           href="product-sidebar.html">
+                                                                           href="#">
                                                                             Product Sidebar
                                                                         </a>
                                                                     </li>
@@ -1324,7 +1324,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="cart-empty.html">
+                                                           href="#">
                                                             Cart Empty
                                                         </a>
                                                     </li>
@@ -1332,7 +1332,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="checkout.html">
+                                                           href="#">
                                                             Checkout
                                                         </a>
                                                     </li>
@@ -1340,7 +1340,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="order-success.html">
+                                                           href="#">
                                                             Order Success
                                                         </a>
                                                     </li>
@@ -1348,7 +1348,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="wishlist.html">
+                                                           href="#">
                                                             Wishlist
                                                         </a>
                                                     </li>
@@ -1356,7 +1356,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="compare.html">
+                                                           href="#">
                                                             Compare
                                                         </a>
                                                     </li>
@@ -1364,7 +1364,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="track-order.html">
+                                                           href="#">
                                                             Track Order
                                                         </a>
                                                     </li>
@@ -1374,7 +1374,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         </div>
                                     </li>
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
-                                        <a class="nav-links__item-link" href="account-login.html">
+                                        <a class="nav-links__item-link" href="#">
                                             <div class="nav-links__item-body">
                                                 BDSM
                                                 <svg class="nav-links__item-arrow" width="9px"
@@ -1392,7 +1392,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-login.html">
+                                                           href="#">
                                                             Login
                                                         </a>
                                                     </li>
@@ -1400,7 +1400,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-dashboard.html">
+                                                           href="#">
                                                             Dashboard
                                                         </a>
                                                     </li>
@@ -1408,7 +1408,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-profile.html">
+                                                           href="#">
                                                             Edit Profile
                                                         </a>
                                                     </li>
@@ -1416,7 +1416,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-orders.html">
+                                                           href="#">
                                                             Order History
                                                         </a>
                                                     </li>
@@ -1424,7 +1424,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-order-details.html">
+                                                           href="#">
                                                             Order Details
                                                         </a>
                                                     </li>
@@ -1432,7 +1432,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-addresses.html">
+                                                           href="#">
                                                             Address Book
                                                         </a>
                                                     </li>
@@ -1440,7 +1440,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-edit-address.html">
+                                                           href="#">
                                                             Edit Address
                                                         </a>
                                                     </li>
@@ -1448,7 +1448,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="account-password.html">
+                                                           href="#">
                                                             Change Password
                                                         </a>
                                                     </li>
@@ -1458,7 +1458,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                         </div>
                                     </li>
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
-                                        <a class="nav-links__item-link" href="blog-classic.html">
+                                        <a class="nav-links__item-link" href="#">
                                             <div class="nav-links__item-body">
                                                 Одежда
                                                 <svg class="nav-links__item-arrow" width="9px"
@@ -1476,7 +1476,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="blog-classic.html">
+                                                           href="#">
                                                             Blog Classic
                                                         </a>
                                                     </li>
@@ -1484,7 +1484,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="blog-grid.html">
+                                                           href="#">
                                                             Blog Grid
                                                         </a>
                                                     </li>
@@ -1492,7 +1492,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="blog-list.html">
+                                                           href="#">
                                                             Blog List
                                                         </a>
                                                     </li>
@@ -1500,14 +1500,14 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="blog-left-sidebar.html">
+                                                           href="#">
                                                             Blog Left Sidebar
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="post.html">
+                                                        <a class="menu__item-link" href="#">
                                                             Post Page
                                                         </a>
                                                     </li>
@@ -1515,7 +1515,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="post-without-sidebar.html">
+                                                           href="#">
                                                             Post Without Sidebar
                                                         </a>
                                                     </li>
@@ -1543,7 +1543,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="about-us.html">
+                                                           href="#">
                                                             About Us
                                                         </a>
                                                     </li>
@@ -1551,7 +1551,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="contact-us.html">
+                                                           href="#">
                                                             Contact Us
                                                         </a>
                                                     </li>
@@ -1559,14 +1559,14 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="contact-us-alt.html">
+                                                           href="#">
                                                             Contact Us Alt
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="404.html">
+                                                        <a class="menu__item-link" href="#">
                                                             404
                                                         </a>
                                                     </li>
@@ -1574,14 +1574,14 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="terms-and-conditions.html">
+                                                           href="#">
                                                             Terms And Conditions
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="faq.html">
+                                                        <a class="menu__item-link" href="#">
                                                             FAQ
                                                         </a>
                                                     </li>
@@ -1589,7 +1589,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="components.html">
+                                                           href="#">
                                                             Components
                                                         </a>
                                                     </li>
@@ -1597,7 +1597,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="typography.html">
+                                                           href="#">
                                                             Typography
                                                         </a>
                                                     </li>
@@ -1625,7 +1625,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="about-us.html">
+                                                           href="#">
                                                             Презервативы
                                                         </a>
                                                     </li>
@@ -1633,7 +1633,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="contact-us.html">
+                                                           href="#">
                                                             Сувениры
                                                         </a>
                                                     </li>
@@ -1641,14 +1641,14 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="contact-us-alt.html">
+                                                           href="#">
                                                             Эротические игры
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="404.html">
+                                                        <a class="menu__item-link" href="#">
                                                             Секс-Мебель
                                                         </a>
                                                     </li>
@@ -1656,14 +1656,14 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="terms-and-conditions.html">
+                                                           href="#">
                                                             Возбуждающие средства
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link" href="faq.html">
+                                                        <a class="menu__item-link" href="#">
                                                             Феромоны
                                                         </a>
                                                     </li>
@@ -1671,7 +1671,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="components.html">
+                                                           href="#">
                                                             Интимная гигиена
                                                         </a>
                                                     </li>
@@ -1679,7 +1679,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="typography.html">
+                                                           href="#">
                                                             Typography
                                                         </a>
                                                     </li>
@@ -1693,7 +1693,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                             <!-- .nav-links / end -->
                             <div class="nav-panel__indicators">
                                 <div class="indicator">
-                                    <a href="wishlist.html" class="indicator__button">
+                                    <a href="#" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#heart-20"></use>
@@ -1788,11 +1788,11 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                     </button>
                                                 </div>
                                                 <div class="account-menu__form-link"><a
-                                                            href="account-login.html">Create An
+                                                            href="#">Create An
                                                         Account</a></div>
                                             </form>
                                             <div class="account-menu__divider"></div>
-                                            <a href="account-dashboard.html"
+                                            <a href="#"
                                                class="account-menu__user">
                                                 <div class="account-menu__user-avatar">
                                                     <img src="/template/red_stroyka/images/avatars/avatar-3.jpg"
@@ -1809,18 +1809,18 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                             </a>
                                             <div class="account-menu__divider"></div>
                                             <ul class="account-menu__links">
-                                                <li><a href="account-profile.html">Edit Profile</a>
+                                                <li><a href="#">Edit Profile</a>
                                                 </li>
-                                                <li><a href="account-orders.html">Order History</a>
+                                                <li><a href="#">Order History</a>
                                                 </li>
-                                                <li><a href="account-addresses.html">Addresses</a>
+                                                <li><a href="#">Addresses</a>
                                                 </li>
-                                                <li><a href="account-password.html">Password</a>
+                                                <li><a href="#">Password</a>
                                                 </li>
                                             </ul>
                                             <div class="account-menu__divider"></div>
                                             <ul class="account-menu__links">
-                                                <li><a href="account-login.html">Logout</a></li>
+                                                <li><a href="#">Logout</a></li>
                                             </ul>
                                         </div>
                                     </div>

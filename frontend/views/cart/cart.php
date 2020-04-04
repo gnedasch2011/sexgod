@@ -286,18 +286,38 @@ use yii\widgets\ActiveForm;
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
                                                                    name="checkout_payment_method"
-                                                                   type="radio" checked>
+                                                                   value="1"
+                                                                   type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                        <span class="payment-methods__item-title">Direct bank transfer</span>
+                                        <span class="payment-methods__item-title">Наличными при получении</span>
+                                    </label>
+<!--                                    <div class="payment-methods__item-container">-->
+<!--                                        <div class="payment-methods__item-description text-muted">-->
+<!--                                            Make your payment directly into our bank account.-->
+<!--                                            Please use your Order ID as the payment-->
+<!--                                            reference. Your order will not be shipped until the-->
+<!--                                            funds have cleared in our account.-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </li>
+                                <li class="payment-methods__item">
+                                    <label class="payment-methods__item-header">
+                                                    <span class="payment-methods__item-radio input-radio">
+                                                        <span class="input-radio__body">
+                                                            <input class="input-radio__input"
+                                                                   name="checkout_payment_method"
+                                                                   val="2"
+                                                                   type="radio">
+                                                            <span class="input-radio__circle"></span>
+                                                        </span>
+                                                    </span>
+                                        <span class="payment-methods__item-title">Картой на сайте</span>
                                     </label>
                                     <div class="payment-methods__item-container">
                                         <div class="payment-methods__item-description text-muted">
-                                            Make your payment directly into our bank account.
-                                            Please use your Order ID as the payment
-                                            reference. Your order will not be shipped until the
-                                            funds have cleared in our account.
+                                            Можете оплатить VISA, MASTERCARD
                                         </div>
                                     </div>
                                 </li>
@@ -307,56 +327,20 @@ use yii\widgets\ActiveForm;
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
                                                                    name="checkout_payment_method"
+                                                                   val="3"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                        <span class="payment-methods__item-title">Check payments</span>
+                                        <span class="payment-methods__item-title">Картой при доставке</span>
                                     </label>
-                                    <div class="payment-methods__item-container">
-                                        <div class="payment-methods__item-description text-muted">
-                                            Please send a check to Store Name, Store Street,
-                                            Store Town, Store State / County, Store Postcode.
-                                        </div>
-                                    </div>
+<!--                                    <div class="payment-methods__item-container">-->
+<!--                                        <div class="payment-methods__item-description text-muted">-->
+<!--                                            Pay with cash upon delivery.-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                 </li>
-                                <li class="payment-methods__item">
-                                    <label class="payment-methods__item-header">
-                                                    <span class="payment-methods__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                        <span class="payment-methods__item-title">Cash on delivery</span>
-                                    </label>
-                                    <div class="payment-methods__item-container">
-                                        <div class="payment-methods__item-description text-muted">
-                                            Pay with cash upon delivery.
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="payment-methods__item">
-                                    <label class="payment-methods__item-header">
-                                                    <span class="payment-methods__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                        <span class="payment-methods__item-title">PayPal</span>
-                                    </label>
-                                    <div class="payment-methods__item-container">
-                                        <div class="payment-methods__item-description text-muted">
-                                            Pay via PayPal; you can pay with your credit card if
-                                            you don’t have a PayPal account.
-                                        </div>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
                         <div class="checkout__agree form-group">
@@ -373,15 +357,11 @@ use yii\widgets\ActiveForm;
                                                 </span>
                                             </span>
                                 <label class="form-check-label" for="checkout-terms">
-                                    I have read and agree to the website <a target="_blank"
-                                                                            href="terms-and-conditions.html">terms
-                                        and conditions</a>*
+                                    Я согласен(a) с политикой конфиденциальности и даю согласие на обработку персональных
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-xl btn-block">Place
-                            Order
-                        </button>
+                        <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary btn-xl btn-block']) ?>
                         <?php ActiveForm::end() ?>
                     </div>
                 </div>

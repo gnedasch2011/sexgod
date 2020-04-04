@@ -36,6 +36,7 @@ $($addInCartJs).on('click', function (e) {
 
 
 let testingCart = function () {
+    return true;
     setTimeout(
         $.ajax({
             url: '/cart/test-cart/',
@@ -335,7 +336,15 @@ $(function () {
     // $("#callleadform-phone").mask("8(999) 999-9999");
 });
 
+$(document).on('click', '.payment-methods__item', function (e) {
+    e.preventDefault();
 
-(function () {
-    // $("#order-phone").mask("8(999) 999-9999");
-})()
+    $(".payment-methods__item").each(function (i, val) {
+        $(val).find('input').attr('checked', false)
+    })
+
+    $(this).find('.input-radio__input').change();
+    $(this).find('input').attr('checked', true);
+
+})
+
