@@ -3,6 +3,7 @@
 namespace frontend\abstractComponents\modules\order\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "order".
@@ -17,6 +18,35 @@ use Yii;
  */
 class Order extends \yii\db\ActiveRecord
 {
+
+    public static $payments = [
+        1 => 'Наличными при получении',
+        2 => 'Картой на сайте',
+        3 => 'Картой при доставке',
+    ];
+
+    public function behaviors()
+    {
+        return [
+            //Использование поведения TimestampBehavior ActiveRecord
+            'timestamp' => [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    \yii\db\BaseActiveRecord::EVENT_BEFORE_INSERT => ['dateCreate'],
+                    \yii\db\BaseActiveRecord::EVENT_BEFORE_UPDATE => ['dateCreate'],
+
+                ],
+                //можно использовать 'value' => new \yii\db\Expression('NOW()'),
+                'value' => function () {
+                    return gmdate("Y-m-d H:i:s");
+                },
+
+
+            ],
+
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -32,7 +62,7 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             ['phone', 'required'],
-            [['payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name'], 'string', 'max' => 255],
+            [['payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product', 'email', 'name'], 'string', 'max' => 255],
         ];
     }
 

@@ -358,19 +358,47 @@ $(document).on('click', '.checkout__agree', function (e) {
     }
 
 })
+
 $(document).on('click', '.checkoutForm', function (e) {
     e.preventDefault();
     $("#checkout-form").submit();
-
-    // let data = $("#checkout-form").serializeArray();
-    // console.log(data);
-    // $.ajax({
-    //     url: '/cart/checkout/',
-    //     method: "post",
-    //     data: data,
-    //
-    //     success: function (data) {
-    //         console.log(data);
-    //     }
-    // });
 })
+
+$(document).on("beforeSubmit", "#checkout-form", function (event, messages) {
+    var formdata = $(this).serialize();
+
+    createOrder(formdata, function (data) {
+        generateOrderSuccess(orderId)
+    })
+    return false;
+});
+
+let generateOrderSuccess = function (data) {
+    $.ajax({
+        url: '/order/ajax/generate-order-success/',
+        method: "post",
+        data: data,
+
+        success: function (data) {
+            $('.').html(data)
+        }
+    });
+}
+
+
+let createOrder = function (data, callback = false) {
+
+    $.ajax({
+        url: '/order/ajax/checkout/',
+        method: "post",
+        data: data,
+
+        success: function (data) {
+            if (callback) {
+                callback(data)
+            }
+        }
+    });
+
+    return true;
+}

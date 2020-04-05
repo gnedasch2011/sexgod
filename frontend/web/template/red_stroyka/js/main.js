@@ -529,7 +529,6 @@
             }
         });
     });
-    console.log('work');
 
     /*
     // Checkout payment methods

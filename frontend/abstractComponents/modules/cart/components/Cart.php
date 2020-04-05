@@ -67,11 +67,6 @@ class Cart extends Component
 
     }
 
-    public function getTotalPriceOneGood()
-    {
-
-    }
-
     public function returnCartFullPrice()
     {
         $fullPrice = 0;
@@ -173,7 +168,7 @@ class Cart extends Component
     public function returnProductModelsInCart()
     {
         $products = [];
-    
+
         if (isset($this->cart)) {
             foreach ($this->cart as $id => $count) {
                 $prod = Goods::getProducts([
@@ -186,6 +181,16 @@ class Cart extends Component
         }
 
         return false;
+    }
+
+    public function getArrProducts()
+    {
+        if (isset($this->cart)) {
+            return json_encode($this->cart);
+        }
+
+        return '';
+
     }
 
 

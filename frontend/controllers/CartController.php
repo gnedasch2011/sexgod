@@ -49,7 +49,7 @@ class CartController extends Controller
         }
 
         $checkout = new Checkout();
-
+     
         return $this->render('cart', [
             'goodsInCart' => $goodsInCart,
             'cart' => $cart,
@@ -57,6 +57,25 @@ class CartController extends Controller
             'checkout' => $checkout,
         ]);
     }
+
+    public function actionGenerateOrderSuccess()
+    {
+        $this->layout = 'red_stroyka/main';
+//        $idOrder = \Yii::$app->request->post('idOrder');
+        $idOrder = 37;
+        $order = \frontend\abstractComponents\modules\order\models\Order::findOne(['id' => $idOrder]);
+        $goodsInCart = Yii::$app->cart->getProductForCart();;
+        $totalPrice = Yii::$app->cart->returnCartFullPrice();;
+
+
+        //почистить сессию
+        return $this->render('successOrder', [
+            'order' => $order,
+            'goodsInCart' => $goodsInCart,
+            'totalPrice' => $totalPrice,
+        ]);
+    }
+
 
     public function actionGetHtmlItemForDrop()
     {
@@ -156,15 +175,16 @@ class CartController extends Controller
         die();
     }
 
-    public function actionCheckout()
-    {
-        $checkout = new Checkout();
 
 
-        if($checkout->load(\Yii::$app->request->post())){
-
-        }
-
-    }
+//    public function actionCheckout()
+//    {
+//        $checkout = new Checkout();
+//
+//        if($checkout->load(\Yii::$app->request->post())){
+//
+//        }
+//
+//    }
 
 }
