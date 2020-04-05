@@ -358,9 +358,19 @@ $(document).on('click', '.checkout__agree', function (e) {
     }
 
 })
-  $(document).on('click','.checkoutForm',function (e) {
-         e.preventDefault();
-console.log( $("#checkout-form").serializeArray());
+$(document).on('click', '.checkoutForm', function (e) {
+    e.preventDefault();
+    $("#checkout-form").submit();
 
-         console.log('fs');
-  })
+    // let data = $("#checkout-form").serializeArray();
+    // console.log(data);
+    // $.ajax({
+    //     url: '/cart/checkout/',
+    //     method: "post",
+    //     data: data,
+    //
+    //     success: function (data) {
+    //         console.log(data);
+    //     }
+    // });
+})

@@ -21,9 +21,10 @@ class Checkout extends Model
     public function rules()
     {
         return [
-            ['phone', 'required'],
+            ['phone', 'required', 'message' => 'Пожалуйста, введите корректный телефон'],
+            [['payment_method'], 'integer'],
             [[
-                'payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name', 'puboferta'
+                'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name', 'puboferta'
             ], 'string', 'max' => 255],
         ];
     }
@@ -32,6 +33,7 @@ class Checkout extends Model
     {
         return [
             'name' => 'Имя',
+            'phone' => 'fsdf',
         ];
     }
 }

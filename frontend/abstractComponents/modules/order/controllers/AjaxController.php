@@ -14,7 +14,6 @@ class AjaxController extends Controller
         $Order = new Order();
         $Buy1Click = new Buy1Click();
 
-
         if ($Buy1Click->load(\Yii::$app->request->post()) && $Buy1Click->validate()) {
             $Order->attributes = $Buy1Click->attributes;
             $Order->arr_product = serialize([$Buy1Click->idItem => 1]);

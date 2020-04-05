@@ -1,11 +1,13 @@
 <?php
 
 use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
 ?>
 
 <?php if ($goodsInCart): ?>
     <div class="cart block cartBlockJs">
+
         <div class="container">
             <table class="cart__table cart-table">
                 <thead class="cart-table__head">
@@ -96,6 +98,11 @@ use yii\widgets\ActiveForm;
     </div>
 <?php endif; ?>
 <div class="checkout block checkout_block_hidden openCheckoutJs">
+    <?php
+    $form = ActiveForm::begin([
+        'id' => 'checkout-form',
+    ]);
+    ?>
     <div class="container">
         <div class="row">
             <!--                <div class="col-12 mb-3">-->
@@ -106,15 +113,6 @@ use yii\widgets\ActiveForm;
                 <div class="card mb-lg-0">
                     <div class="card-body">
                         <h3 class="card-title">Детали заказа</h3>
-                        <?php
-
-                        use yii\helpers\Html;
-
-                        $form = ActiveForm::begin([
-                            'id' => 'checkout-form',
-                            'options' => ['class' => ''],
-                        ]) ?>
-
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
@@ -135,8 +133,6 @@ use yii\widgets\ActiveForm;
                                     ]); ?>
                             </div>
                         </div>
-
-
                         <div class="form-group">
                             <?= $form->field($checkout, 'town', ['errorOptions' => ['class' => 'v-msg']])
                                 ->textInput([
@@ -155,8 +151,6 @@ use yii\widgets\ActiveForm;
                                     'class' => 'checkout-first-name',
                                 ]); ?>
                         </div>
-
-
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <?= $form->field($checkout, 'email', ['errorOptions' => ['class' => 'v-msg']])
@@ -233,7 +227,6 @@ use yii\widgets\ActiveForm;
                                 ])->label('Комментарии', [
                                     'class' => 'checkout-first-name',
                                 ]); ?>
-
                         </div>
                     </div>
                 </div>
@@ -289,7 +282,7 @@ use yii\widgets\ActiveForm;
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="Checkout[checkout_payment_method]"
+                                                                   name="Checkout[payment_method]"
                                                                    value="1"
                                                                    type="radio"
                                                                     checked
@@ -313,7 +306,7 @@ use yii\widgets\ActiveForm;
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="Checkout[checkout_payment_method]"
+                                                                   name="Checkout[payment_method]"
                                                                    value="2"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
@@ -332,7 +325,7 @@ use yii\widgets\ActiveForm;
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="Checkout[checkout_payment_method]"
+                                                                   name="Checkout[payment_method]"
                                                                    value="3"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>

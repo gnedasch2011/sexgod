@@ -156,4 +156,15 @@ class CartController extends Controller
         die();
     }
 
+    public function actionCheckout()
+    {
+        $checkout = new Checkout();
+
+
+        if($checkout->load(\Yii::$app->request->post())){
+
+        }
+
+    }
+
 }
