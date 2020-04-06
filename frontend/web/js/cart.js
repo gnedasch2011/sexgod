@@ -368,19 +368,24 @@ $(document).on("beforeSubmit", "#checkout-form", function (event, messages) {
     var formdata = $(this).serialize();
 
     createOrder(formdata, function (data) {
-        generateOrderSuccess(orderId)
+        let orderId = data.id;
+        console.log(orderId);
+        setTimeout(generateOrderSuccess(orderId), 100)
     })
     return false;
 });
 
 let generateOrderSuccess = function (data) {
+    let idOrder = data;
+
     $.ajax({
         url: '/order/ajax/generate-order-success/',
         method: "post",
-        data: data,
+        data: {idOrder: idOrder},
 
         success: function (data) {
-            $('.').html(data)
+            $('.page-header__container').fadeOut();
+            $('.checkout').html(data);
         }
     });
 }
@@ -392,6 +397,7 @@ let createOrder = function (data, callback = false) {
         url: '/order/ajax/checkout/',
         method: "post",
         data: data,
+        dataType: "json",
 
         success: function (data) {
             if (callback) {

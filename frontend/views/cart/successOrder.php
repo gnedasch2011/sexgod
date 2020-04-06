@@ -1,7 +1,7 @@
 <div class="order-success__body">
     <div class="order-success__header">
         <svg class="order-success__icon" width="100" height="100">
-            <use xlink:href="images/sprite.svg#check-100"></use>
+            <use xlink:href="/template/red_stroyka/images/sprite.svg#check-100"></use>
         </svg>
         <h1 class="order-success__title">Спасибо</h1>
         <div class="order-success__subtitle">Мы получили ваш заказ</div>
@@ -77,15 +77,15 @@
                     </div>
                     <div class="address-card__name"><?= $order->name ;?></div>
                     <div class="address-card__row">
-                        <?= $order->name ;?>
+                        <?= $order->address ;?>
                     </div>
                     <div class="address-card__row">
-                        <div class="address-card__row-title">Phone Number</div>
-                        <div class="address-card__row-content">38 972 588-42-36</div>
+                        <div class="address-card__row-title">Телефон</div>
+                        <div class="address-card__row-content"><?= $order->phone ;?></div>
                     </div>
                     <div class="address-card__row">
-                        <div class="address-card__row-title">Email Address</div>
-                        <div class="address-card__row-content">stroyka@example.com</div>
+                        <div class="address-card__row-title">Email</div>
+                        <div class="address-card__row-content"><?= $order->email ;?></div>
                     </div>
                 </div>
             </div>
@@ -93,21 +93,19 @@
         <div class="col-sm-6 col-12 px-2 mt-sm-0 mt-3">
             <div class="card address-card">
                 <div class="address-card__body">
-                    <div class="address-card__badge address-card__badge--muted">Billing Address
+                    <div class="address-card__badge address-card__badge--muted">Реквизиты магазина
                     </div>
-                    <div class="address-card__name">Helena Garcia</div>
+                    <div class="address-card__name">SexGod.RU</div>
                     <div class="address-card__row">
-                        Random Federation<br>
-                        115302, Moscow<br>
-                        ul. Varshavskaya, 15-2-178
+                        <?= Yii::$app->params['address'] ;?>
                     </div>
                     <div class="address-card__row">
-                        <div class="address-card__row-title">Phone Number</div>
-                        <div class="address-card__row-content">38 972 588-42-36</div>
+                        <div class="address-card__row-title">Телефон</div>
+                        <div class="address-card__row-content"> <?= Yii::$app->params['phone'] ;?></div>
                     </div>
                     <div class="address-card__row">
-                        <div class="address-card__row-title">Email Address</div>
-                        <div class="address-card__row-content">stroyka@example.com</div>
+                        <div class="address-card__row-title">Email</div>
+                        <div class="address-card__row-content"> <?= Yii::$app->params['email'] ;?></div>
                     </div>
                 </div>
             </div>

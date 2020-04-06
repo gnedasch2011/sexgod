@@ -61,8 +61,14 @@ class CartController extends Controller
     public function actionGenerateOrderSuccess()
     {
         $this->layout = 'red_stroyka/main';
-//        $idOrder = \Yii::$app->request->post('idOrder');
+
         $idOrder = 37;
+
+        if(\Yii::$app->request->post('idOrder')){
+            $idOrder = \Yii::$app->request->post('idOrder');
+
+        }
+
         $order = \frontend\abstractComponents\modules\order\models\Order::findOne(['id' => $idOrder]);
         $goodsInCart = Yii::$app->cart->getProductForCart();;
         $totalPrice = Yii::$app->cart->returnCartFullPrice();;
