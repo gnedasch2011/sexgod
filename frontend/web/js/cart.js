@@ -391,6 +391,8 @@ let generateOrderSuccess = function (data) {
 }
 
 
+
+
 let createOrder = function (data, callback = false) {
 
     $.ajax({
