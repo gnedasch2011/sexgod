@@ -16,12 +16,16 @@ class Checkout extends Model
     public $email;
     public $name;
     public $town;
+    public $puboferta;
 
     public function rules()
     {
         return [
-            ['phone', 'required'],
-            [['payment_method', 'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name'], 'string', 'max' => 255],
+            ['phone', 'required', 'message' => 'Пожалуйста, введите корректный телефон'],
+            [['payment_method'], 'integer'],
+            [[
+                'dateCreate', 'delivery', 'phone', 'address', 'arr_product','email','name', 'puboferta'
+            ], 'string', 'max' => 255],
         ];
     }
 
@@ -29,6 +33,7 @@ class Checkout extends Model
     {
         return [
             'name' => 'Имя',
+            'phone' => 'fsdf',
         ];
     }
 }

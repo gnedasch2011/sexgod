@@ -348,3 +348,63 @@ $(document).on('click', '.payment-methods__item', function (e) {
 
 })
 
+
+$(document).on('click', '.checkout__agree', function (e) {
+    e.preventDefault();
+    if ($(this).find('input').is(':checked')) {
+        $(this).find('input').prop('checked', false);
+    } else {
+        $(this).find('input').prop('checked', true);
+    }
+
+})
+
+$(document).on('click', '.checkoutForm', function (e) {
+    e.preventDefault();
+    $("#checkout-form").submit();
+})
+
+$(document).on("beforeSubmit", "#checkout-form", function (event, messages) {
+    var formdata = $(this).serialize();
+
+    createOrder(formdata, function (data) {
+        let orderId = data.id;
+        console.log(orderId);
+        setTimeout(generateOrderSuccess(orderId), 100)
+    })
+    return false;
+});
+
+let generateOrderSuccess = function (data) {
+    let idOrder = data;
+
+    $.ajax({
+        url: '/order/ajax/generate-order-success/',
+        method: "post",
+        data: {idOrder: idOrder},
+
+        success: function (data) {
+            $('.page-header__container').fadeOut();
+            $('.checkout').html(data);
+        }
+    });
+}
+
+
+let createOrder = function (data, callback = false) {
+
+    $.ajax({
+        url: '/order/ajax/checkout/',
+        method: "post",
+        data: data,
+        dataType: "json",
+
+        success: function (data) {
+            if (callback) {
+                callback(data)
+            }
+        }
+    });
+
+    return true;
+}

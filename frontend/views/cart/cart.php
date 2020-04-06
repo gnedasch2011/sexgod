@@ -1,11 +1,13 @@
 <?php
 
 use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
 ?>
 
 <?php if ($goodsInCart): ?>
     <div class="cart block cartBlockJs">
+
         <div class="container">
             <table class="cart__table cart-table">
                 <thead class="cart-table__head">
@@ -29,12 +31,12 @@ use yii\widgets\ActiveForm;
                 </tbody>
             </table>
             <div class="cart__actions">
-                <form class="cart__coupon-form">
-                    <label for="input-coupon-code" class="sr-only">Password</label>
-                    <input type="text" class="form-control" id="input-coupon-code"
-                           placeholder="Код купона">
-                    <button type="submit" class="btn btn-primary">Применить купон</button>
-                </form>
+                <!--                <form class="cart__coupon-form">-->
+                <!--                    <label for="input-coupon-code" class="sr-only">Password</label>-->
+                <!--                    <input type="text" class="form-control" id="input-coupon-code"-->
+                <!--                           placeholder="Код купона">-->
+                <!--                    <button type="submit" class="btn btn-primary">Применить купон</button>-->
+                <!--                </form>-->
                 <div class="cart__buttons">
                     <a href="/catalog/seks-igrushki/" class="btn btn-light">Продолжить покупки</a>
                     <!--                    <a href="" class="btn btn-primary cart__update-button">Update Cart</a>-->
@@ -95,89 +97,83 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 <?php endif; ?>
-<div class="checkout block checkout_block_hidden openCheckoutJs">
-    <div class="container">
-        <div class="row">
-            <!--                <div class="col-12 mb-3">-->
-            <!--                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click-->
-            <!--                            here to login</a></div>-->
-            <!--                </div>-->
-            <div class="col-12 col-lg-6 col-xl-7">
-                <div class="card mb-lg-0">
-                    <div class="card-body">
-                        <h3 class="card-title">Детали заказа</h3>
-                        <?php
-
-                        use yii\helpers\Html;
-
-                        $form = ActiveForm::begin([
-                            'id' => 'login-form',
-                            'options' => ['class' => ''],
-                        ]) ?>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+    <div class="checkout block checkout_block_hidden openCheckoutJs">
+        <?php
+        $form = ActiveForm::begin([
+            'id' => 'checkout-form',
+        ]);
+        ?>
+        <div class="container">
+            <div class="row">
+                <!--                <div class="col-12 mb-3">-->
+                <!--                    <div class="alert alert-lg alert-primary">Returning customer? <a href="">Click-->
+                <!--                            here to login</a></div>-->
+                <!--                </div>-->
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="card mb-lg-0">
+                        <div class="card-body">
+                            <h3 class="card-title">Детали заказа</h3>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+                                        ->textInput([
+                                            'placeholder' => 'Ваше имя',
+                                            'class' => 'form-control',
+                                        ])->label('Ваше имя', [
+                                            'class' => 'checkout-first-name',
+                                        ]); ?>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+                                        ->textInput([
+                                            'placeholder' => 'Ваша фамилия',
+                                            'class' => 'form-control',
+                                        ])->label('Ваша фамилия', [
+                                            'class' => 'checkout-first-name',
+                                        ]); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <?= $form->field($checkout, 'town', ['errorOptions' => ['class' => 'v-msg']])
                                     ->textInput([
-                                        'placeholder' => 'Ваше имя',
+                                        'placeholder' => 'Ваш город',
                                         'class' => 'form-control',
-                                    ])->label('Ваше имя', [
+                                    ])->label('Ваш город', [
                                         'class' => 'checkout-first-name',
                                     ]); ?>
                             </div>
-                            <div class="form-group col-md-6">
-                                <?= $form->field($checkout, 'name', ['errorOptions' => ['class' => 'v-msg']])
+                            <div class="form-group">
+                                <?= $form->field($checkout, 'address', ['errorOptions' => ['class' => 'v-msg']])
                                     ->textInput([
-                                        'placeholder' => 'Ваша фамилия',
+                                        'placeholder' => 'Ваш адрес',
                                         'class' => 'form-control',
-                                    ])->label('Ваша фамилия', [
+                                    ])->label('Ваш адрес', [
                                         'class' => 'checkout-first-name',
                                     ]); ?>
                             </div>
-                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <?= $form->field($checkout, 'email', ['errorOptions' => ['class' => 'v-msg']])
+                                        ->textInput([
+                                            'placeholder' => 'Email',
+                                            'class' => 'form-control',
+                                        ])->label('Email', [
+                                            'class' => 'checkout-first-name',
+                                        ]); ?>
+                                </div>
 
+                                <div class="form-group col-md-6">
+                                    <?= $form->field($checkout, 'phone', ['errorOptions' => ['class' => 'v-msg']])
+                                        ->textInput([
+                                            'placeholder' => 'Ваш телефон',
+                                            'class' => 'form-control',
+                                        ])->label('Ваш телефон', [
+                                            'class' => 'checkout-first-name',
+                                        ]); ?>
+                                </div>
 
-                        <div class="form-group">
-                            <?= $form->field($checkout, 'town', ['errorOptions' => ['class' => 'v-msg']])
-                                ->textInput([
-                                    'placeholder' => 'Ваш город',
-                                    'class' => 'form-control',
-                                ])->label('Ваш город', [
-                                    'class' => 'checkout-first-name',
-                                ]); ?>
-                        </div>
-                        <div class="form-group">
-                            <?= $form->field($checkout, 'address', ['errorOptions' => ['class' => 'v-msg']])
-                                ->textInput([
-                                    'placeholder' => 'Ваш адресс',
-                                    'class' => 'form-control',
-                                ])->label('Ваш адресс', [
-                                    'class' => 'checkout-first-name',
-                                ]); ?>
-                        </div>
-
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <?= $form->field($checkout, 'email', ['errorOptions' => ['class' => 'v-msg']])
-                                    ->textInput([
-                                        'placeholder' => 'Email',
-                                        'class' => 'form-control',
-                                    ])->label('Email', [
-                                        'class' => 'checkout-first-name',
-                                    ]); ?>
                             </div>
-                            <div class="form-group col-md-6">
-                                <?= $form->field($checkout, 'phone', ['errorOptions' => ['class' => 'v-msg']])
-                                    ->textInput([
-                                        'placeholder' => 'Ваш телефон',
-                                        'class' => 'form-control',
-                                    ])->label('Ваш телефон', [
-                                        'class' => 'checkout-first-name',
-                                    ]); ?>
-                            </div>
-                        </div>
-                        <?php /*?>
+                            <?php /*?>
 
                         <div class="form-group">
                             <div class="form-check">
@@ -198,12 +194,12 @@ use yii\widgets\ActiveForm;
                             </div>
                         </div>
   <?php */ ?>
-                    </div>
-                    <div class="card-divider"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Детали доставки</h3>
-                        <div class="form-group">
-                            <?php /*?>
+                        </div>
+                        <div class="card-divider"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Детали доставки</h3>
+                            <div class="form-group">
+                                <?php /*?>
                             <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
@@ -222,133 +218,141 @@ use yii\widgets\ActiveForm;
                                     address?</label>
                             </div>
                             <?php */ ?>
-                        </div>
-                        <div class="form-group">
-                            <?= $form->field($checkout, 'comment', ['errorOptions' => ['class' => 'v-msg']])
-                                ->textarea([
-                                    'placeholder' => 'Комментарии',
-                                    'class' => 'form-control',
-                                ])->label('Комментарии', [
-                                    'class' => 'checkout-first-name',
-                                ]); ?>
-
+                            </div>
+                            <div class="form-group">
+                                <?= $form->field($checkout, 'comment', ['errorOptions' => ['class' => 'v-msg']])
+                                    ->textarea([
+                                        'placeholder' => 'Комментарии',
+                                        'class' => 'form-control',
+                                    ])->label('Комментарии', [
+                                        'class' => 'checkout-first-name',
+                                    ]); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
-                <div class="card mb-0">
-                    <div class="card-body">
-                        <h3 class="card-title">Ваш заказ</h3>
-                        <table class="checkout__totals">
-                            <thead class="checkout__totals-header">
-                            <tr>
-                                <th>Продукт</th>
-                                <th>Итого</th>
-                            </tr>
-                            </thead>
-                            <tbody class="checkout__totals-products">
-                            <?php foreach ($goodsInCart as $good): ?>
-                                <?php
-                                echo $this->render('@frontend/views/site/sexgod/good/_in_cart_yours_order', [
-                                    'good' => $good
-                                ]);
-                                ?>
-                            <?php endforeach; ?>
+                <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <h3 class="card-title">Ваш заказ</h3>
+                            <table class="checkout__totals">
+                                <thead class="checkout__totals-header">
+                                <tr>
+                                    <th>Продукт</th>
+                                    <th>Итого</th>
+                                </tr>
+                                </thead>
+                                <tbody class="checkout__totals-products">
+                                <?php foreach ($goodsInCart as $good): ?>
+                                    <?php
+                                    echo $this->render('@frontend/views/site/sexgod/good/_in_cart_yours_order', [
+                                        'good' => $good
+                                    ]);
+                                    ?>
+                                <?php endforeach; ?>
 
-                         </tbody>
-                            <tbody class="checkout__totals-subtotals">
-                            <tr>
-                                <th>Подитог</th>
-                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
-                            </tr>
-                            <tr>
-                                <th>Скидки</th>
-                                <td>0 руб.</td>
-                            </tr>
-                            <tr>
-                                <th>Доставка</th>
-                                <td>0</td>
-                            </tr>
-                            </tbody>
-                            <tfoot class="checkout__totals-footer">
-                            <tr>
-                                <th>Итого</th>
-                                <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <div class="payment-methods">
-                            <ul class="payment-methods__list">
-                                <li class="payment-methods__item payment-methods__item--active">
-                                    <label class="payment-methods__item-header">
+                                </tbody>
+                                <tbody class="checkout__totals-subtotals">
+                                <tr>
+                                    <th>Подитог</th>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Скидки</th>
+                                    <td>0 руб.</td>
+                                </tr>
+                                <tr>
+                                    <th>Доставка</th>
+                                    <td>0</td>
+                                </tr>
+                                </tbody>
+                                <tfoot class="checkout__totals-footer">
+                                <tr>
+                                    <th>Итого</th>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?>
+                                        руб.
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <div class="payment-methods">
+                                <ul class="payment-methods__list">
+                                    <li class="payment-methods__item payment-methods__item--active">
+                                        <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
+                                                                   name="Checkout[payment_method]"
                                                                    value="1"
-                                                                   type="radio">
+                                                                   type="radio"
+                                                                   checked
+                                                            >
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                        <span class="payment-methods__item-title">Наличными при получении</span>
-                                    </label>
-<!--                                    <div class="payment-methods__item-container">-->
-<!--                                        <div class="payment-methods__item-description text-muted">-->
-<!--                                            Make your payment directly into our bank account.-->
-<!--                                            Please use your Order ID as the payment-->
-<!--                                            reference. Your order will not be shipped until the-->
-<!--                                            funds have cleared in our account.-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-                                </li>
-                                <li class="payment-methods__item">
-                                    <label class="payment-methods__item-header">
+                                            <span class="payment-methods__item-title">Наличными при получении</span>
+                                        </label>
+                                        <!--                                    <div class="payment-methods__item-container">-->
+                                        <!--                                        <div class="payment-methods__item-description text-muted">-->
+                                        <!--                                            Make your payment directly into our bank account.-->
+                                        <!--                                            Please use your Order ID as the payment-->
+                                        <!--                                            reference. Your order will not be shipped until the-->
+                                        <!--                                            funds have cleared in our account.-->
+                                        <!--                                        </div>-->
+                                        <!--                                    </div>-->
+                                    </li>
+                                    <li class="payment-methods__item">
+                                        <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   val="2"
+                                                                   name="Checkout[payment_method]"
+                                                                   value="2"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                        <span class="payment-methods__item-title">Картой на сайте</span>
-                                    </label>
-                                    <div class="payment-methods__item-container">
-                                        <div class="payment-methods__item-description text-muted">
-                                            Можете оплатить VISA, MASTERCARD
+                                            <span class="payment-methods__item-title">Картой на сайте</span>
+                                        </label>
+                                        <div class="payment-methods__item-container">
+                                            <div class="payment-methods__item-description text-muted">
+                                                Можете оплатить VISA, MASTERCARD
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="payment-methods__item">
-                                    <label class="payment-methods__item-header">
+                                    </li>
+                                    <li class="payment-methods__item">
+                                        <label class="payment-methods__item-header">
                                                     <span class="payment-methods__item-radio input-radio">
                                                         <span class="input-radio__body">
                                                             <input class="input-radio__input"
-                                                                   name="checkout_payment_method"
-                                                                   val="3"
+                                                                   name="Checkout[payment_method]"
+                                                                   value="3"
                                                                    type="radio">
                                                             <span class="input-radio__circle"></span>
                                                         </span>
                                                     </span>
-                                        <span class="payment-methods__item-title">Картой при доставке</span>
-                                    </label>
-<!--                                    <div class="payment-methods__item-container">-->
-<!--                                        <div class="payment-methods__item-description text-muted">-->
-<!--                                            Pay with cash upon delivery.-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-                                </li>
+                                            <span class="payment-methods__item-title">Картой при доставке</span>
+                                        </label>
+                                        <!--                                    <div class="payment-methods__item-container">-->
+                                        <!--                                        <div class="payment-methods__item-description text-muted">-->
+                                        <!--                                            Pay with cash upon delivery.-->
+                                        <!--                                        </div>-->
+                                        <!--                                    </div>-->
+                                    </li>
 
-                            </ul>
-                        </div>
+                                </ul>
+                            </div>
+                            <?php /*?>
+
                         <div class="checkout__agree form-group">
                             <div class="form-check">
                                             <span class="form-check-input input-check">
                                                 <span class="input-check__body">
+
                                                     <input class="input-check__input"
-                                                           type="checkbox" id="checkout-terms">
+                                                           type="checkbox" id="checkout-terms"
+                                                           name="puboferta"
+                                                    >
                                                     <span class="input-check__box"></span>
                                                     <svg class="input-check__icon" width="9px"
                                                          height="7px">
@@ -357,18 +361,20 @@ use yii\widgets\ActiveForm;
                                                 </span>
                                             </span>
                                 <label class="form-check-label" for="checkout-terms">
-                                    Я согласен(a) с политикой конфиденциальности и даю согласие на обработку персональных
+                                    Я согласен(a) с политикой конфиденциальности и даю согласие на
+                                    обработку персональных
                                 </label>
                             </div>
+                        </div>    <?php */ ?>
+
+                            <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary btn-xl btn-block checkoutForm']) ?>
+                            <?php ActiveForm::end() ?>
                         </div>
-                        <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary btn-xl btn-block']) ?>
-                        <?php ActiveForm::end() ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <?php /*?>
 
 
@@ -476,7 +482,29 @@ use yii\widgets\ActiveForm;
 
 <?php
 $script = <<< JS
-  // $('.openCheckoutJs').click();
+  $('.openCheckoutJs').click();
+JS;
+//маркер конца строки, обязательно сразу, без пробелов и табуляции
+$this->registerJs($script, yii\web\View::POS_READY);
+?>
+<?php
+$script = <<< JS
+setTimeout(function() {
+  $('.creditButton').click(); 
+  setTimeout(function() {
+ $("[name='Checkout[name]']").val('test');
+ $("[name='Checkout[lname]']").val('test');
+  $("[name='Checkout[fname]']").val('test');
+  $("[name='Checkout[email]']").val('ya@ya.ru');
+  $("[name='Checkout[phone]']").val('71111111111');
+  $("[name='Checkout[birthdate]']").val('2011-11-11');
+  $("[name='Checkout[city]']").val('moscow2011');
+  $("[name='Checkout[password]']").val('11111');
+  $("[name='Checkout[password_repeat]']").val('11111');
+},1000)
+},100)
+
+
 JS;
 //маркер конца строки, обязательно сразу, без пробелов и табуляции
 $this->registerJs($script, yii\web\View::POS_READY);
