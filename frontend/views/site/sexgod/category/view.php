@@ -1015,7 +1015,7 @@ use yii\widgets\Breadcrumbs;
                                         </div>
                                     </div>
                                 </div>
-                                <div class="view-options__legend">Showing 6 of 98 products</div>
+                                <div class="view-options__legend">Показано 14 из <?= $category->getCountItems() ;?></div>
                             <div class="view-options__divider"></div>
                             <div class="view-options__control">
                                 <label for="">Сортировка</label>
