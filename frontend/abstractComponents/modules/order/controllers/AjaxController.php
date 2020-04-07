@@ -55,14 +55,14 @@ class AjaxController extends Controller
 
         $order = \frontend\abstractComponents\modules\order\models\Order::findOne(['id' => $idOrder]);
 
-        $goodsInCart = Yii::$app->cart->getProductForCart();;
-        $totalPrice = Yii::$app->cart->returnCartFullPrice();;
-
-
-        //почистить сессию
+        $goodsInCart = Yii::$app->cart->getProductForCart();
+        $totalPrice = Yii::$app->cart->returnCartFullPrice();
 
         if (isset($idOrder)) {
             $order = \frontend\abstractComponents\modules\order\models\Order::findOne(['id' => $idOrder]);
+
+            //почистить сессию
+            Yii::$app->cart->clear();
 
             return $this->renderAjax('@frontend/abstractComponents/modules/order/views/ajax/successOrder', [
                 'order' => $order,

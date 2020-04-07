@@ -124,9 +124,10 @@ class Cart extends Component
     public function clear()
     {
         $session = self::sessionInit();
-        $cart = isset($session['cart']) ? $_SESSION['cart'] : [];
 
-        $session->destroy();
+        if ($session->remove('cart')) {
+            return true;
+        }
         return true;
 
     }
