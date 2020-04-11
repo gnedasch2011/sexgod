@@ -98,12 +98,14 @@ getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
                 </li>
             </ul>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct" type="button">
+                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct"
+                        type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-7x11"></use>
                     </svg>
                 </button>
-                <button class="block-header__arrow block-header__arrow--right getRandomFuteresProduct" type="button">
+                <button class="block-header__arrow block-header__arrow--right getRandomFuteresProduct"
+                        type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-7x11"></use>
                     </svg>
@@ -113,12 +115,12 @@ getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
         <div class="block-products-carousel__slider">
             <div class="block-products-carousel__preloader"></div>
             <div class="productsResult">
-                    <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
-                        'items' => \app\models\sexgod\good\Goods::getProducts([
-                            'categoryId' => 101,//101///491
-                            'limit' => 4,
-                        ])
-                    ]); ?>
+                <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
+                    'items' => \app\models\sexgod\good\Goods::getProducts([
+                        'categoryId' => 101,//101///491
+                        'limit' => 4,
+                    ])
+                ]); ?>
             </div>
         </div>
     </div>
@@ -146,7 +148,65 @@ getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
 </div>
 <!-- .block-banner / end -->
 <!-- .block-products -->
-<div class="block block-products block-products--layout--large-last">
+<div class="block block-products-carousel" data-layout="grid-4">
+    <div class="container">
+        <div class="block-header">
+            <h3 class="block-header__title">Товары по скидке</h3>
+            <div class="block-header__divider"></div>
+            <ul class="block-header__groups-list">
+                <li>
+                    <button type="button" class="block-header__group block-header__group--active
+getFuturesProductsInCategoryJS" data-id-category="163">
+                        Все
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="block-header__group
+getFuturesProductsInCategoryJS" data-id-category="430"
+                            data-limit="8"
+                    >Страпоны
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="block-header__group
+getFuturesProductsInCategoryJS"
+                            data-id-category="434"
+                            data-limit="8"
+                    >Виброяйца
+                    </button>
+                </li>
+            </ul>
+            <div class="block-header__arrows-list">
+                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct"
+                        type="button">
+                    <svg width="7px" height="11px">
+                        <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-7x11"></use>
+                    </svg>
+                </button>
+                <button class="block-header__arrow block-header__arrow--right getRandomFuteresProduct"
+                        type="button">
+                    <svg width="7px" height="11px">
+                        <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-7x11"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="block-products-carousel__slider">
+            <div class="block-products-carousel__preloader"></div>
+            <div class="productsResult">
+                <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
+                    'items' => \app\models\sexgod\good\Goods::getProducts([
+                        'categoryId' => 101,//101///491
+                        'limit' => 8,
+                    ])
+                ]); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php /*?>
+    <div class="block block-products block-products--layout--large-last">
     <div class="container">
         <div class="block-header">
             <h3 class="block-header__title">Товары по скидке</h3>
@@ -1221,12 +1281,13 @@ getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
         </div>
     </div>
 </div>
+ <?php */ ?>
 <!-- .block-products / end -->
 <!-- .block-categories -->
 <div class="block block--highlighted block-categories block-categories--layout--compact">
     <div class="container">
         <div class="block-header">
-            <h3 class="block-header__title">Popular Categories</h3>
+            <h3 class="block-header__title">Популярные категории</h3>
             <div class="block-header__divider"></div>
         </div>
         <div class="block-categories__list">

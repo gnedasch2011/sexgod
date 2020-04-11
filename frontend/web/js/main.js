@@ -48,13 +48,18 @@ svg4everybody();
 $(document).on('click', '.getFuturesProductsInCategoryJS', function (e) {
     e.preventDefault();
     let dataIdCategory = $(this).attr('data-id-category');
+    let limit = $(this).attr('data-limit');
+
     let placeForHtml = $(this).parents('.container').find('.productsResult')
 
     if (dataIdCategory) {
         $.ajax({
             url: '/good/ajax/get-futures-products-in-category/',
             method: "post",
-            data: {dataIdCategory: dataIdCategory},
+            data: {
+                dataIdCategory: dataIdCategory,
+                limit: limit,
+            },
             success: function (data) {
                 checkActiveGroup($(e.target));
                 $(placeForHtml).html(data)
@@ -67,6 +72,8 @@ $(document).on('click', '.getFuturesProductsInCategoryJS', function (e) {
 $(document).on('click', '.getRandomFuteresProduct', function (e) {
     e.preventDefault();
     let dataIdCategory = $(e.target).parents('.container').find('.block-header__group--active').attr('data-id-category');
+    let limit = $(e.target).parents('.container').find('.block-header__group--active').attr('data-limit');
+        console.log(limit);
     let featured = true;
     let random = true;
 
@@ -80,6 +87,7 @@ $(document).on('click', '.getRandomFuteresProduct', function (e) {
             dataIdCategory: dataIdCategory,
             featured: featured,
             random: random,
+            limit: limit,
         },
 
         success: function (data) {

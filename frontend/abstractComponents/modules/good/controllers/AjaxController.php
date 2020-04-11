@@ -17,19 +17,19 @@ class AjaxController extends Controller
         $dataIdCategory = \Yii::$app->request->post('dataIdCategory');
         $featured = \Yii::$app->request->post('featured', false);
         $random = \Yii::$app->request->post('random', false);
+        $limit = \Yii::$app->request->post('limit', 4);
 //         $bestsellers = \Yii::$app->request->post('bestsellers', false);
+
 
         $query = \app\models\sexgod\good\Goods::getQuery();
 
         if ($featured) {
             $query->andWhere(['goods.Bestseller' => 1]);
         }
-//        $dataIdCategory = 101;
-        $randomBestsellers = CategoryAbstract::getRandomBestsellers($dataIdCategory);
 
-        //вернуть 4 бестселлера из этой категории
+        //вернуть бестселлера из этой категории
         if ($random && $featured) {
-            $randomBestsellers = CategoryAbstract::getRandomBestsellers($dataIdCategory);
+            $randomBestsellers = CategoryAbstract::getRandomBestsellers($dataIdCategory, $limit);
             if ($randomBestsellers) {
                 $query->andWhere(['goods.id' => $randomBestsellers]);
             }
@@ -39,9 +39,8 @@ class AjaxController extends Controller
         $products = \app\models\sexgod\good\Goods::getProducts([
             'query' => $query,
             'categoryId' => $dataIdCategory,
-            'limit' => 4,
+            'limit' => $limit,
         ]);
-
 
         if ($products) {
             return $this->renderAjax('@frontend/abstractComponents/modules/good/views/ajax/_mainPageFeatures.php', [
