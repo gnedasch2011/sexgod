@@ -72,14 +72,13 @@ $($addCountItem, $gpButtonsAddInCart).on('click', function (e) {
     let totalPriceOneGoodClass = $(target).parents('.cart-table__row').find('.cart-table__column--total')
 
     if (addInSessionCart(dataItem)) {
-
+        setTimeout(function () {
+            getTotalPriceOneGood(id, totalPriceOneGoodClass);
+            updateFullPriceInCart('.fullTotalCartClass');
+            getCountItems('.getCountItems');
+            getHtmlItemsForDropCart();
+        }, 100)
     }
-    setTimeout(function () {
-        getTotalPriceOneGood(id, totalPriceOneGoodClass);
-        updateFullPriceInCart('.fullTotalCartClass');
-        getCountItems('.getCountItems');
-        getHtmlItemsForDropCart();
-    }, 100)
 
 
     testingCart();
@@ -156,8 +155,7 @@ let addInSessionCart = function (dataItem) {
 
         success: function (data) {
 
-            // updateCart()
-            // updateFullPriceInCart();
+            updateFullPriceInCart('.fullTotalCartClass');
             return true;
         }
     });
@@ -386,11 +384,14 @@ let generateOrderSuccess = function (data) {
         success: function (data) {
             $('.page-header__container').fadeOut();
             $('.checkout').html(data);
+            clearQuackBlockCart();
         }
     });
 }
 
-
+let clearQuackBlockCart = function(){
+    $('.getCountItems').text('0');
+}
 
 
 let createOrder = function (data, callback = false) {

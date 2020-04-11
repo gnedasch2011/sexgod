@@ -452,6 +452,36 @@ class CategoryAbstract extends ActiveRecord
 
         return '';
     }
+
+
+    /**
+     * @return array
+     */
+    public static function getRandomBestsellers($idCat, $countItems = 4): array
+    {
+        $curCat = self::findOne($idCat);
+        $GoodsCategorys = $curCat->getGoodsCategory()
+            ->leftJoin('goods', 'goods_category.aID = goods.aID')
+            ->andWhere(['goods.Bestseller' => 1])
+            ->all();
+        $ids = ArrayHelper::getColumn($GoodsCategorys, 'aid');
+        $res = [];
+
+        for ($i = 0; $i < $countItems; $i++) {
+            $rand = rand($i, count($ids) - 1);
+            $res[] = $ids[$rand];
+        }
+
+        return $res;
+
+    }
+
+
+    public function getGoodsCategory()
+    {
+        return $this->hasMany(GoodsCategory::className(), ['category_id' => 'id']);
+
+    }
 }
 
 

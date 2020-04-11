@@ -130,7 +130,7 @@ class SiteController extends Controller
 //        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
 
-        return $this->render('index', [
+        return $this->render('/site/sexgod/index', [
 //            'goods' => $goods
         ]);
     }
