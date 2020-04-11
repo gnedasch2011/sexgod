@@ -207,47 +207,52 @@ class Goods extends \yii\db\ActiveRecord
     }
 
 
-    public static function getProducts($params = [])
+    public static function getQuery()
     {
         $query = new \yii\db\Query();
 
         $query->select(["id"])
             ->from('goods');
 
+        return $query;
+    }
+
+    public static function getProducts($params = [])
+    {
+        $query = (isset($params['query'])) ? $params['query'] : self::getQuery();
 
         if (isset($params['idOneGood']) && $params['idOneGood']) {
-            $query->where(['in', 'aID', $params['idOneGood']]);
+            $query->andWhere(['in', 'aID', $params['idOneGood']]);
+        }
+
+
+        if (isset($params['categoryId']) && $params['categoryId']) {
+            $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
+            $query->andWhere(['goods_category.category_id' => $params['categoryId']]);
         }
 
         if (isset($params['name']) && $params['name']) {
-            $query->where(['like', 'name', $params['name']]);
-        }
-
-        if (isset($params['popular']) && $params['popular']) {
-            $query->select(['*'])
-                ->from('goods');
-            $ids = [
-                740,
-                741,
-                742,
-                743,
-                744,
-                745,
-                746,
-                747
-            ];
-
-            return self::find()->where(['id' => $ids])->limit(8)->all();
+            $query->andWhere(['like', 'name', $params['name']]);
         }
 
 
+        if (isset($params['limit']) && $params['limit']) {
+            $query->limit($params['limit']);
+        }
+
+        if (isset($params['offset']) && $params['offset']) {
+            $query->offset($params['offset']);
+        }
+
+        ///Формирование моделей
         $result = [];
-
         if ($query->all()) {
             $ids = ArrayHelper::map($query->all(), 'id', 'id');
+
             foreach ($ids as $id) {
                 $result [] = self::findOne(['aID' => $id]);
-            }
+            }   
+            
 
             return $result;
         }
@@ -256,6 +261,16 @@ class Goods extends \yii\db\ActiveRecord
         return false;
     }
 
+
+    public function getGoodsCategory()
+    {
+        return $this->hasMany(GoodsCategory::className(), ['category_id' => 'id']);
+    }
+
+    public function getGoodsCategoryForBread()
+    {
+        return $this->hasOne(GoodsCategory::className(), ['aid' => 'id']);
+    }
 
     public function getImagesone()
     {
@@ -271,15 +286,10 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getParentCategoryUrl(): array
     {
-        $GoodsCategory = $this->goodsCategory;
+        $GoodsCategory = $this->goodsCategoryForBread;
 
         return CategoryBase::getParentCategoryForBread($GoodsCategory);
 
-    }
-
-    public function getGoodsCategory()
-    {
-        return $this->hasOne(GoodsCategory::className(), ['aid' => 'id']);
     }
 
     public function getName()
@@ -295,4 +305,11 @@ class Goods extends \yii\db\ActiveRecord
 
         return 'Нет в наличии';
     }
+
+
+    public function getGenerateAttr()
+    {
+        return 'Аттрибуты';
+    }
+
 }

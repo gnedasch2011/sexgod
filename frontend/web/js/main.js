@@ -45,3 +45,59 @@ $(document).on('click', '.sexGodBuyOneClick_send', function (e) {
     });
 })
 svg4everybody();
+
+$(document).on('click', '.getFuturesProductsInCategoryJS', function (e) {
+    e.preventDefault();
+    let dataIdCategory = $(this).attr('data-id-category');
+    let placeForHtml = $(this).parents('.container').find('.productsResult')
+
+
+    if (dataIdCategory) {
+        $.ajax({
+            url: '/good/ajax/get-futures-products-in-category/',
+            method: "post",
+            data: {dataIdCategory: dataIdCategory},
+            success: function (data) {
+
+                checkActiveGroup($(e.target));
+
+                $(placeForHtml).html(data)
+                console.log(data);
+            }
+        });
+    }
+
+    let checkActiveGroup = function (context) {
+
+        $groupList = $(context).parents('.block-header__groups-list');
+
+        $('li', $groupList).each(function (i, val) {
+            $(val).find('button').removeClass('block-header__group--active')
+        })
+
+        $(e.target).addClass('block-header__group--active');
+        return true;
+    }
+
+
+    $(document).on('click', '.getRandomFuteresProduct', function (e) {
+        e.preventDefault();
+        let dataIdCategory = $(e.target).parents('.container').find('.block-header__group--active').attr('data-id-category');
+        let featured = true;
+
+        $.ajax({
+            url: '/good/ajax/get-futures-products-in-category/',
+            method: "post",
+            data: {
+                dataIdCategory: dataIdCategory,
+                featured: featured,
+            },
+
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    })
+
+
+})

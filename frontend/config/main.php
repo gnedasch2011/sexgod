@@ -27,6 +27,9 @@ return [
         'order' => [
             'class' => 'frontend\abstractComponents\modules\order\Module',
         ],
+        'good' => [
+            'class' => 'frontend\abstractComponents\modules\good\Module',
+        ],
         'debug' => [
             'class' => 'yii\debug\Module',
             'allowedIPs' => ['*'],
