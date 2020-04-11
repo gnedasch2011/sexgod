@@ -16,7 +16,7 @@ class GenerateBlockGood extends Widget
 
     public function run()
     {
-        return $this->render('sexgod/mainPage', [
+        return $this->render('@frontend/abstractComponents/modules/good/views/ajax/_mainPageFeatures.php', [
             'items' => $this->items,
         ]);
     }

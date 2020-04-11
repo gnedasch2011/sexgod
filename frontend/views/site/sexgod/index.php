@@ -92,13 +92,13 @@ getFuturesProductsInCategoryJS" data-id-category="430">Страпоны
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="block-header__group
+                    <a type="button" class="block-header__group
 getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
-                    </button>
+                    </a>
                 </li>
             </ul>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left" type="button">
+                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct" type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-7x11"></use>
                     </svg>
@@ -112,13 +112,13 @@ getFuturesProductsInCategoryJS" data-id-category="434">Виброяйца
         </div>
         <div class="block-products-carousel__slider">
             <div class="block-products-carousel__preloader"></div>
-            <div class="owl-carousel productsResult">
-                <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
-                    'items' => \app\models\sexgod\good\Goods::getProducts([
-                        'categoryId' => 101,//101///491
-                        'limit' => 10,
-                    ])
-                ]); ?>
+            <div class="productsResult">
+                    <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
+                        'items' => \app\models\sexgod\good\Goods::getProducts([
+                            'categoryId' => 101,//101///491
+                            'limit' => 4,
+                        ])
+                    ]); ?>
             </div>
         </div>
     </div>
