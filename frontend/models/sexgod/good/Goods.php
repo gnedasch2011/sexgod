@@ -229,7 +229,7 @@ class Goods extends \yii\db\ActiveRecord
     public static function generateQueryFromParams($params)
     {
         $query = self::getQuery();
-  
+
         //вернуть бестселлера из категории
         if (isset($params['Bestseller']) && $params['Bestseller']) {
             $query->andWhere(['goods.Bestseller' => 1]);
@@ -238,26 +238,36 @@ class Goods extends \yii\db\ActiveRecord
         if (isset($params['Novelties']) && $params['Novelties']) {
             $query->andWhere(['goods.Novelties' => 1]);
         }
-        
 
         if (isset($params['random']) && $params['random']) {
-            
+
+
+            if(isset($params['Discount_goods']) && $params['Discount_goods']){
+                //тут надо выбрать все ids товаров с самой большой скидкой
+                
+                 
+            }
+
             $randomBestsellers = self::getProductsTest([
                 'query' => $query,
                 'categoryId' => $params['categoryId'],
             ]);
-          
+
             if ($randomBestsellers->one()) {
                 $ids = ArrayHelper::getColumn($randomBestsellers->all(), 'id');
-              
                 $randomIds = self::returnRandomIds($ids, $params['limit']);
-
                 $query->andWhere(['goods.id' => $randomIds]);
             }
 
             return self::generateModels($query);
         }
 
+        
+        
+        
+        
+        
+        
         if (isset($params['categoryId']) && $params['categoryId']) {
             $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
             $query->andWhere(['goods_category.category_id' => $params['categoryId']]);
@@ -269,6 +279,14 @@ class Goods extends \yii\db\ActiveRecord
         }
 
         return self::generateModels($query);
+    }
+    
+    public function getGoodsWithMaxDiscountInCategory($catId)
+    {
+        $ids = [];
+
+
+        return $ids;
     }
 
 

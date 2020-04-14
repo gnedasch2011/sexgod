@@ -188,6 +188,8 @@ getProducts"
     </div>
 </div>
 <!-- .block-banner / end -->
+<?php /*?>
+
 <!-- .block-products -->
 <div class="block block-products-carousel" data-layout="grid-4">
     <div class="container">
@@ -203,7 +205,7 @@ getProducts"
                                "limit":"4",
                                "Discount_goods":"1",
                                "categoryId":"101",
-                               "radom":"1",
+                               "random":"1",
                                "classForResult":".getProductsDiscountGoods"
                                }'
                     >
@@ -245,13 +247,26 @@ getProducts"
 
             </ul>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct"
+                <button class="block-header__arrow block-header__arrow--left getRandomProducts"
+                        data-getProductsParams='{
+                               "limit":"4",
+                                "Discount_goods":"1",
+                               "random":"1",
+                               "classForResult":".getProductsDiscountGoods"
+                               }'
                         type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-7x11"></use>
                     </svg>
                 </button>
-                <button class="block-header__arrow block-header__arrow--right getRandomFuteresProduct"
+                <button class="block-header__arrow block-header__arrow--right getRandomProducts"
+                        data-getProductsParams='{
+                               "limit":"4",
+                                "Discount_goods":"1",
+                               "random":"1",
+                               "classForResult":".getProductsDiscountGoods"
+                               }'
+
                         type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-7x11"></use>
@@ -272,8 +287,8 @@ getProducts"
         </div>
     </div>
 </div>
-
 <!-- .block-products / end -->
+<?php */?>
 <!-- .block-categories -->
 <div class="block block--highlighted block-categories block-categories--layout--compact">
     <div class="container">

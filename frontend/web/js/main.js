@@ -124,7 +124,7 @@ $(document).on('click', '.getRandomProducts', function (e) {
     let categoryId = $(e.target).parents('.container').find('.block-header__group--active').attr('data-id-category');
 
     getProductsParams.categoryId = categoryId;
-    let placeForHtml = getProductsParams.classForResu
+    let placeForHtml = getProductsParams.classForResult;
         console.log(getProductsParams);
     if (placeForHtml) {
         $.ajax({
