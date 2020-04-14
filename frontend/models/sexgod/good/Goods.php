@@ -5,6 +5,7 @@ namespace app\models\sexgod\good;
 use app\models\sexgod\category\CategoryBase;
 use app\models\sexgod\good\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
+use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -217,14 +218,94 @@ class Goods extends \yii\db\ActiveRecord
         return $query;
     }
 
+
+    public static function getRandomProductsInCategory($params)
+    {
+        $query = self::getQuery();
+
+
+    }
+
+    public static function generateQueryFromParams($params)
+    {
+        $query = self::getQuery();
+  
+        //вернуть бестселлера из категории
+        if (isset($params['Bestseller']) && $params['Bestseller']) {
+            $query->andWhere(['goods.Bestseller' => 1]);
+        }
+
+        if (isset($params['Novelties']) && $params['Novelties']) {
+            $query->andWhere(['goods.Novelties' => 1]);
+        }
+        
+
+        if (isset($params['random']) && $params['random']) {
+            
+            $randomBestsellers = self::getProductsTest([
+                'query' => $query,
+                'categoryId' => $params['categoryId'],
+            ]);
+          
+            if ($randomBestsellers->one()) {
+                $ids = ArrayHelper::getColumn($randomBestsellers->all(), 'id');
+              
+                $randomIds = self::returnRandomIds($ids, $params['limit']);
+
+                $query->andWhere(['goods.id' => $randomIds]);
+            }
+
+            return self::generateModels($query);
+        }
+
+        if (isset($params['categoryId']) && $params['categoryId']) {
+            $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
+            $query->andWhere(['goods_category.category_id' => $params['categoryId']]);
+        }
+
+
+        return self::generateModels($query);
+    }
+
+
+    public static function getIdsFromCategory($dataIdCategory, $limit)
+    {
+        $GoodsCategorys = self::find()
+            ->leftJoin('goods_category gc', 'gc.aID = goods.aID')
+            ->andWhere(['gc.category_id' => $dataIdCategory])
+            ->all();
+
+
+        $ids = ArrayHelper::getColumn($GoodsCategorys, 'aID');
+
+        $res = self::returnRandomIds($ids, $limit);
+
+        return $res;
+    }
+
+
+    public static function returnRandomIds($ids, $limit)
+    {
+        $countItems = ($limit < count($ids)) ? $limit : count($ids);
+        $res = [];
+
+        for ($i = 0; $i < $countItems; $i++) {
+            $rand = rand($i, count($ids) - 1);
+            $res[] = $ids[$rand];
+        }
+
+        return $res;
+
+    }
+
     public static function getProducts($params = [])
     {
+
         $query = (isset($params['query'])) ? $params['query'] : self::getQuery();
 
         if (isset($params['idOneGood']) && $params['idOneGood']) {
             $query->andWhere(['in', 'aID', $params['idOneGood']]);
         }
-
 
         if (isset($params['categoryId']) && $params['categoryId']) {
             $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
@@ -244,21 +325,59 @@ class Goods extends \yii\db\ActiveRecord
             $query->offset($params['offset']);
         }
 
-        ///Формирование моделей
+        return self::generateModels($query);
+    }
+
+
+    /**
+     * @param array $params
+     * @return mixed|\yii\db\Query
+     */
+    public static function getProductsTest($params = [])
+    {
+
+        $query = (isset($params['query'])) ? $params['query'] : self::getQuery();
+
+          if (isset($params['idOneGood']) && $params['idOneGood']) {
+            $query->andWhere(['in', 'aID', $params['idOneGood']]);
+        }
+
+        if (isset($params['categoryId']) && $params['categoryId']) {
+            $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
+            $query->andWhere(['goods_category.category_id' => $params['categoryId']]);
+        }
+
+        if (isset($params['name']) && $params['name']) {
+            $query->andWhere(['like', 'name', $params['name']]);
+        }
+
+        if (isset($params['limit']) && $params['limit']) {
+            $query->limit($params['limit']);
+        }
+
+        if (isset($params['offset']) && $params['offset']) {
+            $query->offset($params['offset']);
+        }
+
+        return $query;
+
+    }
+
+
+    public static function generateModels($query)
+    {
         $result = [];
+
         if ($query->all()) {
             $ids = ArrayHelper::map($query->all(), 'id', 'id');
 
             foreach ($ids as $id) {
                 $result [] = self::findOne(['aID' => $id]);
-            }   
-            
+            }
 
-            return $result;
         }
 
-
-        return false;
+        return $result;
     }
 
 

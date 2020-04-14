@@ -2,6 +2,7 @@
 
 namespace frontend\abstractComponents\modules\good\controllers;
 
+use app\models\sexgod\good\Goods;
 use app\modules\cart\models\Order;
 use frontend\abstractComponents\models\CategoryAbstract;
 use frontend\abstractComponents\widgets\modalWindow\Buy1Click;
@@ -18,7 +19,7 @@ class AjaxController extends Controller
         $featured = \Yii::$app->request->post('featured', false);
         $random = \Yii::$app->request->post('random', false);
         $limit = \Yii::$app->request->post('limit', 4);
-//         $bestsellers = \Yii::$app->request->post('bestsellers', false);
+        $newGood = \Yii::$app->request->post('newGood', false);
 
 
         $query = \app\models\sexgod\good\Goods::getQuery();
@@ -30,6 +31,14 @@ class AjaxController extends Controller
         //вернуть бестселлера из этой категории
         if ($random && $featured) {
             $randomBestsellers = CategoryAbstract::getRandomBestsellers($dataIdCategory, $limit);
+            if ($randomBestsellers) {
+                $query->andWhere(['goods.id' => $randomBestsellers]);
+            }
+        }
+
+        //вернуть бестселлера из этой категории
+        if ($random && $newGood) {
+            $randomBestsellers = CategoryAbstract::getNewGoods($dataIdCategory, $limit);
             if ($randomBestsellers) {
                 $query->andWhere(['goods.id' => $randomBestsellers]);
             }
@@ -52,5 +61,22 @@ class AjaxController extends Controller
 
     }
 
+    public function actionGetProducts()
+    {
+
+        $getProductsParams = \Yii::$app->request->post('getProductsParams');
+        if ($getProductsParams) {
+            $products = Goods::generateQueryFromParams($getProductsParams);
+        }
+
+        if ($products) {
+            return $this->renderAjax('@frontend/abstractComponents/modules/good/views/ajax/_mainPageFeatures.php', [
+                'items' => $products,
+            ]);
+        }
+
+        return false;
+
+    }
 
 }

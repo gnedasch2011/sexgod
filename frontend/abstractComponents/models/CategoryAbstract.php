@@ -9,12 +9,14 @@ use app\models\sexgod\good\GoodsCategory;
 use app\models\shop\Category;
 use app\modelsapp\models\sexgod\good\Goods2;
 use app\modules\product\models\ProductCategory;
+use frontend\abstractComponents\modules\images\models\ImgItems;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 class CategoryAbstract extends ActiveRecord
 {
 
+    const ITEMS_TYPE = 1;
     const ROOT_PATH_FOR_CAT = '/catalog/';
 
     public function behaviors()
@@ -459,6 +461,7 @@ class CategoryAbstract extends ActiveRecord
      */
     public static function getRandomBestsellers($idCat, $countItems = 4): array
     {
+
         $curCat = self::findOne($idCat);
         $GoodsCategorys = $curCat->getGoodsCategory()
             ->leftJoin('goods', 'goods_category.aID = goods.aID')
@@ -466,6 +469,40 @@ class CategoryAbstract extends ActiveRecord
             ->all();
         $ids = ArrayHelper::getColumn($GoodsCategorys, 'aid');
         $res = [];
+
+        $countItems = ($countItems < count($ids)) ? $countItems : count($ids);
+
+        for ($i = 0; $i < $countItems; $i++) {
+            $rand = rand($i, count($ids) - 1);
+            $res[] = $ids[$rand];
+        }
+
+        return $res;
+
+
+    }
+
+    public static function generateQueryFromParams($params)
+    {
+        $query = self::getQuery();
+
+    }
+
+    /**
+     * @return array
+     */
+    public static function  getNewGoods($idCat, $countItems = 4): array
+    {
+
+        $curCat = self::findOne($idCat);
+        $GoodsCategorys = $curCat->getGoodsCategory()
+            ->leftJoin('goods', 'goods_category.aID = goods.aID')
+            ->andWhere(['goods.Novelties' => 1])
+            ->all();
+        $ids = ArrayHelper::getColumn($GoodsCategorys, 'aid');
+        $res = [];
+
+        $countItems = ($countItems < count($ids)) ? $countItems : count($ids);
 
         for ($i = 0; $i < $countItems; $i++) {
             $rand = rand($i, count($ids) - 1);
@@ -481,6 +518,36 @@ class CategoryAbstract extends ActiveRecord
     {
         return $this->hasMany(GoodsCategory::className(), ['category_id' => 'id']);
 
+    }
+
+    public static function getCategoryById($ids)
+    {
+
+        if ($ids) {
+            return self::find()
+                ->with('imgItems')
+                ->andWhere(['id' => $ids])
+                ->all();
+        }
+
+    }
+
+    public function getImgItems()
+    {
+        return $this->hasOne(ImgItems::className(), ['items_id' => 'id'])
+            ->where(['or', ['items_id' => 'id'], ['items_type' => self::ITEMS_TYPE]]);
+    }
+
+    public function getDetailUrl()
+    {
+        return '/catalog/' . $this->slug . '/';
+    }
+
+
+    public function getPreviewImg()
+    {
+
+        return '';
     }
 }
 

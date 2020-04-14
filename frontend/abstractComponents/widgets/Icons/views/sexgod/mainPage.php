@@ -1,9 +1,9 @@
 <?php foreach ($items as $item): ?>
     <div class="block-features__item">
         <div class="block-features__icon">
-            <svg width="48px" height="48px">
-                <use xlink:href="<?= $item['img'] ;?>"></use>
-            </svg>
+            <object type="image/svg+xml" data="<?= $item['img'] ;?>" width="60px" height="60px" >
+
+            </object>
         </div>
         <div class="block-features__content">
             <div class="block-features__title"><?= $item['slideTitle'] ;?></div>
