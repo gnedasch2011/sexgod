@@ -264,6 +264,10 @@ class Goods extends \yii\db\ActiveRecord
         }
 
 
+        if (isset($params['limit']) && $params['limit']) {
+            $query->limit($params['limit']);
+        }
+
         return self::generateModels($query);
     }
 

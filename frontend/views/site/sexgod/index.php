@@ -82,34 +82,69 @@ use yii\helpers\Html;
             <ul class="block-header__groups-list">
                 <li>
                     <button type="button" class="block-header__group block-header__group--active
-getFuturesProductsInCategoryJS" data-id-category="101">
+getProducts"
+                            data-id-category="101"
+                            data-getProductsParams='{
+                               "limit":"4",
+                                "Bestseller":"1",
+                               "categoryId":"101",
+                               "random":"1",
+                               "classForResult":".getProductsResultPopulars"
+                               }'
+                    >
                         Все
                     </button>
                 </li>
                 <li>
                     <button type="button" class="block-header__group
-getFuturesProductsInCategoryJS"
+getProducts"
                             data-id-category="636"
-                            data-limit="8"
+                            data-getProductsParams='{
+                               "limit":"4",
+                               "Bestseller":"1",
+                               "categoryId":"636",
+                               "random":"1",
+                               "classForResult":".getProductsResultPopulars"
+                               }'
                     ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(636); ?>
                     </button>
                 </li>
                 <li>
                     <a type="button" class="block-header__group
-getFuturesProductsInCategoryJS"
-                       data-id-category="683"><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(683); ?>
+getProducts"
+                       data-id-category="683"
+                       data-getProductsParams='{
+                               "limit":"4",
+                                   "Bestseller":"1",
+                               "categoryId":"683",
+                               "random":"1",
+                               "classForResult":".getProductsResultPopulars"
+                               }'
+                    ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(683); ?>
                     </a>
                 </li>
 
             </ul>
             <div class="block-header__arrows-list">
-                <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct"
+                <button class="block-header__arrow block-header__arrow--left getRandomProducts"
+                        data-getProductsParams='{
+                               "limit":"4",
+                               "Bestseller":"1",
+                               "random":"1",
+                               "classForResult":".getProductsResultPopulars"
+                               }'
                         type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-left-7x11"></use>
                     </svg>
                 </button>
-                <button class="block-header__arrow block-header__arrow--right getRandomFuteresProduct"
+                <button class="block-header__arrow block-header__arrow--right getRandomProducts"
+                        data-getProductsParams='{
+                               "limit":"4",
+                                "Bestseller":"1",
+                               "random":"1",
+                               "classForResult":".getProductsResultPopulars"
+                               }'
                         type="button">
                     <svg width="7px" height="11px">
                         <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-7x11"></use>
@@ -119,10 +154,10 @@ getFuturesProductsInCategoryJS"
         </div>
         <div class="block-products-carousel__slider">
             <div class="block-products-carousel__preloader"></div>
-            <div class="productsResult">
+            <div class="getProductsResultPopulars">
                 <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
                     'items' => \app\models\sexgod\good\Goods::getProducts([
-                        'categoryId' => 101,//101///491
+                        'categoryId' => 101,
                         'limit' => 4,
                     ])
                 ]); ?>
@@ -162,27 +197,52 @@ getFuturesProductsInCategoryJS"
             <ul class="block-header__groups-list">
                 <li>
                     <button type="button" class="block-header__group block-header__group--active
-getFuturesProductsInCategoryJS" data-id-category="100">
+getProducts"
+                            data-id-category="101"
+                            data-getProductsParams='{
+                               "limit":"4",
+                               "Discount_goods":"1",
+                               "categoryId":"101",
+                               "radom":"1",
+                               "classForResult":".getProductsDiscountGoods"
+                               }'
+                    >
+
                         Все
                     </button>
                 </li>
 
-
                 <li>
                     <button type="button" class="block-header__group
-getFuturesProductsInCategoryJS" data-id-category="636"
-                            data-limit="8"
+getProducts"
+                            data-id-category="636"
+                            data-getProductsParams='{
+                               "limit":"4",
+                               "Discount_goods":"1",
+                               "categoryId":"636",
+                               "radom":"1",
+                               "classForResult":".getProductsDiscountGoods"
+                               }'
+
                     ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(636); ?>
                     </button>
                 </li>
+
                 <li>
                     <button type="button" class="block-header__group
-getFuturesProductsInCategoryJS"
+getProducts"
                             data-id-category="683"
-                            data-limit="8"
+                            data-getProductsParams='{
+                               "limit":"4",
+                               "Discount_goods":"1",
+                               "categoryId":"683",
+                               "radom":"1",
+                               "classForResult":".getProductsDiscountGoods"
+                               }'
                     ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(683); ?>
                     </button>
                 </li>
+
             </ul>
             <div class="block-header__arrows-list">
                 <button class="block-header__arrow block-header__arrow--left getRandomFuteresProduct"
@@ -201,7 +261,7 @@ getFuturesProductsInCategoryJS"
         </div>
         <div class="block-products-carousel__slider">
             <div class="block-products-carousel__preloader"></div>
-            <div class="productsResult">
+            <div class="getProductsDiscountGoods">
                 <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
                     'items' => \app\models\sexgod\good\Goods::getProducts([
                         'categoryId' => 101,//101///491
@@ -235,13 +295,13 @@ getFuturesProductsInCategoryJS"
 <div class="block block-products-carousel" data-layout="grid-4">
     <div class="container">
         <div class="block-header">
-        <h3 class="block-header__title">Новинки</h3>
+            <h3 class="block-header__title">Новинки</h3>
             <div class="block-header__divider"></div>
             <ul class="block-header__groups-list">
                 <li>
                     <button type="button" class="block-header__group block-header__group--active
 getProducts"
-                            data-id-category = "101"
+                            data-id-category="101"
                             data-getProductsParams='{
                                "limit":"4",
                                "Novelties":"1",
@@ -256,38 +316,24 @@ getProducts"
                 <li>
                     <button type="button" class="block-header__group
 getProducts"
-                            data-id-category = "101"
+                            data-id-category="636"
                             data-getProductsParams='{
                                "limit":"8",
                                "Novelties":"1",
-                               "categoryId":"101",
+                               "categoryId":"636",
                                "classForResult":".getProductsResultNovelties"
                                }'
-                    ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(101); ?>
+                    ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(636); ?>
                     </button>
                 </li>
                 <li>
                     <a type="button" class="block-header__group
 getProducts"
-                       data-id-category = "226"
+                       data-id-category="683"
                        data-getProductsParams='{
                                "limit":"8",
                                "Novelties":"1",
-                               "categoryId":"226",
-                               "classForResult":".getProductsResultNovelties"
-                               }'
-
-                    ><?= \frontend\abstractComponents\models\CategoryAbstract::getNameById(226); ?>
-                    </a>
-                </li>
-                <li>
-                    <a type="button" class="block-header__group
-getProducts"
-                       data-id-category = "226"
-                       data-getProductsParams='{
-                               "limit":"8",
-                                "Novelties":"1",
-                               "categoryId":"226",
+                               "categoryId":"683",
                                "classForResult":".getProductsResultNovelties"
                                }'
 
@@ -298,7 +344,7 @@ getProducts"
             <div class="block-header__arrows-list">
                 <button class="block-header__arrow block-header__arrow--left getRandomProducts"
                         data-getProductsParams='{
-                               "limit":"4",
+                               "limit":"8",
                                "Novelties":"1",
                                "random":"1",
                                "classForResult":".getProductsResultNovelties"
@@ -310,7 +356,7 @@ getProducts"
                 </button>
                 <button class="block-header__arrow block-header__arrow--right getRandomProducts"
                         data-getProductsParams='{
-                               "limit":"4",
+                               "limit":"8",
                                "Novelties":"1",
                                "random":"1",
                                "classForResult":".getProductsResultNovelties"
