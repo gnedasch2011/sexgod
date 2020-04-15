@@ -21,6 +21,7 @@ class RedStroykaAsset extends AssetBundle
         'template/red_stroyka/fonts/stroyka/stroyka.css',
         'template/red_stroyka/css/sexgod.css',
         'template/red_stroyka/css/style.css',
+        'template/red_stroyka/css/abstractForJs.css',
     ];
     public $baseUrl = '@web';
     public $depends = [

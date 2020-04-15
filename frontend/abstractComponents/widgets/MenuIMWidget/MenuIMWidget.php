@@ -18,6 +18,11 @@ class MenuIMWidget extends Widget
 
     public function run()
     {
+        if (!isset($this->categoryName)) {
+            $this->categoryName = 'seks-igrushki';
+
+        }
+
         $menuItem = CategoryAbstract::getActiveMenuItems($this->categoryName);
 
         return $this->render('leftMenu', [

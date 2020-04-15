@@ -226,12 +226,14 @@ class SiteController extends Controller
         $this->title = $good->name;
 
         //Хлебные крошки
-        $breadcrumbs[] = $good->parentCategoryUrl;
+
+        if($good->parentCategoryUrl){
+            $breadcrumbs[] = $good->parentCategoryUrl;
+        }
         $breadcrumbs[] = [
             'label' => $good->name,
 //            'url' => [$good->fullUrl]
         ];
-
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
 
