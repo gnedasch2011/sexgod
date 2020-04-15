@@ -6,6 +6,8 @@ use yii\base\Widget;
 
 class RenderItemsWiget extends Widget
 {
+    public $items;
+    public $temlpate;
 
     public function init()
     {
@@ -14,11 +16,9 @@ class RenderItemsWiget extends Widget
 
     public function run()
     {
-        $this->path = '/catalog/';
+        return $this->render($this->temlpate, [
+            'items' => $this->items,
 
-        return $this->render('view', [
-            'childsCurrentCategory' => $this->childsCurrentCategory,
-            'path' => $this->path,
         ]);
     }
 }

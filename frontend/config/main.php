@@ -30,6 +30,10 @@ return [
         'good' => [
             'class' => 'frontend\abstractComponents\modules\good\Module',
         ],
+
+        'brand' => [
+            'class' => 'frontend\abstractComponents\modules\brand\Module',
+        ],
         'debug' => [
             'class' => 'yii\debug\Module',
             'allowedIPs' => ['*'],
@@ -101,6 +105,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 "search" => "search/index",
+                "brand/<brandName:\S+>/" => "brand/site/index",
                 "catalog/<categoryName:\S+>/" => 'site/category',
                 "product/<slugItem:\S+>" => 'site/detail-item',
                 "support" => 'site/support',

@@ -677,28 +677,13 @@ getProducts"
     <div class="container">
         <div class="block-brands__slider">
             <div class="owl-carousel">
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-1.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-2.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-3.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-4.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-5.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-6.png" alt=""></a>
-                </div>
-                <div class="block-brands__item">
-                    <a href=""><img src="/template/red_stroyka/images/logos/logo-7.png" alt=""></a>
-                </div>
+                <?= frontend\abstractComponents\widgets\RenderItems\RenderItemsWiget::widget([
+                        'items'=>\frontend\abstractComponents\modules\brand\models\Brands::find()->all(),
+                        'temlpate'=>'mainPageBlockBrands',
+                    ]) ;?>
+
             </div>
+
         </div>
     </div>
 </div>

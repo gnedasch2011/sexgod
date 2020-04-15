@@ -345,15 +345,20 @@ class CategoryAbstract extends ActiveRecord
 
     public static function getParentCategoryForBread($GoodsCategory)
     {
-        $cat = self::find()->where(['id' => $GoodsCategory->category_id])->one();
+        $arr = [];
 
-        $catForBread = self::getRecursiveParentCat($cat);
+        if (isset($GoodsCategory->category_id)) {
+            $cat = self::find()->where(['id' => $GoodsCategory->category_id])->one();
+            $catForBread = self::getRecursiveParentCat($cat);
 
-        $arr = [
-            'label' => $catForBread->name,
-            'url' => [$catForBread->fullUrl]
-        ];
+            $arr = [
+                'label' => $catForBread->name,
+                'url' => [$catForBread->fullUrl]
+            ];
 
+
+            return $arr;
+        }
 
         return $arr;
     }
@@ -491,7 +496,7 @@ class CategoryAbstract extends ActiveRecord
     /**
      * @return array
      */
-    public static function  getNewGoods($idCat, $countItems = 4): array
+    public static function getNewGoods($idCat, $countItems = 4): array
     {
 
         $curCat = self::findOne($idCat);

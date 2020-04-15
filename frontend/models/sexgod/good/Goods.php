@@ -428,9 +428,12 @@ class Goods extends \yii\db\ActiveRecord
     public function getParentCategoryUrl(): array
     {
         $GoodsCategory = $this->goodsCategoryForBread;
+        $url = CategoryBase::getParentCategoryForBread($GoodsCategory);
+        if(isset($url)){
+            return $url;
+        }
 
-        return CategoryBase::getParentCategoryForBread($GoodsCategory);
-
+        return false;
     }
 
     public function getName()

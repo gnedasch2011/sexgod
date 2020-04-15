@@ -13,8 +13,6 @@
                 <div class="filter-categories">
 
                     <ul class="filter-categories__list">
-
-
                         <?php foreach ($menuItem as $item): ?>
                             <?php
                             $urlCat = "/catalog/$item->slug/";

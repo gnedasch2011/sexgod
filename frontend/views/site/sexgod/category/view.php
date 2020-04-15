@@ -113,7 +113,6 @@ use yii\widgets\Breadcrumbs;
 
                                      <?php */ ?>
                                 <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
-                                    'categoryName' => 'seks-igrushki',
                                 ]); ?>
 
 
