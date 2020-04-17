@@ -21,7 +21,7 @@
             </li>
             <li class="order-success__meta-item">
                 <span class="order-success__meta-title">Итого:</span>
-                <span class="order-success__meta-value"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($totalPrice); ?> руб.</span>
+                <span class="order-success__meta-value"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice($totalPrice); ?></span>
             </li>
             <li class="order-success__meta-item">
                 <span class="order-success__meta-title">Метод оплаты:</span>
@@ -52,7 +52,7 @@
                 <tbody class="order-list__subtotals">
                 <tr>
                     <th class="order-list__column-label" colspan="3">Подитог</th>
-                    <td class="order-list__column-total"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
+                    <td class="order-list__column-total"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
                 </tr>
                 <tr>
                     <th class="order-list__column-label" colspan="3">Доставка</th>
@@ -63,7 +63,7 @@
                 <tfoot class="order-list__footer">
                 <tr>
                     <th class="order-list__column-label" colspan="3">Итого</th>
-                    <td class="order-list__column-total"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?> руб.</td>
+                    <td class="order-list__column-total"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
                 </tr>
                 </tfoot>
             </table>

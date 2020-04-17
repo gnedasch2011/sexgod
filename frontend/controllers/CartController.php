@@ -116,7 +116,7 @@ class CartController extends Controller
         $idGood = \Yii::$app->request->post('idGood');
         $totalPriceOneGood = \Yii::$app->cart->getFullPriceOneGood($idGood);
 
-        return CommonHelper::formatPrice($totalPriceOneGood) . ' руб.';
+        return CommonHelper::formatPrice($totalPriceOneGood);
     }
 
     public function actionAjaxUpdateCart()

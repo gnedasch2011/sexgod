@@ -166,7 +166,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getFormatPrice()
     {
-        return CommonHelper::formatPrice($this->RetailPrice) . ' руб.';
+        return CommonHelper::formatPrice($this->RetailPrice);
     }
 
 
@@ -346,6 +346,7 @@ class Goods extends \yii\db\ActiveRecord
         if (isset($params['offset']) && $params['offset']) {
             $query->offset($params['offset']);
         }
+
 
         return self::generateModels($query);
     }

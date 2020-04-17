@@ -20,6 +20,5 @@
         </div>
     </td>
     <td class="order-list__column-quantity" data-title="Qty:"><?= Yii::$app->cart->countById($good->id); ?></td>
-    <td class="order-list__column-total"> <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->getFullPriceOneGood($good->id)); ?>
-        руб.</td>
+    <td class="order-list__column-total"> <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->getFullPriceOneGood($good->id)); ?></td>
 </tr>
