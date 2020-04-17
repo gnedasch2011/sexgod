@@ -537,6 +537,19 @@ class CategoryAbstract extends ActiveRecord
 
     }
 
+    public function getPreviewForBlockMainPage()
+    {
+        if ($this->id == 484) {
+            if (empty($this->imgItems)) {
+
+                echo "<pre>"; print_r($this);die();
+            }
+
+        }
+        return $this->imgItems;
+    }
+
+
     public function getImgItems()
     {
         return $this->hasOne(ImgItems::className(), ['items_id' => 'id'])
