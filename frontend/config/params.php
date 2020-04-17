@@ -1,7 +1,7 @@
 <?php
 return [
     'emailGnedasch2011' => 'gnedasch2011@yandex.ru',
-    'phone' => '+7(495)266-60-52',
+    'phone' => '+7(495) 266-60-52',
     'phoneAncor' => '+74952666052',
 
     'nameShop' => 'SexGod.RU',
@@ -11,6 +11,7 @@ return [
     'inn' => '761901019165',
     'orgnip' => '318762700075496',
     'ipe' => 'ИП Смирнов И.Н.',
+    'workingHours' => 'Каждый день с 10:00 до 18:00',
 
 
 ];

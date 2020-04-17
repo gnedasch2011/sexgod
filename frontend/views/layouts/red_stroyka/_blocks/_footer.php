@@ -9,22 +9,19 @@
                         <div class="site-footer__widget footer-contacts">
                             <h5 class="footer-contacts__title">Контакты</h5>
                             <div class="footer-contacts__text">
-                                ИП Смирнов И.Н. <br>
-								ИНН: 761901019165<br>
-								ОГРНИП: 318762700075496
+                                <?= Yii::$app->params['ipe']; ?> <br>
+								ИНН:  <?= Yii::$app->params['inn']; ?><br>
+								ОГРНИП:  <?= Yii::$app->params['orgnip']; ?>
                             </div>
                             <ul class="footer-contacts__contacts">
-                                <li><i class="footer-contacts__icon fas fa-globe-americas"></i> 715
-                                    115280, Москва, ул. Автозаводская, д. 16, корпус 2, строение 8
+                                <li><i class="footer-contacts__icon fas fa-globe-americas"></i> <?= Yii::$app->params['address']; ?>
                                 </li>
                                 <li><i class="footer-contacts__icon far fa-envelope"></i>
-                                    stroyka@example.com
+                                    <?= Yii::$app->params['email']; ?>
                                 </li>
                                 <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> <?= Yii::$app->params['phone']; ?>
                                 </li>
-                                <li><i class="footer-contacts__icon far fa-clock"></i> Каждый день
-                                   С 10:00 до 18:00
-                                </li>
+                                <li><i class="footer-contacts__icon far fa-clock"></i><?= Yii::$app->params['workingHours']; ?></li>
                             </ul>
                         </div>
                     </div>

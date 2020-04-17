@@ -3105,6 +3105,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 .product-card__image a {
   display: block;
   padding-bottom: 100%;
+  overflow: hidden;
   position: relative;
 }
 

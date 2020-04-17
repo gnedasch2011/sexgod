@@ -99,7 +99,7 @@ class Cart extends Component
 
     public function countById($id)
     {
-        return $this->cart[$id] ?? false;
+        return $this->cart[$id] ?? 0;
     }
 
     public function getCountItems()
