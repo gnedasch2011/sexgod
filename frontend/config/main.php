@@ -115,8 +115,10 @@ return [
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
                 "about-us" => "page/site/about-us",
+                "contacts" => "page/site/contacts",
+                "delivery" => "page/site/delivery",
+                "ways-of-payment" => "page/site/ways-of-payment",
             ],
-
 
         ],
 

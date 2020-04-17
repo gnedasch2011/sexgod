@@ -33,7 +33,7 @@ class SiteController extends Controller
         return $this->render('/sexgod/aboutUs');
     }
 
-    public function actionСontacts()
+    public function actionContacts()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
