@@ -11,6 +11,7 @@ use yii\web\Controller;
 
 class SiteController extends Controller
 {
+    public $title;
 
     public function actionIndex($brandName)
     {
@@ -37,14 +38,20 @@ class SiteController extends Controller
         $allCategory = [];
 
 
-        //Для Сео
 //        $this->categoryName = $brandCat->name;
+
+
+        $minPriceInBrand = $brandCat->minPrice;
+        $nameShop = \Yii::$app->params['nameShop'];
+
+        $title = "{$brandCat->name} купить товары бренда по цене от {$brandCat->formatMinPrice} в интернет-магазине {$nameShop}";
+        $this->title = $title;
+        $this->view->params['h1'] = $brandCat->name;
+        $tel = \Yii::$app->params['phone'];
 
         $keywords = $brandCat->name;
 
-        $this->view->params['h1'] = $brandCat->name;
-
-        $description = trim($brandCat->name);
+        $description =   "Товары бренда {$brandCat->name} по цене от {$brandCat->formatMinPrice} Бесплатная доставка при заказе от 3000 руб. 100% Анонимность. ☎️ {$tel} — $nameShop";
 
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
@@ -63,6 +70,8 @@ class SiteController extends Controller
             'label' => $brandCat->name,
 //            'url' => [$brandCat->fullUrl]
         ];
+
+
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
 

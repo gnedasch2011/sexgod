@@ -128,7 +128,7 @@ let updateFullPriceInCart = function (fullTotalCartClass) {
         method: "post",
 
         success: function (data) {
-            $(fullTotalCartClass).text(data + ' руб.')
+            $(fullTotalCartClass).text(data)
         }
     });
 

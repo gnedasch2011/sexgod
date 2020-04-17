@@ -1178,11 +1178,9 @@ use yii\widgets\Breadcrumbs;
 
  */; ?>
 
-
 <?php if ($category->desc): ?>
     <?= $category->desc; ?>
 <?php endif; ?>
-
 
 <?php
 $script = <<< JS

@@ -27,9 +27,7 @@
         </div>
     </td>
     <td class="cart-table__column cart-table__column--total" data-title="Итого">
-        <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->getFullPriceOneGood($good->id)); ?>
-        руб.
-    </td>
+        <?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->getFullPriceOneGood($good->id)); ?></td>
     <td class="cart-table__column cart-table__column--remove">
         <button type="button" class="btn btn-light btn-sm btn-svg-icon">
             <svg width="12px" height="12px">

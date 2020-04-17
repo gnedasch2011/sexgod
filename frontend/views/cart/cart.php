@@ -51,9 +51,7 @@ use yii\helpers\Html;
                                 <thead class="cart__totals-header">
                                 <tr>
                                     <th>Промежуточный итог:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?>
-                                        руб.
-                                    </td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
                                 </tr>
                                 </thead>
                                 <tbody class="cart__totals-body">
@@ -75,9 +73,7 @@ use yii\helpers\Html;
                                 <tfoot class="cart__totals-footer">
                                 <tr>
                                     <th>Итого:</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->returnCartFullPrice()) ?>
-                                        руб.
-                                    </td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(\Yii::$app->cart->returnCartFullPrice()) ?></td>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -269,9 +265,7 @@ use yii\helpers\Html;
                                 <tfoot class="checkout__totals-footer">
                                 <tr>
                                     <th>Итого</th>
-                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?>
-                                        руб.
-                                    </td>
+                                    <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ?></td>
                                 </tr>
                                 </tfoot>
                             </table>

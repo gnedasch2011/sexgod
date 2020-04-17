@@ -18,7 +18,13 @@ use frontend\abstractComponents\models\CategoryAbstract;
 
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+    <title>
+        <?php if(isset($this->context->title)):?>
+            <?= Html::encode($this->context->title) ?>
+        <?php else:?>
+        <?php endif;?>
 
+    </title>
     <!-- /Yandex.Metrika counter -->
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1778,7 +1784,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         </tr>
                                                         <tr>
                                                             <th>Итого:</th>
-                                                            <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ;?> руб.</td>
+                                                            <td class="fullTotalCartClass"><?= \frontend\abstractComponents\helpers\CommonHelper::formatPrice(Yii::$app->cart->returnCartFullPrice()) ;?></td>
                                                         </tr>
                                                     </table>
                                                 </div>

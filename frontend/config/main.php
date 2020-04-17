@@ -34,6 +34,9 @@ return [
         'brand' => [
             'class' => 'frontend\abstractComponents\modules\brand\Module',
         ],
+        'page' => [
+            'class' => 'frontend\abstractComponents\modules\page\Module',
+        ],
         'debug' => [
             'class' => 'yii\debug\Module',
             'allowedIPs' => ['*'],
@@ -111,6 +114,7 @@ return [
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
+                "about-us" => "page/site/about-us",
             ],
 
 

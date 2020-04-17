@@ -3,6 +3,7 @@
 namespace frontend\abstractComponents\modules\brand\models;
 
 use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -53,14 +54,12 @@ class Brands extends \yii\db\ActiveRecord
     {
         $goods = Goods::find()
             ->leftJoin('brands b', 'b.name=goods.Vendor')
-            ->where(['b.name' => $this->name])
-
-        ;
+            ->where(['b.name' => $this->name]);
 
         return $goods;
     }
 
-    
+
     public function getCountItems()
     {
         return 0;
@@ -70,23 +69,23 @@ class Brands extends \yii\db\ActiveRecord
     {
         return '';
     }
-    
+
     public function getRelatedCategory()
     {
 
         //вытягиваем категории которые пересекаются с брендом
-/*
- SELECT c.slug FROM sexgod.category c
-left join sexgod.goods_category gc on
-left join sexgod.goods g on g.aID  = gc.aid
-where g.Vendor = "4sexdreaM";
- */
+        /*
+         SELECT c.slug FROM sexgod.category c
+        left join sexgod.goods_category gc on
+        left join sexgod.goods g on g.aID  = gc.aid
+        where g.Vendor = "4sexdreaM";
+         */
 
         $listCateg = CategoryAbstract::find()
             ->from('category c')
             ->leftJoin('sexgod.goods_category gc', 'gc.category_id = c.id')
             ->leftJoin('sexgod.goods g', 'g.aID  = gc.aid')
-            ->where(['g.Vendor'=>$this->name])
+            ->where(['g.Vendor' => $this->name])
             ->all();
 
         $arr = ArrayHelper::map($listCateg, 'slug', 'name');
@@ -94,4 +93,26 @@ where g.Vendor = "4sexdreaM";
         return $arr;
 
     }
+
+    public function getMinPrice()
+    {
+
+        $query = Goods::getQuery();
+        $query->select('min(goods.BaseRetailPrice) as minPrice');
+        $query->andWhere(['goods.Vendor' => $this->name]);
+
+        if ($query->one()) {
+            $minPrice = $query->one();
+            return $minPrice['minPrice'];
+        }
+
+        return 0;
+    }
+
+    public function getFormatMinPrice()
+    {
+        $minPrice = $this->getMinPrice();
+        return CommonHelper::formatPrice($minPrice);
+    }
+
 }

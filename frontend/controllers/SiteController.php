@@ -166,7 +166,9 @@ class SiteController extends Controller
 
         //Для Сео
         $this->categoryName = $categoryName;
+
         $this->title = $category->maskForTitle;
+
         $keywords = $category->name;
 
         $this->view->params['h1'] = $category->h1;
@@ -404,4 +406,13 @@ class SiteController extends Controller
         }
 
     }
+
+    public function actionAboutUs()
+    {
+        echo "<pre>"; print_r($this);die();
+        $this->layout = '/layouts/red_stroyka/main';
+
+        return $this->render('/site/sexgod/pages/aboutUs');
+    }
+
 }
