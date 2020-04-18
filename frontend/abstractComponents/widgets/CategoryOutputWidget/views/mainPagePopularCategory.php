@@ -16,7 +16,8 @@ if (count($items) > 9) {
                         ]); ?>
                         <img
                                 src="/template/red_stroyka/images/categories/category-1.jpg"
-                                alt=""></a>
+                                alt="">
+                    </a>
 
                 </div>
                 <div class="category-card__content">

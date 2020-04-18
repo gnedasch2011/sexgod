@@ -541,12 +541,27 @@ class CategoryAbstract extends ActiveRecord
     {
         if ($this->id == 484) {
             if (empty($this->imgItems)) {
+//                $oneGood = $this->oneGood;
+//
+//                $prod = Goods::getProducts([
+//                    'idOneGood' => $oneGood
+//                ]);
+//                echo "<pre>"; print_r($prod);die();
+//                if (isset($prod[0])) {
+//                    return $prod[0]->imagesone;
+//                }
 
-                echo "<pre>"; print_r($this);die();
             }
 
         }
         return $this->imgItems;
+    }
+
+
+    public function getOneGood()
+    {
+        return $this->hasOne(GoodsCategory::className(), ['category_id' => 'id']);
+
     }
 
 
