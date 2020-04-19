@@ -3,7 +3,6 @@ if (count($items) > 9) {
     $itemsBegin = array_slice($items, 0, 9);
     $itemsHidden = array_slice($items, 9);
 }
-
 ?>
 <div class="block-categories__list">
     <?php foreach ($itemsBegin as $item): ?>
@@ -12,12 +11,13 @@ if (count($items) > 9) {
                 <div class="category-card__image">
                     <a href="<?= $item->getDetailUrl(); ?>">
                         <?= \frontend\abstractComponents\modules\images\widgets\ImageOutputWidget\ImageOutputWidget::widget([
-                            'item' => $item->imgItems,
+                            'item' => $item->previewForBlockMainPage,
                             'template' => 'default',
                         ]); ?>
                         <img
                                 src="/template/red_stroyka/images/categories/category-1.jpg"
-                                alt=""></a>
+                                alt="">
+                    </a>
 
                 </div>
                 <div class="category-card__content">

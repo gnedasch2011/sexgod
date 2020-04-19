@@ -24,6 +24,7 @@ class ImageOutputWidget extends Widget
                 'path' => $path,
             ]);
         }
+
         return false;
     }
 }

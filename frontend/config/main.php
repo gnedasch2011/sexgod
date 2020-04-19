@@ -52,7 +52,7 @@ return [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache', // Используем хранилище yii\caching\FileCache
-            'cachePath' => '@common/runtime/cache' // Храним кэш в common/runtime/cache
+            'cachePath' => '@frontend/runtime/cache' // Храним кэш в common/runtime/cache
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

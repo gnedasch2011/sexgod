@@ -46,23 +46,23 @@ use yii\helpers\Html;
                 'items' => [
                     [
                         'img' => '/template/red_stroyka/images/icons/anon.svg',
-                        'slideTitle' => 'Free Shipping',
-                        'slideText' => 'For orders from $50',
+                        'slideTitle' => 'Гарантия анонимности',
+                        'slideText' => '100% анонимность на каждом этапе заказа',
                     ],
 
                     [
                         'img' => '/template/red_stroyka/images/icons/free-shipping.svg',
-                        'slideTitle' => 'Support 24/7',
-                        'slideText' => 'Call us anytime',
+                        'slideTitle' => 'Бесплатная доставка',
+                        'slideText' => 'Доставка по России бесплатно при заказе от 3000 руб.',
                     ],
                     [
                         'img' => '/template/red_stroyka/images/icons/gift.svg',
-                        'slideTitle' => '100% Safety',
-                        'slideText' => 'Only secure payments',
+                        'slideTitle' => 'Подарки',
+                        'slideText' => 'Приятный сюрприз при первом заказе',
                     ], [
                         'img' => '/template/red_stroyka/images/icons/medal.svg',
-                        'slideTitle' => 'Hot Offers',
-                        'slideText' => 'Discounts up to 90%',
+                        'slideTitle' => 'Гарантия качества',
+                        'slideText' => 'Вся продукция сертифицирована',
                     ],
 
                 ]
@@ -77,7 +77,7 @@ use yii\helpers\Html;
 <div class="block block-products-carousel" data-layout="grid-4">
     <div class="container">
         <div class="block-header">
-            <h3 class="block-header__title">Популярные продукты</h3>
+            <h3 class="block-header__title">Хиты продаж</h3>
             <div class="block-header__divider"></div>
             <ul class="block-header__groups-list">
                 <li>
