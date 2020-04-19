@@ -785,12 +785,8 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                     <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
-<<<<<<< HEAD
-                                                            <div class="megamenu__body">
-=======
                                                             <div class="megamenu__body"
                                                                  style="">
->>>>>>> 064632e909dbcd47e0d1120231c15383510e839d
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
