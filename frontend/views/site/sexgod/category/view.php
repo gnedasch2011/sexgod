@@ -7,7 +7,6 @@ use yii\widgets\Breadcrumbs;
 /* @var $this yii\web\View */
 
 ?>
-
 <div class="container">
     <div class="shop-layout shop-layout--sidebar--start">
         <div class="shop-layout__sidebar">

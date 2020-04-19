@@ -347,7 +347,6 @@ class Goods extends \yii\db\ActiveRecord
             $query->offset($params['offset']);
         }
 
-
         return self::generateModels($query);
     }
 

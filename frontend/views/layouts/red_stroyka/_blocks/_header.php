@@ -375,7 +375,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
                                                             <div class="megamenu__body"
-                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-1.jpg');">
+                                                                 style="">
                                                                 <div class="row">
                                                                     <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
@@ -551,8 +551,8 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
                                                             <div class="megamenu__body"
-                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-2.jpg');">
-                                                                frontend/web/template/red_stroyka
+                                                                 style="">
+
                                                                 <div class="row">
                                                                     <div class="col-4">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
@@ -681,7 +681,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- .megamenu -->
                                                         <div class="megamenu  megamenu--departments ">
                                                             <div class="megamenu__body"
-                                                                 style="background-image: url('/template/red_stroyka/images/megamenu/megamenu-3.jpg');">
+                                                                 style="">
                                                                 <div class="row">
                                                                     <div class="col-6">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
