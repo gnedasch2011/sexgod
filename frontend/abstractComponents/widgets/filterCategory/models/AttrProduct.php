@@ -29,8 +29,8 @@ class AttrProduct extends \yii\db\ActiveRecord
     {
         return [
             [['attr_id'], 'required'],
-            [['product_id', 'value'], 'integer'],
-            [['attr_id'], 'string', 'max' => 255],
+            [['product_id', 'attr_id'], 'integer'],
+            [['value'], 'safe'],
         ];
     }
 
@@ -52,7 +52,7 @@ class AttrProduct extends \yii\db\ActiveRecord
         return self::find()->where(['attr_id' => $attrId])->min() ?? 0;
     }
 
-    public  function getMaxValue($attrId)
+    public function getMaxValue($attrId)
     {
         return self::find()->where(['attr_id' => $attrId])->max() ?? 0;
 

@@ -30,6 +30,7 @@ class Attr extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['group_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
+            [['unit'], 'string'],
         ];
     }
 
@@ -42,6 +43,8 @@ class Attr extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'group_id' => 'Group ID',
+            'unit' => 'Ед. измерения',
+
         ];
     }
 

@@ -7,8 +7,10 @@
 use app\widgets\MenuIMWidget;
 
 use frontend\assets\RedStroykaAsset;
+use frontend\assets\MetricaAsset;
 
 RedStroykaAsset::register($this);
+MetricaAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
