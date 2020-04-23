@@ -19,18 +19,11 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionAboutUs()
+    public function actionAbout()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/aboutUs');
-    }
-
-    public function actionBlog()
-    {
-        $this->layout = '@frontend/views/layouts/red_stroyka/main';
-
-        return $this->render('/sexgod/aboutUs');
+        return $this->render('/sexgod/about');
     }
 
     public function actionContacts()
@@ -40,18 +33,32 @@ class SiteController extends Controller
         return $this->render('/sexgod/contacts');
     }
 
-    public function actionDelivery()
+    public function actionDostavka()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/delivery');
+        return $this->render('/sexgod/dostavka');
     }
 
-    public function actionWaysOfPayment()
+    public function actionOplata()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/ways_of_payment');
+        return $this->render('/sexgod/oplata');
+    }
+
+    public function actionAnonimnost()
+    {
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
+
+        return $this->render('/sexgod/anonimnost');
+    }
+
+    public function actionGarantiya()
+    {
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
+
+        return $this->render('/sexgod/garantiya');
     }
 
 
