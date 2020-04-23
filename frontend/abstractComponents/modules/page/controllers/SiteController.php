@@ -37,21 +37,21 @@ class SiteController extends Controller
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/aboutUs');
+        return $this->render('/sexgod/contacts');
     }
 
     public function actionDelivery()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/aboutUs');
+        return $this->render('/sexgod/delivery');
     }
 
     public function actionWaysOfPayment()
     {
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-        return $this->render('/sexgod/aboutUs');
+        return $this->render('/sexgod/ways_of_payment');
     }
 
 
