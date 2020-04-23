@@ -14,8 +14,9 @@ use yii\helpers\Html;
             <div class="product-card__badges-list">
                 <div class="product-card__badge product-card__badge--new">New</div>
             </div>
+          
             <div class="product-card__image">
-                <a href="/product/<?= $good->slug; ?>"><img
+                <a href="<?= $good->getDetailUrl(); ?>"><img
                             title="<?= $good->name; ?>"
                             class="sexgod_item_img"
                             src="<?= $good->previewImg; ?>"
@@ -26,7 +27,7 @@ use yii\helpers\Html;
             <div class="product-card__info">
                 <div class="product-card__name">
                     <a
-                            href="/product/<?= $good->slug; ?>"
+                            href="<?= $good->getDetailUrl(); ?>"
                             alt="<?= $good->name; ?>"
                     ><?= $good->name; ?></a>
                 </div>
@@ -168,7 +169,7 @@ use yii\helpers\Html;
 
     <div class="sexgodItem">
         <div class="itemSexGod" data-id="<?= $good->aID; ?>">
-            <a href="/product/<?= $good->slug; ?>" class="">
+            <a href="/product/<?= $good->getDetailUrl(); ?>" class="">
                 <div class="wrapForName">
                     <img width="100%"
                          title="<?= $good->name; ?>"
@@ -179,7 +180,7 @@ use yii\helpers\Html;
                 </div>
             </a>
             <div class="itemSexGod__a">
-                <a href="/product/<?= $good->slug; ?>" class="">
+                <a href="/product/<?= $good->getDetailUrl(); ?>" class="">
                     <span class="sex_good_item_name"><?= $good->name; ?></span>
                 </a>
             </div>

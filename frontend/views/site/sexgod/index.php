@@ -296,7 +296,6 @@ getProducts"
             <h3 class="block-header__title">Популярные категории</h3>
             <div class="block-header__divider"></div>
         </div>
-
         <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
             'items' => \frontend\abstractComponents\models\CategoryAbstract::getCategoryById([100, 163, 269, 101, 675, 717, 492, 457, 484, 449, 685, 592, 491, 591, 468, 392, 670, 550, 636, 637, 638, 640]),
             'template' => 'mainPagePopularCategory',

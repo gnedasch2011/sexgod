@@ -242,10 +242,10 @@ class Goods extends \yii\db\ActiveRecord
         if (isset($params['random']) && $params['random']) {
 
 
-            if(isset($params['Discount_goods']) && $params['Discount_goods']){
+            if (isset($params['Discount_goods']) && $params['Discount_goods']) {
                 //тут надо выбрать все ids товаров с самой большой скидкой
-                
-                 
+
+
             }
 
             $randomBestsellers = self::getProductsTest([
@@ -262,12 +262,7 @@ class Goods extends \yii\db\ActiveRecord
             return self::generateModels($query);
         }
 
-        
-        
-        
-        
-        
-        
+
         if (isset($params['categoryId']) && $params['categoryId']) {
             $query->leftJoin('goods_category', 'goods_category.aID = goods.aID');
             $query->andWhere(['goods_category.category_id' => $params['categoryId']]);
@@ -280,7 +275,7 @@ class Goods extends \yii\db\ActiveRecord
 
         return self::generateModels($query);
     }
-    
+
     public function getGoodsWithMaxDiscountInCategory($catId)
     {
         $ids = [];
@@ -360,7 +355,7 @@ class Goods extends \yii\db\ActiveRecord
 
         $query = (isset($params['query'])) ? $params['query'] : self::getQuery();
 
-          if (isset($params['idOneGood']) && $params['idOneGood']) {
+        if (isset($params['idOneGood']) && $params['idOneGood']) {
             $query->andWhere(['in', 'aID', $params['idOneGood']]);
         }
 
@@ -421,7 +416,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getDetailUrl()
     {
-        return "/product/" . $this->slug;
+        return "/product/" . $this->slug . '/';
     }
 
 
@@ -429,7 +424,7 @@ class Goods extends \yii\db\ActiveRecord
     {
         $GoodsCategory = $this->goodsCategoryForBread;
         $url = CategoryBase::getParentCategoryForBread($GoodsCategory);
-        if(isset($url)){
+        if (isset($url)) {
             return $url;
         }
 
