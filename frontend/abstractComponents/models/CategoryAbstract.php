@@ -454,7 +454,7 @@ class CategoryAbstract extends ActiveRecord
         $cat = self::findOne(['id' => $idCat]);
 
         if ($cat) {
-            return self::ROOT_PATH_FOR_CAT . $cat->slug;
+            return self::ROOT_PATH_FOR_CAT . $cat->slug . '/';
         }
 
         return '';
