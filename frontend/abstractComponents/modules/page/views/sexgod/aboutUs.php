@@ -1,7 +1,7 @@
 <div class="site__body">
     <div class="block-map block">
         <div class="block-map__body">
-            <iframe src='https://maps.google.com/maps?q=Holbrook-Palmer%20Park&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A70fb78aa59144749822053d6e3b78f876cef749b01ec2499c2db8b9a646367e7&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
         </div>
     </div>
     <div class="page-header">
@@ -10,13 +10,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">Home</a>
-                            <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-                            </svg>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="">Breadcrumb</a>
+                            <a href="/">Главная</a>
                             <svg class="breadcrumb-arrow" width="6px" height="9px">
                                 <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
                             </svg>
@@ -26,7 +20,7 @@
                 </nav>
             </div>
             <div class="page-header__title">
-                <h1>Contact Us</h1>
+                <h1>Контакты</h1>
             </div>
         </div>
     </div>
@@ -40,25 +34,18 @@
                                 <h4 class="contact-us__header card-title">Адрес:</h4>
                                 <div class="contact-us__address">
                                     <p>
-                                        715 Fake Ave, Apt. 34, New York, NY 10021 USA<br>
-                                        Email: stroyka@example.com<br>
-                                        Phone Number: +1 754 000-00-00
+                                        <?= Yii::$app->params['address']; ?><br>
+                                        Email:     <?= Yii::$app->params['email']; ?><br>
+                                        Телефон: <?= Yii::$app->params['phone']; ?>
                                     </p>
                                     <p>
-                                        <strong>Opening Hours</strong><br>
-                                        Monday to Friday: 8am-8pm<br>
-                                        Saturday: 8am-6pm<br>
-                                        Sunday: 10am-4pm
-                                    </p>
-                                    <p>
-                                        <strong>Comment</strong><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit suscipit mi, non
-                                        tempor nulla finibus eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        <strong>Часы работы:</strong><br>
+                                        <?= Yii::$app->params['workingHours']; ?>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
-                                <h4 class="contact-us__header card-title">Leave us a Message</h4>
+                                <h4 class="contact-us__header card-title">Оставьте сообщение</h4>
                                 <form>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
