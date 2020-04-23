@@ -861,8 +861,8 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                     </div>
                                                 </li>
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
-                                                        Секс-куклы
+                                                    <a class="departments__item-link" href="<?= CategoryAbstract::getLinkById(685); ?>">
+                                                        <?= CategoryAbstract::getNameById(685); ?></a>
                                                         <svg class="departments__item-arrow"
                                                              width="6px" height="9px">
                                                             <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -1073,7 +1073,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                             <div class="nav-panel__nav-links nav-links">
                                 <ul class="nav-links__list">
                                     <li class="nav-links__item  nav-links__item--has-submenu ">
-                                        <a class="nav-links__item-link" href="/">
+                                        <a class="nav-links__item-link">
                                             <div class="nav-links__item-body">
                                                 Женщинам
                                                 <svg class="nav-links__item-arrow" width="9px"
@@ -1091,41 +1091,41 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="#">
-                                                            Home 1 Slideshow
-                                                        </a>
+                                                       href="<?= CategoryAbstract::getLinkById(269); ?>">
+                                                        <?= CategoryAbstract::getNameById(269); ?>
+                                                    </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="#">
-                                                            Home 2 Slideshow
-                                                        </a>
+                                                       href="<?= CategoryAbstract::getLinkById(163); ?>">
+                                                        <?= CategoryAbstract::getNameById(163); ?>
+                                                    </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="#">
-                                                            Home 1 Finder
-                                                        </a>
+                                                       href="<?= CategoryAbstract::getLinkById(717); ?>">
+                                                        <?= CategoryAbstract::getNameById(717); ?>
+                                                    </a>
+                                                    </li>
+                                                    <li class="menu__item">
+                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
+                                                        <div class="menu__item-submenu-offset"></div>
+                                                       <a class="menu__item-link"
+                                                       href="<?= CategoryAbstract::getLinkById(592); ?>">
+                                                        <?= CategoryAbstract::getNameById(592); ?>
+                                                    </a>
                                                     </li>
                                                     <li class="menu__item">
                                                         <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
-                                                           href="#">
-                                                            Home 2 Finder
-                                                        </a>
-                                                    </li>
-                                                    <li class="menu__item">
-                                                        <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
-                                                        <div class="menu__item-submenu-offset"></div>
-                                                        <a class="menu__item-link"
-                                                           href="#">
-                                                            Offcanvas Cart
-                                                        </a>
+                                                       href="<?= CategoryAbstract::getLinkById(101); ?>">
+                                                        <?= CategoryAbstract::getNameById(101); ?>
+                                                    </a>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -870,6 +870,8 @@ use yii\widgets\Breadcrumbs;
                             </div>
                         </div>
                     </div>
+                    <?php /*?>
+
                     <div class="block-sidebar__item d-none d-lg-block">
                         <div class="widget-products widget">
                             <h4 class="widget__title">Latest Products</h4>
@@ -958,6 +960,7 @@ use yii\widgets\Breadcrumbs;
                             </div>
                         </div>
                     </div>
+  <?php */ ?>
                 </div>
             </div>
         </div>
@@ -1041,7 +1044,7 @@ use yii\widgets\Breadcrumbs;
                          data-with-features="false" data-mobile-grid-columns="2">
                         <div class="products-list__body">
                             <?php foreach ($goods as $good): ?>
-                            <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
+                                <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
