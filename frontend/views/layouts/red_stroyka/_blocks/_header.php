@@ -146,20 +146,19 @@ use frontend\abstractComponents\models\CategoryAbstract;
                 <div class="topbar__container container">
                     <div class="topbar__row">
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="#">О нас</a>
+                            <a class="topbar-link" href="/about-us/">О нас</a>
+                        </div>
+
+                        <div class="topbar__item topbar__item--link">
+                            <a class="topbar-link" href="/delivery/">Доставка</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="#">Доставка</a>
+                            <a class="topbar-link" href="/ways-of-payment/">Способы оплаты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="">Способы оплаты</a>
+                            <a class="topbar-link" href="/contacts/">Контакты</a>
                         </div>
-                        <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="#">Контакты</a>
-                        </div>
-                        <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="#">Блог</a>
-                        </div>
+
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
