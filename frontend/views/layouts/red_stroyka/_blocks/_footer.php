@@ -29,18 +29,18 @@
                         <div class="site-footer__widget footer-links">
                             <h5 class="footer-links__title">Информация</h5>
                             <ul class="footer-links__list">
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/about/"
                                                                   class="footer-links__link">О магазине</a></li>
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/dostavka/"
                                                                   class="footer-links__link">Доставка</a></li>
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/oplata/"
                                                                   class="footer-links__link">Оплата</a></li>
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/anonimnost/"
                                                                   class="footer-links__link">Гарантия анонимности</a>
                                 </li>
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/garantiya/"
                                                                   class="footer-links__link">Гарантия и возврат</a></li>
-                                <li class="footer-links__item"><a href=""
+                                <li class="footer-links__item"><a href="/sitemap.html"
                                                                   class="footer-links__link">Карта сайта</a></li>
                             </ul>
                         </div>
@@ -165,7 +165,7 @@
                 data-collapse-opened-class="mobile-links__item--open">
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="index.html" class="mobile-links__item-link">Для женщин</a>
+                        <a class="mobile-links__item-link">Для неё</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -177,27 +177,42 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index.html" class="mobile-links__item-link">Вибраторы</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(269); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(269); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-2.html" class="mobile-links__item-link">Фаллоимитаторы</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(163); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(163); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-3.html" class="mobile-links__item-link">Анальные пробки</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(717); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(717); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="index-4.html" class="mobile-links__item-link">Страпоны</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(592); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(592); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="offcanvas-cart.html" class="mobile-links__item-link">Вагинальные шарики</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(101); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(101); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(457); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(457); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(484); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(484); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(261); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(261); ?></a>
                                 </div>
                             </li>
                         </ul>
@@ -205,7 +220,7 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="" class="mobile-links__item-link">Для мужчин</a>
+                        <a class="mobile-links__item-link">Для него</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -217,101 +232,166 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">Мастурбаторы</a>
-                                    <button class="mobile-links__item-toggle" type="button"
-                                            data-collapse-trigger>
-                                        <svg class="mobile-links__item-arrow" width="12px"
-                                             height="7px">
-                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="mobile-links__item-sub-links" data-collapse-content>
-                                    <ul class="mobile-links mobile-links--level--2">
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href=""
-                                                   class="mobile-links__item-link">Массажёры простаты</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href=""
-                                                   class="mobile-links__item-link">Эрекционные кольца</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Секс-куклы</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Pneumatic
-                                                    Tools</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(685); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(685); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">Machine Tools</a>
-                                    <button class="mobile-links__item-toggle" type="button"
-                                            data-collapse-trigger>
-                                        <svg class="mobile-links__item-arrow" width="12px"
-                                             height="7px">
-                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                                        </svg>
-                                    </button>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(449); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(449); ?></a>
                                 </div>
-                                <div class="mobile-links__item-sub-links" data-collapse-content>
-                                    <ul class="mobile-links mobile-links--level--2">
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Thread
-                                                    Cutting</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Chip
-                                                    Blowers</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Sharpening
-                                                    Machines</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Pipe
-                                                    Cutters</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="" class="mobile-links__item-link">Slotting
-                                                    machines</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href=""
-                                                   class="mobile-links__item-link">Lathes</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(478); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(478); ?></a>
                                 </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(468); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(468); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(675); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(675); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(392); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(392); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(657); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(657); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(492); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(492); ?></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>                    
+                <li class="mobile-links__item" data-collapse-item>
+                    <div class="mobile-links__item-title">
+                        <a class="mobile-links__item-link">Для двоих</a>
+                        <button class="mobile-links__item-toggle" type="button"
+                                data-collapse-trigger>
+                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                        <ul class="mobile-links mobile-links--level--1">
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(431); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getH1ById(431); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(212); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getH1ById(212); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(542); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getH1ById(542); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(424); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getH1ById(424); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(677); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(677); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(670); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(670); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(646); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(646); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(673); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(673); ?></a>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(674); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(674); ?></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+				
+                <li class="mobile-links__item" data-collapse-item>
+                    <div class="mobile-links__item-title">
+                        <a class="mobile-links__item-link">BDSM</a>
+                        <button class="mobile-links__item-toggle" type="button"
+                                data-collapse-trigger>
+                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                        <ul class="mobile-links mobile-links--level--1">
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(637); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(637); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(638); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(638); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(639); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(639); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(640); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(640); ?></a>
+                                </div>
+                            </li>
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(642); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(642); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(645); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(645); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(650); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(650); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(648); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(648); ?></a>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(663); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(663); ?></a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="shop-grid-3-columns-sidebar.html" class="mobile-links__item-link">Для пар</a>
+                        <a class="mobile-links__item-link">Одежда</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -323,137 +403,91 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="shop-grid-3-columns-sidebar.html"
-                                       class="mobile-links__item-link">Shop Grid</a>
-                                    <button class="mobile-links__item-toggle" type="button"
-                                            data-collapse-trigger>
-                                        <svg class="mobile-links__item-arrow" width="12px"
-                                             height="7px">
-                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="mobile-links__item-sub-links" data-collapse-content>
-                                    <ul class="mobile-links mobile-links--level--2">
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="shop-grid-3-columns-sidebar.html"
-                                                   class="mobile-links__item-link">3 Columns
-                                                    Sidebar</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="shop-grid-4-columns-full.html"
-                                                   class="mobile-links__item-link">4 Columns
-                                                    Full</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="shop-grid-5-columns-full.html"
-                                                   class="mobile-links__item-link">5 Columns
-                                                    Full</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(669); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(669); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="shop-list.html" class="mobile-links__item-link">Shop
-                                        List</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(683); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(683); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="shop-right-sidebar.html"
-                                       class="mobile-links__item-link">Shop Right Sidebar</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(701); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(701); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="product.html"
-                                       class="mobile-links__item-link">Product</a>
-                                    <button class="mobile-links__item-toggle" type="button"
-                                            data-collapse-trigger>
-                                        <svg class="mobile-links__item-arrow" width="12px"
-                                             height="7px">
-                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="mobile-links__item-sub-links" data-collapse-content>
-                                    <ul class="mobile-links mobile-links--level--2">
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="product.html"
-                                                   class="mobile-links__item-link">Product</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="product-alt.html"
-                                                   class="mobile-links__item-link">Product Alt</a>
-                                            </div>
-                                        </li>
-                                        <li class="mobile-links__item" data-collapse-item>
-                                            <div class="mobile-links__item-title">
-                                                <a href="product-sidebar.html"
-                                                   class="mobile-links__item-link">Product
-                                                    Sidebar</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(697); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(697); ?></a>
+                                </div>                            
+                        </ul>
+                    </div>
+                </li>
+                <li class="mobile-links__item" data-collapse-item>
+                    <div class="mobile-links__item-title">
+                        <a class="mobile-links__item-link">Лубриканты</a>
+                        <button class="mobile-links__item-toggle" type="button"
+                                data-collapse-trigger>
+                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                        <ul class="mobile-links mobile-links--level--1">
+                            <li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(593); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(593); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="/cart/" class="mobile-links__item-link">Cart</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(594); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(594); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="cart-empty.html" class="mobile-links__item-link">Cart
-                                        Empty</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(595); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(595); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="checkout.html"
-                                       class="mobile-links__item-link">Checkout</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(598); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(598); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="order-success.html" class="mobile-links__item-link">Order
-                                        Success</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(599); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(599); ?></a>
                                 </div>
                             </li>
-                            <li class="mobile-links__item" data-collapse-item>
+							<li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="wishlist.html"
-                                       class="mobile-links__item-link">Wishlist</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(602); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(602); ?></a>
                                 </div>
                             </li>
-                            <li class="mobile-links__item" data-collapse-item>
+							<li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="compare.html"
-                                       class="mobile-links__item-link">Compare</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(600); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(600); ?></a>
                                 </div>
                             </li>
-                            <li class="mobile-links__item" data-collapse-item>
+							<li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="track-order.html" class="mobile-links__item-link">Track
-                                        Order</a>
-                                </div>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(614); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(614); ?></a>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(615); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(615); ?></a>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(616); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(616); ?></a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="account-login.html" class="mobile-links__item-link">BDSM</a>
+                        <a class="mobile-links__item-link">Полезное</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -465,57 +499,40 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-login.html" class="mobile-links__item-link">Login</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(675); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(675); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-dashboard.html"
-                                       class="mobile-links__item-link">Dashboard</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(678); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(678); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-profile.html" class="mobile-links__item-link">Edit
-                                        Profile</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(677); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(677); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-orders.html" class="mobile-links__item-link">Order
-                                        History</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(668); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(668); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-order-details.html"
-                                       class="mobile-links__item-link">Order Details</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(679); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(679); ?></a>
                                 </div>
                             </li>
-                            <li class="mobile-links__item" data-collapse-item>
+							<li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="account-addresses.html"
-                                       class="mobile-links__item-link">Address Book</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(676); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(676); ?></a>
                                 </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="account-edit-address.html"
-                                       class="mobile-links__item-link">Edit Address</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="account-password.html" class="mobile-links__item-link">Change
-                                        Password</a>
-                                </div>
-                            </li>
+                            </li>							
                         </ul>
                     </div>
                 </li>
                 <li class="mobile-links__item" data-collapse-item>
                     <div class="mobile-links__item-title">
-                        <a href="blog-classic.html" class="mobile-links__item-link">Эротическая одежда</a>
+                        <a class="mobile-links__item-link">Информация</a>
                         <button class="mobile-links__item-toggle" type="button"
                                 data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
@@ -527,177 +544,47 @@
                         <ul class="mobile-links mobile-links--level--1">
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="blog-classic.html" class="mobile-links__item-link">Blog
-                                        Classic</a>
+                                    <a href="/contacts/" class="mobile-links__item-link">Контакты</a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="blog-grid.html" class="mobile-links__item-link">Blog
-                                        Grid</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(449); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(449); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="blog-list.html" class="mobile-links__item-link">Blog
-                                        List</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(478); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(478); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="blog-left-sidebar.html"
-                                       class="mobile-links__item-link">Blog Left Sidebar</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(468); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(468); ?></a>
                                 </div>
                             </li>
                             <li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="post.html" class="mobile-links__item-link">Post
-                                        Page</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(675); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(675); ?></a>
                                 </div>
                             </li>
-                            <li class="mobile-links__item" data-collapse-item>
+							<li class="mobile-links__item" data-collapse-item>
                                 <div class="mobile-links__item-title">
-                                    <a href="post-without-sidebar.html"
-                                       class="mobile-links__item-link">Post Without Sidebar</a>
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(392); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(392); ?></a>
                                 </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(657); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(657); ?></a>
+                                </div>
+                            </li>
+							<li class="mobile-links__item" data-collapse-item>
+                                <div class="mobile-links__item-title">
+                                    <a href="<?= frontend\abstractComponents\models\CategoryAbstract::getLinkById(492); ?>" class="mobile-links__item-link"><?= frontend\abstractComponents\models\CategoryAbstract::getNameById(492); ?></a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="mobile-links__item" data-collapse-item>
-                    <div class="mobile-links__item-title">
-                        <a href="" class="mobile-links__item-link">Смазки и лубриканты</a>
-                        <button class="mobile-links__item-toggle" type="button"
-                                data-collapse-trigger>
-                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="mobile-links__item-sub-links" data-collapse-content>
-                        <ul class="mobile-links mobile-links--level--1">
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="about-us.html" class="mobile-links__item-link">About
-                                        Us</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="contact-us.html" class="mobile-links__item-link">Contact
-                                        Us</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="contact-us-alt.html" class="mobile-links__item-link">Contact
-                                        Us Alt</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="404.html" class="mobile-links__item-link">404</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="terms-and-conditions.html"
-                                       class="mobile-links__item-link">Terms And Conditions</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="faq.html" class="mobile-links__item-link">FAQ</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="components.html" class="mobile-links__item-link">Components</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="typography.html" class="mobile-links__item-link">Typography</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mobile-links__item" data-collapse-item>
-                    <div class="mobile-links__item-title">
-                        <a data-collapse-trigger class="mobile-links__item-link">Презервативы</a>
-                        <button class="mobile-links__item-toggle" type="button"
-                                data-collapse-trigger>
-                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="mobile-links__item-sub-links" data-collapse-content>
-                        <ul class="mobile-links mobile-links--level--1">
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">€ Euro</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">£ Pound Sterling</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">$ US Dollar</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">₽ Russian Ruble</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mobile-links__item" data-collapse-item>
-                    <div class="mobile-links__item-title">
-                        <a data-collapse-trigger class="mobile-links__item-link">Полезное</a>
-                        <button class="mobile-links__item-toggle" type="button"
-                                data-collapse-trigger>
-                            <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="mobile-links__item-sub-links" data-collapse-content>
-                        <ul class="mobile-links mobile-links--level--1">
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">English</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">French</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">German</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">Russian</a>
-                                </div>
-                            </li>
-                            <li class="mobile-links__item" data-collapse-item>
-                                <div class="mobile-links__item-title">
-                                    <a href="" class="mobile-links__item-link">Italian</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </div>
