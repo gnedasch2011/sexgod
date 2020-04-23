@@ -449,6 +449,21 @@ class CategoryAbstract extends ActiveRecord
         return '';
     }
 
+    /**
+     * @param $idCat
+     * @return mixed|string
+     */
+    public static function getH1ById($idCat)
+    {
+        $cat = self::findOne(['id' => $idCat]);
+
+        if ($cat) {
+            return $cat->h1;
+        }
+
+        return '';
+    }
+
     public static function getLinkById($idCat)
     {
         $cat = self::findOne(['id' => $idCat]);
