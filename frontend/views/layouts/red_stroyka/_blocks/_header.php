@@ -149,16 +149,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                             <a class="topbar-link" href="/about/">О нас</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
-<<<<<<< HEAD
-                            <a class="topbar-link" href="/dostavka/">Доставка</a>
-                        </div>
-                        <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="/oplata/">Способы оплаты</a>
-                        </div>
-                        <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="/contacts/">Контакты</a>
-                        </div>                        
-=======
+
                             <a class="topbar-link" href="/contacts/">Контакты</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
@@ -175,7 +166,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                             <a class="topbar-link" href="/garantiya/">Гарантия</a>
                         </div>
 
->>>>>>> 1d2e10d525d33b3cc66c82887dabc1bbdf8dd64e
+
                         <div class="topbar__spring"></div>
                         <div class="topbar__item">
                             <div class="topbar-dropdown">
