@@ -124,7 +124,7 @@ return [
                 "anonimnost" => "page/site/anonimnost",
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
-                "sitemap" => "site/site/sitemap",
+                "sitemap.xml" => "site/site/sitemap",
             ],
 
         ],
