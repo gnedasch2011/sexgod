@@ -1,52 +1,39 @@
 <div class="site__body">
     <div class="block about-us">
-        <div class="about-us__image"></div>
+        <div class="about-us__image"><img src="/template/red_stroyka/images/delivery.jpg" style="
+    height: 500px;
+    display: block;
+    margin:auto;"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-xl-10">
                     <div class="about-us__body">
-                        <h1 class="about-us__title">About Us</h1>
+                        <h1 class="about-us__title">Доставка</h1>
                         <div class="about-us__text typography">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus metus, convallis ut leo nec, tincidunt
-                                eleifend justo. Ut felis orci, hendrerit a pulvinar et, gravida ac lorem. Sed vitae molestie sapien, at
-                                sollicitudin tortor.
-                            </p>
-                            <p>
-                                Duis id volutpat libero, id vestibulum purus.Donec euismod accumsan felis,egestas lobortis velit tempor vitae.
-                                Integer eget velit fermentum, dignissim odio non, bibendum velit.
-                            </p>
+                            <p>Доставка заказов на сумму от 3000 рублей - бесплатно!</p>
+							<p>Стоимость доставки заказов по России на меньшую сумму составляет 300 рублей в не зависимости от региона России.</p>                          <p>
+
                         </div>
-                        <div class="about-us__team">
-                            <h2 class="about-us__team-title">Meat Our Team</h2>
-                            <div class="about-us__team-subtitle text-muted">Want to work in our friendly team?<br><a href="contact-us.html">Contact us</a> and we will consider your candidacy.</div>
-                            <div class="about-us__teammates teammates">
-                                <div class="owl-carousel">
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-1.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Michael Russo</div>
-                                        <div class="teammate__position text-muted">Chief Executive Officer</div>
-                                    </div>
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-2.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Katherine Miller</div>
-                                        <div class="teammate__position text-muted">Marketing Officer</div>
-                                    </div>
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-3.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Anthony Harris</div>
-                                        <div class="teammate__position text-muted">Finance Director</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div>
+                            <h2 class="about-us__team-title">СПОСОБЫ ДОСТАВКИ ЗАКАЗОВ</h2>
+                            <div >
+								<ul>
+										<li>Курьером - по Москве</li>
+										<li>Постоматы и пункты самовывоза PickPoint - по Москве и по России.</li>
+										<li>Самовывоз - метро Автозаводская.</li>
+										<li>Почтой - По Москве и в пределах России.</li>
+										<li>Курьером DPD - По России.</li>
+										<li>Курьером СДЭК - По России.</li>
+										<li>В ПВЗ СДЭК - По Москве и России.</li>
+								</ul>
+								<h2 class="about-us__team-title">Важные особенности</h2>
+									<ul>
+										<li>В зависимости от выбранного Вами способа доставки заказа Вам будут предложены возможные варианты оплаты заказа.</li>
+										<li>Если Вы неправильно или не полностью указали адрес доставки или ФИО получателя, обработка Вашего заказа существенно затянется до уточнения Ваших адресных данных</li>
+										<li>Курьерская доставка и отправка почтой заказов, которые оформлены покупателем верно и отсутствует необходимость связи с ним, обрабатываются (доставляются курьером или высылаются почтой) в этот же день.</li>
+								</ul>
+							</div>
+						</div>
                 </div>
             </div>
         </div>

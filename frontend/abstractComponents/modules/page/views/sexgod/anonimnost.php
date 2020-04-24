@@ -1,51 +1,37 @@
 <div class="site__body">
     <div class="block about-us">
-        <div class="about-us__image"></div>
+        <div class="about-us__image"><img src="/template/red_stroyka/images/anon.jpg" style="
+    height: 500px;
+    display: block;
+    margin:auto;"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-xl-10">
                     <div class="about-us__body">
-                        <h1 class="about-us__title">About Us</h1>
+                        <h1 class="about-us__title">Ананимность и конфиденциальность</h1><br>
                         <div class="about-us__text typography">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus metus, convallis ut leo nec, tincidunt
-                                eleifend justo. Ut felis orci, hendrerit a pulvinar et, gravida ac lorem. Sed vitae molestie sapien, at
-                                sollicitudin tortor.
-                            </p>
-                            <p>
-                                Duis id volutpat libero, id vestibulum purus.Donec euismod accumsan felis,egestas lobortis velit tempor vitae.
-                                Integer eget velit fermentum, dignissim odio non, bibendum velit.
-                            </p>
+                                Мы понимаем, как важно оставаться анонимными при получении товаров нашего магазина, поэтому мы всеми возможными способами бережём вашу конфиденциальность.
+                            </p>                            
                         </div>
-                        <div class="about-us__team">
-                            <h2 class="about-us__team-title">Meat Our Team</h2>
-                            <div class="about-us__team-subtitle text-muted">Want to work in our friendly team?<br><a href="contact-us.html">Contact us</a> and we will consider your candidacy.</div>
-                            <div class="about-us__teammates teammates">
-                                <div class="owl-carousel">
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-1.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Michael Russo</div>
-                                        <div class="teammate__position text-muted">Chief Executive Officer</div>
-                                    </div>
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-2.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Katherine Miller</div>
-                                        <div class="teammate__position text-muted">Marketing Officer</div>
-                                    </div>
-                                    <div class="teammates__item teammate">
-                                        <div class="teammate__avatar">
-                                            <img src="/template/red_stroyka/images/teammates/teammate-3.jpg" alt="">
-                                        </div>
-                                        <div class="teammate__name">Anthony Harris</div>
-                                        <div class="teammate__position text-muted">Finance Director</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div>
+                           <br> <h2 class="about-us__team-title">При доставке почтой</h2><br>                           
+                            <div >
+								<ul>
+										<li>Бандероли тщательно упаковываются нашими же сотрудниками.</li>
+										<li>Специально для каждого заказа мы делаем картонную коробку, которая надежно сохраняет заказанные товары во время их доставки Вам. Коробка оборачивается в бумагу и уже сверху наклеевается бланк с Вашим почтовым адресом.</li>
+										<li>Почтовым работникам нет никакой необходимости вскрывать Вашу бандероль, т.к. бланк наложенного платежа приложен к бандероли сверху в отдельном конверте, прикрепленном к наружней упаковке.</li>
+										<li>Никаких логотипов нашего магазина, надписей *из секс-шопа*, *осторожно! интимные штучки* или подробного перечня заказанных товаров, Вы не обнаружите на почтовой бандероли. Документы, удостоверяющие покупку, будут вложены внутрь прямо вместе с товарами.</li>
+										<li>Отправитель бандероли будет не *секс-шоп СексГод*, а один из наших уполномоченных сотрудников. Т.е. фактически Вы получите бандероль от частного лица и в качестве обратного адреса будет указан адрес нашего сотрудника и его ФИО.</li>
+										<li>ВНИМАНИЕ! Не дайте почтовым работникам запутать или обмануть Вас! Единственный и самый важный бланк, который приклеен сверху на бандероль, где есть Ваш адрес, наш обратный адрес и самое главное: 2 графы - объявленная ценность и сумма наложенного платежа. Если указана только ценность - то это обычная бандероль, которая не требует дополнительной оплаты от получателя. Если указана и ценность и сумма наложенного платежа, то к этой бандероли в отдельном конверте, прикрепленном с обратной стороны бандероли, еще приложен БЛАНК наложенного платежа, по которому получатель и отправляет оплату за бандероль. Если Вы получаете бандероль, которую уже предварительно оплатили в нашем магазине, но почтовые работники все же требуют от Вас оплаты за бандероль, мотивируя тем, что она оформлена с оплатой наложенным платежом, ни в коем случае не оплачивайте, а укажите почтовым работникам на их ошибку. Объявленная ценность - это не сумма наложенного платежа, а ценность Вашей бандероли.</li>
+								</ul>
+								<br><h2 class="about-us__team-title">При доставке курьером по Москве</h2><br>
+									<ul>
+										<li>Упаковка заказов максимально нейтральная. Товары, заказанные Вами, упаковываются в непрозрачный пакет, который в свою очередь помещается в пластиковую сумку. На пакетах нет рекламы нашего магазина или товаров, также на них не указано название магазина. По внешнему виду невозможно догадаться о содержимом, но Вы всегда можете проверить комплектацию полученного заказа до его оплаты.</li>
+										<li>Курьер не сообщает Вашим сотрудникам или родственникам из какого магазина он приехал и что привез. Обсуждение состава покупки, оплата и передача самого заказа происходит только с клиентом или лицом, им уполномоченным.</li>
+								</ul>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
