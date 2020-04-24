@@ -91,43 +91,20 @@ class SiteController extends Controller
     {
         $this->layout = 'red_stroyka/main';
 
-//        $items = \app\models\sexgod\good\Goods::find()->all();
-////        $categorys = CategoryBase::find()->all();
-//
-//        foreach ($items as $item) {
-//            $item->id = str_replace('ʹ', '', $item->aID);
-//            if (!$item->save()) {
-//                echo "<pre>";
-//                print_r($item->errors);
-//                die();
-//            };
-//
-//        }
-//        die();
-////        foreach ($goods as $good) {
-////            $good->slug = $this->slugify($good->name);     0000000
-////            if(!$good->save(false)){
-////                echo "<pre>"; print_r($good->errors);die();
-////            }
-////        }
-////        die();
-//        $this->layout = 'main';
-//        $params['popular'] = 1;
-//
-//        $model = new CallLeadForm();
-//        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-//            echo '<pre>';
-//            print_r($model);
-//            die();
-//        }
-//        $goods = Goods::getProducts($params);
-//
-//
-//        $keywords = '';
-//        $description = trim($category->name) . '';
-//
-//        $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
-//        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
+
+        $keywords = '';
+        $nameShop = \Yii::$app->params['nameShop'];
+        $tel = \Yii::$app->params['phone'];
+
+
+        $title = "Секс-шоп в Москве | Интернет-магазин интимных товаров для взрослых  «{$nameShop}»";
+
+        $this->title = $title;
+
+        $description = "★★★★★ Секс-шоп. Более 20000 товаров. Бесплатная доставка по Москве и РФ при заказе от 3000 руб. ☛ Подарок при первом заказе ☛ Полная конфиденциальность ☛ {$nameShop} ☎️ {$tel}";
+
+        $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
+        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
 
         return $this->render('/site/sexgod/index', [
@@ -229,7 +206,7 @@ class SiteController extends Controller
 
         //Хлебные крошки
 
-        if($good->parentCategoryUrl){
+        if ($good->parentCategoryUrl) {
             $breadcrumbs[] = $good->parentCategoryUrl;
         }
         $breadcrumbs[] = [
@@ -409,7 +386,9 @@ class SiteController extends Controller
 
     public function actionAboutUs()
     {
-        echo "<pre>"; print_r($this);die();
+        echo "<pre>";
+        print_r($this);
+        die();
         $this->layout = '/layouts/red_stroyka/main';
 
         return $this->render('/site/sexgod/pages/aboutUs');

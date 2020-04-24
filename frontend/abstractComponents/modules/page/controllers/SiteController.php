@@ -62,4 +62,9 @@ class SiteController extends Controller
     }
 
 
+    public function siteMap()
+    {
+        return $this->render('/sexgod/garantiya');
+    }
+
 }
