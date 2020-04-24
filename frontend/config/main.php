@@ -24,6 +24,9 @@ return [
         'parsers' => [
             'class' => 'frontend\abstractComponents\modules\parsers\Module',
         ],
+        'site' => [
+            'class' => 'frontend\abstractComponents\modules\site\Module',
+        ],
         'order' => [
             'class' => 'frontend\abstractComponents\modules\order\Module',
         ],
@@ -109,8 +112,8 @@ return [
             'rules' => [
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
-                "catalog/<categoryName:\S+>/" => 'site/category',
-                "product/<slugItem:\S+>" => 'site/detail-item',
+                "catalog/<categoryName:\S+>/" => 'site/site/category',
+                "product/<slugItem:\S+>" => 'good/site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
@@ -120,6 +123,8 @@ return [
                 "oplata" => "page/site/oplata",
                 "anonimnost" => "page/site/anonimnost",
                 "garantiya" => "page/site/garantiya",
+                "" => "site/site/index",
+                "sitemap" => "site/site/sitemap",
             ],
 
         ],

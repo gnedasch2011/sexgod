@@ -91,7 +91,6 @@ class SiteController extends Controller
     {
         $this->layout = 'red_stroyka/main';
 
-
         $keywords = '';
         $nameShop = \Yii::$app->params['nameShop'];
         $tel = \Yii::$app->params['phone'];

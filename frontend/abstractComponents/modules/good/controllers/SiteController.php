@@ -26,6 +26,7 @@ use yii\db\ActiveRecord;
  */
 class SiteController extends Controller
 {
+    public $title;
 
     public function actionIndex()
     {
@@ -106,6 +107,39 @@ die();
         ]);
 
 
+    }
+
+    public function actionDetailItem($slugItem)
+    {
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
+
+        $slugItem = str_replace("/", '', $slugItem);
+        $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
+            ->one();
+        $keywords = $good->name;
+        $description = trim($good->name);
+
+        $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
+        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
+        $this->title = $good->name;
+
+        //Хлебные крошки
+
+        if ($good->parentCategoryUrl) {
+            $breadcrumbs[] = $good->parentCategoryUrl;
+        }
+        $breadcrumbs[] = [
+            'label' => $good->name,
+//            'url' => [$good->fullUrl]
+        ];
+
+        $this->view->params['breadcrumbs'] = $breadcrumbs;
+
+
+        return $this->render('@currentSiteView/good/detailItem', [
+            'good' => $good,
+            'breadcrumbs' => $breadcrumbs,
+        ]);
     }
 
 }
