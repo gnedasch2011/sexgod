@@ -1,14 +1,10 @@
 <?php
-
-use yii\helpers\Html;
+    use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\abstractComponents\models\CategoryAbstract;
-
 ?>
-
-
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
