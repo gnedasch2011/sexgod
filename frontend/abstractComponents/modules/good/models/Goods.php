@@ -421,7 +421,6 @@ class Goods extends \yii\db\ActiveRecord
      */
 
 
-
     public function getDetailUrl()
     {
         return "/product/" . $this->slug . '/';
@@ -462,10 +461,24 @@ class Goods extends \yii\db\ActiveRecord
     public function getAttrProduct()
     {
 
-        $exception = [4, 6, 11, 12, 13, 16, 17, 8,9];
+        $exception = [4, 6, 11, 12, 13, 16, 17, 8, 9];
 
         return $this->hasMany(AttrProduct::className(), ['product_id' => 'aID'])
             ->where(['not in', 'attr_product.attr_id', $exception]);
+    }
+
+    public function getAttrProductForCat()
+    {
+
+        $idsAtt = [26,25,32,5];
+
+        return $this->hasMany(AttrProduct::className(), ['product_id' => 'aID'])
+            ->where(['in', 'attr_product.attr_id', $idsAtt]);
+    }
+
+    public function getProductStatus()
+    {
+        return 'Новинка';
     }
 
 }

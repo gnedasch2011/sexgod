@@ -225,6 +225,7 @@ class CategoryAbstract extends ActiveRecord
 
         $allGoods = Goods::find()
             ->join('left join', 'goods_category ghc', 'ghc.aid = goods.aID')
+            ->with('attrProduct')
 //            ->join('left join', 'category c', 'c.id = ghc.category_id')
             ->where(['ghc.category_id' => $arrIdCategoryAllArr])
 //            ->limit(100)

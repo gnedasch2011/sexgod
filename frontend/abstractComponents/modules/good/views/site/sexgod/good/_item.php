@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 ?>
     <div class="products-list__item">
-        <div class="product-card ">
+        <div class="product-card">
             <button class="product-card__quickview" type="button">
                 <svg width="16px" height="16px">
                     <use xlink:href="/template/red_stroyka/images/sprite.svg#quickview-16"></use>
@@ -12,9 +12,9 @@ use yii\helpers\Html;
                 <span class="fake-svg-icon"></span>
             </button>
             <div class="product-card__badges-list">
-                <div class="product-card__badge product-card__badge--new">New</div>
+                <div class="product-card__badge product-card__badge--new"><?= $good->productStatus; ?></div>
             </div>
-          
+
             <div class="product-card__image">
                 <a href="<?= $good->getDetailUrl(); ?>"><img
                             title="<?= $good->name; ?>"
@@ -125,16 +125,16 @@ use yii\helpers\Html;
                     <div class="product-card__rating-legend">0 отзывов</div>
                 </div>
                 <ul class="product-card__features-list">
-                    <li>Speed: 750 RPM</li>
-                    <li>Power Source: Cordless-Electric</li>
-                    <li>Battery Cell Type: Lithium</li>
-                    <li>Voltage: 20 Volts</li>
-                    <li>Battery Capacity: 2 Ah</li>
+                    <?php foreach ($good->attrProductForCat as $attr): ?>
+                        <?php if ($attr->value): ?>
+                            <li><?= $attr->fullProps->name; ?>: <?= $attr->value; ?></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="product-card__actions">
                 <div class="product-card__availability">
-                    Availability: <span class="text-success">In Stock</span>
+                    <span class="text-success"><?= $good->Availibilty ?></span>
                 </div>
                 <div class="product-card__prices">
                     <?= $good->price; ?> руб.
@@ -143,9 +143,6 @@ use yii\helpers\Html;
                     <button class="btn btn-primary prod1uct-card__addtocart addInCartJs oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"
                             data-id="<?= $good->aID; ?>"
                             type="button"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Купить'; ?>
-                    </button>
-                    <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                            type="button">Add To Cart
                     </button>
                     <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
                             type="button">

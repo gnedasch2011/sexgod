@@ -42,6 +42,7 @@ class SiteController extends Controller
 
         //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
+
         $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
 
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
