@@ -462,7 +462,7 @@ class Goods extends \yii\db\ActiveRecord
     public function getAttrProduct()
     {
 
-        $exception = [4, 6, 11, 12, 13, 16, 17, 8, 9];
+        $exception = [4, 6, 11, 12, 13, 16, 17, 8, 9, 14];
 
         return $this->hasMany(AttrProduct::className(), ['product_id' => 'aID'])
             ->where(['not in', 'attr_product.attr_id', $exception]);

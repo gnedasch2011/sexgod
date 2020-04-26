@@ -164,13 +164,6 @@ use yii\widgets\Breadcrumbs;
                         <div class="product__description">
                             <?= $good->description; ?>
                         </div>
-                        <ul class="product__features">
-                            <li>Speed: 750 RPM</li>
-                            <li>Power Source: Cordless-Electric</li>
-                            <li>Battery Cell Type: Lithium</li>
-                            <li>Voltage: 20 Volts</li>
-                            <li>Battery Capacity: 2 Ah</li>
-                        </ul>
                         <ul class="product__meta">
                             <li class="product__meta-availability">Наличие: <span
                                         class="text-success"><?= $good->Availibilty ?></span>
@@ -341,7 +334,7 @@ use yii\widgets\Breadcrumbs;
                                     <?php if ($attr->value): ?>
                                         <div class="spec__row">
                                             <div class="spec__name"><?= $attr->fullProps->name; ?></div>
-                                            <div class="spec__value"><?= $attr->value; ?></div>
+                                            <div class="spec__value"><?= $attr->value; ?> <?= $attr->fullProps->unit; ?></div>
                                         </div>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
