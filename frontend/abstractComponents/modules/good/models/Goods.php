@@ -487,7 +487,7 @@ class Goods extends \yii\db\ActiveRecord
     {
         $brandLink = $this->brand;
 
-        return '/brand/' . $brandLink->url;
+        return '/brand/' . $brandLink->url . '/';
     }
 
     public function getBrand()
