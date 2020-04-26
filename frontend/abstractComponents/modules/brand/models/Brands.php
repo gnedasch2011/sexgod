@@ -115,4 +115,5 @@ class Brands extends \yii\db\ActiveRecord
         return CommonHelper::formatPrice($minPrice);
     }
 
+
 }

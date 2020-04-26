@@ -4,6 +4,7 @@ namespace frontend\abstractComponents\modules\good\models;
 
 
 use app\models\sexgod\category\CategoryBase;
+use frontend\abstractComponents\modules\brand\models\Brands;
 use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
@@ -470,7 +471,7 @@ class Goods extends \yii\db\ActiveRecord
     public function getAttrProductForCat()
     {
 
-        $idsAtt = [26,25,32,5];
+        $idsAtt = [26, 25, 32, 5];
 
         return $this->hasMany(AttrProduct::className(), ['product_id' => 'aID'])
             ->where(['in', 'attr_product.attr_id', $idsAtt]);
@@ -479,6 +480,20 @@ class Goods extends \yii\db\ActiveRecord
     public function getProductStatus()
     {
         return 'Новинка';
+    }
+
+
+    public function getUrlOnBrandInGood()
+    {
+        $brandLink = $this->brand;
+
+        return '/brand/' . $brandLink->url;
+    }
+
+    public function getBrand()
+    {
+        return $this->hasOne(Brands::className(), ['name' => 'Vendor']);
+
     }
 
 }

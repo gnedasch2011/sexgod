@@ -21,12 +21,10 @@ class SiteController extends Controller
 
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
-
         $brandName = str_replace("/", '', $brandName);
         $brandCat = Brands::find()->where(['url' => $brandName])->one();
 
-        //для пагинации
-
+        //дляпагинации
 
         $allGoodsInCategoryAndSubCategory = $brandCat->getGoods();
         $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
@@ -79,7 +77,7 @@ class SiteController extends Controller
 
         $childsCurrentCategory = $brandCat->getRelatedCategory();
 
-        return $this->render('@frontend/views/site/sexgod/category/view.php', [
+        return $this->render('@frontend/abstractComponents/modules/category/views/site/sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
             'breadcrumbs' => $breadcrumbs,
