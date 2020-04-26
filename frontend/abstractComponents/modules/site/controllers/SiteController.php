@@ -345,7 +345,9 @@ class SiteController extends Controller
     {
         $sitemap = new SiteMap();
 
+
         //Если в кэше нет карты сайта
+
         if (!$xml_sitemap = Yii::$app->cache->get('sitemap')) {
             //Получаем массив всех ссылок
             $urls = $sitemap->getUrl();
@@ -363,8 +365,6 @@ class SiteController extends Controller
         $headers->add('Content-Type', 'text/xml');
 
         return $xml_sitemap;
-
-
     }
 
 }

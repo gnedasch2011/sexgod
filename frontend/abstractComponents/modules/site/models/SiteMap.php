@@ -16,7 +16,7 @@ class SiteMap extends Model
         $urlGoods = Goods::find()
             ->select('slug')
             ->asArray()
-//            ->limit(100)
+            ->limit(1)
             ->all();
 
         $urlsGoodsFull = array_map(function ($val) {
@@ -43,7 +43,7 @@ class SiteMap extends Model
         $slugBrandsFull = array_map(function ($val) {
             return '/brand/' . $val['url'] . '/';
         }, $slugBrands);
-
+//
       $allUrls = array_merge($urlsGoodsFull,$urlsCatsFull,$slugBrandsFull);
 
         //Формируем двумерный массив. createUrl преобразует ссылки в правильный вид.
