@@ -50,7 +50,7 @@ class AjaxController extends Controller
     public function actionGenerateOrderSuccess()
     {
 
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
         $idOrder = \Yii::$app->request->post('idOrder');
 
         $order = \frontend\abstractComponents\modules\order\models\Order::findOne(['id' => $idOrder]);

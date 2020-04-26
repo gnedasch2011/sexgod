@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\abstractComponents\modules\good\controllers;
+namespace frontend\abstractComponents\modules\category\controllers;
 
 use frontend\abstractComponents\modules\good\models\Goods;
 use app\modules\cart\models\Order;

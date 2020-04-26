@@ -12,8 +12,8 @@
         foreach($idCountPrices as $id=>$count):?>
             <tr>
                 <td><?= $number++ ;?>.</td>
-                <td><?= \app\models\sexgod\good\Goods::findOne($id)->name ;?></td>
-                <td><?= \app\models\sexgod\good\Goods::findOne($id)->price  ;?> руб.</td>
+                <td><?= \frontend\abstractComponents\modules\good\models\Goods::findOne($id)->name ;?></td>
+                <td><?= \frontend\abstractComponents\modules\good\models\Goods::findOne($id)->price  ;?> руб.</td>
                 <td><?= $count ;?></td>
             </tr>
         <?php endforeach;?>

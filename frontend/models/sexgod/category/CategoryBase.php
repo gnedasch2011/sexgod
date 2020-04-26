@@ -3,7 +3,7 @@
 namespace app\models\sexgod\category;
 
 use app\models\sexgod\category\CategoryAdvantages;
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;
 

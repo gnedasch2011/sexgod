@@ -42,7 +42,7 @@
                 <tbody class="order-list__products">
                 <?php foreach ($goodsInCart as $good): ?>
                     <?php
-                    echo $this->render('@frontend/views/site/sexgod/good/_in_success_order_tr', [
+                    echo $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_in_success_order_tr', [
                         'good' => $good
                     ]);
                     ?>

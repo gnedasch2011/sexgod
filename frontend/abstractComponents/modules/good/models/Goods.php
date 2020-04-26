@@ -1,11 +1,13 @@
 <?php
 
-namespace app\models\sexgod\good;
+namespace frontend\abstractComponents\modules\good\models;
+
 
 use app\models\sexgod\category\CategoryBase;
-use app\models\sexgod\good\GoodsCategory;
+use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
+use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -400,7 +402,7 @@ class Goods extends \yii\db\ActiveRecord
 
     public function getGoodsCategory()
     {
-        return $this->hasMany(GoodsCategory::className(), ['category_id' => 'id']);
+        return $this->hasMany(GoodsCategory::className(), ['aid' => 'aID']);
     }
 
     public function getGoodsCategoryForBread()
@@ -412,6 +414,12 @@ class Goods extends \yii\db\ActiveRecord
     {
         return $this->mainImg;
     }
+
+    /**
+     * Вернуть категории, где он находится
+     * @return string
+     */
+
 
 
     public function getDetailUrl()
@@ -449,6 +457,15 @@ class Goods extends \yii\db\ActiveRecord
     public function getGenerateAttr()
     {
         return 'Аттрибуты';
+    }
+
+    public function getAttrProduct()
+    {
+
+        $exception = [4, 6, 11, 12, 13, 16, 17, 8,9];
+
+        return $this->hasMany(AttrProduct::className(), ['product_id' => 'aID'])
+            ->where(['not in', 'attr_product.attr_id', $exception]);
     }
 
 }

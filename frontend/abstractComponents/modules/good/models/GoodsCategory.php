@@ -1,7 +1,8 @@
 <?php
 
-namespace app\models\sexgod\good;
+namespace frontend\abstractComponents\modules\good\models;
 
+use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;
 
 /**
@@ -46,5 +47,9 @@ class GoodsCategory extends \yii\db\ActiveRecord
         ];
     }
 
+     public function getCategory()
+         {
+             return $this->hasOne(CategoryAbstract::className(), ['id' => 'category_id']);
+         }
 
 }

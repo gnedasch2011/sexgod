@@ -21,8 +21,16 @@ return [
             'class' => 'yii\gii\Module',
             'allowedIPs' => ['*'],
         ],
+        'attribute' => [
+            'class' => 'frontend\abstractComponents\modules\attribute\Module',
+        ],
+
         'parsers' => [
             'class' => 'frontend\abstractComponents\modules\parsers\Module',
+        ],
+
+        'category' => [
+            'class' => 'frontend\abstractComponents\modules\category\Module',
         ],
         'site' => [
             'class' => 'frontend\abstractComponents\modules\site\Module',
@@ -112,7 +120,7 @@ return [
             'rules' => [
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
-                "catalog/<categoryName:\S+>/" => 'site/site/category',
+                "catalog/<categoryName:\S+>/" => 'category/site/category',
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",

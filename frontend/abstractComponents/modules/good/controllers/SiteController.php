@@ -3,7 +3,7 @@
 namespace frontend\abstractComponents\modules\good\controllers;
 
 use app\models\sexgod\category\CategoryBase;
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
 use frontend\models\form\CallLeadForm;
 use Yii;
@@ -28,11 +28,10 @@ class SiteController extends Controller
 {
     public $title;
 
-    public function actionIndex()
+    public function actionDistillationGoods()
     {
+        die();
         ini_set('memory_limit', '5000M');
-
-
         $arrProp = [
             'Barcode' => 6,
             'Vendor' => 7,
@@ -67,31 +66,55 @@ class SiteController extends Controller
             'ready_to_go' => 36,
             'StopPromo' => 37
         ];
-die();
-        foreach (Goods::find()->where('id>157467')->batch(1000) as $products) {
+        foreach (Goods::find()
+                     ->select('id,slug,aID')
+                     ->where('id>170895')
+                     ->asArray()
+                     ->batch(1000) as $products) {
+
             foreach ($products as $product) {
-                foreach ($product as $prop => $val) {
-                    if (isset($arrProp[$prop]) && !empty($arrProp[$prop])) {
 
-                        $newArr = new AttrProduct();
-                        $idProd = $product->aID;
-                        $idAttr = $arrProp[$prop];
-                        $valAttr = $val;
+                $slug = $product['slug'] ?? 'continue';
 
-                        $newArr->product_id = $idProd;
-                        $newArr->attr_id = $idAttr;
-                        $newArr->value = $valAttr;
-                        if (!$newArr->save()) {
-                            echo "<pre>";
-                            print_r($newArr);
-                            die();
-                        }
-                    }
+                if ($slug == 'continue') {
+                    continue;
                 }
+
+                $aId = $product['aID'];
+
+                $newSlug = $aId . '-' . $slug;
+                // UPDATE (table name, column values, condition)
+                Yii::$app->db->createCommand()->update('goods', [
+                    'slug' => $newSlug
+                ], "id ={$product['id']}")->execute();
+
+//                $good = Yii::$app->db->createCommand('SELECT * FROM sexgod.goods where id = :id')
+//                    ->bindValue(':id', $product['id'])
+//                    ->queryOne();
+
+                //                foreach ($product as $prop => $val) {
+//                    if (isset($arrProp[$prop]) && !empty($arrProp[$prop])) {
+//
+//                        $newArr = new AttrProduct();
+//                        $idProd = $product->aID;
+//                        $idAttr = $arrProp[$prop];
+//                        $valAttr = $val;
+//
+//                        $newArr->product_id = $idProd;
+//                        $newArr->attr_id = $idAttr;
+//                        $newArr->value = $valAttr;
+//                        if (!$newArr->save()) {
+//                            echo "<pre>";
+//                            print_r($newArr);
+//                            die();
+//                        }
+//                    }
+//                }
+
+
             }
         }
 
-        die('ok');
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
         $cache = Yii::$app->cache;
 
@@ -114,8 +137,12 @@ die();
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $slugItem = str_replace("/", '', $slugItem);
-        $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
-            ->one();
+        $good =
+            \frontend\abstractComponents\modules\good\models\Goods::find()
+                ->where(['goods.slug' => $slugItem])
+                ->with('attrProduct')
+                ->one();
+
         $keywords = $good->name;
         $description = trim($good->name);
 
@@ -136,7 +163,7 @@ die();
         $this->view->params['breadcrumbs'] = $breadcrumbs;
 
 
-        return $this->render('@currentSiteView/good/detailItem', [
+        return $this->render('/site/sexgod/detail/view', [
             'good' => $good,
             'breadcrumbs' => $breadcrumbs,
         ]);

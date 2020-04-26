@@ -58,4 +58,10 @@ class AttrProduct extends \yii\db\ActiveRecord
 
     }
 
+
+     public function getFullProps()
+         {
+             return $this->hasOne(\frontend\abstractComponents\modules\attribute\models\Attr::className(), ['id' => 'attr_id']);
+         }
+
 }

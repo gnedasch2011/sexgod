@@ -1044,7 +1044,7 @@ use yii\widgets\Breadcrumbs;
                          data-with-features="false" data-mobile-grid-columns="2">
                         <div class="products-list__body">
                             <?php foreach ($goods as $good): ?>
-                                <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
+                                <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -1156,7 +1156,7 @@ use yii\widgets\Breadcrumbs;
 
     <div class="row productsList">
         <?php foreach ($goods as $good): ?>
-            <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
+            <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
         <?php endforeach; ?>
 
     </div>

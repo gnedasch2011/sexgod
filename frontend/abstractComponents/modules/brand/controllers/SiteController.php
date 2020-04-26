@@ -4,7 +4,7 @@ namespace frontend\abstractComponents\modules\brand\controllers;
 
 
 use app\models\sexgod\category\CategoryBase;
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\modules\brand\models\Brands;
 use yii\data\Pagination;
 use yii\web\Controller;

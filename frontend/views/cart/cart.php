@@ -23,7 +23,7 @@ use yii\helpers\Html;
                 <tbody class="cart-table__body">
                 <?php foreach ($goodsInCart as $good): ?>
                     <?php
-                    echo $this->render('@frontend/views/site/sexgod/good/_in_cart_tr', [
+                    echo $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_in_cart_tr', [
                         'good' => $good
                     ]);
                     ?>
@@ -241,7 +241,7 @@ use yii\helpers\Html;
                                 <tbody class="checkout__totals-products">
                                 <?php foreach ($goodsInCart as $good): ?>
                                     <?php
-                                    echo $this->render('@frontend/views/site/sexgod/good/_in_cart_yours_order', [
+                                    echo $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_in_cart_yours_order', [
                                         'good' => $good
                                     ]);
                                     ?>

@@ -89,7 +89,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $keywords = '';
         $nameShop = \Yii::$app->params['nameShop'];
@@ -124,7 +124,7 @@ class SiteController extends Controller
             \Yii::$app->cart->clear();
         }
 
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $categoryName = str_replace("/", '', $categoryName);
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
@@ -190,10 +190,10 @@ class SiteController extends Controller
 
     public function actionDetailItem($slugItem)
     {
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $slugItem = str_replace("/", '', $slugItem);
-        $good = \app\models\sexgod\good\Goods::find()->where(['slug' => $slugItem])
+        $good = \frontend\abstractComponents\modules\good\models\Goods::find()->where(['slug' => $slugItem])
             ->one();
 
         $keywords = $good->name;

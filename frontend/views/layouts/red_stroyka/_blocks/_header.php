@@ -1679,7 +1679,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
                                                     <?php if (\Yii::$app->cart->returnProductModelsInCart()): ?>
-                                                        <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+                                                        <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item_in_drop_cart', [
                                                             'products' => \Yii::$app->cart->returnProductModelsInCart()
                                                         ]); ?>
 

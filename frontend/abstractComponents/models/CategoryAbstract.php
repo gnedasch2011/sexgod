@@ -4,10 +4,10 @@
 namespace frontend\abstractComponents\models;
 
 
-use app\models\sexgod\good\Goods;
-use app\models\sexgod\good\GoodsCategory;
+use frontend\abstractComponents\modules\good\models\Goods;
+use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use app\models\shop\Category;
-use app\modelsapp\models\sexgod\good\Goods2;
+use app\modelsfrontend\abstractComponents\modules\good\models\Goods2;
 use app\modules\product\models\ProductCategory;
 use frontend\abstractComponents\modules\images\models\ImgItems;
 use yii\db\ActiveRecord;
