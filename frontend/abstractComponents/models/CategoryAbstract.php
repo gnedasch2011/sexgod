@@ -4,10 +4,10 @@
 namespace frontend\abstractComponents\models;
 
 
-use app\models\sexgod\good\Goods;
-use app\models\sexgod\good\GoodsCategory;
+use frontend\abstractComponents\modules\good\models\Goods;
+use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use app\models\shop\Category;
-use app\modelsapp\models\sexgod\good\Goods2;
+use app\modelsfrontend\abstractComponents\modules\good\models\Goods2;
 use app\modules\product\models\ProductCategory;
 use frontend\abstractComponents\modules\images\models\ImgItems;
 use yii\db\ActiveRecord;
@@ -225,6 +225,7 @@ class CategoryAbstract extends ActiveRecord
 
         $allGoods = Goods::find()
             ->join('left join', 'goods_category ghc', 'ghc.aid = goods.aID')
+            ->with('attrProduct')
 //            ->join('left join', 'category c', 'c.id = ghc.category_id')
             ->where(['ghc.category_id' => $arrIdCategoryAllArr])
 //            ->limit(100)

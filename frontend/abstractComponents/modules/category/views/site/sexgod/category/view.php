@@ -984,7 +984,7 @@ use yii\widgets\Breadcrumbs;
                                     <svg class="filters-button__icon" width="16px" height="16px">
                                         <use xlink:href="/template/red_stroyka/images/sprite.svg#filters-16"></use>
                                     </svg>
-                                    <span class="filters-button__title">Filters</span>
+                                    <span class="filters-button__title">Фильтры</span>
                                     <span class="filters-button__counter">3</span>
                                 </button>
                             </div>
@@ -1044,7 +1044,7 @@ use yii\widgets\Breadcrumbs;
                          data-with-features="false" data-mobile-grid-columns="2">
                         <div class="products-list__body">
                             <?php foreach ($goods as $good): ?>
-                                <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
+                                <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -1156,7 +1156,7 @@ use yii\widgets\Breadcrumbs;
 
     <div class="row productsList">
         <?php foreach ($goods as $good): ?>
-            <?= $this->render('@currentSiteView/good/_item', ['good' => $good]); ?>
+            <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
         <?php endforeach; ?>
 
     </div>
@@ -1186,7 +1186,9 @@ use yii\widgets\Breadcrumbs;
 
 <?php
 $script = <<< JS
-  // $('.indicator__button')[4].click()
+// $('.layout-switcher__button:eq(2)').click();
+
+// $('.indicator__button')[4].click()
 JS;
 //маркер конца строки, обязательно сразу, без пробелов и табуляции
 $this->registerJs($script, yii\web\View::POS_READY);

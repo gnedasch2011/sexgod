@@ -2,7 +2,7 @@
 
 namespace frontend\abstractComponents\modules\brand\models;
 
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;

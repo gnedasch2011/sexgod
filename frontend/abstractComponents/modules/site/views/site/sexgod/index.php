@@ -156,7 +156,7 @@ getProducts"
             <div class="block-products-carousel__preloader"></div>
             <div class="getProductsResultPopulars">
                 <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
-                    'items' => \app\models\sexgod\good\Goods::getProducts([
+                    'items' => \frontend\abstractComponents\modules\good\models\Goods::getProducts([
                         'categoryId' => 101,
                         'limit' => 4,
                     ])
@@ -278,7 +278,7 @@ getProducts"
             <div class="block-products-carousel__preloader"></div>
             <div class="getProductsDiscountGoods">
                 <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
-                    'items' => \app\models\sexgod\good\Goods::getProducts([
+                    'items' => \frontend\abstractComponents\modules\good\models\Goods::getProducts([
                         'categoryId' => 101,//101///491
                         'limit' => 8,
                     ])
@@ -386,7 +386,7 @@ getProducts"
             <div class="block-products-carousel__preloader"></div>
             <div class="productsResult getProductsResultNovelties">
                 <?= \frontend\abstractComponents\widgets\GenerateBlockGood\GenerateBlockGood::widget([
-                    'items' => \app\models\sexgod\good\Goods::getProducts([
+                    'items' => \frontend\abstractComponents\modules\good\models\Goods::getProducts([
                         'categoryId' => 101,//101///491
                         'limit' => 4,
                     ])

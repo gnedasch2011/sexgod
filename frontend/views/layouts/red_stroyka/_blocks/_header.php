@@ -1,14 +1,10 @@
 <?php
-
-use yii\helpers\Html;
+    use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\abstractComponents\models\CategoryAbstract;
-
 ?>
-
-
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1697,7 +1693,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                             <div class="dropcart__body">
                                                 <div class="dropcart__products-list">
                                                     <?php if (\Yii::$app->cart->returnProductModelsInCart()): ?>
-                                                        <?= $this->render('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+                                                        <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item_in_drop_cart', [
                                                             'products' => \Yii::$app->cart->returnProductModelsInCart()
                                                         ]); ?>
 

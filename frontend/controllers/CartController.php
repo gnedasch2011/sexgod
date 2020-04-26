@@ -8,7 +8,7 @@ use frontend\modules\cart\models\form_for_order\Checkout;
 use Yii;
 use yii\web\Controller;
 use app\models\Cart;
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use app\modules\cart\models\Order;
 
 class CartController extends Controller
@@ -18,7 +18,7 @@ class CartController extends Controller
 
     public function actionIndex()
     {
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $cart = \Yii::$app->cart;
 
@@ -60,7 +60,7 @@ class CartController extends Controller
 
     public function actionGenerateOrderSuccess()
     {
-        $this->layout = 'red_stroyka/main';
+        $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $idOrder = 37;
 
@@ -85,7 +85,7 @@ class CartController extends Controller
 
     public function actionGetHtmlItemForDrop()
     {
-        return $this->renderAjax('@frontend/views/site/sexgod/good/_item_in_drop_cart', [
+        return $this->renderAjax('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item_in_drop_cart', [
             'products' => \Yii::$app->cart->returnProductModelsInCart()
         ]);
     }

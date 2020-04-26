@@ -4,7 +4,7 @@
 namespace frontend\abstractComponents\modules\cart\components;
 
 
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\helpers\CommonHelper;
 use Yii;
 use yii\base\Component;

@@ -4,7 +4,7 @@
 namespace frontend\controllers;
 
 
-use app\models\sexgod\good\Goods;
+use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\models\form\CallLeadForm;
 use yii\web\Controller;
 
