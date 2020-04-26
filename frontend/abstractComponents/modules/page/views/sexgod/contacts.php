@@ -49,23 +49,23 @@
                                 <form>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="form-name">Your Name</label>
-                                            <input type="text" id="form-name" class="form-control" placeholder="Your Name">
+                                            <label for="form-name">Введите ваше имя</label>
+                                            <input type="text" id="form-name" class="form-control" placeholder="Ваше имя">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="form-email">Email</label>
-                                            <input type="email" id="form-email" class="form-control" placeholder="Email Address">
+                                            <label for="form-email">Введите ваш Email</label>
+                                            <input type="email" id="form-email" class="form-control" placeholder="Ваш Email">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="form-subject">Subject</label>
-                                        <input type="text" id="form-subject" class="form-control" placeholder="Subject">
+                                        <label for="form-subject">Напишите тему письма</label>
+                                        <input type="text" id="form-subject" class="form-control" placeholder="Тема письма">
                                     </div>
                                     <div class="form-group">
-                                        <label for="form-message">Message</label>
+                                        <label for="form-message">Напишите сообщение</label>
                                         <textarea id="form-message" class="form-control" rows="4"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
                                 </form>
                             </div>
                         </div>
