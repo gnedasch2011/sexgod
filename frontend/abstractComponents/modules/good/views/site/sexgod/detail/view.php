@@ -175,7 +175,7 @@ use yii\widgets\Breadcrumbs;
                             <li class="product__meta-availability">Наличие: <span
                                         class="text-success"><?= $good->Availibilty ?></span>
                             </li>
-                            <li>Бренд: <a href=""><?= $good->Vendor; ?></a></li>
+                            <li>Бренд: <a href="<?= $good->urlOnBrandInGood ;?>"><?= $good->Vendor; ?></a></li>
                             <li>Артикул товара: <?= $good->aID; ?></li>
                         </ul>
                     </div>
