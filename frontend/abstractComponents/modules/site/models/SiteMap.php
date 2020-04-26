@@ -45,7 +45,6 @@ class SiteMap extends Model
         }, $slugBrands);
 //
       $allUrls = array_merge($urlsGoodsFull,$urlsCatsFull,$slugBrandsFull);
-//      $allUrls = array_merge($urlsGoodsFull,$urlsCatsFull,$slugBrandsFull);
 
         //Формируем двумерный массив. createUrl преобразует ссылки в правильный вид.
         //Добавляем элемент массива 'daily' для указания периода обновления контента

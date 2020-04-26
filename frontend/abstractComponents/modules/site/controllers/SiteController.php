@@ -346,24 +346,18 @@ class SiteController extends Controller
         $sitemap = new SiteMap();
 
 
-        $urls = $sitemap->getUrl();
-    
-        $xml_sitemap = $this->renderPartial('/site/sitemap/default', [
-            'urls' => $urls,
-        ]);
-
         //Если в кэше нет карты сайта
 
-//               if (!$xml_sitemap = Yii::$app->cache->get('sitemap2')) {
-//            //Получаем массив всех ссылок
-//            $urls = $sitemap->getUrl();
-//
-//            $xml_sitemap = $this->renderPartial('/site/sitemap/default', [
-//                'urls' => $urls,
-//            ]);
-//            // кэшируем результат
-//            Yii::$app->cache->set('sitemap', $xml_sitemap, 3600 * 12);
-//        }
+        if (!$xml_sitemap = Yii::$app->cache->get('sitemap')) {
+            //Получаем массив всех ссылок
+            $urls = $sitemap->getUrl();
+
+            $xml_sitemap = $this->renderPartial('/site/sitemap/default', [
+                'urls' => $urls,
+            ]);
+            // кэшируем результат
+            Yii::$app->cache->set('sitemap', $xml_sitemap, 3600 * 12);
+        }
 
 
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
@@ -371,8 +365,6 @@ class SiteController extends Controller
         $headers->add('Content-Type', 'text/xml');
 
         return $xml_sitemap;
-
-
     }
 
 }
