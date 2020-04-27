@@ -8,11 +8,6 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
     <changefreq>daily</changefreq>
     <priority>1</priority>
 </url>
-<url>
-    <loc><?= $host ?></loc>
-    <changefreq>daily</changefreq>
-    <priority>1</priority>
-</url>
 <?php foreach ($urls as $url): ?>
     <?php if (isset($url[0]) && !empty($url[0])): ?>
         <url>

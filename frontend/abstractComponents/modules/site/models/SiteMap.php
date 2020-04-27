@@ -16,7 +16,7 @@ class SiteMap extends Model
         $urlGoods = Goods::find()
             ->select('slug')
             ->asArray()
-            ->limit(1)
+//            ->limit(1)
             ->all();
 
         $urlsGoodsFull = array_map(function ($val) {
