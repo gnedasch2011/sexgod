@@ -99,7 +99,7 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                'levels' => ['error', 'warning'],
                 ],
             ],
         ],
@@ -132,7 +132,7 @@ return [
                 "anonimnost" => "page/site/anonimnost",
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
-                "sitemap.xml" => "site/site/sitemap",
+                "sitemap.xml/" => "site/site/sitemap",
             ],
 
         ],

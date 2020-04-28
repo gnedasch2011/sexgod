@@ -346,25 +346,62 @@ class SiteController extends Controller
         $sitemap = new SiteMap();
 
 
-        //Если в кэше нет карты сайта
+        //запихнуть в кэш все урл
 
-        if (!$xml_sitemap = Yii::$app->cache->get('sitemap')) {
-            //Получаем массив всех ссылок
-            $urls = $sitemap->getUrl();
 
-            $xml_sitemap = $this->renderPartial('/site/sitemap/default', [
-                'urls' => $urls,
-            ]);
-            // кэшируем результат
-            Yii::$app->cache->set('sitemap', $xml_sitemap, 3600 * 12);
+        $allUrls = Yii::$app->cache->getOrSet('allUrls', function () use ($sitemap) {
+            $allUrls = $sitemap->getUrl();
+            return $allUrls;
+        });
+
+        $count = count($allUrls);
+        $divider = 3000;
+
+        $countFile = 1000;
+
+        if ($count > $divider) {
+            $countFile = round($count / $divider);
         }
+
+
+        $fullXmlFile = '';
+
+        if (isset($allUrls)) {
+            for ($factor = 1; $factor < $countFile; $factor++) {
+
+                $urls = [];
+                $xml_sitemap = '';
+
+                for ($i = 0; $i < 2000; $i++) {
+                    $num = $i * $factor;
+                    $urls[] = $allUrls[$num];
+                }
+
+                $cacheName = 'sitemap_' . $factor;
+
+                $xml_sitemap = Yii::$app->cache->getOrSet($cacheName, function () use ($urls) {
+                    $xml_sitemap = $this->renderPartial('/site/sitemap/_block_item', [
+                        'urls' => $urls,
+                    ]);
+
+                    return $xml_sitemap;
+                });
+
+
+                $fullXmlFile .= $xml_sitemap;
+            }
+        }
+
+        $renderXml = $this->renderPartial('/site/sitemap/wrap', [
+            'fullXmlFile' => $fullXmlFile,
+        ]);
 
 
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         $headers = Yii::$app->response->headers;
         $headers->add('Content-Type', 'text/xml');
 
-        return $xml_sitemap;
+        return $renderXml;
     }
 
 }

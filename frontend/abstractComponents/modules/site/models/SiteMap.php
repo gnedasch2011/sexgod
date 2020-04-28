@@ -19,6 +19,7 @@ class SiteMap extends Model
 //            ->limit(1)
             ->all();
 
+        //раскидать по нескольким xml
         $urlsGoodsFull = array_map(function ($val) {
             return '/product/' . $val['slug'] . '/';
         }, $urlGoods);

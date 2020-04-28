@@ -60,10 +60,12 @@ class SiteController extends Controller
         $keywords = $category->name;
 
         $this->view->params['h1'] = $category->h1;
+        $this->view->params['canonical'] = 'test';
 
         $description = trim($category->descriptionMeta);
 
-        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => "/" . \Yii::$app->request->pathInfo]);
+
+        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => Yii::$app->request->hostInfo . "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
