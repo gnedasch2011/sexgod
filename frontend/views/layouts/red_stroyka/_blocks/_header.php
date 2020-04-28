@@ -10,16 +10,13 @@ use frontend\abstractComponents\models\CategoryAbstract;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-<<<<<<< HEAD
-=======
+
 
     <link rel="<?php if (isset($this->context->canonical)): ?>
             <?= Html::encode($this->context->canonical) ?>
         <?php else: ?>
         <?php endif; ?>" href="#"/>
 
->>>>>>> a2e0d52cb70960aa5d1d280b0c640f56b69044af
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
