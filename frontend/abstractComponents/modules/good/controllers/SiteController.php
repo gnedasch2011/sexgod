@@ -85,7 +85,6 @@ class SiteController extends Controller
 
                 }
 
-                die();
                 $aId = $product['aID'];
 
                 $newSlug = str_replace('+', '', $slug);
