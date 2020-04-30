@@ -340,8 +340,10 @@ class CategoryAbstract extends ActiveRecord
 
     public function getFullUrl()
     {
-        $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
-        return $fullUrl;
+        if (isset($this->slug)) {
+            $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
+        }
+        return '';
     }
 
     public static function getParentCategoryForBread($GoodsCategory)

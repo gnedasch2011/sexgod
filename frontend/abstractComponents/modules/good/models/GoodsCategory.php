@@ -47,9 +47,9 @@ class GoodsCategory extends \yii\db\ActiveRecord
         ];
     }
 
-     public function getCategory()
-         {
-             return $this->hasOne(CategoryAbstract::className(), ['id' => 'category_id']);
-         }
+    public function getCategory()
+    {
+        return $this->hasOne(CategoryAbstract::className(), ['id' => 'category_id']);
+    }
 
 }

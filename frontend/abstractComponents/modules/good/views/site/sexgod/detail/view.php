@@ -7,66 +7,66 @@ use yii\web\View;
 use yii\widgets\Breadcrumbs;
 
 ?>
-    <div class="block">
-        <div class="container">
-            <div class="product product--layout--standard" data-layout="standard">
-                <div class="product__content">
-                    <!-- .product__gallery -->
-                    <div class="product__gallery">
-                        <div class="product-gallery">
-                            <div class="product-gallery__featured">
-                                <button class="product-gallery__zoom">
-                                    <svg width="24px" height="24px">
-                                        <use xlink:href="/template/red_stroyka/images/products/sprite.svg#zoom-in-24"></use>
-                                    </svg>
-                                </button>
-                                <div class="owl-carousel" id="product-image">
-                                    <a href="<?= $good->mainImg; ?>" target="_blank">
-                                        <img src="<?= $good->mainImg; ?>" alt="">
-                                    </a>
+<div class="block">
+    <div class="container">
+        <div class="product product--layout--standard" data-layout="standard">
+            <div class="product__content">
+                <!-- .product__gallery -->
+                <div class="product__gallery">
+                    <div class="product-gallery">
+                        <div class="product-gallery__featured">
+                            <button class="product-gallery__zoom">
+                                <svg width="24px" height="24px">
+                                    <use xlink:href="/template/red_stroyka/images/products/sprite.svg#zoom-in-24"></use>
+                                </svg>
+                            </button>
+                            <div class="owl-carousel" id="product-image">
+                                <a href="<?= $good->mainImg; ?>" target="_blank">
+                                    <img src="<?= $good->mainImg; ?>" alt="">
+                                </a>
 
-                                    <?php foreach ($good->images as $imgMini): ?>
-                                        <a href="<?= $imgMini; ?>" target="_blank">
-                                            <img src="<?= $imgMini; ?>" alt="">
-                                        </a>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                            <div class="product-gallery__carousel">
-                                <div class="owl-carousel" id="product-carousel">
-                                    <a href="<?= $good->mainImg; ?>" target="_blank"
-                                       title="<?= $good->name; ?>">
-                                        <img src="<?= $good->mainImg; ?>" alt="<?= $good->name; ?>">
+                                <?php foreach ($good->images as $imgMini): ?>
+                                    <a href="<?= $imgMini; ?>" target="_blank">
+                                        <img src="<?= $imgMini; ?>" alt="">
                                     </a>
-                                    <?php foreach ($good->images as $imgMini): ?>
-                                        <a href="<?= $imgMini; ?>" target="_blank"
-                                           title="<?= $good->name; ?>">
-                                            <img src="<?= $imgMini; ?>" alt="<?= $good->name; ?>">
-                                        </a>
-                                    <?php endforeach; ?>
-                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <div class="product-gallery__carousel">
+                            <div class="owl-carousel" id="product-carousel">
+                                <a href="<?= $good->mainImg; ?>" target="_blank"
+                                   title="<?= $good->name; ?>">
+                                    <img src="<?= $good->mainImg; ?>" alt="<?= $good->name; ?>">
+                                </a>
+                                <?php foreach ($good->images as $imgMini): ?>
+                                    <a href="<?= $imgMini; ?>" target="_blank"
+                                       title="<?= $good->name; ?>">
+                                        <img src="<?= $imgMini; ?>" alt="<?= $good->name; ?>">
+                                    </a>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
-                    <!-- .product__gallery / end -->
-                    <!-- .product__info -->
-                    <div class="product__info">
-                        <div class="product__wishlist-compare">
-                            <button type="button" class="btn btn-sm btn-light btn-svg-icon"
-                                    data-toggle="tooltip" data-placement="right" title="Wishlist">
-                                <svg width="16px" height="16px">
-                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-light btn-svg-icon"
-                                    data-toggle="tooltip" data-placement="right" title="Compare">
-                                <svg width="16px" height="16px">
-                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
-                                </svg>
-                            </button>
-                        </div>
-                        <h1 class="product__name"><?= $good->name; ?></h1>
-                        <?php /*?>
+                </div>
+                <!-- .product__gallery / end -->
+                <!-- .product__info -->
+                <div class="product__info">
+                    <div class="product__wishlist-compare">
+                        <button type="button" class="btn btn-sm btn-light btn-svg-icon"
+                                data-toggle="tooltip" data-placement="right" title="Wishlist">
+                            <svg width="16px" height="16px">
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-light btn-svg-icon"
+                                data-toggle="tooltip" data-placement="right" title="Compare">
+                            <svg width="16px" height="16px">
+                                <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <h1 class="product__name"><?= $good->name; ?></h1>
+                    <?php /*?>
 
                     <div class="product__rating">
                         <div class="product__rating-stars">
@@ -161,31 +161,33 @@ use yii\widgets\Breadcrumbs;
                     </div>
                              <?php */ ?>
 
-                        <div class="product__description">
-                            <?= $good->description; ?>
-                        </div>
-                        <ul class="product__meta">
-                            <li class="product__meta-availability">Наличие: <span
-                                        class="text-success"><?= $good->Availibilty ?></span>
-                            </li>
-                            <li>Бренд: <a href="<?= $good->urlOnBrandInGood ;?>"><?= $good->Vendor; ?></a></li>
-                            <li>Артикул товара: <?= $good->aID; ?></li>
-                        </ul>
+                    <div class="product__description">
+                        <?= $good->description; ?>
                     </div>
-                    <!-- .product__info / end -->
-                    <!-- .product__sidebar -->
-                    <div class="product__sidebar">
-                        <div class="product__availability">
-                            Наличие: <span class="text-success"><?= $good->Availibilty ?></span>
-                        </div>
-                        <div class="product__prices">
-                            <?= $good->formatPrice ?>
-                        </div>
-                        <!-- .product__options -->
+                    <ul class="product__meta">
+                        <li class="product__meta-availability">Наличие: <span
+                                    class="text-success"><?= $good->Availibilty ?></span>
+                        </li>
+                        <li>Бренд: <a
+                                    href="<?= $good->urlOnBrandInGood; ?>"><?= $good->Vendor; ?></a>
+                        </li>
+                        <li>Артикул товара: <?= $good->aID; ?></li>
+                    </ul>
+                </div>
+                <!-- .product__info / end -->
+                <!-- .product__sidebar -->
+                <div class="product__sidebar">
+                    <div class="product__availability">
+                        Наличие: <span class="text-success"><?= $good->Availibilty ?></span>
+                    </div>
+                    <div class="product__prices">
+                        <?= $good->formatPrice ?>
+                    </div>
+                    <!-- .product__options -->
 
 
-                        <form class="product__options">
-                            <?php /*?>
+                    <form class="product__options">
+                        <?php /*?>
 
                             <div class="form-group product__option">
                                 <label class="product__option-label">Color</label>
@@ -218,8 +220,8 @@ use yii\widgets\Breadcrumbs;
                                     </div>
                                 </div>
                             </div>
-    <?php */?>
-                            <?php /*?>
+    <?php */ ?>
+                        <?php /*?>
 
                         <div class="form-group product__option">
                             <label class="product__option-label">Material</label>
@@ -241,107 +243,109 @@ use yii\widgets\Breadcrumbs;
                             </div>
                         </div>
                          <?php */ ?>
-                            <div class="form-group product__option">
-                                <label class="product__option-label"
-                                       for="product-quantity">Количество</label>
-                                <div class="product__actions">
-                                    <div class="product__actions-item">
-                                        <div class="input-number product__quantity"
-                                             data-id="<?= $good->aID; ?>"
-                                        >
-                                            <input id="product-quantity"
-                                                   class="input-number__input form-control form-control-lg"
-                                                   type="number" min="1"
-                                                   value="<?= Yii::$app->cart->countById($good->id); ?>">
-                                            <div class="input-number__add"></div>
-                                            <div class="input-number__sub"></div>
-                                        </div>
-                                    </div>
-                                    <div class="product__actions-item product__actions-item--addtocart">
-                                        <button
-                                                data-id="<?= $good->aID; ?>"
-                                                class="btn btn-primary btn-lg addInCartJs oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Добавить в корзину'; ?>
-                                        </button>
-                                    </div>
-                                    <div class="product__actions-item product__actions-item--wishlist">
-                                        <button type="button"
-                                                class="btn btn-secondary btn-svg-icon btn-lg"
-                                                data-toggle="tooltip" title="Избранное">
-                                            <svg width="16px" height="16px">
-                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__actions-item product__actions-item--compare">
-                                        <button type="button"
-                                                class="btn btn-secondary btn-svg-icon btn-lg"
-                                                data-toggle="tooltip" title="Сравнение">
-                                            <svg width="16px" height="16px">
-                                                <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
-                                            </svg>
-                                        </button>
+                        <div class="form-group product__option">
+                            <label class="product__option-label"
+                                   for="product-quantity">Количество</label>
+                            <div class="product__actions">
+                                <div class="product__actions-item">
+                                    <div class="input-number product__quantity"
+                                         data-id="<?= $good->aID; ?>"
+                                    >
+                                        <input id="product-quantity"
+                                               class="input-number__input form-control form-control-lg"
+                                               type="number" min="1"
+                                               value="<?= Yii::$app->cart->countById($good->id); ?>">
+                                        <div class="input-number__add"></div>
+                                        <div class="input-number__sub"></div>
                                     </div>
                                 </div>
+                                <div class="product__actions-item product__actions-item--addtocart">
+                                    <button
+                                            data-id="<?= $good->aID; ?>"
+                                            class="btn btn-primary btn-lg addInCartJs oneClickAndDisabled <?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'goodsInCart' : ''; ?>"><?= \Yii::$app->cart->checkGoodsInCart($good->id) ? 'Добавлено' : 'Добавить в корзину'; ?>
+                                    </button>
+                                </div>
+                                <div class="product__actions-item product__actions-item--wishlist">
+                                    <button type="button"
+                                            class="btn btn-secondary btn-svg-icon btn-lg"
+                                            data-toggle="tooltip" title="Избранное">
+                                        <svg width="16px" height="16px">
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#wishlist-16"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="product__actions-item product__actions-item--compare">
+                                    <button type="button"
+                                            class="btn btn-secondary btn-svg-icon btn-lg"
+                                            data-toggle="tooltip" title="Сравнение">
+                                        <svg width="16px" height="16px">
+                                            <use xlink:href="/template/red_stroyka/images/sprite.svg#compare-16"></use>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
 
-                        <!-- .product__options / end -->
+                    <!-- .product__options / end -->
+                </div>
+                <!-- .product__end -->
+                <div class="product__footer">
+                    <div class="product__tags tags">
+                        <div class="tags__list">
+                            <?php foreach ($good->goodsCategory as $linkCat): ?>
+                                <?php if (isset($linkCat->category->fullUrl)): ?>
+                                    <a href="<?= $linkCat->category->fullUrl ?>"><?= $linkCat->category->name; ?></a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                    <!-- .product__end -->
-                    <div class="product__footer">
-                        <div class="product__tags tags">
-                            <div class="tags__list">
-                                <?php foreach($good->goodsCategory as $linkCat):?>
-                                    <a href="<?= $linkCat->category->fullUrl?>"><?= $linkCat->category->name ;?></a>
-                                <?php endforeach;?>
-                            </div>
-                        </div>
-                        <div class="product__share-links share-links">
-                            <ul class="share-links__list">
-                                <li class="share-links__item share-links__item--type--like"><a
-                                            href="">Like</a>
-                                </li>
-                                <li class="share-links__item share-links__item--type--tweet"><a
-                                            href="">Tweet</a>
-                                </li>
-                                <li class="share-links__item share-links__item--type--pin"><a
-                                            href="">Pin
-                                        It</a></li>
-                                <li class="share-links__item share-links__item--type--counter"><a
-                                            href="">4K</a></li>
-                            </ul>
-                        </div>
+                    <div class="product__share-links share-links">
+                        <ul class="share-links__list">
+                            <li class="share-links__item share-links__item--type--like"><a
+                                        href="">Like</a>
+                            </li>
+                            <li class="share-links__item share-links__item--type--tweet"><a
+                                        href="">Tweet</a>
+                            </li>
+                            <li class="share-links__item share-links__item--type--pin"><a
+                                        href="">Pin
+                                    It</a></li>
+                            <li class="share-links__item share-links__item--type--counter"><a
+                                        href="">4K</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="product-tabs ">
-                <div class="product-tabs__list">
-                    <a href="#tab-description"
-                       class="product-tabs__item product-tabs__item--active">Описание</a>
-                    <a href="#tab-specification" class="product-tabs__item">Характеристики</a>
-                    <?php /*?>
+        </div>
+        <div class="product-tabs ">
+            <div class="product-tabs__list">
+                <a href="#tab-description"
+                   class="product-tabs__item product-tabs__item--active">Описание</a>
+                <a href="#tab-specification" class="product-tabs__item">Характеристики</a>
+                <?php /*?>
                 <a href="#tab-reviews" class="product-tabs__item">Отзывы</a>
                  <?php */ ?>
+            </div>
+            <div class="product-tabs__content">
+                <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
+                    <?= $good->Description; ?>
                 </div>
-                <div class="product-tabs__content">
-                    <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
-                        <?= $good->Description; ?>
-                    </div>
-                    <div class="product-tabs__pane" id="tab-specification">
-                        <div class="spec">
-                            <div class="spec__section">
-                                <?php foreach ($good->attrProduct as $attr): ?>
-                                    <?php if ($attr->value): ?>
-                                        <div class="spec__row">
-                                            <div class="spec__name"><?= $attr->fullProps->name; ?></div>
-                                            <div class="spec__value"><?= $attr->value; ?> <?= $attr->fullProps->unit; ?></div>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </div>
+                <div class="product-tabs__pane" id="tab-specification">
+                    <div class="spec">
+                        <div class="spec__section">
+                            <?php foreach ($good->attrProduct as $attr): ?>
+                                <?php if ($attr->value): ?>
+                                    <div class="spec__row">
+                                        <div class="spec__name"><?= $attr->fullProps->name; ?></div>
+                                        <div class="spec__value"><?= $attr->value; ?> <?= $attr->fullProps->unit; ?></div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <?php /*?>
+                </div>
+                <?php /*?>
                 <div class="product-tabs__pane" id="tab-reviews">
                     <div class="reviews-view">
                         <div class="reviews-view__list">
@@ -745,8 +749,8 @@ use yii\widgets\Breadcrumbs;
                     </div>
                 </div>
   <?php */ ?>
-                </div>
             </div>
         </div>
     </div>
+</div>
 
