@@ -352,14 +352,10 @@ class SiteController extends Controller
             $countOfFiles = round($countUrls / $divider);
         }
 
-        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
-        $headers = Yii::$app->response->headers;
-        $headers->add('Content-Type', 'text/xml');
-
-        return $this->renderPartial('/site/sitemap/wrapForSitemap', [
-            'countOfFiles' => $countOfFiles,
-        ]);
-
+        return $this->renderXMlFormat('/site/sitemap/wrapForSitemap',
+            [
+                'countOfFiles' => $countOfFiles,
+            ]);
     }
 
     public function getCountAllUrls()
@@ -367,8 +363,7 @@ class SiteController extends Controller
         $sitemap = new SiteMap();
 
         $countUrls = Yii::$app->cache->getOrSet('allUrlsCount', function () use ($sitemap) {
-            $allGoodsUrls = $sitemap->getCountAllUrlsGoods();
-            $countUrlsAllGoods = count($allGoodsUrls);
+            $countUrlsAllGoods = $sitemap->getCountAllUrlsGoods();
 
             return $countUrlsAllGoods;
         });
@@ -393,16 +388,11 @@ class SiteController extends Controller
             return $urls;
         });
 
-
-        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
-        $headers = Yii::$app->response->headers;
-        $headers->add('Content-Type', 'text/xml');
-
-
-        return $this->renderPartial('/site/sitemap/sitemapPage', [
-            'urlGoodsWithOffset' => $urlGoodsWithOffset,
-        ]);
-
+        return $this->renderXMlFormat('/site/sitemap/sitemapPage',
+            [
+                'urlsForRender' => $urlGoodsWithOffset,
+            ]
+        );
 
     }
 
@@ -419,18 +409,22 @@ class SiteController extends Controller
             return $urls;
         });
 
+        return $this->renderXMlFormat('/site/sitemap/sitemapPage',
+            [
+                'urlsForRender' => $urlOtherUrls,
+            ]
+        );
 
+    }
+
+    public function renderXMlFormat($temp, $params)
+    {
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         $headers = Yii::$app->response->headers;
         $headers->add('Content-Type', 'text/xml');
 
 
-        return $this->renderPartial('/site/sitemap/sitemapPage', [
-            'urlGoodsWithOffset' => $urlOtherUrls,
-        ]);
-
-
+        return $this->renderPartial($temp, $params);
     }
-
 
 }
