@@ -86,7 +86,6 @@ class SiteController extends Controller
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
 
-
         //Плитки тегов
         $childsCurrentCategory = $category->getChildsCurrentCategory();
 

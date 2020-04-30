@@ -341,67 +341,96 @@ class SiteController extends Controller
     }
 
 
+    const COUNT_GOODS_IN_SITEMAP = 3000;
+
     public function actionSitemap()
+    {
+        $countUrls = $this->countAllUrls;
+        $divider = self::COUNT_GOODS_IN_SITEMAP;
+
+        if ($countUrls > $divider) {
+            $countOfFiles = round($countUrls / $divider);
+        }
+
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        $headers = Yii::$app->response->headers;
+        $headers->add('Content-Type', 'text/xml');
+
+        return $this->renderPartial('/site/sitemap/wrapForSitemap', [
+            'countOfFiles' => $countOfFiles,
+        ]);
+
+    }
+
+    public function getCountAllUrls()
     {
         $sitemap = new SiteMap();
 
+        $countUrls = Yii::$app->cache->getOrSet('allUrlsCount', function () use ($sitemap) {
+            $allGoodsUrls = $sitemap->getCountAllUrlsGoods();
+            $countUrlsAllGoods = count($allGoodsUrls);
 
-        //запихнуть в кэш все урл
-
-
-        $allUrls = Yii::$app->cache->getOrSet('allUrls', function () use ($sitemap) {
-            $allUrls = $sitemap->getUrl();
-            return $allUrls;
+            return $countUrlsAllGoods;
         });
 
-        $count = count($allUrls);
-        $divider = 3000;
+        return $countUrls;
+    }
 
-        $countFile = 1000;
+    public function actionSitemapPage($SitemapPage)
+    {
 
-        if ($count > $divider) {
-            $countFile = round($count / $divider);
-        }
+        $sitemap = new SiteMap();
 
+        $countUrls = $this->countAllUrls;
+        $limit = self::COUNT_GOODS_IN_SITEMAP;
+        $offset = $SitemapPage * $limit;
 
-        $fullXmlFile = '';
+        $name = 'urlGoodsWithOffset_' . $SitemapPage;
 
-        if (isset($allUrls)) {
-            for ($factor = 1; $factor < $countFile; $factor++) {
+        $urlGoodsWithOffset = Yii::$app->cache->getOrSet($name, function () use ($sitemap, $offset, $limit) {
+            $urls = $sitemap->getUrlGoodsWithOffset($offset, $limit);
 
-                $urls = [];
-                $xml_sitemap = '';
-
-                for ($i = 0; $i < 2000; $i++) {
-                    $num = $i * $factor;
-                    $urls[] = $allUrls[$num];
-                }
-
-                $cacheName = 'sitemap_' . $factor;
-
-                $xml_sitemap = Yii::$app->cache->getOrSet($cacheName, function () use ($urls) {
-                    $xml_sitemap = $this->renderPartial('/site/sitemap/_block_item', [
-                        'urls' => $urls,
-                    ]);
-
-                    return $xml_sitemap;
-                });
-
-
-                $fullXmlFile .= $xml_sitemap;
-            }
-        }
-
-        $renderXml = $this->renderPartial('/site/sitemap/wrap', [
-            'fullXmlFile' => $fullXmlFile,
-        ]);
+            return $urls;
+        });
 
 
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         $headers = Yii::$app->response->headers;
         $headers->add('Content-Type', 'text/xml');
 
-        return $renderXml;
+
+        return $this->renderPartial('/site/sitemap/sitemapPage', [
+            'urlGoodsWithOffset' => $urlGoodsWithOffset,
+        ]);
+
+
     }
+
+    public function actionSitemapOtherUrls()
+    {
+
+        $sitemap = new SiteMap();
+
+        $name = 'SitemapOtherUrls';
+
+        $urlOtherUrls = Yii::$app->cache->getOrSet($name, function () use ($sitemap) {
+            $urls = $sitemap->getOtherUrls();
+
+            return $urls;
+        });
+
+
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        $headers = Yii::$app->response->headers;
+        $headers->add('Content-Type', 'text/xml');
+
+
+        return $this->renderPartial('/site/sitemap/sitemapPage', [
+            'urlGoodsWithOffset' => $urlOtherUrls,
+        ]);
+
+
+    }
+
 
 }
