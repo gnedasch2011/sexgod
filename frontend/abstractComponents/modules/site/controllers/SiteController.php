@@ -341,6 +341,9 @@ class SiteController extends Controller
     }
 
 
+    /*
+     * SiteMap
+     */
     const COUNT_GOODS_IN_SITEMAP = 3000;
 
     public function actionSitemap()
