@@ -122,7 +122,7 @@ class SiteMap extends Model
         $allUrls = array_merge( $urlsCatsFull, $slugBrandsFull);
 
         //Формируем двумерный массив. createUrl преобразует ссылки в правильный вид.
-        //Добавляем элемент массива 'daily' для указания периода обновления контента
+
         foreach ($allUrls as $url_rule) {
             $urls[] = [Yii::$app->urlManager->createUrl([$url_rule]), 'daily'];
         }
@@ -154,8 +154,6 @@ class SiteMap extends Model
 
         return $urls;
     }
-
-
 
 
 }
