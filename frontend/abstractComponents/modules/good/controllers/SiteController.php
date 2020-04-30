@@ -30,7 +30,6 @@ class SiteController extends Controller
 
     public function actionDistillationGoods()
     {
-        die();
         ini_set('memory_limit', '5000M');
         $arrProp = [
             'Barcode' => 6,
@@ -66,24 +65,30 @@ class SiteController extends Controller
             'ready_to_go' => 36,
             'StopPromo' => 37
         ];
+
+        $ids = [669, 5602, 5617, 16363, 39418, 39419, 50084, 71454, 71455, 73808, 73809, 73811, 76345, 76348, 79257, 79262, 80401, 81972, 82272, 82274, 8230882752, 82753, 83060, 98418, 104769, 104784, 104785, 107507, 107535, 109419, 122005, 140063, 140064, 140065, 140066, 140067, 140068, 140069140070, 140071, 140072];
+                
+        
+
         foreach (Goods::find()
                      ->select('id,slug,aID')
-                     ->where('id>170895')
+                     ->where(['id' => $ids])
                      ->asArray()
                      ->batch(1000) as $products) {
-
             foreach ($products as $product) {
-
                 $slug = $product['slug'] ?? 'continue';
-
+//                echo "<pre>"; print_r($slug);die();
                 if ($slug == 'continue') {
                     continue;
                 }
+                if (strpos($slug, '+')) {
 
+                }
+
+                die();
                 $aId = $product['aID'];
 
-                $newSlug = $aId . '-' . $slug;
-                // UPDATE (table name, column values, condition)
+                $newSlug = str_replace('+', '', $slug);
                 Yii::$app->db->createCommand()->update('goods', [
                     'slug' => $newSlug
                 ], "id ={$product['id']}")->execute();
@@ -142,7 +147,6 @@ class SiteController extends Controller
                 ->where(['goods.slug' => $slugItem])
                 ->with('attrProduct')
                 ->one();
-
         $keywords = $good->name;
         $description = trim($good->name);
 
