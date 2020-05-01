@@ -1,5 +1,5 @@
 <div class="widget-filters__item">
-    <div class="filter filter--opened" data-collapse-item>
+    <div class="filter" data-collapse-item>
         <button type="button" class="filter__title" data-collapse-trigger>
             Категории
             <svg class="filter__arrow" width="12px" height="7px">
@@ -11,7 +11,6 @@
         <div class="filter__body" data-collapse-content>
             <div class="filter__container">
                 <div class="filter-categories">
-
                     <ul class="filter-categories__list">
                         <?php foreach ($menuItem as $item): ?>
                             <?php
@@ -27,11 +26,14 @@
 
                             <ul>
                                 <?php foreach ($item->subMenu as $subItem): ?>
-
-                                    <li class="filter-categories__item filter-categories__item--child">
-                                        <a href="<?= "/catalog/$subItem->slug/"; ?>"><?= $subItem->name; ?></a>
-                                        <div class="filter-categories__counter"><?= $subItem->countItems; ?></div>
-                                    </li>
+                                    <?php if ($subItem->countItems): ?>
+                                        <?php if ($subItem->slug == 'yaponskie-seks-igrushki'): ?>
+                                        <?php endif; ?>
+                                        <li class="filter-categories__item filter-categories__item--child">
+                                            <a href="<?= "/catalog/$subItem->slug/"; ?>"><?= $subItem->name; ?></a>
+                                            <div class="filter-categories__counter"><?= $subItem->countItems; ?></div>
+                                        </li>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
                             </li>

@@ -26,7 +26,6 @@ use yii\widgets\Breadcrumbs;
                              data-collapse data-collapse-opened-class="filter--opened">
                             <h4 class="widget-filters__title widget__title">Фильтры</h4>
                             <div class="widget-filters__list">
-
                                 <?php /*?>
 
                                     <div class="widget-filters__item">
@@ -113,7 +112,6 @@ use yii\widgets\Breadcrumbs;
                                      <?php */ ?>
                                 <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
                                 ]); ?>
-
 
                                 <?php /*?>
 
