@@ -969,8 +969,9 @@ use yii\widgets\Breadcrumbs;
                 <div class="products-view">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <?= \frontend\abstractComponents\widgets\TagTile\TagTileWidget::widget([
-                                'childsCurrentCategory' => $childsCurrentCategory,
+                            <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
+                                'items' => $IdsChildsCurrentCategory,
+                                'template' => 'category_block_tags',
                             ]); ?>
 
                         </div>

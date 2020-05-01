@@ -85,6 +85,19 @@ class CategoryAbstract extends ActiveRecord
         return $arr;
     }
 
+
+    public function getIdsChildsCurrentCategory()
+    {
+
+        $listCateg = self::find()
+            ->distinct()
+            ->orderBy('name')
+            ->where(['parent_id' => $this->id])
+            ->all();
+
+        return $listCateg;
+    }
+
     public static function getActiveMenuItems()
     {
         $itemMenu = self::find()
@@ -340,8 +353,10 @@ class CategoryAbstract extends ActiveRecord
 
     public function getFullUrl()
     {
+
         if (isset($this->slug)) {
             $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
+            return $fullUrl;
         }
         return '';
     }

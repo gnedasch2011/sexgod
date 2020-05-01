@@ -88,6 +88,7 @@ class SiteController extends Controller
 
         //Плитки тегов
         $childsCurrentCategory = $category->getChildsCurrentCategory();
+        $IdsChildsCurrentCategory = $category->getIdsChildsCurrentCategory();
 
 
         return $this->render('sexgod/category/view', [
@@ -97,6 +98,7 @@ class SiteController extends Controller
             'category' => $category,
             'pages' => $pages,
             'childsCurrentCategory' => $childsCurrentCategory,
+            'IdsChildsCurrentCategory' => $IdsChildsCurrentCategory,
 
         ]);
     }

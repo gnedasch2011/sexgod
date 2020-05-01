@@ -16,6 +16,7 @@ class CategoryOutputWidget extends Widget
 
     public function run()
     {
+
         return $this->render($this->template, [
             'items' => $this->items,
         ]);

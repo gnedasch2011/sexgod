@@ -5,12 +5,15 @@ use yii\helpers\Html;
 ?>
     <div class="products-list__item">
         <div class="product-card">
+            <?php /*?>
+
             <button class="product-card__quickview" type="button">
                 <svg width="16px" height="16px">
                     <use xlink:href="/template/red_stroyka/images/sprite.svg#quickview-16"></use>
                 </svg>
                 <span class="fake-svg-icon"></span>
             </button>
+    <?php */ ?>
             <div class="product-card__badges-list">
                 <div class="product-card__badge product-card__badge--new"><?= $good->productStatus; ?></div>
             </div>

@@ -21,8 +21,7 @@ use frontend\models\ContactForm;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
-/**
- * Site controller
+/** * Site controller
  */
 class SiteController extends Controller
 {
