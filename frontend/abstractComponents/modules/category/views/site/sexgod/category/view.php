@@ -113,6 +113,13 @@ use yii\widgets\Breadcrumbs;
                                 <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
                                 ]); ?>
 
+                                <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
+                                    'id' => '',
+                                    'typeFilter' => '',
+                                    'h2' => '',
+                                    'template' => '',
+                                ]); ?>
+
                                 <?php /*?>
 
                                     <div class="widget-filters__item">
@@ -261,6 +268,7 @@ use yii\widgets\Breadcrumbs;
                                         </div>
                                     </div>
       <?php */ ?>
+
                                 <div class="widget-filters__item">
                                     <div class="filter filter--opened" data-collapse-item>
                                         <button type="button" class="filter__title"
@@ -967,10 +975,14 @@ use yii\widgets\Breadcrumbs;
                 <div class="products-view">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
-                                'items' => $IdsChildsCurrentCategory,
-                                'template' => 'category_block_tags',
-                            ]); ?>
+
+                            <?php if (isset($IdsChildsCurrentCategory)): ?>
+                                <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
+                                    'items' => $IdsChildsCurrentCategory,
+                                    'template' => 'category_block_tags',
+                                ]); ?>
+                            <?php endif; ?>
+
 
                         </div>
 

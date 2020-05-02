@@ -88,8 +88,7 @@ class CategoryAbstract extends ActiveRecord
 
     public function getIdsChildsCurrentCategory()
     {
-
-        $listCateg = self::find()
+        $listCateg  = self::find()
             ->distinct()
             ->orderBy('name')
             ->where(['parent_id' => $this->id])

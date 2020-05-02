@@ -6,8 +6,6 @@
                 <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
             </svg>
         </button>
-
-
         <div class="filter__body" data-collapse-content>
             <div class="filter__container">
                 <div class="filter-categories">

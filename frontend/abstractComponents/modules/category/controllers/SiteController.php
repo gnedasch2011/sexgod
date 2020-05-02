@@ -90,7 +90,6 @@ class SiteController extends Controller
         $childsCurrentCategory = $category->getChildsCurrentCategory();
         $IdsChildsCurrentCategory = $category->getIdsChildsCurrentCategory();
 
-
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
