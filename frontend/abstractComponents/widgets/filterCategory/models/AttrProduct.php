@@ -3,6 +3,7 @@
 namespace frontend\abstractComponents\widgets\filterCategory\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "attr_product".
@@ -59,9 +60,63 @@ class AttrProduct extends \yii\db\ActiveRecord
     }
 
 
-     public function getFullProps()
-         {
-             return $this->hasOne(\frontend\abstractComponents\modules\attribute\models\Attr::className(), ['id' => 'attr_id']);
-         }
+    public function getFullProps()
+    {
+        return $this->hasOne(\frontend\abstractComponents\modules\attribute\models\Attr::className(), ['id' => 'attr_id']);
+    }
+
+
+    public static function valueAttrProductInCat($idAttr, $idsCat, $value)
+    {
+
+        $res = self::find()
+            ->select('attr_product.value')
+            ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
+            ->where([self::tableName() . '.attr_id' => $idAttr])
+            ->andWhere(['gc.category_id' => $idsCat]);
+
+        if ($value == 'min') {
+            return ($res->min('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
+        }
+
+        if ($value == 'max') {
+            return ($res->max('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
+        }
+
+        if ($value == 'distinct') {
+            if ($distVal = $res->select('distinct(attr_product.value)')->all()) {
+                return ArrayHelper::getColumn($distVal, 'value');
+            }
+
+        }
+
+
+        return 0;
+    }
+
+
+    public static function distinctValuesInCats($idAttr, $idsCat, $value)
+    {
+
+
+//
+//        $res = self::find()
+//            ->select('attr_product.value')
+//            ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
+//            ->where([self::tableName() . '.attr_id' => $idAttr])
+//            ->andWhere(['gc.category_id' => $idsCat]);
+//
+//        if ($value == 'min') {
+//            return ($res->min('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
+//        }
+//
+//        if ($value == 'max') {
+//            return ($res->max('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
+//        }
+//
+//
+//        return 0;
+    }
+
 
 }

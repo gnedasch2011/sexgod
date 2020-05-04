@@ -2,7 +2,9 @@
 
 namespace frontend\abstractComponents\widgets\filterCategory\models;
 
+use frontend\abstractComponents\models\CategoryAbstract;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "attr".
@@ -52,6 +54,33 @@ class Attr extends \yii\db\ActiveRecord
     {
         return $this->hasOne(AttrGroup::className(), ['id' => 'group_id']);
     }
+
+    /**
+     * @param $idCat нужны так же внутренние
+     * @param $value min/max
+     * @return int|mixed
+     */
+    public function getValueInAttrProduct($idCat, $value)
+    {
+        return AttrProduct::minValueAttrProductInCat($this->id, $idCat, $value);
+    }
+       
+       
+        /**
+     * @param $idCat нужны так же внутренние
+     * @param $value min/max
+     * @return int|mixed
+     */
+    public function getValueInAttrProductAndInChildCat($idCat, $value)
+    {
+        $idsCategory = CategoryAbstract::findOne(['id'=>$idCat]);
+        $idsChildCat = ArrayHelper::getColumn($idsCategory->idsChildsCurrentCategory,'id');
+
+        return AttrProduct::valueAttrProductInCat($this->id, $idsChildCat, $value);
+    }
+    
+    
+
 
 
 }

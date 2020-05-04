@@ -2,28 +2,33 @@
 
 namespace frontend\abstractComponents\modules\attribute\widgets\FilterWidget;
 
+use frontend\abstractComponents\widgets\filterCategory\models\Attr;
 use yii\base\Widget;
 
 class FilterWithAttrWidget extends Widget
 {
     public $id;
-    public $typeFilter;
     public $h2;
     public $template;
+    public $category;
 
     public function init()
     {
+
+        if (!isset($this->template)) {
+            $this->template = "filter/sexgod/_block/";
+        }
         parent::init();
     }
 
     public function run()
     {
-        return true;
-        $this->path = '/catalog/';
 
-        return $this->render('view', [
-            'childsCurrentCategory' => $this->childsCurrentCategory,
-            'path' => $this->path,
+        $attr = Attr::findOne(['id' => $this->id]);
+
+        return $this->render($this->template . $attr->group->type, [
+            'attrModel' => $attr,
+            'category' => $this->category,
         ]);
     }
 }

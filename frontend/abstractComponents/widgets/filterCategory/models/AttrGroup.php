@@ -28,7 +28,7 @@ class AttrGroup extends \yii\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['id'], 'integer'],
-            [['name'], 'string', 'max' => 45],
+            [['name','type'], 'string', 'max' => 45],
             [['id'], 'unique'],
         ];
     }
@@ -41,6 +41,7 @@ class AttrGroup extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'type' => 'type',
         ];
     }
 }

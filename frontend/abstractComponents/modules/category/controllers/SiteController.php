@@ -4,6 +4,7 @@ namespace frontend\abstractComponents\modules\category\controllers;
 
 use app\models\sexgod\category\CategoryBase;
 use frontend\abstractComponents\modules\good\models\Goods;
+use frontend\abstractComponents\widgets\filterCategory\models\Attr;
 use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
 use frontend\models\form\CallLeadForm;
 use Yii;
@@ -31,6 +32,10 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
+        $attr = Attr::findOne(['id'=>9]);
+//               echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
+
+
         if (\Yii::$app->request->get('clearCart')) {
             \Yii::$app->cart->clear();
         }
@@ -42,7 +47,6 @@ class SiteController extends Controller
 
         //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
-
         $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
 
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
@@ -54,9 +58,7 @@ class SiteController extends Controller
 
         //Для Сео
         $this->categoryName = $categoryName;
-
         $this->title = $category->maskForTitle;
-
         $keywords = $category->name;
 
         $this->view->params['h1'] = $category->h1;
@@ -93,7 +95,6 @@ class SiteController extends Controller
         return $this->render('sexgod/category/view', [
             'goods' => $allGoodsInCategoryAndSubCategory,
             'allCategory' => $allCategory,
-//            'breadcrumbs' => $breadcrumbs,
             'category' => $category,
             'pages' => $pages,
             'childsCurrentCategory' => $childsCurrentCategory,
