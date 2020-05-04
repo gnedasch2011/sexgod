@@ -88,7 +88,7 @@ class CategoryAbstract extends ActiveRecord
 
     public function getIdsChildsCurrentCategory()
     {
-        $listCateg  = self::find()
+        $listCateg = self::find()
             ->distinct()
             ->orderBy('name')
             ->where(['parent_id' => $this->id])
@@ -227,7 +227,7 @@ class CategoryAbstract extends ActiveRecord
      * @return array
      * @throws \yii\db\Exception
      */
-    public static function getAllGoods($currentIDCategory)
+    public static function getAllGoods($currentIDCategory, $paramsGet = [])
     {
         $listCateg = static::find()->all();
         $resultArr = ArrayHelper::map($listCateg, 'slug', 'parent_id', 'id');
@@ -235,15 +235,40 @@ class CategoryAbstract extends ActiveRecord
         $arrIdCategoryAll = self::recursiveLevelDownCategory($currentIDCategoryArr, $resultArr);
         $arrIdCategoryAllArr = explode(',', $arrIdCategoryAll);
 
+
         $allGoods = Goods::find()
             ->join('left join', 'goods_category ghc', 'ghc.aid = goods.aID')
             ->with('attrProduct')
-//            ->join('left join', 'category c', 'c.id = ghc.category_id')
             ->where(['ghc.category_id' => $arrIdCategoryAllArr])
 //            ->limit(100)
 //            ->all()
 
         ;
+
+        if (!empty($paramsGet) && isset($paramsGet['attr'])) {
+
+            $allGoods = Goods::find()
+                ->leftJoin('attr_product ap', 'ap.product_id = goods.aID')
+                ->leftJoin('goods_category ghc', 'ghc.aid = goods.aID')
+                ->leftJoin('attr a', 'ap.product_id = goods.aID')
+                ->with('attrProduct')
+                ->andWhere(['ghc.category_id' => $arrIdCategoryAllArr]);
+
+
+            foreach ($paramsGet['attr'] as $idAttr => $attrValue) {
+
+                $allGoods->andWhere([
+                    "and",
+                    ['ap.attr_id' => $idAttr],
+                    ['ap.value' => $attrValue],
+
+                ]);
+
+                $allGoods->andWhere(['ghc.category_id' => $arrIdCategoryAllArr]);
+            }
+
+        }
+
 
         return $allGoods;
     }

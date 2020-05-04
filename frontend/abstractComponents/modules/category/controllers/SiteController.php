@@ -32,8 +32,12 @@ class SiteController extends Controller
 
     public function actionCategory($categoryName = "")
     {
-        $attr = Attr::findOne(['id'=>9]);
+        $attr = Attr::findOne(['id' => 9]);
 //               echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
+
+        $paramsGet = Yii::$app->request->queryParams;
+        unset($paramsGet['categoryName']);
+
 
 
         if (\Yii::$app->request->get('clearCart')) {
@@ -46,7 +50,9 @@ class SiteController extends Controller
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
 
         //для пагинации
-        $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id);
+        $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id, $paramsGet);
+
+
         $pages = new Pagination(['totalCount' => $allGoodsInCategoryAndSubCategory->count()]);
 
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
