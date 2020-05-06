@@ -118,15 +118,18 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                [
-                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
-                    // ...настройка других параметров правила...
-                ],
                 "sitemap/otherUrls/" => "site/site/sitemap-other-urls",
                 "sitemap/<SitemapPage:\w+>/" => "site/site/sitemap-page",
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
-                "catalog/<categoryName:\S+>/" => 'category/site/category',
+
+//                "catalog/<categoryName:\S+>/" => 'category/site/category',
+
+                [
+                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
+                    // ...настройка других параметров правила...
+                ],
+
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",

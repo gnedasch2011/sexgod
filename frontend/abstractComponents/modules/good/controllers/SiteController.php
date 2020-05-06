@@ -3,7 +3,9 @@
 namespace frontend\abstractComponents\modules\good\controllers;
 
 use app\models\sexgod\category\CategoryBase;
+use frontend\abstractComponents\models\CategoryAbstract;
 use frontend\abstractComponents\modules\good\models\Goods;
+use frontend\abstractComponents\modules\url\models\Urls;
 use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
 use frontend\models\form\CallLeadForm;
 use Yii;
@@ -66,8 +68,33 @@ class SiteController extends Controller
         ];
 
         $ids = [669, 5602, 5617, 16363, 39418, 39419, 50084, 71454, 71455, 73808, 73809, 73811, 76345, 76348, 79257, 79262, 80401, 81972, 82272, 82274, 8230882752, 82753, 83060, 98418, 104769, 104784, 104785, 107507, 107535, 109419, 122005, 140063, 140064, 140065, 140066, 140067, 140068, 140069140070, 140071, 140072];
-                
-        
+
+//        $allCats = CategoryAbstract::find()->all();
+//
+//        foreach ($allCats as $cat) {
+//
+//            $newUrls = new Urls();
+//
+//            $newUrls->alias = "catalog/" . $cat->slug;
+//            $newUrls->route = "category/site/category-with-filter";
+//            $newUrls->param = $cat->id;
+//            $newUrls->title = $cat->title;
+//            $newUrls->h1 = $cat->h1;
+//            $newUrls->keywords = $cat->h1;
+//            $newUrls->description = $cat->description;
+//            $newUrls->isAdaptive = 0;
+//            $newUrls->status = 1;
+//            $newUrls->params_for_filter = "null";
+//
+//            if (!$newUrls->save()) {
+//                echo "<pre>"; print_r($newUrls->errors);die();
+//            }
+//        }
+
+        echo "<pre>";
+        print_r($allCats);
+        die();
+        die();
 
         foreach (Goods::find()
                      ->select('id,slug,aID')

@@ -23,6 +23,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -57,6 +58,10 @@ class SiteController extends Controller
         $categoryName = str_replace("/", '', $categoryName);
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
 
+
+        if(!isset($category->id)) {
+            throw new NotFoundHttpException;
+        };
         //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id, $paramsGet);
 

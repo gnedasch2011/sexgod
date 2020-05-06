@@ -10,6 +10,9 @@ class UrlRules extends \yii\web\UrlRule
 {
     public function init()
     {
+        
+        $this->pattern = '';
+        $this->route = '';
         parent::init();
     }
 
@@ -17,13 +20,12 @@ class UrlRules extends \yii\web\UrlRule
     public function createUrl($manager, $route, $params)
     {
 
-      return true;
+      return false;
 
     }
 
     public function parseRequest($manager, $request)
     {
-
         $pathInfo = $request->getPathInfo();
         $clearPath = substr($pathInfo, 0, -1);
 
@@ -35,7 +37,6 @@ class UrlRules extends \yii\web\UrlRule
 
 
         if ($route) {
-
             return [
                 $route->getAttribute('route'),
                 [
@@ -43,6 +44,8 @@ class UrlRules extends \yii\web\UrlRule
                 ]
             ];
         }
-        return false;  // данное правило не применимо
+
+        return false;  // данное прав
+        //ило не применимо
     }
 }
