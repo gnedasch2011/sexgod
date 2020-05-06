@@ -118,6 +118,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
+                    // ...настройка других параметров правила...
+                ],
                 "sitemap/otherUrls/" => "site/site/sitemap-other-urls",
                 "sitemap/<SitemapPage:\w+>/" => "site/site/sitemap-page",
                 "search" => "search/index",
@@ -135,6 +139,7 @@ return [
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
+
             ],
 
         ],

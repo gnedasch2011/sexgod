@@ -1057,7 +1057,6 @@ use yii\widgets\Breadcrumbs;
                             <?php endforeach; ?>
                         </div>
                     </div>
-
                     <div class="products-view__pagination">
                         <?= \yii\widgets\LinkPager::widget([
                             'pagination' => $pages,

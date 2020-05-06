@@ -244,7 +244,6 @@ class CategoryAbstract extends ActiveRecord
 //            ->all()
 
         ;
-
         if (!empty($paramsGet) && isset($paramsGet['attr'])) {
 
             $allGoods = Goods::find()
@@ -253,7 +252,6 @@ class CategoryAbstract extends ActiveRecord
                 ->leftJoin('attr a', 'ap.product_id = goods.aID')
                 ->with('attrProduct')
                 ->andWhere(['ghc.category_id' => $arrIdCategoryAllArr]);
-
 
             foreach ($paramsGet['attr'] as $idAttr => $attrValue) {
 
