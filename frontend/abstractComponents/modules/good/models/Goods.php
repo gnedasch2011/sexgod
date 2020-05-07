@@ -8,7 +8,7 @@ use frontend\abstractComponents\modules\brand\models\Brands;
 use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
-use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
+use frontend\abstractComponents\modules\attribute\models\AttrProduct;
 use Yii;
 use yii\helpers\ArrayHelper;
 

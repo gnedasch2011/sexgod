@@ -127,7 +127,11 @@ class SiteController extends Controller
     }
 
     public function actionCategoryWithFilter($urlId = "")
-    {      
+    {
+        $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
+
+//     echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
+
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
         $urlModel = Urls::findOne(['id' => $urlId]);
 

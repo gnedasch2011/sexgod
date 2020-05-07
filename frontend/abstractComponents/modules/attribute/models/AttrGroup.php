@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\abstractComponents\widgets\filterCategory\models;
+namespace frontend\abstractComponents\modules\attribute\models;
 
 use Yii;
 

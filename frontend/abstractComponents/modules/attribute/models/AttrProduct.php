@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\abstractComponents\widgets\filterCategory\models;
+namespace frontend\abstractComponents\modules\attribute\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -70,28 +70,33 @@ class AttrProduct extends \yii\db\ActiveRecord
     {
 
         $res = self::find()
-            ->select('attr_product.value')
             ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
             ->where([self::tableName() . '.attr_id' => $idAttr])
             ->andWhere(['gc.category_id' => $idsCat]);
 
         if ($value == 'min') {
+            $res->select('attr_product.value');
+
             return ($res->min('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
         }
 
         if ($value == 'max') {
+            $res->select('attr_product.value');
             return ($res->max('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
         }
 
         if ($value == 'distinct') {
-            if ($distVal = $res->select('distinct(attr_product.value)')->all()) {
-                return ArrayHelper::getColumn($distVal, 'value');
-            }
+
+            $res->select("value as name, count('id') as countItems");
+            $res->groupBy('value');
+
+             return $res->asArray()->all();
+
 
         }
 
 
-        return 0;
+        return false;
     }
 
 
