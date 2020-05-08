@@ -114,9 +114,16 @@ use yii\widgets\Breadcrumbs;
                                 ]); ?>
 
                                 <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
+                                    'id' => 4,
+                                    'category' => $category
+                                ]); ?>
+
+                                <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
                                     'id' => 10,
                                     'category' => $category
                                 ]); ?>
+
+
 
                                 <?php /*?>
 
