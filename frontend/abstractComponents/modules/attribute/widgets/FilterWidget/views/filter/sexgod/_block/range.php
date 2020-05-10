@@ -11,12 +11,12 @@
             <div class="filter__container">
                 <div class="filter-price"
                      data-min="<?= $attr->getValueInAttrProductAndInChildCat($category->id, 'min') ;?>"
-                     data-max="1500" data-from="590" data-to="1130">
+                     data-max="<?= $attr->getValueInAttrProductAndInChildCat($category->id, 'max') ;?>" data-from="<?= $attr->getValueInAttrProductAndInChildCat($category->id, 'min') ;?>" data-to="<?= $attr->getValueInAttrProductAndInChildCat($category->id, 'max') ;?>">
                     <div class="filter-price__slider"></div>
                     <div class="filter-price__title"><?= $attr->name; ?>: <span
-                                class="filter-price__min-value"></span>
+                                class="filter-price__min-value"></span> <?= $attr->unit ;?>.
                         – <span
-                                class="filter-price__max-value"></span>
+                                class="filter-price__max-value"></span> <?= $attr->unit ;?>.
                     </div>
                 </div>
             </div>

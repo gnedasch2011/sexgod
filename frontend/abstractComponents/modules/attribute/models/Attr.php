@@ -73,10 +73,12 @@ class Attr extends \yii\db\ActiveRecord
      * @return int|mixed
      */
     public function getValueInAttrProductAndInChildCat($idCat, $value)
-    {
-        $idsCategory = CategoryAbstract::findOne(['id'=>$idCat]);
-
+    {       
+        
+       $idsCategory = CategoryAbstract::findOne(['id'=>$idCat]);
         $idsChildCat = ArrayHelper::getColumn($idsCategory->idsChildsCurrentCategory,'id');
+        $idsChildCat[] = $idsCategory->id;
+
         return AttrProduct::valueAttrProductInCat($this->id, $idsChildCat, $value);
     }
 

@@ -20,7 +20,6 @@ class MenuIMWidget extends Widget
     {
         if (!isset($this->categoryName)) {
             $this->categoryName = 'seks-igrushki';
-
         }
 
         $menuItem = CategoryAbstract::getActiveMenuItems($this->categoryName);

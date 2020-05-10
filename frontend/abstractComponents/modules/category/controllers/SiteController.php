@@ -69,7 +69,6 @@ class SiteController extends Controller
         $pages = new Pagination([
             'totalCount' => $allGoodsInCategoryAndSubCategory->count(),
             'pageSize' => 36,
-
         ]);
 
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
@@ -127,7 +126,7 @@ class SiteController extends Controller
     }
 
     public function actionCategoryWithFilter($urlId = "")
-    {
+    {   
         $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
 
 //     echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
@@ -145,9 +144,11 @@ class SiteController extends Controller
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id, $paramsGet);
         $pages = new Pagination([
             'totalCount' => $allGoodsInCategoryAndSubCategory->count(),
+            'pageSize' => 30,
         ]);
 
-        $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory->offset($pages->offset)
+        $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory
+            ->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
@@ -184,7 +185,6 @@ class SiteController extends Controller
         ];
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
-
         //Плитки тегов
         $childsCurrentCategory = $category->getChildsCurrentCategory();
         $IdsChildsCurrentCategory = $category->getIdsChildsCurrentCategory();

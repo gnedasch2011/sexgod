@@ -99,7 +99,7 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning'],
                 ],
             ],
         ],
@@ -125,11 +125,6 @@ return [
 
 //                "catalog/<categoryName:\S+>/" => 'category/site/category',
 
-                [
-                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
-                    // ...настройка других параметров правила...
-                ],
-
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
                 "support" => 'site/support',
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
@@ -142,6 +137,10 @@ return [
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
+                [
+                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
+                    // ...настройка других параметров правила...
+                ],
 
             ],
 

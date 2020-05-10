@@ -68,37 +68,49 @@ class AttrProduct extends \yii\db\ActiveRecord
 
     public static function valueAttrProductInCat($idAttr, $idsCat, $value)
     {
+        $cache = Yii::$app->cache;
+        $cacheKey = $idAttr . implode('_', $idsCat) . $value;
 
-        $res = self::find()
-            ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
-            ->where([self::tableName() . '.attr_id' => $idAttr])
-            ->andWhere(['gc.category_id' => $idsCat]);
+        $data = false;
 
-        if ($value == 'min') {
-            $res->select('attr_product.value');
+        $data = $cache->getOrSet($cacheKey, function () use ($idAttr, $idsCat, $value) {
+            $res = self::find()
+                ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
+                ->where([self::tableName() . '.attr_id' => $idAttr])
+                ->andWhere(['gc.category_id' => $idsCat]);
 
-            return ($res->min('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
-        }
+            if ($value == 'min') {
+                $min = $res->select('min(CAST(`attr_product`.`value` as signed)) as minPrice')->asArray()->one();
 
-        if ($value == 'max') {
-            $res->select('attr_product.value');
-            return ($res->max('attr_product.value') == false) ? 0 : $res->min('attr_product.value');
-        }
+                return (isset($min['minPrice'])) ? $min['minPrice'] : 0;
+            }
 
-        if ($value == 'distinct') {
+            if ($value == 'max') {
+                $max = $res->select(', max(CAST(`attr_product`.`value` as signed)) as maxPrice')->asArray()->one();
 
-            $res->select("value as name, count('id') as countItems");
-            $res->groupBy('value');
+                return (isset($max['maxPrice'])) ? $max['maxPrice'] : 0;
+            }
 
-             return $res->asArray()->all();
+            if ($value == 'distinct') {
+
+                $res->select("value as name, count('id') as countItems");
+                $res->groupBy('value');
+
+                return $res->asArray()->all();
 
 
-        }
+            }
+   });
 
+        return $data;
 
-        return false;
     }
 
+    public function returnCache()
+    {
+        
+    }
+    
 
     public static function distinctValuesInCats($idAttr, $idsCat, $value)
     {
