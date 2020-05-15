@@ -4,8 +4,10 @@ use yii\helpers\Html;
 use yii\web\View;
 use yii\widgets\Breadcrumbs;
 
-/* @var $this yii\web\View */
-
+$this->registerJsFile("@web/js/filter/main.js",
+    ['rel' => 'stylesheet',
+        'depends'=> ['frontend\assets\AppAsset']],
+    'mystyle');
 ?>
 <div class="container">
     <div class="shop-layout shop-layout--sidebar--start">
@@ -114,6 +116,7 @@ use yii\widgets\Breadcrumbs;
                                 ]); ?>
 
                                 <?php
+                                $arrAttr = [21];
                                 $arrAttr = [13, 21, 22, 23, 25, 32, 33];
                                 ?>
 

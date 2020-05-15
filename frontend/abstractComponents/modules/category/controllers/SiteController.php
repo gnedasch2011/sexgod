@@ -59,7 +59,7 @@ class SiteController extends Controller
         $category = CategoryBase::find()->where(['slug' => $categoryName])->one();
 
 
-        if(!isset($category->id)) {
+        if (!isset($category->id)) {
             throw new NotFoundHttpException;
         };
         //для пагинации
@@ -126,7 +126,7 @@ class SiteController extends Controller
     }
 
     public function actionCategoryWithFilter($urlId = "")
-    {   
+    {
         $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
 
 //     echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
@@ -135,13 +135,23 @@ class SiteController extends Controller
         $urlModel = Urls::findOne(['id' => $urlId]);
 
         $category = CategoryBase::findOne(['id' => $urlModel->param]);
-     
+
         //$paramsGet для атрибутов
+
+
         $paramsGet = [];
         $urlModel->params_for_filter = '';
-        parse_str($urlModel->params_for_filter,$paramsGet);
-        
+
+        $paramsGet = (!empty($urlModel->params_for_filter)) ? parse_str($urlModel->params_for_filter, $paramsGet) : Yii::$app->request->get();
+
+
+        //   $paramsGet['attr'][{attr_id] = [value]
+
+        $this->generateNameCache($paramsGet);
+
+
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id, $paramsGet);
+
         $pages = new Pagination([
             'totalCount' => $allGoodsInCategoryAndSubCategory->count(),
             'pageSize' => 30,
@@ -151,6 +161,7 @@ class SiteController extends Controller
             ->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
+        
         $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
 
 
@@ -200,4 +211,25 @@ class SiteController extends Controller
         ]);
     }
 
+    public function  generateNameCache($paramsGet)
+    {
+        $nameCache = '';
+
+        foreach ($paramsGet as $param) {
+
+            if (is_array($param)) {
+                $nameCache .= implode('_', $param);
+                continue;
+            }
+
+            $nameCache .= ' ' . $param;
+        }
+
+        $nameCacheRes = str_replace(' ', '_', $nameCache);
+
+        return $nameCacheRes;
+    }
+
 }
+
+

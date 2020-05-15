@@ -244,6 +244,7 @@ class CategoryAbstract extends ActiveRecord
 //            ->all()
 
         ;
+
         if (!empty($paramsGet) && isset($paramsGet['attr'])) {
 
             $allGoods = Goods::find()

@@ -32,6 +32,7 @@ class Attr extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['group_id'], 'integer'],
+            [['filter_opened'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['unit'], 'string'],
         ];
@@ -47,7 +48,7 @@ class Attr extends \yii\db\ActiveRecord
             'name' => 'Name',
             'group_id' => 'Group ID',
             'unit' => 'Ед. измерения',
-
+            'filter_opened' => 'Ед. измерения',
         ];
     }
 
@@ -65,23 +66,40 @@ class Attr extends \yii\db\ActiveRecord
     {
         return AttrProduct::minValueAttrProductInCat($this->id, $idCat, $value);
     }
-       
-       
-        /**
+
+
+    /**
      * @param $idCat нужны так же внутренние
      * @param $value min/max
      * @return int|mixed
      */
     public function getValueInAttrProductAndInChildCat($idCat, $value)
-    {       
-        
-       $idsCategory = CategoryAbstract::findOne(['id'=>$idCat]);
-        $idsChildCat = ArrayHelper::getColumn($idsCategory->idsChildsCurrentCategory,'id');
+    {
+
+        $idsCategory = CategoryAbstract::findOne(['id' => $idCat]);
+        $idsChildCat = ArrayHelper::getColumn($idsCategory->idsChildsCurrentCategory, 'id');
         $idsChildCat[] = $idsCategory->id;
 
         return AttrProduct::valueAttrProductInCat($this->id, $idsChildCat, $value);
     }
 
 
+    public function getCssFilterOpened()
+    {
+        if ($this->filter_opened) {
+            return ' filter--opened';
+        }
+        return '';
+    }
 
+    public function getLinkWithFilter($value)
+    {
+        if(isset($value)){
+            $link = "/catalog/seks-igrushki/?attr[{$this->id}]={$value}";
+
+            return $link;
+        }
+
+        return '#';
+    }
 }

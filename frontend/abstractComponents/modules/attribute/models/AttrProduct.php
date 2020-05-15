@@ -73,6 +73,11 @@ class AttrProduct extends \yii\db\ActiveRecord
 
         $data = false;
 
+        $cacheDisabeled = \Yii::$app->request->post('cacheDisabled');
+        if($cacheDisabeled){
+            $cacheKey = false;
+        }
+
         $data = $cache->getOrSet($cacheKey, function () use ($idAttr, $idsCat, $value) {
             $res = self::find()
                 ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
