@@ -6,7 +6,7 @@ use yii\widgets\Breadcrumbs;
 
 $this->registerJsFile("@web/js/filter/main.js",
     ['rel' => 'stylesheet',
-        'depends'=> ['frontend\assets\AppAsset']],
+        'depends' => ['frontend\assets\AppAsset']],
     'mystyle');
 ?>
 <div class="container">
@@ -23,12 +23,13 @@ $this->registerJsFile("@web/js/filter/main.js",
                             </svg>
                         </button>
                     </div>
-                    <div class="block-sidebar__item">
-                        <div class="widget-filters widget widget-filters--offcanvas--mobile"
-                             data-collapse data-collapse-opened-class="filter--opened">
-                            <h4 class="widget-filters__title widget__title">Фильтры</h4>
-                            <div class="widget-filters__list">
-                                <?php /*?>
+                    <form id="main_filter" action="/good/ajax/get-products/">
+                        <div class="block-sidebar__item">
+                            <div class="widget-filters widget widget-filters--offcanvas--mobile"
+                                 data-collapse data-collapse-opened-class="filter--opened">
+                                <h4 class="widget-filters__title widget__title">Фильтры</h4>
+                                <div class="widget-filters__list">
+                                    <?php /*?>
 
                                     <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
@@ -112,23 +113,23 @@ $this->registerJsFile("@web/js/filter/main.js",
                                     </div>
 
                                      <?php */ ?>
-                                <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
-                                ]); ?>
-
-                                <?php
-                                $arrAttr = [21];
-                                $arrAttr = [13, 21, 22, 23, 25, 32, 33];
-                                ?>
-
-                                <?php foreach ($arrAttr as $attrId): ?>
-                                    <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
-                                        'id' => $attrId,
-                                        'category' => $category
+                                    <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
                                     ]); ?>
 
-                                <?php endforeach; ?>
+                                    <?php
+                                    $arrAttr = [21];
+                                    $arrAttr = [13, 21, 22, 23, 25, 32, 33];
+                                    ?>
 
-                                <?php /*?>
+                                    <?php foreach ($arrAttr as $attrId): ?>
+                                        <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
+                                            'id' => $attrId,
+                                            'category' => $category
+                                        ]); ?>
+
+                                    <?php endforeach; ?>
+
+                                    <?php /*?>
                                 <div class="widget-filters__item">
                                     <div class="filter filter--opened" data-collapse-item>
                                         <button type="button" class="filter__title"
@@ -730,14 +731,15 @@ $this->registerJsFile("@web/js/filter/main.js",
                                     </div>
                                 </div>
     <?php */ ?>
-                            </div>
+                                </div>
 
-                            <div class="widget-filters__actions d-flex">
-                                <button class="btn btn-primary btn-sm">Filter</button>
-                                <button class="btn btn-secondary btn-sm">Reset</button>
+                                <div class="widget-filters__actions d-flex">
+                                    <button class="btn btn-primary btn-sm">Filter</button>
+                                    <button class="btn btn-secondary btn-sm">Reset</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <?php /*?>
 
                     <div class="block-sidebar__item d-none d-lg-block">

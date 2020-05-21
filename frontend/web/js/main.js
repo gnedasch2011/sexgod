@@ -43,7 +43,7 @@ $(document).on('click', '.sexGodBuyOneClick_send', function (e) {
         }
     });
 })
-svg4everybody();
+// svg4everybody();
 
 $(document).on('click', '.getFuturesProductsInCategoryJS', function (e) {
     e.preventDefault();
@@ -125,7 +125,7 @@ $(document).on('click', '.getRandomProducts', function (e) {
 
     getProductsParams.categoryId = categoryId;
     let placeForHtml = getProductsParams.classForResult;
-        console.log(getProductsParams);
+    console.log(getProductsParams);
     if (placeForHtml) {
         $.ajax({
             url: '/good/ajax/get-products/',
@@ -150,7 +150,7 @@ let checkActiveGroup = function (context) {
     $('li', $groupList).each(function (i, val) {
         $(val).find('.getProducts').removeClass('block-header__group--active')
     })
-        console.log('fd');
+    console.log('fd');
     $(context).addClass('block-header__group--active');
     return true;
 };

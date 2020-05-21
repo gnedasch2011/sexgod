@@ -290,7 +290,6 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
                                                     <div class="menu__item-icon"><img
-                                                                srcset="/template/red_stroyka/images/languages/language-3.png 1x, images/languages/language-3@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-3.png"
                                                                 alt=""></div>
                                                     Нижний Новгород

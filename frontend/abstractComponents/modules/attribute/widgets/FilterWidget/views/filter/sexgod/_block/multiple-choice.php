@@ -17,8 +17,11 @@
                                 <label class="filter-list__item">
 <span class="filter-list__input input-check">
 <span class="input-check__body">
-<input class="input-check__input"
-       type="checkbox">
+    <?= \yii\helpers\Html::hiddenInput('attrs[' . $attr->id . '][]', $value['name'], [
+        'class' => 'input-check__input',
+        'type' => 'checkbox',
+    ]) ?>
+
 <span class="input-check__box"></span>
 <svg class="input-check__icon"
      width="9px"

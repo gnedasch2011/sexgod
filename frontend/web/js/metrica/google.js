@@ -5,5 +5,4 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TV4F4DD');
 
-console.log('google');
 <!-- End Google Tag Manager -->

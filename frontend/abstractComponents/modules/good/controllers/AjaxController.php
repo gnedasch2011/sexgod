@@ -62,7 +62,7 @@ class AjaxController extends Controller
     }
 
     public function actionGetProducts()
-    {
+    {   
         $getProductsParams = \Yii::$app->request->post('getProductsParams');
 
         if ($getProductsParams) {
