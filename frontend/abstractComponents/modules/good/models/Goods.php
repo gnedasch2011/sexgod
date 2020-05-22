@@ -379,7 +379,7 @@ class Goods extends \yii\db\ActiveRecord
             $query->andWhere('');
 
         }
-
+        echo "<pre>"; print_r($query);die();
         return self::generateModels($query);
 
     }
