@@ -23,7 +23,8 @@ $this->registerJsFile("@web/js/filter/main.js",
                             </svg>
                         </button>
                     </div>
-                    <form id="main_filter" action="/good/ajax/get-products/">
+                    <form id="main_filter" action="/good/ajax/get-products-for-filter/">
+                        <?= Html::hiddenInput('categoryId', $category->id) ;?>
                         <div class="block-sidebar__item">
                             <div class="widget-filters widget widget-filters--offcanvas--mobile"
                                  data-collapse data-collapse-opened-class="filter--opened">

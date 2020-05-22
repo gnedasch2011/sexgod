@@ -9,6 +9,7 @@ use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
 use frontend\abstractComponents\modules\attribute\models\AttrProduct;
+use function GuzzleHttp\Psr7\parse_query;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -279,6 +280,12 @@ class Goods extends \yii\db\ActiveRecord
         return self::generateModels($query);
     }
 
+    public function actionGetProductsForFilter()
+    {
+
+    }
+
+
     public function getGoodsWithMaxDiscountInCategory($catId)
     {
         $ids = [];
@@ -346,6 +353,35 @@ class Goods extends \yii\db\ActiveRecord
         }
 
         return self::generateModels($query);
+    }
+
+
+    public static function getProductsForFilter($getProductsParams)
+    {
+        $query = (isset($params['query'])) ? $getProductsParams['query'] : self::getQuery();
+
+        parse_str($getProductsParams, $params);
+
+
+        if (isset($params['categoryId'])) {
+            $query->leftJoin('attr_product ap', 'ap.product_id=goods.id');
+            $query->leftJoin('goods_category gc', 'gc.aid=ap.product_id');
+            $catIds = CategoryAbstract::getAllCategorysIdsInCurrent($params['categoryId']);
+            $query->andWhere(['gc.category_id' => $catIds]);
+        }
+
+
+        if (isset($params['attrs'])) {
+            foreach ($params['attrs'] as $key => $attr) {
+
+            }
+
+            $query->andWhere('');
+
+        }
+
+        return self::generateModels($query);
+
     }
 
 
@@ -495,5 +531,6 @@ class Goods extends \yii\db\ActiveRecord
         return $this->hasOne(Brands::className(), ['name' => 'Vendor']);
 
     }
+
 
 }

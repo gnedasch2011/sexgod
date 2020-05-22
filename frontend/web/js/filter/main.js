@@ -36,7 +36,7 @@ let getProducts = function (params, action) {
     $.ajax({
         url: action,
         method: "post",
-        data: {params: params},
+        data: {getProductsParams: params},
 
         success: function (data) {
             console.log(data);

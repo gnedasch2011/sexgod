@@ -291,6 +291,19 @@ class CategoryAbstract extends ActiveRecord
         return $categorys;
     }
 
+    public static function getAllCategorysIdsInCurrent($currentIDCategory)
+    {
+
+        $categorys = self::find()
+            ->where(['parent_id' => $currentIDCategory])
+            ->all();
+
+        $categorysIds = ArrayHelper::getColumn($categorys, 'id');
+
+        return $categorysIds;
+    }
+
+
     static public function getAllCategoryName()
     {
         $listCateg = self::find()

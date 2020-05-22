@@ -232,7 +232,7 @@ class Category extends \yii\db\ActiveRecord
             ->all();
 
         $categorysIds = ArrayHelper::getColumn($categorys, 'id');
-
+        echo "<pre>"; print_r($categorysIds);die();
         return $categorys;
     }
 
