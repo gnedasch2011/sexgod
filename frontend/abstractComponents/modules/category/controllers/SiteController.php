@@ -173,11 +173,12 @@ class SiteController extends Controller
         $keywords = $urlModel->keywords;
 
         $this->view->params['h1'] = $urlModel->h1;
-//        $this->view->params['canonical'] = 'test';
+
+//        $this->view->params['canonical'] = $urlModel->alias;
 
         $description = trim($urlModel->description);
 
-        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => Yii::$app->request->hostInfo . "/" . \Yii::$app->request->pathInfo]);
+        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => Yii::$app->request->hostInfo . "/" .$urlModel->alias]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
         $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
 
