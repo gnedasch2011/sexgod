@@ -65,7 +65,7 @@ class AjaxController extends Controller
     public function actionGetProducts()
     {
         $getProductsParams = \Yii::$app->request->post('getProductsParams');
-
+       
         if ($getProductsParams) {
             $products = Goods::generateQueryFromParams($getProductsParams);
         }
@@ -82,7 +82,7 @@ class AjaxController extends Controller
 
     public function actionGetProductsForFilter()
     {
-
+    
         $getProductsParams = \Yii::$app->request->post('getProductsParams');
 
 
@@ -91,8 +91,8 @@ class AjaxController extends Controller
         }
 
         if ($products) {
-            return $this->renderAjax('@frontend/abstractComponents/modules/good/views/ajax/_mainPageFeatures.php', [
-                'items' => $products,
+            return $this->renderAjax('@frontend/abstractComponents/modules/good/views/ajax/_categoryPageList.php', [
+                'goods' => $products,
             ]);
         }
 

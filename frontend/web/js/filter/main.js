@@ -14,24 +14,39 @@ $(document).on('click', '.filter-list__item', function (e) {
 })
 
 
+//multiple-choice
+
 $(document).on('click', '.filter-list__item', function (e) {
     e.preventDefault();
-    console.log('change');
-    let selectorMainFilter = "#main_filter";
+
+    executeGetProduct("#main_filter", ".products-list__body");
+
+});
+
+
+//range
+$(document).on('mouseup', '.noUi-touch-area', function (e) {
+    e.preventDefault();
+
+    executeGetProduct("#main_filter", ".products-list__body");
+});
+
+
+let executeGetProduct = function (selectorMainFilter, selectorForResult) {
 
     let params = getParamsWithFilters(selectorMainFilter);
     let action = getAction(selectorMainFilter);
 
-    getProducts(params, action);
-});
+    let products = getProducts(params, action, selectorForResult);
 
+    $(selectorForResult).html(products);
+};
 
 let getAction = function (selectorMainFilter) {
     return $(selectorMainFilter).attr('action');
-}
+};
 
-let getProducts = function (params, action) {
-
+let getProducts = function (params, action, selectorForResult) {
 
     $.ajax({
         url: action,
@@ -39,13 +54,22 @@ let getProducts = function (params, action) {
         data: {getProductsParams: params},
 
         success: function (data) {
-            console.log(data);
+            $(selectorForResult).html(data);
         }
     });
-}
+
+};
 
 let getParamsWithFilters = function (selectorFilter) {
     let getParamsWithFilters = $(selectorFilter).serialize();
 
     return getParamsWithFilters;
-}
+};
+
+$(document).on('mouseenter', '.filter-categories__item--parent', function (e) {
+    $(this).next('.submenu-cat').show();
+});
+
+$(document).on('mouseleave', '.submenu-cat', function (e) {
+    $(this).hide();
+});

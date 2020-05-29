@@ -216,7 +216,7 @@ class Goods extends \yii\db\ActiveRecord
     {
         $query = new \yii\db\Query();
 
-        $query->select(["id"])
+        $query->select([self::tableName() . ".id"])
             ->from('goods');
 
         return $query;
@@ -362,24 +362,45 @@ class Goods extends \yii\db\ActiveRecord
 
         parse_str($getProductsParams, $params);
 
+        $query->leftJoin('attr_product ap', 'ap.product_id=goods.aID');
 
         if (isset($params['categoryId'])) {
-            $query->leftJoin('attr_product ap', 'ap.product_id=goods.id');
             $query->leftJoin('goods_category gc', 'gc.aid=ap.product_id');
             $catIds = CategoryAbstract::getAllCategorysIdsInCurrent($params['categoryId']);
             $query->andWhere(['gc.category_id' => $catIds]);
         }
 
-
         if (isset($params['attrs'])) {
-            foreach ($params['attrs'] as $key => $attr) {
+            $attrRange = [];
+            foreach ($params['attrs'] as $idAttr => $arrAttr) {
 
+
+                if (isset($arrAttr['range'])) {
+                    $attrRange[$idAttr] = $arrAttr;
+                    continue;
+                }
+
+                $query->andWhere(['and',
+                    ['ap.attr_id' => $idAttr],
+                    ['ap.value' => $arrAttr]
+                ]);
             }
 
-            $query->andWhere('');
+
+            if (isset($attrRange)) {
+                foreach ($attrRange as $idAttr => $arrAttr) {
+                    $minVal = $arrAttr['range']['min'] ?? 0;
+                    $maxVal = $arrAttr['range']['max'] ?? 0;
+
+                    $query->andWhere(['and',
+                        ['ap.attr_id' => $idAttr],
+                        ['and', 'ap.value>=' . $minVal, 'ap.value<=' . $maxVal]
+                    ]);
+                }
+            }
+
 
         }
-        echo "<pre>"; print_r($query);die();
         return self::generateModels($query);
 
     }
@@ -423,6 +444,8 @@ class Goods extends \yii\db\ActiveRecord
     public static function generateModels($query)
     {
         $result = [];
+
+        $begin = time();
 
         if ($query->all()) {
             $ids = ArrayHelper::map($query->all(), 'id', 'id');

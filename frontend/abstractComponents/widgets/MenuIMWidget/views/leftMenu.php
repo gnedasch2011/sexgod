@@ -1,5 +1,5 @@
 <div class="widget-filters__item">
-    <div class="filter" data-collapse-item>
+    <div class="filter filter--opened" data-collapse-item>
         <button type="button" class="filter__title" data-collapse-trigger>
             Категории
             <svg class="filter__arrow" width="12px" height="7px">
@@ -22,7 +22,7 @@
                                 <div class="filter-categories__counter"><?= $item->countItems; ?></div>
                             </li>
 
-                            <ul>
+                            <ul class="submenu-cat">
                                 <?php foreach ($item->subMenu as $subItem): ?>
                                     <?php if ($subItem->countItems): ?>
                                         <?php if ($subItem->slug == 'yaponskie-seks-igrushki'): ?>

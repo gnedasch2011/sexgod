@@ -19,9 +19,7 @@ class UrlRules extends \yii\web\UrlRule
 
     public function createUrl($manager, $route, $params)
     {
-
       return false;
-
     }
 
     public function parseRequest($manager, $request)

@@ -4,5 +4,4 @@
             <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $product]); ?>
         </div>
     <?php endforeach; ?>
-</div>                                                              
 </div>

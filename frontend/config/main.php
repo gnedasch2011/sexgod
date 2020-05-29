@@ -122,7 +122,7 @@ return [
                 "sitemap/<SitemapPage:\w+>/" => "site/site/sitemap-page",
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
-
+//
 //                "catalog/<categoryName:\S+>/" => 'category/site/category',
 
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
@@ -141,7 +141,6 @@ return [
                     'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
                     // ...настройка других параметров правила...
                 ],
-
             ],
 
         ],

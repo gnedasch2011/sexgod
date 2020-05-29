@@ -25,7 +25,6 @@ class FilterWithAttrWidget extends Widget
     {
 
         $attr = Attr::findOne(['id' => $this->id]);
-
         return $this->render($this->template . $attr->group->type, [
             'attr' => $attr,
             'category' => $this->category,

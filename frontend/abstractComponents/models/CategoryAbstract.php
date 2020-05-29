@@ -17,7 +17,7 @@ class CategoryAbstract extends ActiveRecord
 {
 
     const ITEMS_TYPE = 1;
-    const ROOT_PATH_FOR_CAT = '/catalog/';
+    const ROOT_URL_FOR_CAT = '/catalog/';
 
     public function behaviors()
     {
@@ -391,7 +391,7 @@ class CategoryAbstract extends ActiveRecord
     {
 
         if (isset($this->slug)) {
-            $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
+            $fullUrl = self::ROOT_URL_FOR_CAT . $this->slug . '/';
             return $fullUrl;
         }
         return '';
@@ -523,7 +523,7 @@ class CategoryAbstract extends ActiveRecord
         $cat = self::findOne(['id' => $idCat]);
 
         if ($cat) {
-            return self::ROOT_PATH_FOR_CAT . $cat->slug . '/';
+            return self::ROOT_URL_FOR_CAT . $cat->slug . '/';
         }
 
         return '';

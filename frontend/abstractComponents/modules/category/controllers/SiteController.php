@@ -127,7 +127,7 @@ class SiteController extends Controller
 
     public function actionCategoryWithFilter($urlId = "")
     {
-        $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
+//        $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
 
 //     echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
 
@@ -157,13 +157,15 @@ class SiteController extends Controller
             'pageSize' => 30,
         ]);
 
+
         $allGoodsInCategoryAndSubCategory = $allGoodsInCategoryAndSubCategory
             ->offset($pages->offset)
+            ->groupBy('aID')
             ->limit($pages->limit)
-            ->all();
-        
-        $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
+                        ->all()
+        ;
 
+        $allCategory = CategoryBase::getAllCategoryInCurrent($category->id);
 
         //Для Сео
         $this->categoryName = $urlModel->title;
@@ -174,7 +176,6 @@ class SiteController extends Controller
 //        $this->view->params['canonical'] = 'test';
 
         $description = trim($urlModel->description);
-
 
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => Yii::$app->request->hostInfo . "/" . \Yii::$app->request->pathInfo]);
         $this->view->registerMetaTag(['name' => 'keyword', 'content' => $keywords]);
@@ -196,6 +197,8 @@ class SiteController extends Controller
         ];
 
         $this->view->params['breadcrumbs'] = $breadcrumbs;
+
+
         //Плитки тегов
         $childsCurrentCategory = $category->getChildsCurrentCategory();
         $IdsChildsCurrentCategory = $category->getIdsChildsCurrentCategory();
@@ -207,11 +210,10 @@ class SiteController extends Controller
             'pages' => $pages,
             'childsCurrentCategory' => $childsCurrentCategory,
             'IdsChildsCurrentCategory' => $IdsChildsCurrentCategory,
-
         ]);
     }
 
-    public function  generateNameCache($paramsGet)
+    public function generateNameCache($paramsGet)
     {
         $nameCache = '';
 

@@ -24,7 +24,7 @@ $this->registerJsFile("@web/js/filter/main.js",
                         </button>
                     </div>
                     <form id="main_filter" action="/good/ajax/get-products-for-filter/">
-                        <?= Html::hiddenInput('categoryId', $category->id) ;?>
+                        <?= Html::hiddenInput('categoryId', $category->id); ?>
                         <div class="block-sidebar__item">
                             <div class="widget-filters widget widget-filters--offcanvas--mobile"
                                  data-collapse data-collapse-opened-class="filter--opened">
@@ -119,7 +119,7 @@ $this->registerJsFile("@web/js/filter/main.js",
 
                                     <?php
                                     $arrAttr = [21];
-                                    $arrAttr = [13, 21, 22, 23, 25, 32, 33];
+                                    $arrAttr = [13,7, 24,21, 22, 23, 25, 32, 33, 30];
                                     ?>
 
                                     <?php foreach ($arrAttr as $attrId): ?>
@@ -919,9 +919,11 @@ $this->registerJsFile("@web/js/filter/main.js",
                     <div class="products-view__list products-list" data-layout="grid-3-sidebar"
                          data-with-features="false" data-mobile-grid-columns="2">
                         <div class="products-list__body">
-                            <?php foreach ($goods as $good): ?>
-                                <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
-                            <?php endforeach; ?>
+                            <?php
+                            echo $this->render('@frontend/abstractComponents/modules/good/views/ajax/_categoryPageList.php', [
+                                'goods' => $goods,
+                            ]);
+                            ?>
                         </div>
                     </div>
                     <div class="products-view__pagination">
