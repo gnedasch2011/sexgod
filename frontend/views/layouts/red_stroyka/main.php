@@ -10,7 +10,10 @@ use frontend\assets\RedStroykaAsset;
 use frontend\assets\MetricaAsset;
 
 RedStroykaAsset::register($this);
-MetricaAsset::register($this);
+
+if (!common\helpers\DevHelpers::localDevelop()) {
+    MetricaAsset::register($this);
+}
 
 ?>
 <?php $this->beginPage() ?>

@@ -24,7 +24,6 @@ class RedStroykaAsset extends AssetBundle
         '/template/red_stroyka/vendor/select2/js/select2.min.js',
         '/template/red_stroyka/js/main.js',
         '/template/red_stroyka/js/header.js',
-
         '/js/main.js',
 
         //модули
@@ -38,9 +37,9 @@ class RedStroykaAsset extends AssetBundle
         'template/red_stroyka/vendor/fontawesome/css/all.min.css',
         'template/red_stroyka/vendor/select2/css/select2.min.css',
         'template/red_stroyka/fonts/stroyka/stroyka.css',
-        'template/red_stroyka/css/sexgod.css',
         'template/red_stroyka/css/style.css',
         'template/red_stroyka/css/abstractForJs.css',
+        'template/red_stroyka/css/sexgod.css',
     ];
     public $baseUrl = '@web';
     public $depends = [

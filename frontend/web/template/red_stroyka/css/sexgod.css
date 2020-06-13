@@ -116,3 +116,9 @@
 .submenu-cat{
     display: none;
 }
+
+.product-card__buttons .btn{
+    font-size: 0.9em!important;
+    height: 2.5em!important;
+    padding: 0 30px!important;
+}

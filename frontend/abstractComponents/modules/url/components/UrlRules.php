@@ -9,8 +9,7 @@ use yii\web\UrlRuleInterface;
 class UrlRules extends \yii\web\UrlRule
 {
     public function init()
-    {
-        
+    {   
         $this->pattern = '';
         $this->route = '';
         parent::init();
@@ -26,7 +25,6 @@ class UrlRules extends \yii\web\UrlRule
     {
         $pathInfo = $request->getPathInfo();
         $clearPath = substr($pathInfo, 0, -1);
-
         $route = Urls::find()->where([
             'alias' => $clearPath,
             'route' => 'category/site/category-with-filter',

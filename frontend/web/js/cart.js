@@ -404,7 +404,7 @@ let createOrder = function (data, callback = false) {
 
         success: function (data) {
             if (callback) {
-                callback(data)
+                callback(data);
             }
         }
     });

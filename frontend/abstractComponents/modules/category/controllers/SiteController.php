@@ -30,6 +30,19 @@ use yii\web\NotFoundHttpException;
  */
 class SiteController extends Controller
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
     public $categoryName = 'category';
     public $title;
 
@@ -143,8 +156,6 @@ class SiteController extends Controller
         $urlModel->params_for_filter = '';
 
         $paramsGet = (!empty($urlModel->params_for_filter)) ? parse_str($urlModel->params_for_filter, $paramsGet) : Yii::$app->request->get();
-
-
         //   $paramsGet['attr'][{attr_id] = [value]
 
         $this->generateNameCache($paramsGet);
