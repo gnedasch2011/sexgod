@@ -35,8 +35,6 @@
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </ul>
-
-
                             <?php endforeach; ?>
                         </ul>
                     </div>

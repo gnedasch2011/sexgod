@@ -78,9 +78,15 @@ class Attr extends \yii\db\ActiveRecord
 
         $idsCategory = CategoryAbstract::findOne(['id' => $idCat]);
         $idsChildCat = ArrayHelper::getColumn($idsCategory->idsChildsCurrentCategory, 'id');
-        $idsChildCat[] = $idsCategory->id;
 
-        return AttrProduct::valueAttrProductInCat($this->id, $idsChildCat, $value);
+        $idsChildCat[] = $idsCategory->id;
+        $res = [];
+
+        if ($res = AttrProduct::valueAttrProductInCat($this->id, $idsChildCat, $value)) {
+            return $res;
+        }
+
+        return $res;
     }
 
 
@@ -94,7 +100,7 @@ class Attr extends \yii\db\ActiveRecord
 
     public function getLinkWithFilter($value)
     {
-        if(isset($value)){
+        if (isset($value)) {
             $link = "/catalog/seks-igrushki/?attr[{$this->id}]={$value}";
 
             return $link;

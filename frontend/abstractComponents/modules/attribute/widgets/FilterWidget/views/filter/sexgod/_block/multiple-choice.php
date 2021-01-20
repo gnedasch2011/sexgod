@@ -11,7 +11,7 @@
             <div class="filter__container">
                 <div class="filter-list">
                     <div class="filter-list__list">
-                        <!--                        Здесь надо вывести, все значения атрибута, встречающегося в этой категории-->
+                        <!--   Здесь надо вывести, все значения атрибута, встречающегося в этой категории-->
                         <?php foreach ($attr->getValueInAttrProductAndInChildCat($category->id, 'distinct') as $value): ?>
                             <?php if ($value): ?>
                                 <label class="filter-list__item">

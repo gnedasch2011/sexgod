@@ -70,20 +70,22 @@ class AttrProduct extends \yii\db\ActiveRecord
     {
         $cache = Yii::$app->cache;
         $cacheKey = $idAttr . implode('_', $idsCat) . $value;
-
         $data = false;
 
-        $cacheDisabeled = \Yii::$app->request->post('cacheDisabled');
-        if($cacheDisabeled){
+        $cacheDisabeledPost = \Yii::$app->request->post('cacheDisabled');
+        $cacheDisabeledGet = \Yii::$app->request->get('cacheDisabled');
+
+        if ($cacheDisabeledPost || $cacheDisabeledGet) {
             $cacheKey = false;
         }
-
+        
         $data = $cache->getOrSet($cacheKey, function () use ($idAttr, $idsCat, $value) {
+            
             $res = self::find()
                 ->leftJoin('goods_category gc', 'gc.aid = attr_product.product_id')
                 ->where([self::tableName() . '.attr_id' => $idAttr])
                 ->andWhere(['gc.category_id' => $idsCat]);
-
+          
             if ($value == 'min') {
                 $min = $res->select('min(CAST(`attr_product`.`value` as signed)) as minPrice')->asArray()->one();
 
@@ -105,7 +107,10 @@ class AttrProduct extends \yii\db\ActiveRecord
 
 
             }
-   });
+
+
+        });
+
 
         return $data;
 
@@ -113,9 +118,9 @@ class AttrProduct extends \yii\db\ActiveRecord
 
     public function returnCache()
     {
-        
+
     }
-    
+
 
     public static function distinctValuesInCats($idAttr, $idsCat, $value)
     {

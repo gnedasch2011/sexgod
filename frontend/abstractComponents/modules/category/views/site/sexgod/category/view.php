@@ -118,8 +118,10 @@ $this->registerJsFile("@web/js/filter/main.js",
                                     ]); ?>
 
                                     <?php
-                                    $arrAttr = [21];
+
+//                                    аттрибуты для фильтра
                                     $arrAttr = [13,7, 24,21, 22, 23, 25, 32, 33, 30];
+
                                     ?>
 
                                     <?php foreach ($arrAttr as $attrId): ?>

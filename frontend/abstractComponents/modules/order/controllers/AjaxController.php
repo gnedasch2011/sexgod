@@ -45,11 +45,11 @@ class AjaxController extends Controller
             $order->arr_product = \Yii::$app->cart->getArrProducts();
             if ($order->save()) {
                 //отправить заказ в магазин-поставщика
-                ApiSexGood::sendOrder($order);
+               //ApiSexGood::sendOrder($order);
 
                 //отправить оповещения клиенту и нам
-                Mail::sendCustomer ($order);
-                Mail::sendToAdmin($order);
+                \frontend\abstractComponents\modules\mail\models\Mail::sendCustomer ($order);
+                \frontend\abstractComponents\modules\mail\models\Mail::sendToAdmin($order);
 
                 return $this->asJson($order);
             } else {
