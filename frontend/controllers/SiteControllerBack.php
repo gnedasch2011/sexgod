@@ -392,5 +392,10 @@ class SiteController extends Controller
 
         return $this->render('/site/sexgod/pages/aboutUs');
     }
+    
+    public function actionTest()
+    {
+        
+    }
 
 }

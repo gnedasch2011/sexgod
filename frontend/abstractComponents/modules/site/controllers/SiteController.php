@@ -430,4 +430,46 @@ class SiteController extends Controller
         return $this->renderPartial($temp, $params);
     }
 
+    public function actionTest()
+    {
+        return $this->message_to_telegram('Тестирование!');
+    }
+
+
+    public function actionReturnIdUser()
+    {
+        $url = "https://api.telegram.org/bot1145345938:AAHZyCf1uPg10CvIvAJp7SaLYl6b5iRou_U/getUpdates";
+
+
+    }
+
+
+
+    public function message_to_telegram($text)
+    {
+
+        $TELEGRAM_TOKEN = '1145345938:AAHZyCf1uPg10CvIvAJp7SaLYl6b5iRou_U';
+//        $TELEGRAM_CHATID = '725086949';//мой
+        $TELEGRAM_CHATID = '264231577';//не мой
+
+        $ch = curl_init();
+        curl_setopt_array(
+            $ch,
+            array(
+                CURLOPT_URL => 'https://api.telegram.org/bot' . $TELEGRAM_TOKEN . '/sendMessage',
+                CURLOPT_POST => TRUE,
+                CURLOPT_RETURNTRANSFER => TRUE,
+                CURLOPT_TIMEOUT => 10,
+                CURLOPT_POSTFIELDS => array(
+                    'chat_id' => $TELEGRAM_CHATID,
+                    'text' => $text,
+                ),
+            )
+        );
+
+        $res = curl_exec($ch);
+
+        return $res;
+    }
+
 }

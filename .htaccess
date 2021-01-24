@@ -4,6 +4,9 @@
 </IfModule>
 
 <IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.sexgod.ru$ [NC]
+RewriteRule ^(.*)$ https://sexgod.ru/$1 [R=301,L]
 
 
 

@@ -293,11 +293,37 @@ getProducts"
 <div class="block block--highlighted block-categories block-categories--layout--compact">
     <div class="container">
         <div class="block-header">
-            <h3 class="block-header__title">Популярные категории</h3>
+            <h3 class="block-header__title">Товары для взрослых</h3>
             <div class="block-header__divider"></div>
         </div>
         <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
-            'items' => \frontend\abstractComponents\models\CategoryAbstract::getCategoryById([100, 163, 269, 101, 675, 717, 492, 457, 484, 449, 685, 592, 491, 591, 468, 392, 670, 550, 636, 637, 638, 640]),
+            'items' => \frontend\abstractComponents\models\CategoryAbstract::getCategoryById([100, 163, 269, 101, 675, 717, 492, 457, 484, 449, 685, 592, 491, 591, 468, 392, 670, 550, 637, 638, 640]),
+            'template' => 'mainPagePopularCategory',
+        ]); ?>
+
+    </div>
+</div>
+<div class="block block--highlighted block-categories block-categories--layout--compact">
+    <div class="container">
+        <div class="block-header">
+            <h3 class="block-header__title">Эротическая одежда</h3>
+            <div class="block-header__divider"></div>
+        </div>
+        <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
+            'items' => \frontend\abstractComponents\models\CategoryAbstract::getCategoryById([704, 705, 699, 698, 658, 717, 713, 686, 687, 690, 669, 691, 694, 695]),
+            'template' => 'mainPagePopularCategory',
+        ]); ?>
+
+    </div>
+</div>
+<div class="block block--highlighted block-categories block-categories--layout--compact">
+    <div class="container">
+        <div class="block-header">
+            <h3 class="block-header__title">БДСМ-товары</h3>
+            <div class="block-header__divider"></div>
+        </div>
+        <?= \frontend\abstractComponents\widgets\CategoryOutputWidget\CategoryOutputWidget::widget([
+            'items' => \frontend\abstractComponents\models\CategoryAbstract::getCategoryById([637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 655, 656, 657, 661, 662, 663, 664, 665, 666, 667, 668]),
             'template' => 'mainPagePopularCategory',
         ]); ?>
 

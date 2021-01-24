@@ -303,6 +303,7 @@ getProducts"
 
     </div>
 </div>
+
 <!-- .block-categories / end -->
 <!-- .block-products-carousel -->
 <!-- .block-products-carousel -->

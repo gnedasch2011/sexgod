@@ -30,7 +30,7 @@
                             <h5 class="footer-links__title">Информация</h5>
                             <ul class="footer-links__list">
                                 <li class="footer-links__item"><a href="/about/"
-                                                                  class="footer-links__link">О магазине</a></li>
+                                                                  class="footer-links__link">О секс-шопе</a></li>
                                 <li class="footer-links__item"><a href="/dostavka/"
                                                                   class="footer-links__link">Доставка</a></li>
                                 <li class="footer-links__item"><a href="/oplata/"

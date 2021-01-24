@@ -135,6 +135,7 @@ return [
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
+                "test/" => "site/site/test",
             ],
 
         ],

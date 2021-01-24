@@ -10,6 +10,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -156,7 +157,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                 <div class="topbar__container container">
                     <div class="topbar__row">
                         <div class="topbar__item topbar__item--link">
-                            <a class="topbar-link" href="/about/">О нас</a>
+                            <a class="topbar-link" href="/about/">О нашем секс-шопе</a>
                         </div>
                         <div class="topbar__item topbar__item--link">
 
@@ -199,7 +200,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Dashboard
+                                                    Личный кабинет
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -207,7 +208,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Edit Profile
+                                                    Мой профиль
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -215,7 +216,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Order History
+                                                    История заказов
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -223,7 +224,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Addresses
+                                                    Мои адреса
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -231,7 +232,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Password
+                                                    Сменить пароль
                                                 </a>
                                             </li>
                                             <li class="menu__item">
@@ -239,7 +240,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link"
                                                    href="#">
-                                                    Logout
+                                                    Выйти
                                                 </a>
                                             </li>
                                         </ul>
@@ -1371,7 +1372,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <div class="menu__item-submenu-offset"></div>
                                                         <a class="menu__item-link"
                                                            href="<?= CategoryAbstract::getLinkById(637); ?>">
-                                                            <?= CategoryAbstract::getNameById(637); ?>
+                                                            <?= CategoryAbstract::geth1ById(637); ?>
                                                         </a>
                                                     </li>
                                                     <li class="menu__item">
