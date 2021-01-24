@@ -3,7 +3,6 @@ return [
     'emailGnedasch2011' => 'gnedasch2011@yandex.ru',
     'phone' => '+7(495) 266-60-52',
     'phoneAncor' => '+74952666052',
-
     'nameShop' => 'SexGod.RU',
     'email' => 'info@sexgod.ru',
     'gtm' => 'GTM-TV4F4DD',

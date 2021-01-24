@@ -139,9 +139,6 @@ return [
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
 
-                "test/" => "site/site/test",
-
-
                 [
                     // ...настройка других параметров правила...
                     'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
@@ -149,7 +146,6 @@ return [
 
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
-
 
             ],
 

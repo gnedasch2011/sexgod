@@ -3,6 +3,8 @@
 namespace frontend\abstractComponents\modules\order\controllers;
 
 use app\modules\cart\models\Order;
+use frontend\abstractComponents\modules\mail\models\Mail\Mail;
+use frontend\abstractComponents\modules\order\components\ApiSexGood;
 use frontend\abstractComponents\widgets\modalWindow\Buy1Click;
 use frontend\modules\cart\models\form_for_order\Checkout;
 use Yii;
@@ -13,6 +15,9 @@ class AjaxController extends Controller
 
     public function actionCreateOrder()
     {
+
+
+
         $Order = new Order();
         $Buy1Click = new Buy1Click();
 
@@ -29,14 +34,23 @@ class AjaxController extends Controller
 
     public function actionCheckout()
     {
+
         $checkout = new Checkout();
+
         $order = new \frontend\abstractComponents\modules\order\models\Order();
 
         if ($checkout->load(\Yii::$app->request->post())) {
-
+        
             $order->attributes = $checkout->attributes;
             $order->arr_product = \Yii::$app->cart->getArrProducts();
             if ($order->save()) {
+                //отправить заказ в магазин-поставщика
+               //ApiSexGood::sendOrder($order);
+
+                //отправить оповещения клиенту и нам
+                \frontend\abstractComponents\modules\mail\models\Mail::sendCustomer ($order);
+                \frontend\abstractComponents\modules\mail\models\Mail::sendToAdmin($order);
+
                 return $this->asJson($order);
             } else {
                 echo "<pre>";

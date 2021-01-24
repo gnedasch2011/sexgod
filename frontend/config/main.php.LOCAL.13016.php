@@ -99,7 +99,7 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                'levels' => ['error', 'warning'],
                 ],
             ],
         ],
@@ -117,19 +117,16 @@ return [
             'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-
             'rules' => [
-
                 "sitemap/otherUrls/" => "site/site/sitemap-other-urls",
                 "sitemap/<SitemapPage:\w+>/" => "site/site/sitemap-page",
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
-//
-//                "catalog/<categoryName:\S+>/" => 'category/site/category',
-
+                "catalog/<categoryName:\S+>/" => 'category/site/category',
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
                 "support" => 'site/support',
-
+                "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
+                "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
                 "about" => "page/site/about",
                 "contacts" => "page/site/contacts",
                 "dostavka" => "page/site/dostavka",
@@ -138,19 +135,7 @@ return [
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
-
                 "test/" => "site/site/test",
-
-
-                [
-                    // ...настройка других параметров правила...
-                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
-                ],
-
-                "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
-                "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
-
-
             ],
 
         ],

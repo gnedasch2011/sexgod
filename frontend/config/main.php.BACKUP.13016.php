@@ -138,9 +138,9 @@ return [
                 "garantiya" => "page/site/garantiya",
                 "" => "site/site/index",
                 "sitemap.xml/" => "site/site/sitemap",
-
+<<<<<<< HEAD
                 "test/" => "site/site/test",
-
+=======
 
                 [
                     // ...настройка других параметров правила...
@@ -150,7 +150,7 @@ return [
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
 
-
+>>>>>>> 7b4b26f368bef4267b56b99342d7b39d4cf6ff98
             ],
 
         ],

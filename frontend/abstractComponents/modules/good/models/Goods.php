@@ -8,7 +8,8 @@ use frontend\abstractComponents\modules\brand\models\Brands;
 use frontend\abstractComponents\modules\good\models\GoodsCategory;
 use frontend\abstractComponents\helpers\CommonHelper;
 use frontend\abstractComponents\models\CategoryAbstract;
-use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
+use frontend\abstractComponents\modules\attribute\models\AttrProduct;
+use function GuzzleHttp\Psr7\parse_query;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -215,7 +216,7 @@ class Goods extends \yii\db\ActiveRecord
     {
         $query = new \yii\db\Query();
 
-        $query->select(["id"])
+        $query->select([self::tableName() . ".id"])
             ->from('goods');
 
         return $query;
@@ -278,6 +279,12 @@ class Goods extends \yii\db\ActiveRecord
 
         return self::generateModels($query);
     }
+
+    public function actionGetProductsForFilter()
+    {
+
+    }
+
 
     public function getGoodsWithMaxDiscountInCategory($catId)
     {
@@ -349,6 +356,56 @@ class Goods extends \yii\db\ActiveRecord
     }
 
 
+    public static function getProductsForFilter($getProductsParams)
+    {
+        $query = (isset($params['query'])) ? $getProductsParams['query'] : self::getQuery();
+
+        parse_str($getProductsParams, $params);
+
+        $query->leftJoin('attr_product ap', 'ap.product_id=goods.aID');
+
+        if (isset($params['categoryId'])) {
+            $query->leftJoin('goods_category gc', 'gc.aid=ap.product_id');
+            $catIds = CategoryAbstract::getAllCategorysIdsInCurrent($params['categoryId']);
+            $query->andWhere(['gc.category_id' => $catIds]);
+        }
+
+        if (isset($params['attrs'])) {
+            $attrRange = [];
+            foreach ($params['attrs'] as $idAttr => $arrAttr) {
+
+
+                if (isset($arrAttr['range'])) {
+                    $attrRange[$idAttr] = $arrAttr;
+                    continue;
+                }
+
+                $query->andWhere(['and',
+                    ['ap.attr_id' => $idAttr],
+                    ['ap.value' => $arrAttr]
+                ]);
+            }
+
+
+            if (isset($attrRange)) {
+                foreach ($attrRange as $idAttr => $arrAttr) {
+                    $minVal = $arrAttr['range']['min'] ?? 0;
+                    $maxVal = $arrAttr['range']['max'] ?? 0;
+
+                    $query->andWhere(['and',
+                        ['ap.attr_id' => $idAttr],
+                        ['and', 'ap.value>=' . $minVal, 'ap.value<=' . $maxVal]
+                    ]);
+                }
+            }
+
+
+        }
+        return self::generateModels($query);
+
+    }
+
+
     /**
      * @param array $params
      * @return mixed|\yii\db\Query
@@ -387,6 +444,8 @@ class Goods extends \yii\db\ActiveRecord
     public static function generateModels($query)
     {
         $result = [];
+
+        $begin = time();
 
         if ($query->all()) {
             $ids = ArrayHelper::map($query->all(), 'id', 'id');
@@ -495,5 +554,6 @@ class Goods extends \yii\db\ActiveRecord
         return $this->hasOne(Brands::className(), ['name' => 'Vendor']);
 
     }
+
 
 }

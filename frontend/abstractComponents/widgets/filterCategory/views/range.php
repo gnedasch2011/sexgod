@@ -1,2 +1,0 @@
-<?php
-echo 'range.php';

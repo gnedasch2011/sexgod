@@ -17,7 +17,7 @@ class CategoryAbstract extends ActiveRecord
 {
 
     const ITEMS_TYPE = 1;
-    const ROOT_PATH_FOR_CAT = '/catalog/';
+    const ROOT_URL_FOR_CAT = '/catalog/';
 
     public function behaviors()
     {
@@ -254,7 +254,6 @@ class CategoryAbstract extends ActiveRecord
                 ->with('attrProduct')
                 ->andWhere(['ghc.category_id' => $arrIdCategoryAllArr]);
 
-
             foreach ($paramsGet['attr'] as $idAttr => $attrValue) {
 
                 $allGoods->andWhere([
@@ -291,6 +290,19 @@ class CategoryAbstract extends ActiveRecord
 
         return $categorys;
     }
+
+    public static function getAllCategorysIdsInCurrent($currentIDCategory)
+    {
+
+        $categorys = self::find()
+            ->where(['parent_id' => $currentIDCategory])
+            ->all();
+
+        $categorysIds = ArrayHelper::getColumn($categorys, 'id');
+
+        return $categorysIds;
+    }
+
 
     static public function getAllCategoryName()
     {
@@ -379,7 +391,7 @@ class CategoryAbstract extends ActiveRecord
     {
 
         if (isset($this->slug)) {
-            $fullUrl = self::ROOT_PATH_FOR_CAT . $this->slug . '/';
+            $fullUrl = self::ROOT_URL_FOR_CAT . $this->slug . '/';
             return $fullUrl;
         }
         return '';
@@ -511,7 +523,7 @@ class CategoryAbstract extends ActiveRecord
         $cat = self::findOne(['id' => $idCat]);
 
         if ($cat) {
-            return self::ROOT_PATH_FOR_CAT . $cat->slug . '/';
+            return self::ROOT_URL_FOR_CAT . $cat->slug . '/';
         }
 
         return '';

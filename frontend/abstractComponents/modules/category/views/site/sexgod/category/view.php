@@ -4,8 +4,10 @@ use yii\helpers\Html;
 use yii\web\View;
 use yii\widgets\Breadcrumbs;
 
-/* @var $this yii\web\View */
-
+$this->registerJsFile("@web/js/filter/main.js",
+    ['rel' => 'stylesheet',
+        'depends' => ['frontend\assets\AppAsset']],
+    'mystyle');
 ?>
 <div class="container">
     <div class="shop-layout shop-layout--sidebar--start">
@@ -21,12 +23,14 @@ use yii\widgets\Breadcrumbs;
                             </svg>
                         </button>
                     </div>
-                    <div class="block-sidebar__item">
-                        <div class="widget-filters widget widget-filters--offcanvas--mobile"
-                             data-collapse data-collapse-opened-class="filter--opened">
-                            <h4 class="widget-filters__title widget__title">Фильтры</h4>
-                            <div class="widget-filters__list">
-                                <?php /*?>
+                    <form id="main_filter" action="/good/ajax/get-products-for-filter/">
+                        <?= Html::hiddenInput('categoryId', $category->id); ?>
+                        <div class="block-sidebar__item">
+                            <div class="widget-filters widget widget-filters--offcanvas--mobile"
+                                 data-collapse data-collapse-opened-class="filter--opened">
+                                <h4 class="widget-filters__title widget__title">Фильтры</h4>
+                                <div class="widget-filters__list">
+                                    <?php /*?>
 
                                     <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
@@ -110,163 +114,25 @@ use yii\widgets\Breadcrumbs;
                                     </div>
 
                                      <?php */ ?>
-                                <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
-                                ]); ?>
+                                    <?= \app\abstractComponents\widgets\MenuIMWidget\MenuIMWidget::widget([
+                                    ]); ?>
 
-                                <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
-                                    'id' => 9,
-                                    'category'=> $category
-                                ]); ?>
+                                    <?php
 
-                                <?php /*?>
+//                                    аттрибуты для фильтра
+                                    $arrAttr = [13,7, 24,21, 22, 23, 25, 32, 33, 30];
 
-                                    <div class="widget-filters__item">
-                                        <div class="filter filter--opened" data-collapse-item>
-                                            <button type="button" class="filter__title" data-collapse-trigger>
-                                                Categories Alt
-                                                <svg class="filter__arrow" width="12px" height="7px">
-                                                    <use xlink:href="/template/red_stroyka/images/sprite.svg#arrow-rounded-down-12x7"></use>
-                                                </svg>
-                                            </button>
-                                            <div class="filter__body" data-collapse-content>
-                                                <div class="filter__container">
-                                                    <div class="filter-categories-alt">
-                                                        <ul class="filter-categories-alt__list filter-categories-alt__list--level--1" data-collapse-opened-class="filter-categories-alt__item--open">
-                                                            <li class="filter-categories-alt__item" data-collapse-item>
-                                                                <a href="">Clothes & PPE</a>
-                                                            </li>
-                                                            <li class="filter-categories-alt__item" data-collapse-item>
-                                                                <button class="filter-categories-alt__expander" data-collapse-trigger></button>
-                                                                <a href="">Power Tools</a>
-                                                                <div class="filter-categories-alt__children" data-collapse-content>
-                                                                    <ul class="filter-categories-alt__list filter-categories-alt__list--level--2">
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Engravers</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Drills</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Wrenches</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Plumbing</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Wall Chaser</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Pneumatic Tools</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Milling Cutters</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <li class="filter-categories-alt__item filter-categories-alt__item--open filter-categories-alt__item--current" data-collapse-item>
-                                                                <button class="filter-categories-alt__expander" data-collapse-trigger></button>
-                                                                <a href="">Hand Tools</a>
-                                                                <div class="filter-categories-alt__children" data-collapse-content>
-                                                                    <ul class="filter-categories-alt__list filter-categories-alt__list--level--2">
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Screwdrivers</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item filter-categories-alt__item--current" data-collapse-item>
-                                                                            <button class="filter-categories-alt__expander" data-collapse-trigger></button>
-                                                                            <a href="">Handsaws</a>
-                                                                            <div class="filter-categories-alt__children" data-collapse-content>
-                                                                                <ul class="filter-categories-alt__list filter-categories-alt__list--level--3">
-                                                                                    <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                        <a href="">Power Saws</a>
-                                                                                    </li>
-                                                                                    <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                        <a href="">Hacksaws</a>
-                                                                                    </li>
-                                                                                    <li class="filter-categories-alt__item filter-categories-alt__item--current" data-collapse-item>
-                                                                                        <button class="filter-categories-alt__expander" data-collapse-trigger></button>
-                                                                                        <a href="">Deep Dive</a>
-                                                                                        <div class="filter-categories-alt__children" data-collapse-content>
-                                                                                            <ul class="filter-categories-alt__list filter-categories-alt__list--level--4">
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Submarines</a>
-                                                                                                </li>
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Silt In Bags</a>
-                                                                                                </li>
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Black Pearl</a>
-                                                                                                </li>
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Krakens</a>
-                                                                                                </li>
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Nautilus</a>
-                                                                                                </li>
-                                                                                                <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                                    <a href="">Mariana Trench</a>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                        <a href="">Chain Saws</a>
-                                                                                    </li>
-                                                                                    <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                        <a href="">Two-handed Saws</a>
-                                                                                    </li>
-                                                                                    <li class="filter-categories-alt__item" data-collapse-item>
-                                                                                        <a href="">Other</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Knives</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Axes</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Multitools</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Paint Tools</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <li class="filter-categories-alt__item" data-collapse-item>
-                                                                <a href="">Measurement</a>
-                                                            </li>
-                                                            <li class="filter-categories-alt__item" data-collapse-item>
-                                                                <button class="filter-categories-alt__expander" data-collapse-trigger></button>
-                                                                <a href="">Garden Equipment</a>
-                                                                <div class="filter-categories-alt__children" data-collapse-content>
-                                                                    <ul class="filter-categories-alt__list filter-categories-alt__list--level--2">
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Motor Pumps</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Chainsaws</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Electric Saws</a>
-                                                                        </li>
-                                                                        <li class="filter-categories-alt__item" data-collapse-item>
-                                                                            <a href="">Brush Cutters</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-      <?php */ ?>
+                                    ?>
 
+                                    <?php foreach ($arrAttr as $attrId): ?>
+                                        <?= \frontend\abstractComponents\modules\attribute\widgets\FilterWidget\FilterWithAttrWidget::widget([
+                                            'id' => $attrId,
+                                            'category' => $category
+                                        ]); ?>
+
+                                    <?php endforeach; ?>
+
+                                    <?php /*?>
                                 <div class="widget-filters__item">
                                     <div class="filter filter--opened" data-collapse-item>
                                         <button type="button" class="filter__title"
@@ -867,13 +733,16 @@ use yii\widgets\Breadcrumbs;
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="widget-filters__actions d-flex">
-                                <button class="btn btn-primary btn-sm">Filter</button>
-                                <button class="btn btn-secondary btn-sm">Reset</button>
+    <?php */ ?>
+                                </div>
+
+                                <div class="widget-filters__actions d-flex">
+                                    <button class="btn btn-primary btn-sm">Filter</button>
+                                    <button class="btn btn-secondary btn-sm">Reset</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <?php /*?>
 
                     <div class="block-sidebar__item d-none d-lg-block">
@@ -1052,12 +921,13 @@ use yii\widgets\Breadcrumbs;
                     <div class="products-view__list products-list" data-layout="grid-3-sidebar"
                          data-with-features="false" data-mobile-grid-columns="2">
                         <div class="products-list__body">
-                            <?php foreach ($goods as $good): ?>
-                                <?= $this->render('@frontend/abstractComponents/modules/good/views/site/sexgod/good/_item', ['good' => $good]); ?>
-                            <?php endforeach; ?>
+                            <?php
+                            echo $this->render('@frontend/abstractComponents/modules/good/views/ajax/_categoryPageList.php', [
+                                'goods' => $goods,
+                            ]);
+                            ?>
                         </div>
                     </div>
-
                     <div class="products-view__pagination">
                         <?= \yii\widgets\LinkPager::widget([
                             'pagination' => $pages,

@@ -2,9 +2,7 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-
 ?>
-
 <?php if ($goodsInCart): ?>
     <div class="cart block cartBlockJs">
 

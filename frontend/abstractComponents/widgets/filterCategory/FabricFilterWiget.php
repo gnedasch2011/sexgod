@@ -10,6 +10,7 @@ use yii\base\Widget;
 class FabricFilterWiget extends Widget
 {
     public $attrModel;
+
     public $typeFilter = [
         '1' => 'range.php',
         '2' => 'multiple_choice.php',

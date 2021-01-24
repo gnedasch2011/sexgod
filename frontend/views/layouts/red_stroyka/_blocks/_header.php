@@ -13,23 +13,23 @@ use frontend\abstractComponents\models\CategoryAbstract;
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>
         <?php if (isset($this->context->title)): ?>
             <?= Html::encode($this->context->title) ?>
@@ -291,7 +291,6 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
                                                     <div class="menu__item-icon"><img
-                                                                srcset="/template/red_stroyka/images/languages/language-3.png 1x, images/languages/language-3@2x.png 2x"
                                                                 src="/template/red_stroyka/images/languages/language-3.png"
                                                                 alt=""></div>
                                                     Нижний Новгород
@@ -370,6 +369,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
             </div>
             <div class="site-header__nav-panel">
                 <!-- data-sticky-mode - one of [pullToShow, alwaysOnTop] -->
+<<<<<<< HEAD
                 <div class="nav-panel nav-panel--sticky" data-sticky-mode="pullToShow">
                     <div class="nav-panel__container container">
                         <div class="nav-panel__row">
@@ -1706,7 +1706,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                                         <!--                                                        <tr>-->
                                                         <!--                                                            <th>Подитог:</th>-->
                                                         <!--                                                            <td>$5,877.00</td>-->
-                                                        <!--                                                        </tr>-->
+                                                        <!--                                                        </tr>--
                                                         <tr>
                                                             <th>Доставка:</th>
                                                             <td>0 руб.</td>
@@ -1805,7 +1805,12 @@ use frontend\abstractComponents\models\CategoryAbstract;
                             </div>
                         </div>
                     </div>
-                </div>
+               </div>
+
+                <?php
+                echo $this->render("@app/abstractComponents/modules/cache_module/views/menu/top");
+                ?>
+
             </div>
         </div>
     </header>

@@ -2,6 +2,7 @@
 
 namespace frontend\abstractComponents\modules\good\controllers;
 
+use app\models\shop\Category;
 use frontend\abstractComponents\modules\good\models\Goods;
 use app\modules\cart\models\Order;
 use frontend\abstractComponents\models\CategoryAbstract;
@@ -64,7 +65,7 @@ class AjaxController extends Controller
     public function actionGetProducts()
     {
         $getProductsParams = \Yii::$app->request->post('getProductsParams');
-
+       
         if ($getProductsParams) {
             $products = Goods::generateQueryFromParams($getProductsParams);
         }
@@ -78,5 +79,26 @@ class AjaxController extends Controller
         return false;
 
     }
+
+    public function actionGetProductsForFilter()
+    {
+    
+        $getProductsParams = \Yii::$app->request->post('getProductsParams');
+
+
+        if ($getProductsParams) {
+            $products = Goods::getProductsForFilter($getProductsParams);
+        }
+
+        if ($products) {
+            return $this->renderAjax('@frontend/abstractComponents/modules/good/views/ajax/_categoryPageList.php', [
+                'goods' => $products,
+            ]);
+        }
+
+        return false;
+
+    }
+
 
 }

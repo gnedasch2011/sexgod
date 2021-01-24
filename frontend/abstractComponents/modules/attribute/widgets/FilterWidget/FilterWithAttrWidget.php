@@ -2,7 +2,7 @@
 
 namespace frontend\abstractComponents\modules\attribute\widgets\FilterWidget;
 
-use frontend\abstractComponents\widgets\filterCategory\models\Attr;
+use frontend\abstractComponents\modules\attribute\models\Attr;
 use yii\base\Widget;
 
 class FilterWithAttrWidget extends Widget
@@ -27,7 +27,7 @@ class FilterWithAttrWidget extends Widget
         $attr = Attr::findOne(['id' => $this->id]);
 
         return $this->render($this->template . $attr->group->type, [
-            'attrModel' => $attr,
+            'attr' => $attr,
             'category' => $this->category,
         ]);
     }
