@@ -126,6 +126,9 @@ return [
                 "brand/<brandName:\S+>/" => "brand/site/index",
 //
                 "catalog/<categoryName:\S+>/" => 'category/site/category',
+               // "cart/<a:\S+>/" => 'category/site/category',
+
+                "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",
 
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
 
@@ -141,13 +144,7 @@ return [
                 "sitemap.xml/" => "site/site/sitemap",
 
                 "test/" => "site/site/test",
-                "cart/" => "/cart/index",
-
-
-                [
-                    // ...настройка других параметров правила...
-                    'class' => '\frontend\abstractComponents\modules\url\components\UrlRules',
-                ],
+                "cart/<action:\w+>/" => "cart/<action>",
 
                 "<controller:\w+>/<action:\w+>/" => "<controller>/<action>",
                 "<module:\w+>/<controller:\w+>/<action:\w+>/" => "<module>/<controller>/<action>",

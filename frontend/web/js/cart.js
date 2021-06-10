@@ -23,7 +23,6 @@ $($addInCartJs).on('click', function (e) {
     dataItem = JSON.stringify(dataItem);
 
     addInSessionCart(dataItem);
-
     setTimeout(function () {
         getHtmlItemsForDropCart();
         getCountItems('.getCountItems');
