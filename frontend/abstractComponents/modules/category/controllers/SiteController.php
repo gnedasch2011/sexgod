@@ -4,10 +4,10 @@ namespace frontend\abstractComponents\modules\category\controllers;
 
 use app\models\sexgod\category\CategoryBase;
 use frontend\abstractComponents\models\CategoryAbstract;
+use frontend\abstractComponents\modules\attribute\models\Attr;
 use frontend\abstractComponents\modules\good\models\Goods;
 use frontend\abstractComponents\modules\url\models\Urls;
-use frontend\abstractComponents\widgets\filterCategory\models\Attr;
-use frontend\abstractComponents\widgets\filterCategory\models\AttrProduct;
+use frontend\abstractComponents\modules\attribute\models\AttrProduct;
 use frontend\models\form\CallLeadForm;
 use Yii;
 use yii\base\InvalidParamException;
@@ -54,9 +54,7 @@ class SiteController extends Controller
             $categoryName = $categoryModel->slug;
         }
 
-
-        $attr = Attr::findOne(['id' => 9]);
-//               echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
+   //     $attr = Attr::findOne(['id' => 9]);
 
         $paramsGet = Yii::$app->request->queryParams;
         unset($paramsGet['categoryName']);
@@ -75,6 +73,7 @@ class SiteController extends Controller
         if (!isset($category->id)) {
             throw new NotFoundHttpException;
         };
+
         //для пагинации
         $allGoodsInCategoryAndSubCategory = CategoryBase::getAllGoods($category->id, $paramsGet);
 

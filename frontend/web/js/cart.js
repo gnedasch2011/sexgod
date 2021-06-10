@@ -11,8 +11,7 @@ $priceDetail = $('.priceDetail'),
     $itemRow = '.cart-table__row',
     $gpButtonsAddInCartClass = '.input-number',
     $inputNumberInputClass = '.input-number__input',
-    $cartDeleteItemClass = '.cartDeleteItemClass'
-;
+    $cartDeleteItemClass = '.cartDeleteItemClass';
 
 
 $($addInCartJs).on('click', function (e) {
@@ -389,7 +388,7 @@ let generateOrderSuccess = function (data) {
     });
 }
 
-let clearQuackBlockCart = function(){
+let clearQuackBlockCart = function () {
     $('.getCountItems').text('0');
 }
 

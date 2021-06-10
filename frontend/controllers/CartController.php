@@ -21,7 +21,6 @@ class CartController extends Controller
         $this->layout = '@frontend/views/layouts/red_stroyka/main';
 
         $cart = \Yii::$app->cart;
-
         $goodsInCart = $cart->getProductForCart();
         $order = new \frontend\abstractComponents\modules\order\models\Order();
 

@@ -125,9 +125,10 @@ return [
                 "search" => "search/index",
                 "brand/<brandName:\S+>/" => "brand/site/index",
 //
-//                "catalog/<categoryName:\S+>/" => 'category/site/category',
+                "catalog/<categoryName:\S+>/" => 'category/site/category',
 
                 "product/<slugItem:\S+>" => 'good/site/detail-item',
+
                 "support" => 'site/support',
 
                 "about" => "page/site/about",
@@ -140,6 +141,7 @@ return [
                 "sitemap.xml/" => "site/site/sitemap",
 
                 "test/" => "site/site/test",
+                "cart/" => "/cart/index",
 
 
                 [

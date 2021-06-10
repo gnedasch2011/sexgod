@@ -22,7 +22,7 @@ use yii\helpers\Html;
                 <a href="<?= $good->getDetailUrl(); ?>"><img
                             title="<?= $good->name; ?>"
                             class="sexgod_item_img"
-                            src="<?= $good->previewImg; ?>"
+                            src="/"
                             alt="<?= $good->name; ?>"
 
                     ></a>
