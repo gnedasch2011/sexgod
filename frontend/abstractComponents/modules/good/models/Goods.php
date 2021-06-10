@@ -25,6 +25,7 @@ use yii\helpers\ArrayHelper;
  * @property int $VendorID
  * @property string $VendorCountry
  * @property string $ProdCountry
+ * @property string $productStatus
  * @property double $BaseRetailPrice
  * @property double $BaseWholePrice
  * @property int $Stock
@@ -72,10 +73,16 @@ class Goods extends \yii\db\ActiveRecord
     {
         return [
             'slug' => [
-                'class' => 'frontend\abstractComponents\behaviors\Slug',
-                'in_attribute' => 'ProdName',
-                'out_attribute' => 'slug',
-//                'translit' => true
+                'class' => 'Zelenin\yii\behaviors\Slug',
+                'slugAttribute' => 'slug',
+                'attribute' => 'ProdName',
+                // optional params
+                'ensureUnique' => true,
+                'replacement' => '-',
+                'lowercase' => true,
+                'immutable' => false,
+                // If intl extension is enabled, see http://userguide.icu-project.org/transforms/general.
+//                'transliterateOptions' => 'Russian-Latin/BGN; Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;'
             ]
         ];
     }
@@ -352,6 +359,9 @@ class Goods extends \yii\db\ActiveRecord
             $query->offset($params['offset']);
         }
 
+        //echo $query->createCommand()->getRawSql();die();
+       
+
         return self::generateModels($query);
     }
 
@@ -449,12 +459,14 @@ class Goods extends \yii\db\ActiveRecord
 
         if ($query->all()) {
             $ids = ArrayHelper::map($query->all(), 'id', 'id');
-
+         
             foreach ($ids as $id) {
-                $result [] = self::findOne(['aID' => $id]);
+                $result [] = self::findOne(['id' => $id]);
             }
 
         }
+        
+//        echo "<pre>"; print_r($result);die();
 
         return $result;
     }

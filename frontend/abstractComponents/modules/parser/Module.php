@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\abstractComponents\modules\parsers;
+namespace frontend\abstractComponents\modules\parser;
 
 /**
  * parsers module definition class

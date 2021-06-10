@@ -26,7 +26,7 @@ return [
         ],
 
         'parsers' => [
-            'class' => 'frontend\abstractComponents\modules\parsers\Module',
+            'class' => 'frontend\abstractComponents\modules\parser\Module',
         ],
 
         'category' => [

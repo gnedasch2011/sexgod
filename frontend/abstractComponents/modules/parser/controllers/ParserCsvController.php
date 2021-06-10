@@ -6,7 +6,7 @@
  * Time: 8:40
  */
 
-namespace frontend\abstractComponents\modules\parsers\controllers;
+namespace frontend\abstractComponents\modules\parser\controllers;
 
 
 use app\models\shop\Goods;
@@ -18,22 +18,32 @@ class ParserCsvController extends Controller
 {
     public function actionCsv()
     {
+    
         $cache = \Yii::$app->cache;
-        $key = 'csvResult21';
+        $key = 'test';
         $csvResult = $cache->get($key);
 
-        $fields = ['article', 'categoryParent', 'categoryId', 'name', 'desc', 'manufactury', 'manufacturer_part_number', 'price_retail', 'price_wholesale', 'sale_access', 'in_stock', 'shipment_time', 'the_size', 'color', 'aID', 'material', 'batteries', 'packaging', 'gross_weight', 'photo_150', 'photo_1', 'photo_2', 'photo_3', 'photo_4', 'photo_5', 'barcode'];
+
+
+        $fields = ['prodID','aID','Barcode','ProdName','VendorCode','Vendor','VendorID','VendorCountry','ProdCountry','BaseRetailPrice','BaseWholePrice','Stock','ShippingDate','Description','Brutto','Batteries','Pack','Material','Lenght','Diameter','Collection','Images','Category','SubCategory','Color','Size','Novelties','SuperSale','Bestseller','RetailPrice','WholePrice','Discount','prodUrl','function','addfunction','vibration','volume','ModelYear','img_status','ready_to_go','StopPromo','slug','photo_150','Brutto_length', 'Brutto_width', 'Brutto_height'];
+
         if ($csvResult === false) {
             $csv = new Csv();
-            $csv->auto('p5s_assort.csv');
+            $csv->auto('csv/test.csv');
             $csv->limit = 100000;
+           
             // Сохраняем значение $categories в кэше по ключу. Данные можно получить в следующий раз.
+
             $cache->set($key, $csv->data);
         } else {
-            $goodInBases = \frontend\abstractComponents\modules\good\models\Goods::find()->where(['not like', 'photo_150', '.jpg'])->all();
+            $goodsInBases = \frontend\abstractComponents\modules\good\models\Goods::find()
+                ->limit(100)
+                ->all();
+        
+            foreach ($goodsInBases as $good) {    
+             
+                $itemArr = $csvResult[$good];
 
-            foreach ($goodInBases as $good) {
-                $itemArr = $csvResult[$good->article];
                 $good->photo_150 = $itemArr['Фотография 1'];
 //                $good->save(false);
             }

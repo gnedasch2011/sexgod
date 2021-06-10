@@ -140,6 +140,18 @@ class SiteController extends Controller
 
     public function actionCategoryWithFilter($urlId = "")
     {
+
+//        $goods = Goods::find()
+//            ->where('id>26479')
+//            ->all();
+//
+//        foreach ($goods as $good) {
+//
+//            if(!$good->save()){
+//                echo "<pre>"; print_r($good->errors);die();
+//            }
+//        }
+//        echo "<pre>"; print_r($goods);die();
 //        $attr = \frontend\abstractComponents\modules\attribute\models\Attr::findOne(['id' => 9]);
 
 //     echo "<pre>"; print_r($attr->getValueInAttrProductAndInChildCat(101, 'distinct'));die();
