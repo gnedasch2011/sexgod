@@ -10,7 +10,7 @@ use frontend\abstractComponents\models\CategoryAbstract;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" href="/template/red_stroyka/images/favicon.png">
     <link href="/template/red_stroyka/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -1723,95 +1723,101 @@ use frontend\abstractComponents\models\CategoryAbstract;
                                             </div>
                                         </div>
                                         <!-- .dropcart / end -->
-                                    </div>
-                                </div>
-                                <div class="indicator indicator--trigger--click">
-                                    <a href="/cart/" class="indicator__button">
+                                                </div>
+                                            </div>
+                                            <div class="indicator indicator--trigger--click">
+                                                <a href="/cart/" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="/template/red_stroyka/images/sprite.svg#person-20"></use>
                                                 </svg>
                                             </span>
-                                    </a>
-                                    <div class="indicator__dropdown">
-                                        <div class="account-menu">
-                                            <form class="account-menu__form">
-                                                <div class="account-menu__form-title">Log In to Your
-                                                    Account
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="header-signin-email"
-                                                           class="sr-only">Email address</label>
-                                                    <input id="header-signin-email" type="email"
-                                                           class="form-control form-control-sm"
-                                                           placeholder="Email address">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="header-signin-password"
-                                                           class="sr-only">Password</label>
-                                                    <div class="account-menu__form-forgot">
-                                                        <input id="header-signin-password"
-                                                               type="password"
-                                                               class="form-control form-control-sm"
-                                                               placeholder="Password">
-                                                        <a href=""
-                                                           class="account-menu__form-forgot-link">Forgot?</a>
+                                                </a>
+
+                                                <div class="indicator__dropdown">
+                                                    <div class="account-menu">
+                                                        <form class="account-menu__form">
+                                                            <div class="account-menu__form-title">
+                                                                Log In to Your
+                                                                Account
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="header-signin-email"
+                                                                       class="sr-only">Email
+                                                                    address</label>
+                                                                <input id="header-signin-email"
+                                                                       type="email"
+                                                                       class="form-control form-control-sm"
+                                                                       placeholder="Email address">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="header-signin-password"
+                                                                       class="sr-only">Password</label>
+                                                                <div class="account-menu__form-forgot">
+                                                                    <input id="header-signin-password"
+                                                                           type="password"
+                                                                           class="form-control form-control-sm"
+                                                                           placeholder="Password">
+                                                                    <a href=""
+                                                                       class="account-menu__form-forgot-link">Forgot?</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group account-menu__form-button">
+                                                                <button type="submit"
+                                                                        class="btn btn-primary btn-sm">
+                                                                    Login
+                                                                </button>
+                                                            </div>
+                                                            <div class="account-menu__form-link"><a
+                                                                        href="#">Create An
+                                                                    Account</a></div>
+                                                        </form>
+                                                        <div class="account-menu__divider"></div>
+                                                        <a href="#"
+                                                           class="account-menu__user">
+                                                            <div class="account-menu__user-avatar">
+                                                                <img src="/template/red_stroyka/images/avatars/avatar-3.jpg"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="account-menu__user-info">
+                                                                <div class="account-menu__user-name">
+                                                                    Helena
+                                                                    Garcia
+                                                                </div>
+                                                                <div class="account-menu__user-email">
+                                                                    stroyka@example.com
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="account-menu__divider"></div>
+                                                        <ul class="account-menu__links">
+                                                            <li><a href="#">Edit Profile</a>
+                                                            </li>
+                                                            <li><a href="#">Order History</a>
+                                                            </li>
+                                                            <li><a href="#">Addresses</a>
+                                                            </li>
+                                                            <li><a href="#">Password</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="account-menu__divider"></div>
+                                                        <ul class="account-menu__links">
+                                                            <li><a href="#">Logout</a></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <div class="form-group account-menu__form-button">
-                                                    <button type="submit"
-                                                            class="btn btn-primary btn-sm">Login
-                                                    </button>
-                                                </div>
-                                                <div class="account-menu__form-link"><a
-                                                            href="#">Create An
-                                                        Account</a></div>
-                                            </form>
-                                            <div class="account-menu__divider"></div>
-                                            <a href="#"
-                                               class="account-menu__user">
-                                                <div class="account-menu__user-avatar">
-                                                    <img src="/template/red_stroyka/images/avatars/avatar-3.jpg"
-                                                         alt="">
-                                                </div>
-                                                <div class="account-menu__user-info">
-                                                    <div class="account-menu__user-name">Helena
-                                                        Garcia
-                                                    </div>
-                                                    <div class="account-menu__user-email">
-                                                        stroyka@example.com
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <li><a href="#">Edit Profile</a>
-                                                </li>
-                                                <li><a href="#">Order History</a>
-                                                </li>
-                                                <li><a href="#">Addresses</a>
-                                                </li>
-                                                <li><a href="#">Password</a>
-                                                </li>
-                                            </ul>
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <li><a href="#">Logout</a></li>
-                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <?php
+                            echo $this->render("@app/abstractComponents/modules/cache_module/views/menu/top");
+                            ?>
+
                         </div>
                     </div>
-               </div>
-
-                <?php
-                echo $this->render("@app/abstractComponents/modules/cache_module/views/menu/top");
-                ?>
-
-            </div>
-        </div>
     </header>
 
     <div class="site__body">

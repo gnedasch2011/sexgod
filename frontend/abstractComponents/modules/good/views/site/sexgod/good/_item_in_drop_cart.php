@@ -1,4 +1,3 @@
-
 <?php foreach ($products as $good): ?>
     <div class="dropcart__product dropBlockForRemove"
          data-id="<?= $good->aID; ?>"

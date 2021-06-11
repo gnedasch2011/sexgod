@@ -22,7 +22,7 @@ use yii\widgets\Breadcrumbs;
                             </button>
                             <div class="owl-carousel" id="product-image">
                                 <a href="<?= $good->mainImg; ?>" target="_blank">
-                                    <img src="https://yamaguchi.ru//images/product/axiom/landing/cards/01.jpg" alt="">
+                                    <img src="<?= $good->mainImg; ?>" alt="">
                                 </a>
 
                                 <?php foreach ($good->images as $imgMini): ?>
@@ -65,7 +65,7 @@ use yii\widgets\Breadcrumbs;
                             </svg>
                         </button>
                     </div>
-                    <h1 class="product__name">Test</h1>
+                    <h1 class="product__name"><?= $good->name; ?></h1>
                     <?php /*?>
 
                     <div class="product__rating">
